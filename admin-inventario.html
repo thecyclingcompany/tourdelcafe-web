@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Inventario &amp; Kardex | Tienda Oficial Tour del Café</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Tipografías Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0e0d0c;
+      --card-bg: #161413;
+      --card-inner: #1e1b19;
+      --accent: #d35400;
+      --accent-hover: #e67e22;
+      --accent-glow: rgba(211, 84, 0, 0.35);
+      --success: #2ecc71;
+      --warning: #f39c12;
+      --danger: #e74c3c;
+      --text-main: #fafafa;
+      --text-muted: rgba(250, 250, 250, 0.6);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(211, 84, 0, 0.3);
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Courier Prime', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: radial-gradient(circle at 50% 0%, rgba(211, 84, 0, 0.08) 0%, rgba(14, 13, 12, 1) 60%);
+      line-height: 1.5;
+    }
+
+    /* Topbar */
+    .admin-topbar {
+      background: rgba(22, 20, 19, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .brand-group:hover .brand-logo-img {
+      transform: scale(1.02);
+    }
+
+    .badge-admin {
+      background: rgba(211, 84, 0, 0.2);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-hover);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-topbar {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-topbar:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-primary-action {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      border: 1px solid rgba(243, 156, 18, 0.4);
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px var(--accent-glow);
+      transition: all 0.2s;
+    }
+
+    .btn-primary-action:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(211, 84, 0, 0.5);
+    }
+
+    /* Main Container */
+    .admin-main {
+      flex: 1;
+      max-width: 1320px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px 24px;
+    }
+
+    /* KPI Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .kpi-card.warning::before { background: var(--warning); }
+    .kpi-card.danger::before { background: var(--danger); }
+    .kpi-card.success::before { background: var(--success); }
+
+    .kpi-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .kpi-value {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .kpi-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Nav Tabs */
+    .tabs-bar {
+      display: flex;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 12px 20px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-hover);
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent-hover);
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      background: var(--card-bg);
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search-input {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 9px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      min-width: 260px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+
+    .select-filter {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 9px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Tables */
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow-x: auto;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .custom-table th {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 14px 16px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .custom-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: middle;
+    }
+
+    .custom-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Product Item Column */
+    .prod-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .prod-thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: #252220;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .prod-title {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .prod-variant {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .sku-badge {
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: var(--accent-hover);
+      display: inline-block;
+    }
+
+    /* Stock Level Display */
+    .stock-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .stock-pill.ok {
+      background: rgba(46, 204, 113, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(46, 204, 113, 0.3);
+    }
+
+    .stock-pill.low {
+      background: rgba(243, 156, 18, 0.15);
+      color: var(--warning);
+      border: 1px solid rgba(243, 156, 18, 0.3);
+    }
+
+    .stock-pill.out {
+      background: rgba(231, 76, 60, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(231, 76, 60, 0.3);
+    }
+
+    .kardex-type-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .kardex-type-badge.entrada {
+      background: rgba(46, 204, 113, 0.2);
+      color: var(--success);
+      border: 1px solid rgba(46, 204, 113, 0.4);
+    }
+
+    .kardex-type-badge.salida {
+      background: rgba(231, 76, 60, 0.2);
+      color: var(--danger);
+      border: 1px solid rgba(231, 76, 60, 0.4);
+    }
+
+    .btn-action-small {
+      padding: 5px 9px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      transition: all 0.2s;
+    }
+
+    .btn-action-small:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    #auth-modal {
+      z-index: 10000;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(14, 13, 12, 0.94);
+    }
+
+    .modal-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 540px;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      animation: modalFade 0.25s ease;
+    }
+
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: #ffffff;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+    }
+
+    .type-toggle-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .type-toggle-btn {
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid var(--border);
+      background: var(--card-inner);
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .type-toggle-btn.active.entrada {
+      background: rgba(46, 204, 113, 0.2);
+      border-color: var(--success);
+      color: var(--success);
+    }
+
+    .type-toggle-btn.active.salida {
+      background: rgba(231, 76, 60, 0.2);
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    /* Auth Gate Modal */
+    #auth-modal {
+      display: none;
+    }
+    #auth-modal.active {
+      display: flex;
+    }
+
+    /* Toast */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--accent);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: none;
+      z-index: 2000;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .toast-msg.show {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: toastIn 0.3s ease;
+    }
+
+    @keyframes toastIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* ==========================================================================
+       OPTIMIZACIÓN RESPONSIVE & MOBILE-FIRST (< 768px)
+       ========================================================================== */
+    @media screen and (max-width: 768px) {
+      .admin-topbar {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .brand-group {
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .topbar-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .btn-topbar,
+      .btn-primary-action {
+        flex: 1 1 calc(50% - 6px);
+        min-height: 44px;
+        padding: 10px 12px;
+        font-size: 12px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .admin-main {
+        padding: 16px 12px;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .kpi-card {
+        padding: 14px 12px;
+      }
+
+      .kpi-value {
+        font-size: 1.5rem;
+      }
+
+      .tabs-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+        gap: 6px;
+        margin-bottom: 18px;
+        padding-bottom: 6px;
+      }
+
+      .tab-btn {
+        padding: 10px 14px;
+        font-size: 13px;
+        white-space: nowrap;
+        min-height: 44px;
+      }
+
+      .controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 14px 12px;
+      }
+
+      .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .search-input,
+      .select-filter {
+        width: 100%;
+        min-width: 100%;
+        min-height: 48px !important;
+        font-size: 16px !important; /* Previene auto-zoom en iOS */
+        border-radius: 8px;
+      }
+
+      .table-container {
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .custom-table {
+        min-width: 600px; /* Permite desplazamiento horizontal fluido */
+      }
+
+      /* Modales Móviles */
+      .modal-overlay {
+        padding: 12px;
+      }
+
+      .modal-card {
+        width: 95% !important;
+        max-width: 95vw !important;
+        max-height: 85vh !important;
+        overflow-y: auto;
+        padding: 20px 16px !important;
+        border-radius: 12px;
+      }
+
+      .modal-close {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+      }
+
+      .form-control,
+      select.form-control {
+        font-size: 16px !important;
+        min-height: 48px !important;
+        border-radius: 8px;
+      }
+
+      .type-toggle-group {
+        grid-template-columns: 1fr;
+      }
+
+      .type-toggle-btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-actions .btn-topbar,
+      .topbar-actions .btn-primary-action {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="admin-topbar">
+    <a href="tienda.html" class="brand-group">
+      <img src="assets/logo-festival-header.png" alt="Tour del Café Gran Fondo" class="brand-logo-img">
+      <span class="badge-admin">SISTEMA INVENTARIO</span>
+    </a>
+    <div class="topbar-actions">
+      <span class="badge-admin" id="badge-env" style="display: none;"></span>
+      <a href="tienda.html" class="btn-topbar">← Ver Tienda</a>
+      <button class="btn-topbar" onclick="InventoryApp.loadData()">↻ Refrescar</button>
+      <button class="btn-primary-action" onclick="InventoryApp.openMovementModal()">
+        <span>+</span> Registrar Movimiento
+      </button>
+      <button class="btn-topbar" onclick="InventoryApp.logout()" style="color: #ff6b6b; border-color: rgba(231, 76, 60, 0.35);" title="Cerrar sesión de inventario">
+        🔒 Cerrar Sesión
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="admin-main">
+    
+    <!-- KPI Cards -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Variantes / SKUs</div>
+        <div class="kpi-value" id="kpi-skus">--</div>
+        <div class="kpi-sub">Total productos activos en catálogo</div>
+      </div>
+      <div class="kpi-card success">
+        <div class="kpi-label">Unidades en Bodega</div>
+        <div class="kpi-value" id="kpi-units">--</div>
+        <div class="kpi-sub">Total unidades físicas disponibles</div>
+      </div>
+      <div class="kpi-card warning">
+        <div class="kpi-label">Stock Crítico (Bajo)</div>
+        <div class="kpi-value" id="kpi-low" style="color: var(--warning);">--</div>
+        <div class="kpi-sub">SKUs por debajo del stock mínimo</div>
+      </div>
+      <div class="kpi-card danger">
+        <div class="kpi-label">SKUs Agotados</div>
+        <div class="kpi-value" id="kpi-out" style="color: var(--danger);">--</div>
+        <div class="kpi-sub">Disponibilidad en 0 unidades</div>
+      </div>
+    </section>
+
+    <!-- Pestañas de Vista -->
+    <div class="tabs-bar">
+      <button class="tab-btn active" id="tab-btn-stock" onclick="InventoryApp.switchTab('stock')">📦 Stock por Variante</button>
+      <button class="tab-btn" id="tab-btn-kardex" onclick="InventoryApp.switchTab('kardex')">📜 Historial Kardex</button>
+    </div>
+
+    <!-- PESTAÑA 1: INVENTARIO POR VARIANTE -->
+    <section id="view-stock">
+      <div class="controls-bar">
+        <div class="filter-group">
+          <input type="text" id="filter-search" class="search-input" placeholder="Buscar por SKU, producto o molienda..." oninput="InventoryApp.applyFilters()">
+          <select id="filter-category" class="select-filter" onchange="InventoryApp.applyFilters()">
+            <option value="all">Todas las categorías</option>
+            <option value="single-origin">Origen Único</option>
+            <option value="drips">Drips</option>
+            <option value="bundles">Packs / Combos</option>
+            <option value="accessories">Accesorios</option>
+          </select>
+          <select id="filter-status" class="select-filter" onchange="InventoryApp.applyFilters()">
+            <option value="all">Todos los estados</option>
+            <option value="low">Stock Bajo</option>
+            <option value="out">Agotados</option>
+            <option value="ok">En Stock</option>
+          </select>
+        </div>
+        <div style="font-size: 13px; color: var(--text-muted);" id="table-counter">
+          Mostrando 0 variantes
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Producto &amp; Presentación</th>
+              <th>SKU</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Stock Actual</th>
+              <th>Mínimo</th>
+              <th>Estado</th>
+              <th style="text-align: right;">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="stock-table-body">
+            <tr>
+              <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                Cargando inventario...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PESTAÑA 2: HISTORIAL KARDEX -->
+    <section id="view-kardex" style="display: none;">
+      <div class="controls-bar">
+        <div class="filter-group">
+          <input type="text" id="kardex-search" class="search-input" placeholder="Buscar en historial por SKU, orden o motivo..." oninput="InventoryApp.applyKardexFilters()">
+          <select id="kardex-type-filter" class="select-filter" onchange="InventoryApp.applyKardexFilters()">
+            <option value="all">Todos los movimientos</option>
+            <option value="ENTRADA">Solo ENTRADAS (+)</option>
+            <option value="SALIDA">Solo SALIDAS (-)</option>
+          </select>
+        </div>
+        <div style="font-size: 13px; color: var(--text-muted);" id="kardex-counter">
+          0 movimientos registrados
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Fecha &amp; Hora</th>
+              <th>SKU / Producto</th>
+              <th>Tipo</th>
+              <th>Cantidad</th>
+              <th>Saldo (Ant → Nuevo)</th>
+              <th>Motivo</th>
+              <th>Referencia / Orden</th>
+              <th>Usuario</th>
+            </tr>
+          </thead>
+          <tbody id="kardex-table-body">
+            <tr>
+              <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                Cargando movimientos...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: REGISTRAR MOVIMIENTO (ENTRADA / SALIDA) -->
+  <div class="modal-overlay" id="movement-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="movement-modal-title">Registrar Movimiento de Inventario</h3>
+        <button class="modal-close" onclick="InventoryApp.closeMovementModal()">&times;</button>
+      </div>
+      <form id="movement-form" onsubmit="InventoryApp.submitMovement(event)">
+        
+        <div class="form-group">
+          <label class="form-label">Tipo de Movimiento</label>
+          <div class="type-toggle-group">
+            <button type="button" class="type-toggle-btn active entrada" id="btn-toggle-in" onclick="InventoryApp.setMovementType('ENTRADA')">
+              + ENTRADA (Lote / Reposición)
+            </button>
+            <button type="button" class="type-toggle-btn salida" id="btn-toggle-out" onclick="InventoryApp.setMovementType('SALIDA')">
+              - SALIDA (Merma / Cata / Evento)
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Variante / SKU de Café</label>
+          <select id="modal-sku-select" class="form-control" required>
+            <!-- Inyectado dinámicamente -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Cantidad de Unidades</label>
+          <input type="number" id="modal-qty-input" class="form-control" min="1" step="1" required placeholder="Ej: 10">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Motivo</label>
+          <select id="modal-reason-select" class="form-control" required>
+            <option value="Nuevo Lote Tostión">Nuevo Lote Tostión</option>
+            <option value="Reposición Bodega">Reposición Bodega</option>
+            <option value="Cata / Degustación">Cata / Degustación</option>
+            <option value="Evento / Coffee Ride">Evento / Coffee Ride</option>
+            <option value="Merma / Daño">Merma / Daño</option>
+            <option value="Venta Directa">Venta Directa</option>
+            <option value="Ajuste de Auditoría">Ajuste de Auditoría</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Referencia / Consecutivo</label>
+          <input type="text" id="modal-ref-input" class="form-control" placeholder="Ej: LOTE-2027-01 o FACT-1234">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Responsable / Usuario</label>
+          <input type="text" id="modal-user-input" class="form-control" value="Admin Tostador">
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 24px;">
+          <button type="button" class="btn-topbar" style="flex: 1; justify-content: center;" onclick="InventoryApp.closeMovementModal()">Cancelar</button>
+          <button type="submit" class="btn-primary-action" style="flex: 2; justify-content: center;" id="modal-submit-btn">Guardar Movimiento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: AUTENTICACIÓN ADMIN -->
+  <div class="modal-overlay" id="auth-modal" style="display: none;">
+    <div class="modal-card" style="max-width: 400px; text-align: center;">
+      <div style="font-size: 38px; margin-bottom: 10px;">🔒</div>
+      <h3 class="modal-title" style="margin-bottom: 8px;">Acceso al Inventario</h3>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+        Ingresa tu clave de administración para acceder al control de stock y kardex oficial.
+      </p>
+      <form onsubmit="InventoryApp.submitAuth(event)">
+        <div class="form-group">
+          <input type="password" id="admin-key-input" class="form-control" placeholder="Clave de administración" required autofocus style="text-align: center; font-size: 16px; letter-spacing: 2px;">
+        </div>
+        <div id="auth-modal-error" style="display: none; background: rgba(231,76,60,0.15); border: 1px solid rgba(231,76,60,0.4); color: #ff6b6b; font-size: 12px; padding: 8px 12px; border-radius: 6px; margin-bottom: 14px;"></div>
+        <button type="submit" class="btn-primary-action" style="width: 100%; justify-content: center; padding: 12px;">
+          Desbloquear Panel
+        </button>
+        <div style="margin-top: 16px;">
+          <a href="tienda.html" style="color: var(--text-muted); font-size: 12px; text-decoration: none;">← Volver a la Tienda</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-msg" id="admin-toast"></div>
+
+  <!-- LÓGICA DE LA APLICACIÓN -->
+  <script>
+    const InventoryApp = (function() {
+      const STORAGE_KEY = 'mitico_admin_key';
+      const MASTER_KEY = 'mitico_admin_2027';
+      // Sesión estrictamente por pestaña: al cerrar el navegador o la página se requiere ingresar la clave de nuevo
+      let adminKey = sessionStorage.getItem(STORAGE_KEY) || '';
+      let rawStock = [];
+      let rawKardex = [];
+      let currentTab = 'stock';
+      let currentMovementType = 'ENTRADA';
+
+      const formatCOP = val => '$ ' + Math.round(Number(val) || 0).toLocaleString('es-CO') + ' COP';
+
+      const showToast = msg => {
+        const t = document.getElementById('admin-toast');
+        if (!t) return;
+        t.innerHTML = `<span>✓</span> <span>${msg}</span>`;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 3500);
+      };
+
+      const setEnvBadge = (label, type) => {
+        const badge = document.getElementById('badge-env');
+        if (!badge) return;
+        badge.style.display = 'inline-flex';
+        badge.textContent = label;
+        if (type === 'api') {
+          badge.style.background = 'rgba(46, 204, 113, 0.2)';
+          badge.style.borderColor = 'rgba(46, 204, 113, 0.4)';
+          badge.style.color = '#2ecc71';
+        } else {
+          badge.style.background = 'rgba(211, 84, 0, 0.2)';
+          badge.style.borderColor = 'rgba(211, 84, 0, 0.4)';
+          badge.style.color = '#e67e22';
+        }
+      };
+
+      const checkAuth = async () => {
+        const authModal = document.getElementById('auth-modal');
+        if (!adminKey) {
+          authModal.classList.add('active');
+          authModal.style.display = 'flex';
+          const inp = document.getElementById('admin-key-input');
+          if (inp) setTimeout(() => inp.focus(), 150);
+          return false;
+        }
+
+        let isValid = false;
+        try {
+          const res = await fetch('/api/admin/inventory', {
+            headers: { 'x-admin-key': adminKey }
+          });
+          const ct = res.headers.get('content-type') || '';
+          if (res.ok && ct.includes('json')) {
+            isValid = true;
+          } else if (res.status === 401) {
+            isValid = false;
+          } else {
+            // Modo estático (ej: Hostinger donde /api/ es 404 HTML)
+            if (adminKey === MASTER_KEY) isValid = true;
+          }
+        } catch (e) {
+          if (adminKey === MASTER_KEY) isValid = true;
+        }
+
+        if (isValid) {
+          authModal.classList.remove('active');
+          authModal.style.display = 'none';
+          return true;
+        } else {
+          sessionStorage.removeItem(STORAGE_KEY);
+          adminKey = '';
+          authModal.classList.add('active');
+          authModal.style.display = 'flex';
+          return false;
+        }
+      };
+
+      const submitAuth = async e => {
+        e.preventDefault();
+        const input = document.getElementById('admin-key-input');
+        const errBox = document.getElementById('auth-modal-error');
+        const key = input ? input.value.trim() : '';
+        if (!key) return;
+
+        if (errBox) {
+          errBox.style.display = 'none';
+          errBox.textContent = '';
+        }
+
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Verificando...';
+        }
+
+        let isValid = false;
+        try {
+          const res = await fetch('/api/admin/inventory', {
+            headers: { 'x-admin-key': key }
+          });
+          const ct = res.headers.get('content-type') || '';
+          if (res.ok && ct.includes('json')) {
+            isValid = true;
+          } else if (res.status === 401) {
+            isValid = false;
+          } else {
+            if (key === MASTER_KEY) isValid = true;
+          }
+        } catch (netErr) {
+          if (key === MASTER_KEY) isValid = true;
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Desbloquear Panel';
+          }
+        }
+
+        if (isValid) {
+          adminKey = key;
+          sessionStorage.setItem(STORAGE_KEY, adminKey);
+          const authModal = document.getElementById('auth-modal');
+          authModal.classList.remove('active');
+          authModal.style.display = 'none';
+          await loadData();
+          showToast('Sesión administrativa iniciada');
+        } else {
+          if (errBox) {
+            errBox.textContent = 'Clave de administración incorrecta. Por favor verifica e intenta de nuevo.';
+            errBox.style.display = 'block';
+          } else {
+            alert('Clave de administración incorrecta. Por favor verifica e intenta de nuevo.');
+          }
+        }
+      };
+
+      const logout = () => {
+        sessionStorage.removeItem(STORAGE_KEY);
+        adminKey = '';
+        const authModal = document.getElementById('auth-modal');
+        if (authModal) {
+          authModal.classList.add('active');
+          authModal.style.display = 'flex';
+        }
+        const input = document.getElementById('admin-key-input');
+        if (input) input.value = '';
+        const errBox = document.getElementById('auth-modal-error');
+        if (errBox) errBox.style.display = 'none';
+
+        rawStock = [];
+        rawKardex = [];
+        renderStockTable([]);
+        renderKardexTable([]);
+        document.getElementById('kpi-skus').textContent = '--';
+        document.getElementById('kpi-units').textContent = '--';
+        document.getElementById('kpi-low').textContent = '--';
+        document.getElementById('kpi-out').textContent = '--';
+        showToast('Sesión cerrada correctamente');
+      };
+
+      const loadData = async () => {
+        const ok = await checkAuth();
+        if (!ok) return;
+
+        let loadedViaApi = false;
+        try {
+          const res = await fetch('/api/admin/inventory', {
+            headers: { 'x-admin-key': adminKey }
+          });
+          const ct = res.headers.get('content-type') || '';
+          if (res.ok && ct.includes('json')) {
+            const data = await res.json();
+            if (data.success) {
+              rawStock = data.items || [];
+              rawKardex = data.kardex || [];
+
+              // Actualizar KPIs
+              document.getElementById('kpi-skus').textContent = data.stats.totalSkus;
+              document.getElementById('kpi-units').textContent = data.stats.totalUnits;
+              document.getElementById('kpi-low').textContent = data.stats.lowStockCount;
+              document.getElementById('kpi-out').textContent = data.stats.outOfStockCount;
+
+              loadedViaApi = true;
+              setEnvBadge('API En Vivo', 'api');
+            }
+          }
+        } catch (apiErr) {
+          console.warn('[AdminInventario] API backend no disponible, usando modo estático:', apiErr.message);
+        }
+
+        // Fallback para producción en Hostinger (servidor estático sin Node)
+        if (!loadedViaApi) {
+          try {
+            console.log('[AdminInventario] Cargando datos desde data/inventory-stock.json...');
+            const stockRes = await fetch('data/inventory-stock.json?v=' + Date.now());
+            if (stockRes.ok) {
+              const stockData = await stockRes.json();
+
+              // Mezclar con posibles ajustes locales en localStorage
+              let localStockOverrides = {};
+              try {
+                localStockOverrides = JSON.parse(localStorage.getItem('mitico_custom_stock') || '{}');
+              } catch (e) {}
+
+              const mergedStock = { ...stockData, ...localStockOverrides };
+
+              let totalUnits = 0;
+              let lowStockCount = 0;
+              let outOfStockCount = 0;
+              const DEFAULT_MIN = 3;
+
+              rawStock = Object.values(mergedStock).map(item => {
+                const qty = Number(item.current_stock) || 0;
+                const min = Number(item.min_stock) || DEFAULT_MIN;
+                totalUnits += qty;
+                const isOut = qty <= 0;
+                const isLow = !isOut && qty <= min;
+
+                if (isOut) outOfStockCount++;
+                if (isLow) lowStockCount++;
+
+                return {
+                  ...item,
+                  current_stock: qty,
+                  min_stock: min,
+                  status: isOut ? 'agotado' : (isLow ? 'bajo' : 'ok'),
+                  isLowStock: isLow,
+                  isOutOfStock: isOut
+                };
+              });
+
+              // Cargar Kardex desde archivo y localStorage
+              let fileKardex = [];
+              try {
+                const kardexRes = await fetch('data/inventory-kardex.json?v=' + Date.now());
+                if (kardexRes.ok) {
+                  fileKardex = await kardexRes.json();
+                }
+              } catch (e) {}
+
+              let localMovements = [];
+              try {
+                localMovements = JSON.parse(localStorage.getItem('mitico_local_movements') || '[]');
+              } catch (e) {}
+
+              rawKardex = [...localMovements, ...fileKardex];
+
+              // Actualizar KPIs
+              document.getElementById('kpi-skus').textContent = rawStock.length;
+              document.getElementById('kpi-units').textContent = totalUnits;
+              document.getElementById('kpi-low').textContent = lowStockCount;
+              document.getElementById('kpi-out').textContent = outOfStockCount;
+
+              setEnvBadge('Hostinger / Estático', 'static');
+            } else {
+              throw new Error('No se pudo leer data/inventory-stock.json');
+            }
+          } catch (staticErr) {
+            console.error('[AdminInventario] Error cargando datos estáticos:', staticErr);
+            const tbody = document.getElementById('stock-table-body');
+            if (tbody) {
+              tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 40px; color: var(--danger);">
+                Error al cargar catálogo de productos (${staticErr.message}).
+              </td></tr>`;
+            }
+          }
+        }
+
+        populateSkuSelect();
+        applyFilters();
+        applyKardexFilters();
+      };
+
+      const populateSkuSelect = () => {
+        const select = document.getElementById('modal-sku-select');
+        if (!select) return;
+        select.innerHTML = rawStock.map(i => `
+          <option value="${i.sku}">${i.sku} — ${i.productTitle} (${i.variantTitle}) [Actual: ${i.current_stock}]</option>
+        `).join('');
+      };
+
+      const applyFilters = () => {
+        const q = (document.getElementById('filter-search')?.value || '').toLowerCase().trim();
+        const cat = document.getElementById('filter-category')?.value || 'all';
+        const st = document.getElementById('filter-status')?.value || 'all';
+
+        let filtered = rawStock.slice();
+
+        if (cat !== 'all') {
+          filtered = filtered.filter(i => i.category === cat);
+        }
+
+        if (st === 'low') {
+          filtered = filtered.filter(i => i.isLowStock);
+        } else if (st === 'out') {
+          filtered = filtered.filter(i => i.isOutOfStock);
+        } else if (st === 'ok') {
+          filtered = filtered.filter(i => !i.isLowStock && !i.isOutOfStock);
+        }
+
+        if (q) {
+          filtered = filtered.filter(i => 
+            (i.sku || '').toLowerCase().includes(q) ||
+            (i.productTitle || '').toLowerCase().includes(q) ||
+            (i.variantTitle || '').toLowerCase().includes(q)
+          );
+        }
+
+        document.getElementById('table-counter').textContent = `Mostrando ${filtered.length} de ${rawStock.length} variantes`;
+        renderStockTable(filtered);
+      };
+
+      const renderStockTable = items => {
+        const tbody = document.getElementById('stock-table-body');
+        if (!tbody) return;
+
+        if (items.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">No se encontraron variantes con los filtros seleccionados.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = items.map(i => {
+          const pillClass = i.isOutOfStock ? 'out' : (i.isLowStock ? 'low' : 'ok');
+          const pillText = i.isOutOfStock ? '0 (Agotado)' : `${i.current_stock} un.`;
+          const statusBadge = i.isOutOfStock ? `<span class="stock-pill out">Agotado</span>` : (i.isLowStock ? `<span class="stock-pill low">Stock Bajo</span>` : `<span class="stock-pill ok">En Stock</span>`);
+
+          return `
+            <tr>
+              <td>
+                <div class="prod-cell">
+                  <img src="${i.image || 'assets/tienda/productos/mitico-ciclamino-volata-castillo-1.png'}" class="prod-thumb" alt="${i.productTitle}" onerror="this.src='assets/logo-gran-fondo.png'">
+                  <div>
+                    <div class="prod-title">${i.productTitle}</div>
+                    <div class="prod-variant">${i.variantTitle}</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="sku-badge">${i.sku}</span></td>
+              <td><span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted);">${i.categoryName || i.category}</span></td>
+              <td style="font-weight: 700;">${formatCOP(i.price)}</td>
+              <td>
+                <span class="stock-pill ${pillClass}">${pillText}</span>
+              </td>
+              <td style="color: var(--text-muted);">${i.min_stock || 3} un.</td>
+              <td>${statusBadge}</td>
+              <td style="text-align: right;">
+                <button class="btn-action-small" onclick="InventoryApp.quickMovement('${i.sku}', 'ENTRADA')" title="Sumar lote a este SKU">+ Entrada</button>
+                <button class="btn-action-small" onclick="InventoryApp.quickMovement('${i.sku}', 'SALIDA')" title="Descontar unidades de este SKU">- Salida</button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      };
+
+      const applyKardexFilters = () => {
+        const q = (document.getElementById('kardex-search')?.value || '').toLowerCase().trim();
+        const tipo = document.getElementById('kardex-type-filter')?.value || 'all';
+
+        let filtered = rawKardex.slice();
+
+        if (tipo !== 'all') {
+          filtered = filtered.filter(k => k.tipo === tipo);
+        }
+
+        if (q) {
+          filtered = filtered.filter(k => 
+            (k.sku || '').toLowerCase().includes(q) ||
+            (k.productTitle || '').toLowerCase().includes(q) ||
+            (k.motivo || '').toLowerCase().includes(q) ||
+            (k.referencia || '').toLowerCase().includes(q)
+          );
+        }
+
+        document.getElementById('kardex-counter').textContent = `${filtered.length} movimientos`;
+        renderKardexTable(filtered);
+      };
+
+      const renderKardexTable = list => {
+        const tbody = document.getElementById('kardex-table-body');
+        if (!tbody) return;
+
+        if (list.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">No se registran movimientos en el historial Kardex.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = list.map(k => {
+          const isEntrada = k.tipo === 'ENTRADA';
+          const typeClass = isEntrada ? 'entrada' : 'salida';
+          const sign = isEntrada ? '+' : '-';
+          const dateStr = k.fecha ? new Date(k.fecha).toLocaleString('es-CO', { dateStyle: 'short', timeStyle: 'short' }) : 'N/A';
+
+          return `
+            <tr>
+              <td style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">${dateStr}</td>
+              <td>
+                <span class="sku-badge">${k.sku}</span>
+                <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">${k.productTitle || ''}</div>
+              </td>
+              <td><span class="kardex-type-badge ${typeClass}">${k.tipo}</span></td>
+              <td style="font-weight: 700; color: ${isEntrada ? 'var(--success)' : 'var(--danger)'};">${sign}${k.cantidad} un.</td>
+              <td style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">${k.stockAnterior} → <strong style="color: #fff;">${k.stockNuevo}</strong></td>
+              <td><strong style="color: var(--text-main); font-size: 12px;">${k.motivo || 'Movimiento'}</strong></td>
+              <td><span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-hover);">${k.referencia || 'N/A'}</span></td>
+              <td style="font-size: 12px; color: var(--text-muted);">${k.usuario || 'Sistema'}</td>
+            </tr>
+          `;
+        }).join('');
+      };
+
+      const switchTab = tab => {
+        currentTab = tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        if (tab === 'stock') {
+          document.getElementById('tab-btn-stock').classList.add('active');
+          document.getElementById('view-stock').style.display = 'block';
+          document.getElementById('view-kardex').style.display = 'none';
+        } else {
+          document.getElementById('tab-btn-kardex').classList.add('active');
+          document.getElementById('view-stock').style.display = 'none';
+          document.getElementById('view-kardex').style.display = 'block';
+        }
+      };
+
+      const setMovementType = type => {
+        currentMovementType = type;
+        const btnIn = document.getElementById('btn-toggle-in');
+        const btnOut = document.getElementById('btn-toggle-out');
+        const reasonSelect = document.getElementById('modal-reason-select');
+
+        if (type === 'ENTRADA') {
+          btnIn.className = 'type-toggle-btn active entrada';
+          btnOut.className = 'type-toggle-btn salida';
+          if (reasonSelect) {
+            reasonSelect.innerHTML = `
+              <option value="Nuevo Lote Tostión">Nuevo Lote Tostión</option>
+              <option value="Reposición Bodega">Reposición Bodega</option>
+              <option value="Ajuste de Auditoría">Ajuste de Auditoría</option>
+            `;
+          }
+        } else {
+          btnIn.className = 'type-toggle-btn entrada';
+          btnOut.className = 'type-toggle-btn active salida';
+          if (reasonSelect) {
+            reasonSelect.innerHTML = `
+              <option value="Cata / Degustación">Cata / Degustación</option>
+              <option value="Evento / Coffee Ride">Evento / Coffee Ride</option>
+              <option value="Merma / Daño">Merma / Daño</option>
+              <option value="Venta Directa">Venta Directa</option>
+              <option value="Ajuste de Auditoría">Ajuste de Auditoría</option>
+            `;
+          }
+        }
+      };
+
+      const openMovementModal = (preselectedSku = null, preselectedType = 'ENTRADA') => {
+        const modal = document.getElementById('movement-modal');
+        setMovementType(preselectedType);
+
+        if (preselectedSku) {
+          const select = document.getElementById('modal-sku-select');
+          if (select) select.value = preselectedSku;
+        }
+
+        modal.classList.add('active');
+      };
+
+      const quickMovement = (sku, type) => {
+        openMovementModal(sku, type);
+      };
+
+      const closeMovementModal = () => {
+        document.getElementById('movement-modal').classList.remove('active');
+        document.getElementById('movement-form').reset();
+      };
+
+      const submitMovement = async e => {
+        e.preventDefault();
+        const sku = document.getElementById('modal-sku-select').value;
+        const qty = parseInt(document.getElementById('modal-qty-input').value);
+        const motivo = document.getElementById('modal-reason-select').value;
+        const referencia = document.getElementById('modal-ref-input').value;
+        const usuario = document.getElementById('modal-user-input').value;
+
+        const submitBtn = document.getElementById('modal-submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Guardando...';
+
+        try {
+          let savedViaApi = false;
+          try {
+            const res = await fetch('/api/admin/inventory/movement', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-admin-key': adminKey
+              },
+              body: JSON.stringify({
+                sku,
+                tipo: currentMovementType,
+                cantidad: qty,
+                motivo,
+                referencia,
+                usuario
+              })
+            });
+            const ct = res.headers.get('content-type') || '';
+            if (res.ok && ct.includes('json')) {
+              const data = await res.json();
+              if (data.success) savedViaApi = true;
+            }
+          } catch (e) {}
+
+          if (!savedViaApi) {
+            // Aplicar localmente en el navegador (para Hostinger estático)
+            const target = rawStock.find(s => s.sku === sku);
+            const oldStock = target ? Number(target.current_stock) : 0;
+            const diff = currentMovementType === 'ENTRADA' ? qty : -qty;
+            const newStock = Math.max(0, oldStock + diff);
+
+            if (target) {
+              target.current_stock = newStock;
+            }
+
+            // Guardar en localStorage
+            let localOverrides = {};
+            try {
+              localOverrides = JSON.parse(localStorage.getItem('mitico_custom_stock') || '{}');
+            } catch (e) {}
+            localOverrides[sku] = {
+              ...(target || {}),
+              current_stock: newStock,
+              updatedAt: new Date().toISOString()
+            };
+            localStorage.setItem('mitico_custom_stock', JSON.stringify(localOverrides));
+
+            let localMovements = [];
+            try {
+              localMovements = JSON.parse(localStorage.getItem('mitico_local_movements') || '[]');
+            } catch (e) {}
+            const newKardexEntry = {
+              id: 'mov-' + Date.now(),
+              fecha: new Date().toISOString(),
+              sku,
+              productTitle: target ? target.productTitle : '',
+              tipo: currentMovementType,
+              cantidad: qty,
+              stockAnterior: oldStock,
+              stockNuevo: newStock,
+              motivo,
+              referencia,
+              usuario
+            };
+            localMovements.unshift(newKardexEntry);
+            localStorage.setItem('mitico_local_movements', JSON.stringify(localMovements));
+          }
+
+          closeMovementModal();
+          showToast(`Movimiento registrado: ${currentMovementType} de ${qty} un. en ${sku}`);
+          await loadData();
+        } catch (err) {
+          alert(`Error: ${err.message}`);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Guardar Movimiento';
+        }
+      };
+
+      // Inicialización
+      document.addEventListener('DOMContentLoaded', () => {
+        loadData();
+      });
+
+      return {
+        loadData,
+        logout,
+        switchTab,
+        setMovementType,
+        openMovementModal,
+        closeMovementModal,
+        quickMovement,
+        submitMovement,
+        submitAuth,
+        applyFilters,
+        applyKardexFilters
+      };
+    })();
+  </script>
+</body>
+</html>

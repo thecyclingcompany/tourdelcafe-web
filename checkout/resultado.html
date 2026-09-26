@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de tu Compra | Tienda Oficial Mítico Coffee - Tour del Café</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0e0d;
+            --card-bg: #181615;
+            --accent-orange: #d35400;
+            --accent-gold: #e67e22;
+            --color-success: #2ecc71;
+            --color-pending: #f39c12;
+            --color-error: #e74c3c;
+            --text-light: #fafafa;
+            --text-muted: rgba(250, 250, 250, 0.6);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: radial-gradient(circle at 50% 10%, rgba(211, 84, 0, 0.12) 0%, rgba(15, 14, 13, 1) 70%);
+        }
+
+        /* Header */
+        .resultado-header {
+            padding: 24px 30px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(15, 14, 13, 0.8);
+            backdrop-filter: blur(8px);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .header-brand span.logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .header-brand span.badge-store {
+            font-size: 11px;
+            padding: 2px 7px;
+            background: rgba(211, 84, 0, 0.2);
+            color: var(--accent-gold);
+            border: 1px solid rgba(211, 84, 0, 0.35);
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .resultado-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .resultado-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            width: 100%;
+            max-width: 620px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Status Badges */
+        .status-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+        }
+
+        .status-icon-wrapper.success {
+            background: rgba(46, 204, 113, 0.15);
+            border: 2px solid var(--color-success);
+            color: var(--color-success);
+        }
+
+        .status-icon-wrapper.pending {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid var(--color-pending);
+            color: var(--color-pending);
+        }
+
+        .status-icon-wrapper.rejected {
+            background: rgba(231, 76, 60, 0.15);
+            border: 2px solid var(--color-error);
+            color: var(--color-error);
+        }
+
+        .status-title {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .status-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+
+        /* Data Details Grid */
+        .order-details-table {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--text-muted);
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .detail-value.highlight {
+            color: var(--accent-gold);
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        /* Action Buttons */
+        .actions-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-action-primary {
+            background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 18px rgba(211, 84, 0, 0.35);
+        }
+
+        .btn-action-primary:hover {
+            background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+            transform: translateY(-2px);
+        }
+
+        .btn-action-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 1px solid var(--border-subtle);
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-action-wa {
+            background: transparent;
+            color: var(--color-success);
+            border: 1px solid rgba(46, 204, 113, 0.35);
+            text-decoration: none;
+            padding: 11px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action-wa:hover {
+            background: rgba(46, 204, 113, 0.1);
+            color: #ffffff;
+            border-color: var(--color-success);
+        }
+
+        /* Footer */
+        .resultado-footer {
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* Loader */
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            border-top-color: var(--accent-gold);
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="resultado-header">
+        <a href="../index.html" class="header-brand">
+            <span class="logo-text">TOUR DEL CAFÉ</span>
+            <span class="badge-store">TIENDA OFICIAL</span>
+        </a>
+        <a href="../tienda.html" style="color: var(--accent-gold); font-size: 13px; text-decoration: none; font-weight: 600;">
+            ← Ir al Catálogo
+        </a>
+    </header>
+
+    <!-- Main -->
+    <main class="resultado-main">
+        <div class="resultado-card" id="resultado-container">
+            <div class="loading-spinner"></div>
+            <h2 class="status-title">Verificando Transacción...</h2>
+            <p class="status-subtitle">Estamos comunicándonos de forma segura con la pasarela ePayco para confirmar el estado de tu pago.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="resultado-footer">
+        © 2026 Tour del Café & Mítico Coffee. Todos los derechos reservados. | Pagos seguros procesados por ePayco Colombia.
+    </footer>
+
+    <!-- Lógica de Consulta y Renderizado -->
+    <script>
+        (function() {
+            const container = document.getElementById('resultado-container');
+            const urlParams = new URLSearchParams(window.location.search);
+            const refPayco = urlParams.get('ref_payco') || urlParams.get('x_ref_payco');
+
+            const formatCOP = (val) => {
+                if (!val) return '$ 0 COP';
+                return '$ ' + Math.round(Number(val)).toLocaleString('es-CO') + ' COP';
+            };
+
+            const renderCard = (status, title, subtitle, data) => {
+                const iconMap = {
+                    success: '✓',
+                    pending: '⏱',
+                    rejected: '✕'
+                };
+
+                let rowsHtml = '';
+                if (data) {
+                    if (data.invoice) rowsHtml += `<div class="detail-row"><span class="detail-label">Factura / Consecutivo:</span><span class="detail-value">${data.invoice}</span></div>`;
+                    if (data.ref) rowsHtml += `<div class="detail-row"><span class="detail-label">Referencia ePayco:</span><span class="detail-value">${data.ref}</span></div>`;
+                    if (data.date) rowsHtml += `<div class="detail-row"><span class="detail-label">Fecha y Hora:</span><span class="detail-value">${data.date}</span></div>`;
+                    if (data.franchise) rowsHtml += `<div class="detail-row"><span class="detail-label">Método de Pago:</span><span class="detail-value">${data.franchise}</span></div>`;
+                    if (data.amount) rowsHtml += `<div class="detail-row"><span class="detail-label">Monto Pagado:</span><span class="detail-value highlight">${formatCOP(data.amount)}</span></div>`;
+                }
+
+                container.innerHTML = `
+                    <div class="status-icon-wrapper ${status}">
+                        ${iconMap[status] || '•'}
+                    </div>
+                    <h2 class="status-title">${title}</h2>
+                    <p class="status-subtitle">${subtitle}</p>
+
+                    ${rowsHtml ? `<div class="order-details-table">${rowsHtml}</div>` : ''}
+
+                    <div class="actions-group">
+                        <a href="../tienda.html" class="btn-action-primary">
+                            ☕ Volver a la Tienda Oficial
+                        </a>
+                        <a href="https://wa.me/573103297299?text=Hola,%20acabo%20de%20realizar%20un%20pago%20en%20la%20tienda%20(Ref:%20${encodeURIComponent(data && data.ref ? data.ref : 'Web')})%20y%20deseo%20confirmar%20mi%20pedido." target="_blank" rel="noopener" class="btn-action-wa">
+                            💬 Confirmar Despacho por WhatsApp
+                        </a>
+                        <a href="../index.html" class="btn-action-secondary">
+                            Ir a la Página Principal
+                        </a>
+                    </div>
+                `;
+            };
+
+            // Manejo especial de Cortesía 100% (sin pasar por ePayco)
+            const isCourtesyDirect = (refPayco && refPayco.startsWith('CORTESIA-')) || urlParams.get('cortesia') === 'true';
+            if (isCourtesyDirect) {
+                fetch(`/api/inscripciones/consultar?ref=${encodeURIComponent(refPayco || '')}&invoice=${encodeURIComponent(invoiceParam || '')}`)
+                    .then(r => r.json())
+                    .then(regData => {
+                        const reg = regData.registration;
+                        const orderInfo = {
+                            invoice: reg ? reg.invoiceNumber : (invoiceParam || 'TDC-CORTESIA'),
+                            ref: reg ? reg.refPayco : refPayco,
+                            date: reg && reg.paymentDate ? new Date(reg.paymentDate).toLocaleString() : new Date().toLocaleString(),
+                            franchise: 'Cortesía 100% (Patrocinador / Aliado)',
+                            amount: 0
+                        };
+
+                        renderCard(
+                            'success',
+                            '¡Inscripción de Cortesía Confirmada!',
+                            'Tu registro 100% de cortesía para el Tour del Café Gran Fondo 2027 ha sido confirmado exitosamente. Hemos emitido tus dorsales y enviado el comprobante oficial a tu correo electrónico.',
+                            orderInfo
+                        );
+                    })
+                    .catch(() => {
+                        renderCard(
+                            'success',
+                            '¡Inscripción de Cortesía Confirmada!',
+                            'Tu registro de cortesía para el Tour del Café Gran Fondo 2027 ha sido confirmado.',
+                            { invoice: invoiceParam || 'TDC-CORTESIA', ref: refPayco, date: new Date().toLocaleString(), franchise: 'Cortesía 100%', amount: 0 }
+                        );
+                    });
+                return;
+            }
+
+            // Si hay referencia, consultar API de ePayco
+            if (refPayco) {
+                fetch(`https://secure.epayco.co/validation/v1/reference/${encodeURIComponent(refPayco)}`)
+                    .then(res => res.json())
+                    .then(response => {
+                        console.log('Respuesta de validación ePayco:', response);
+                        if (response.success && response.data) {
+                            const d = response.data;
+                            const codResponse = parseInt(d.x_cod_response);
+
+                            const orderInfo = {
+                                invoice: d.x_id_invoice || 'TDC-Orden',
+                                ref: d.x_ref_payco || refPayco,
+                                date: d.x_transaction_date || new Date().toLocaleString(),
+                                franchise: (d.x_franchise || d.x_bank_name || 'Pasarela ePayco').toUpperCase(),
+                                amount: d.x_amount
+                            };
+
+                            const invoiceStr = (d.x_id_invoice || '').toString();
+                            const isRegistration = invoiceStr.startsWith('TDC-INS');
+
+                            if (codResponse === 1) {
+                                // APROBADA
+                                try {
+                                    localStorage.removeItem('mitico_store_cart');
+                                } catch (e) {}
+
+                                if (isRegistration) {
+                                    // Intentar consultar dorsales asignados desde el backend
+                                    fetch(`/api/inscripciones/consultar?ref=${encodeURIComponent(refPayco)}&invoice=${encodeURIComponent(invoiceStr)}`)
+                                        .then(r => r.json())
+                                        .then(regData => {
+                                            let dorsalDetails = '';
+                                            if (regData.success && regData.registration && regData.registration.participants) {
+                                                const dorsals = regData.registration.participants.map(p => `${p.fullName} (Dorsal: <strong>${p.dorsalNumber}</strong>)`).join('<br>');
+                                                dorsalDetails = `<div class="detail-row"><span class="detail-label">Corredores y Dorsales:</span><span class="detail-value" style="color: #e67e22;">${dorsals}</span></div>`;
+                                            }
+
+                                            renderCard(
+                                                'success',
+                                                '¡Inscripción Confirmada con Éxito!',
+                                                'Tu participación en el Tour del Café Gran Fondo 2027 ha sido confirmada. Hemos enviado el comprobante oficial y recomendaciones técnicas a tu correo electrónico.',
+                                                orderInfo
+                                            );
+                                        })
+                                        .catch(() => {
+                                            renderCard(
+                                                'success',
+                                                '¡Inscripción Confirmada con Éxito!',
+                                                'Tu participación en el Tour del Café Gran Fondo 2027 ha sido confirmada. Hemos enviado el comprobante oficial a tu correo electrónico.',
+                                                orderInfo
+                                            );
+                                        });
+                                } else {
+                                    renderCard(
+                                        'success',
+                                        '¡Pago Confirmado con Éxito!',
+                                        'Tu orden ha sido procesada correctamente. Hemos enviado los detalles a tu correo electrónico y tu café comenzará su preparación para despacho nacional.',
+                                        orderInfo
+                                    );
+                                }
+                            } else if (codResponse === 3) {
+                                // PENDIENTE (PSE, Efecty)
+                                const pendSub = isRegistration 
+                                    ? 'Tu pago para la inscripción se encuentra en proceso de validación bancaria o red de recaudo. Una vez confirmado, tu dorsal oficial será activado automáticamente.'
+                                    : 'Tu transacción se encuentra pendiente de confirmación por tu entidad bancaria o red de recaudo. Una vez aprobada, despacharemos tu café.';
+
+                                renderCard('pending', 'Pago en Proceso de Validación', pendSub, orderInfo);
+                            } else {
+                                // RECHAZADA O FALLIDA
+                                const rejSub = isRegistration
+                                    ? 'El pago de la inscripción no se completó. Tu reserva de cupo sigue disponible para reintentar con otro medio de pago.'
+                                    : 'El pago fue rechazado o cancelado. Puedes intentar nuevamente con otro medio de pago o escribirnos directamente a WhatsApp para asistirte.';
+
+                                renderCard('rejected', 'Transacción No Completada', rejSub, orderInfo);
+                            }
+                        } else {
+                            // Respuesta sin data de API pero con referencia
+                            renderCard(
+                                'pending',
+                                'Transacción Registrada',
+                                `Hemos recibido tu solicitud de pago con referencia #${refPayco}. Si realizaste el pago en efectivo o transferencia, se validará en breves minutos.`,
+                                { ref: refPayco, date: new Date().toLocaleString() }
+                            );
+                        }
+                    })
+                    .catch(err => {
+                        console.warn('No se pudo validar con la API de ePayco:', err);
+                        renderCard(
+                            'pending',
+                            'Transacción Registrada',
+                            `Tu referencia de pago #${refPayco} ha sido registrada. Nuestro equipo validará el comprobante para coordinar el envío.`,
+                            { ref: refPayco, date: new Date().toLocaleString() }
+                        );
+                    });
+            } else {
+                // Sin parámetro en URL (modo demostración o acceso directo)
+                renderCard(
+                    'success',
+                    'Centro de Transacciones ePayco',
+                    'Esta es la pantalla de respuesta oficial donde tus clientes visualizarán la confirmación de pago y factura tras finalizar en ePayco.',
+                    {
+                        invoice: 'TDC-DEMO',
+                        ref: 'EPAYCO-SANDBOX',
+                        date: new Date().toLocaleString(),
+                        franchise: 'PSE / TARJETA / NEQUI',
+                        amount: 145000
+                    }
+                );
+            }
+        })();
+    </script>
+</body>
+</html>

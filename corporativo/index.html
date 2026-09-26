@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia y Finanzas - Tour del Café</title>
+    <meta name="description"
+        content="Hoja de ruta estratégica, comercial y financiera del Tour del Café 2027-2028 para inversionistas.">
+
+    <!-- Check Session first to avoid layout flash -->
+    <script>
+        if (sessionStorage.getItem('corp_session') !== 'active') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <!-- Global CSS Stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Dedicated styles for the Corporate Strategic page -->
+    <style>
+        :root {
+            --color-card-bg: rgba(22, 22, 22, 0.7);
+            --color-card-border: rgba(255, 255, 255, 0.06);
+            --accent-glow: rgba(211, 84, 0, 0.25);
+        }
+
+        body {
+            background-color: #121212;
+            color: #FAFAFA;
+        }
+
+        /* Corporate Sticky Navigation */
+        .corp-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border-dark);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .corp-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .corp-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .corp-logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .corp-logo-badge {
+            background: var(--color-accent);
+            color: #FFF;
+            font-size: 0.65rem;
+            font-family: var(--font-mono);
+            padding: 2px 6px;
+            border-radius: 3px;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+
+        .corp-menu {
+            display: flex;
+            list-style: none;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .corp-menu-link {
+            color: rgba(250, 250, 250, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            padding: 6px 0;
+            position: relative;
+            text-transform: uppercase;
+            font-family: var(--font-mono);
+            letter-spacing: 0.5px;
+        }
+
+        .corp-menu-link:hover,
+        .corp-menu-link.active {
+            color: var(--color-accent);
+        }
+
+        .corp-menu-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .corp-menu-link:hover::after,
+        .corp-menu-link.active::after {
+            width: 100%;
+        }
+
+        .corp-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-logout {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: #FAFAFA;
+            border-radius: 4px;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-logout:hover {
+            background: rgba(211, 47, 47, 0.2);
+            border-color: rgba(211, 47, 47, 0.5);
+            color: #FFCDD2;
+        }
+
+        /* Hamburger button for mobile corp nav */
+        .corp-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .corp-hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: #FAFAFA;
+            transition: var(--transition-smooth);
+        }
+
+        /* Hero Corporate Layout with photo-cyclist-worker.jpg */
+        .corp-hero {
+            position: relative;
+            min-height: 90vh;
+            padding-top: 140px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.82), rgba(18, 18, 18, 0.88)), url('../assets/photo-cyclist-worker.jpg') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .corp-hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(211, 84, 0, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .corp-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 24px;
+        }
+
+        .corp-hero-logo {
+            max-width: 320px;
+            height: auto;
+            margin: 0 auto 30px auto;
+            display: block;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .corp-hero-subtitle {
+            font-family: var(--font-mono);
+            color: var(--color-accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: rgba(211, 84, 0, 0.1);
+            padding: 6px 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(211, 84, 0, 0.2);
+        }
+
+        .corp-hero-desc {
+            font-size: 1.3rem;
+            color: rgba(250, 250, 250, 0.85);
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section Layouts */
+        .corp-section {
+            padding: 110px 0;
+            border-bottom: 1px solid var(--color-border-dark);
+            position: relative;
+        }
+
+        .corp-section:nth-child(even) {
+            background-color: rgba(20, 20, 20, 0.3);
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            color: var(--color-accent);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        /* Responsive Columns Layout */
+        .grid-two-cols {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .grid-two-cols.reverse {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        /* Contextual Image Wrapper */
+        .image-context-box {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            background: #181818;
+            aspect-ratio: 16/10;
+        }
+
+        .image-context-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .image-context-box:hover img {
+            transform: scale(1.04);
+        }
+
+        .image-overlay-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 24px;
+            color: #FFF;
+        }
+
+        .image-overlay-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* List Styling */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: rgba(250, 250, 250, 0.8);
+        }
+
+        .bullet-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Timeline Layout (Bloque 6) */
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: 50px auto 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 50%;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            right: -8px;
+            top: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 4px solid #121212;
+            z-index: 10;
+            box-shadow: 0 0 10px var(--color-accent);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+            right: auto;
+        }
+
+        .timeline-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-card-border);
+            border-radius: 8px;
+            padding: 28px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(211, 84, 0, 0.3);
+            background: rgba(30, 30, 30, 0.75);
+            transform: translateY(-2px);
+        }
+
+        .timeline-date {
+            font-family: var(--font-mono);
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: rgba(211, 84, 0, 0.08);
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .timeline-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin: 0 0 12px 0;
+        }
+
+        .timeline-desc {
+            color: rgba(250, 250, 250, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .timeline-places {
+            margin-top: 14px;
+            font-size: 0.8rem;
+            color: rgba(250, 250, 250, 0.5);
+            font-family: var(--font-mono);
+            letter-spacing: 0.5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 8px;
+        }
+
+        /* Ecosistema Grid (Bloque 3) */
+        .ecosystem-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .eco-lead-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-card-border);
+            border-radius: 8px;
+            padding: 36px;
+            position: relative;
+        }
+
+        .eco-lead-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .eco-lead-icon {
+            height: 48px;
+            width: auto;
+        }
+
+        .eco-lead-title {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            margin: 0;
+        }
+
+        .host-city-features {
+            background: rgba(30, 30, 30, 0.4);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        /* De la finca a la taza panels (Bloque 4) */
+        .farm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .farm-panel {
+            background: linear-gradient(135deg, rgba(25, 25, 25, 0.8), rgba(15, 15, 15, 0.8));
+            border: 1px solid var(--color-card-border);
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .farm-panel-logo {
+            height: 45px;
+            width: auto;
+            align-self: flex-start;
+            margin-bottom: 24px;
+        }
+
+        /* Bloque 5: Impacto (Dashboard & Custom Interactive Graphic) */
+        .impact-dashboard {
+            background: #171717;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 48px;
+            margin-top: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .impact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .scenario-selector {
+            display: flex;
+            background: #111;
+            border-radius: 30px;
+            padding: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .scenario-btn {
+            background: transparent;
+            border: none;
+            color: rgba(250, 250, 250, 0.6);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 10px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .scenario-btn.active {
+            background: var(--color-accent);
+            color: #FFF;
+            box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
+        }
+
+        /* Financial Bar Chart Visual */
+        .chart-layout {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .bar-chart-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .chart-row {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .chart-label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .chart-label-name {
+            font-weight: 600;
+            color: rgba(250, 250, 250, 0.9);
+        }
+
+        .chart-label-value {
+            font-family: var(--font-mono);
+            font-weight: bold;
+            color: var(--color-accent);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .chart-bar-track {
+            height: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, #E67E22 100%);
+            width: 0%;
+            /* Dynamic */
+            transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 0 10px rgba(211, 84, 0, 0.4);
+        }
+
+        /* Gauge wheels */
+        .gauges-side {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .gauge-widget {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .gauge-circle-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+        }
+
+        .gauge-svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
+        }
+
+        .gauge-svg-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-width: 8;
+        }
+
+        .gauge-svg-fill {
+            fill: none;
+            stroke: var(--color-accent);
+            stroke-width: 8;
+            stroke-dasharray: 220;
+            stroke-dashoffset: 220;
+            /* Dynamic animate */
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease-in-out;
+        }
+
+        .gauge-value-center {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: bold;
+            color: #FAFAFA;
+        }
+
+        .gauge-text-side {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gauge-number {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FAFAFA;
+            margin: 0;
+        }
+
+        .gauge-desc {
+            font-size: 0.85rem;
+            color: rgba(250, 250, 250, 0.5);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        .spillover-summary-banner {
+            margin-top: 44px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .total-economic-box {
+            background: linear-gradient(135deg, rgba(211, 84, 0, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
+            border: 1px dashed rgba(211, 84, 0, 0.35);
+            border-radius: 8px;
+            padding: 24px 36px;
+            flex-grow: 1;
+        }
+
+        .total-economic-lbl {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: rgba(250, 250, 250, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .total-economic-val {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #FFF;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        /* Download modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #181818;
+            border: 1px solid var(--color-border-dark);
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            transform: scale(0.9);
+            transition: var(--transition-bounce);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin: 0 0 12px 0;
+        }
+
+        .modal-desc {
+            color: rgba(250, 250, 250, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .modal-btn-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        /* Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .corp-menu {
+                display: none;
+            }
+
+            .corp-menu.mobile-active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: #121212;
+                border-bottom: 1px solid var(--color-border-dark);
+                padding: 20px;
+                gap: 16px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .corp-hamburger {
+                display: flex;
+            }
+
+            .grid-two-cols {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .grid-two-cols.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .farm-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ecosystem-intro {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 45px;
+                margin-bottom: 40px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-left: 45px;
+            }
+
+            .timeline-dot {
+                left: 12px !important;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .impact-dashboard {
+                padding: 24px;
+            }
+
+            .spillover-summary-banner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="corp-header">
+        <div class="corp-navbar">
+            <a href="#hero" class="corp-logo-container">
+                <img src="../assets/logo-festival-header.png" alt="Tour del Café" class="corp-logo-img">
+                <span class="corp-logo-badge">CORPORATIVO</span>
+            </a>
+
+            <!-- Mobile Hamburger -->
+            <button class="corp-hamburger" onclick="toggleMenu()" aria-label="Abrir menú corporativo">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation Links (6 Blocks) -->
+            <ul class="corp-menu" id="corp-menu">
+                <li><a href="#manifiesto" class="corp-menu-link" onclick="closeMenu()">El Manifiesto</a></li>
+                <li><a href="#para-que" class="corp-menu-link" onclick="closeMenu()">Para qué el Tour</a></li>
+                <li><a href="#ecosistema" class="corp-menu-link" onclick="closeMenu()">Ecosistema</a></li>
+                <li><a href="#finca-taza" class="corp-menu-link" onclick="closeMenu()">De la Finca a la Taza</a></li>
+                <li><a href="#impacto" class="corp-menu-link" onclick="closeMenu()">Impacto</a></li>
+                <li><a href="#calendario" class="corp-menu-link" onclick="closeMenu()">Calendario</a></li>
+            </ul>
+
+            <div class="corp-actions">
+                <button onclick="handleLogout()" class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Strategic Content -->
+    <main>
+
+        <!-- HERO SECTION / PORTADA CORPORATIVA -->
+        <section id="hero" class="corp-hero">
+            <div class="corp-hero-glow"></div>
+            <div class="container-main corp-hero-content">
+
+                <!-- Logo index image instead of title text -->
+                <img src="../assets/logo-festival-index.png" alt="Tour del Café" class="corp-hero-logo">
+
+                <p class="corp-hero-desc">
+                    World's Coffee &amp; Cycling Festival — Oportunidad de Inversión y Patrocinio Premium (2027 - 2028).
+                    La plataforma permanente de promoción internacional de destino, desarrollo deportivo y dinamización
+                    económica.
+                </p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <button onclick="openDownloadModal()" class="btn-primary" style="gap: 8px;">
+                        Descargar Propuesta Personalizada de Vinculación
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 1: EL MANIFIESTO -->
+        <section id="manifiesto" class="corp-section">
+            <div class="container-main">
+                <div class="grid-two-cols">
+                    <div>
+                        <span class="section-tag">Bloque 01 • Conectando Identidad</span>
+                        <h2 class="heading-2">El Manifiesto</h2>
+                        <h3 class="heading-3" style="color: var(--color-accent); font-size: 1.3rem; margin-top: 15px;">
+                            Tour del Café: The World's First Coffee &amp; Cycling Festival</h3>
+
+                        <p class="body-main" style="color: rgba(250,250,250,0.8); font-size: 1.05rem;">
+                            El Tour del Café es una plataforma para conectar a Colombia con el mundo a través de sus dos
+                            grandes símbolos: el café y el ciclismo. Colombia tiene una historia que merece seguir
+                            siendo contada. Hay países reconocidos por sus industrias, otros por sus recursos naturales
+                            y otros por su legado cultural.
+                        </p>
+                        <p class="body-main" style="color: rgba(250,250,250,0.7); font-size: 0.95rem;">
+                            Colombia tiene el privilegio de ser reconocida por dos de sus mayores expresiones de
+                            identidad: el café y el ciclismo. El café representa nuestra tierra, nuestras montañas,
+                            nuestra tradición, nuestra capacidad de transformar el trabajo en excelencia. El ciclismo
+                            representa esfuerzo, resiliencia, disciplina, superación y la capacidad de competir con los
+                            mejores del mundo desde los territorios más diversos. Ambos nacieron en las mismas montañas.
+                            Ambos transforman vidas. Ambos proyectan la mejor imagen de Colombia ante el mundo.
+                        </p>
+                    </div>
+
+                    <!-- Contextual image container -->
+                    <div class="image-context-box">
+                        <img src="../assets/manifiesto-tdc-index.jpg" alt="Manifiesto del Ciclismo y Café">
+                        <div class="image-overlay-caption">
+                            <h4 class="image-overlay-title">Nacidos de las mismas montañas</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-two-cols reverse" style="margin-top: 50px; align-items: start;">
+                    <!-- Image space placeholder for purpose illustration -->
+                    <div class="image-context-box" style="aspect-ratio: 16/9;">
+                        <img src="../assets/coffee-rides-tdc-index.jpg" alt="Nuestra Misión en Movimiento">
+                        <div class="image-overlay-caption">
+                            <h4 class="image-overlay-title">Cultura en Movimiento 365 días</h4>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-3">1.2 Nuestro Propósito</h3>
+                        <p class="body-main" style="font-size: 0.95rem; color: rgba(250,250,250,0.75);">
+                            Posicionar a Colombia como el principal destino mundial donde convergen el ciclismo, el
+                            café, el turismo y la cultura, generando oportunidades de desarrollo económico, social y
+                            deportivo para las regiones y sus comunidades.
+                        </p>
+
+                        <h3 class="heading-3" style="margin-top: 24px;">1.3 Nuestra Misión</h3>
+                        <p class="body-main" style="font-size: 0.95rem; color: rgba(250,250,250,0.75);">
+                            Diseñar y desarrollar un evento internacional de categoría UCI 2.1, masculino y femenino,
+                            que reúna a algunos de los mejores equipos y corredores del mundo en un recorrido por las
+                            montañas y paisajes cafeteros de Colombia, integrando durante toda la temporada experiencias
+                            deportivas, culturales, académicas, turísticas y comerciales que generen valor
+                            simultáneamente para:
+                        </p>
+
+                        <ul class="bullet-list" style="columns: 2; column-gap: 20px;">
+                            <li>Los corredores y equipos.</li>
+                            <li>Los aficionados.</li>
+                            <li>Las regiones anfitrionas.</li>
+                            <li>La industria del café.</li>
+                            <li>El sector turístico.</li>
+                            <li>Los patrocinadores e inversionistas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 2: PARA QUE EL TOUR DEL CAFÉ -->
+        <section id="para-que" class="corp-section">
+            <div class="container-main">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;">
+                    <span class="section-tag">Bloque 02 • Impacto de Desarrollo</span>
+                    <h2 class="heading-2">¿Para qué el Tour del Café?</h2>
+                    <p class="body-main" style="color: rgba(250,250,250,0.85);">
+                        El Tour del Café es una plataforma que conecta a Colombia con el mundo a través del café y el
+                        ciclismo, actuando bajo cuatro grandes propósitos de transformación sectorial.
+                    </p>
+                </div>
+
+                <div class="grid-two-cols" style="align-items: start;">
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <div>
+                            <h3 class="heading-3" style="color: var(--color-accent);">2.1 Promover a Colombia ante el
+                                mundo</h3>
+                            <p class="body-main"
+                                style="font-size: 0.95rem; color: rgba(250,250,250,0.75); margin: 6px 0 0 0;">
+                                El Tour del Café será una vitrina internacional para mostrar la riqueza cultural de
+                                nuestras regiones, la calidad de nuestros cafés especiales, paisajes, infraestructura
+                                turística, capacidad organizativa y el talento deportivo nacional. Cada etapa es una
+                                invitación a descubrir el país.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="heading-3" style="color: var(--color-accent);">2.2 Desarrollo Económico Regional
+                            </h3>
+                            <p class="body-main"
+                                style="font-size: 0.95rem; color: rgba(250,250,250,0.75); margin: 6px 0 0 0;">
+                                Motor de dinamización para los territorios anfitriones. Los grandes eventos deportivos
+                                internacionales generan impactos directos en hotelería, gastronomía, transporte,
+                                comercio, turismo y servicios especializados, convirtiéndose en una herramienta de
+                                atracción de inversión.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="heading-3" style="color: var(--color-accent);">2.3 Conectividad y Comunidad
+                                Global</h3>
+                            <p class="body-main"
+                                style="font-size: 0.95rem; color: rgba(250,250,250,0.75); margin: 6px 0 0 0;">
+                                No comienza con la primera etapa ni termina con la premiación. Su propósito es construir
+                                una comunidad internacional de aficionados que compartan de forma permanente a través de
+                                activaciones locales y globales, atrayendo operadores y prensa internacional.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contextual image of host cities / regions -->
+                    <div class="image-context-box" style="aspect-ratio: 1/1;">
+                        <img src="../assets/photo-cyclists-house.jpg"
+                            alt="Región Cafetera Tradicional e Infraestructura">
+                        <div class="image-overlay-caption">
+                            <h4 class="image-overlay-title">Rutas inmersivas y paisajes culturales protegidos</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-two-cols reverse" style="margin-top: 50px; align-items: start;">
+                    <!-- Contextual image placeholder for educational/junior riders -->
+                    <div class="image-context-box" style="aspect-ratio: 16/10;">
+                        <img src="../assets/gran-fondo-tdc-index.jpg" alt="Ciclismo Formativo y Amateur">
+                        <div class="image-overlay-caption">
+                            <h4 class="image-overlay-title">Tour del Café Junior y Desarrollo Social</h4>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <div>
+                            <h3 class="heading-3" style="color: var(--color-accent);">2.4 Desarrollo del ciclismo
+                                colombiano</h3>
+                            <p class="body-main"
+                                style="font-size: 0.95rem; color: rgba(250,250,250,0.75); margin: 6px 0 0 0;">
+                                El ciclismo moderno exige procesos permanentes de formación. Incorporamos iniciativas de
+                                capacitación dirigidas a entrenadores, nutricionistas, preparadores físicos, médicos
+                                deportivos, masajistas y directores deportivos.
+                            </p>
+                            <p class="body-main"
+                                style="font-size: 0.9rem; color: rgba(250,250,250,0.6); margin: 8px 0 0 0;">
+                                <strong>Tour del Café Junior:</strong> Eventos de apertura enfocados en categorías
+                                juveniles y prejuveniles para acercar a las nuevas generaciones a la competencia de
+                                nivel internacional.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="heading-3" style="color: var(--color-accent);">2.5 Una plataforma para todos los
+                                ciclistas</h3>
+                            <p class="body-main"
+                                style="font-size: 0.95rem; color: rgba(250,250,250,0.75); margin: 6px 0 0 0;">
+                                El componente aficionado es vital:
+                            </p>
+                            <ul class="bullet-list" style="margin-top: 10px;">
+                                <li><strong>Gran Fondo Tour del Café:</strong> Diseñado para que miles de ciclistas
+                                    amateurs experimenten las mismas carreteras e infraestructura que los profesionales.
+                                </li>
+                                <li><strong>Tour del Café Expo:</strong> Espacio comercial que reúne marcas, innovación
+                                    tecnológica, equipamiento, cafés especiales y conferencias culturales.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 3: ECOSISTEMA -->
+        <section id="ecosistema" class="corp-section">
+            <div class="container-main">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;">
+                    <span class="section-tag">Bloque 03 • Plataforma Comercial</span>
+                    <h2 class="heading-2">Ecosistema del Evento</h2>
+                    <p class="body-main" style="color: rgba(250,250,250,0.85);">
+                        El Tour del Café no es una competencia aislada. Es la primera plataforma global estructurada que
+                        une el ciclismo masivo con la cultura de cafés especiales.
+                    </p>
+                </div>
+
+                <div class="ecosystem-intro">
+                    <!-- GF -->
+                    <div class="eco-lead-card">
+                        <div class="eco-lead-header">
+                            <img src="../assets/logo-gran-fondo.png" alt="Gran Fondo" class="eco-lead-icon">
+                            <h3 class="eco-lead-title">3.1 Gran Fondo Tour del Café</h3>
+                        </div>
+                        <p class="body-main" style="font-size: 0.95rem; color: rgba(250,250,250,0.75); margin: 0;">
+                            Será el primer evento amateur masivo de <strong>equipos contra equipos (Teams vs
+                                Teams)</strong>. Durante 3 días, ciclistas de todo el mundo compartirán con grandes
+                            estrellas históricas del ciclismo en un formato similar a los eventos Hammer: desafíos
+                            específicos de escalada y de sprint para probar el rendimiento grupal.
+                        </p>
+                    </div>
+
+                    <!-- UCI 2.1 -->
+                    <div class="eco-lead-card">
+                        <div class="eco-lead-header">
+                            <img src="../assets/logo-festival-header.png" alt="UCI 2.1" class="eco-lead-icon"
+                                style="height:35px;">
+                            <h3 class="eco-lead-title">3.2 Tour del Café UCI 2.1</h3>
+                        </div>
+                        <p class="body-main" style="font-size: 0.95rem; color: rgba(250,250,250,0.75); margin: 0;">
+                            El activo cumbre y motor de visibilidad de la marca. Una competencia oficial para las ramas
+                            masculina y femenina bajo estándares de la UCI (febrero 2028). Integra de forma orgánica el
+                            café de origen y el ciclismo élite en un Hub inmersivo de experiencias y negocios
+                            internacionales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="host-city-features">
+                    <h3 class="heading-3" style="text-align: center; margin-bottom: 30px;">3.2.1 Puntos Clave del Modelo
+                        de Operación (Host City Model)</h3>
+                    <p class="body-main"
+                        style="text-align: center; max-width: 800px; margin: 0 auto 30px auto; color: rgba(250,250,250,0.6); font-size: 0.95rem;">
+                        Inspirado en las grandes clásicas y monumentos europeos, evitamos traslados diarios ineficientes
+                        centralizando operaciones en un hub hotelero principal que rota anualmente.
+                    </p>
+
+                    <div class="pillars-grid" style="margin-top: 30px;">
+                        <div class="pillar-card" style="background: rgba(0,0,0,0.25);">
+                            <h4 class="pillar-title" style="font-size: 1.15rem; color: var(--color-accent);">
+                                Centralización Operativa</h4>
+                            <p class="pillar-text" style="font-size: 0.9rem;">Concentración del centro de operaciones,
+                                parque técnico, prensa y televisión en un máximo de dos sedes por edición (Antioquia y
+                                Eje Cafetero: Quindío, Caldas y Risaralda).</p>
+                        </div>
+                        <div class="pillar-card" style="background: rgba(0,0,0,0.25);">
+                            <h4 class="pillar-title" style="font-size: 1.15rem; color: var(--color-accent);">Reducción
+                                de Costos</h4>
+                            <p class="pillar-text" style="font-size: 0.9rem;">Disminución del 40% en costos de
+                                operaciones gracias a la eliminación de traslados largos de la caravana y montajes
+                                repetitivos.</p>
+                        </div>
+                        <div class="pillar-card" style="background: rgba(0,0,0,0.25);">
+                            <h4 class="pillar-title" style="font-size: 1.15rem; color: var(--color-accent);">Inyección
+                                Local Directa</h4>
+                            <p class="pillar-text" style="font-size: 0.9rem;">Retención del 100% del gasto de los
+                                asistentes en la región sede. Los equipos, patrocinadores y aficionados permanecen en el
+                                mismo hub hotelero de 4 a 5 días.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-two-cols" style="margin-top: 50px;">
+                    <div>
+                        <h3 class="heading-3">3.2.2 Arquitectura Deportiva y de Experiencias</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Paridad Deportiva UCI 2.1:</strong> Carreras de categoría internacional
+                                masculino y femenino, con las mismas condiciones de premios, recorrido y visibilidad de
+                                medios.</li>
+                            <li><strong>Gran Fondo y Expo:</strong> Integración comercial masiva ferial donde marcas,
+                                exportadores de café de especialidad y firmas internacionales interactúan directamente
+                                con los asistentes y compradores VIP.</li>
+                            <li><strong>Sostenibilidad y Visibilidad Permanente:</strong> Creación de Fan Zones fijas de
+                                alto impacto y VIP Coffee Labs operativas a lo largo de toda la semana del festival.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Image space placeholder for expo environment -->
+                    <div class="image-context-box" style="aspect-ratio: 16/10;">
+                        <img src="../assets/photo-mitico.jpg" alt="Área de Expo y Roasters Lounge">
+                        <div class="image-overlay-caption">
+                            <h4 class="image-overlay-title">Tour del Café Expo &amp; Roaster's Lounge</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 4: DE LA FINCA A LA TAZA -->
+        <section id="finca-taza" class="corp-section">
+            <div class="container-main">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+                    <span class="section-tag">Bloque 04 • Cadena de Valor Cafetera</span>
+                    <h2 class="heading-2">De la Finca a la Taza</h2>
+                    <p class="body-main" style="color: rgba(250, 250, 250, 0.85);">
+                        En el festival, el café de especialidad no es solo un patrocinador; es una cadena de valor
+                        integrada y auténtica que conecta directamente a los caficultores de origen con el estilo de
+                        vida de los ciclistas profesionales y aficionados.
+                    </p>
+                </div>
+
+                <div class="farm-grid">
+                    <!-- A Coffee Family -->
+                    <div class="farm-panel">
+                        <div>
+                            <img src="../assets/logo-roasters-lounge.png" alt="A Coffee Family Logo"
+                                class="farm-panel-logo">
+                            <h3 class="heading-3">4.1 A Coffee Family</h3>
+                            <p
+                                style="font-family: var(--font-mono); color: var(--color-accent); font-size: 0.8rem; text-transform: uppercase;">
+                                El Origen, el Impacto Social y la Cadena B2B</p>
+
+                            <ul class="bullet-list" style="margin-top: 20px;">
+                                <li><strong>Rol de Producción:</strong> Empresa encargada de la producción de origen y
+                                    desarrollo de café especial en alianza con más de 50 familias caficultoras.</li>
+                                <li><strong>Propósito en el Festival:</strong> Representa el corazón agrícola del
+                                    proyecto, garantizando trazabilidad, sostenibilidad ambiental y comercio justo.</li>
+                                <li><strong>The Roaster’s Lounge &amp; Cupping Sessions:</strong> Espacio B2B en la Expo
+                                    y en Roadshows internacionales (Bélgica, Países Bajos, EE.UU. y Canadá) para
+                                    conectar microtostadores globales con microlotes de origen.</li>
+                                <li><strong>Origin Field Experience:</strong> Muestra técnica de procesos de beneficio,
+                                    fermentaciones y trazabilidad para compradores de café verde, prensa e invitados
+                                    VIP.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Space for image in A Coffee Family context -->
+                        <div class="image-context-box" style="aspect-ratio: 16/9; margin-top: 20px;">
+                            <img src="../assets/photo-cyclists-house.jpg" alt="Productores de Origen">
+                            <div class="image-overlay-caption">
+                                <h4 class="image-overlay-title">Relacionamiento con 50+ Familias Caficultoras</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mítico Cycling Coffee -->
+                    <div class="farm-panel">
+                        <div>
+                            <img src="../assets/logo-coffee-rides.png" alt="Mítico Logo" class="farm-panel-logo"
+                                style="height:55px;">
+                            <h3 class="heading-3">4.2 Mítico Cycling Coffee</h3>
+                            <p
+                                style="font-family: var(--font-mono); color: var(--color-accent); font-size: 0.8rem; text-transform: uppercase;">
+                                La Experiencia B2C y la Cultura de Vida</p>
+
+                            <ul class="bullet-list" style="margin-top: 20px;">
+                                <li><strong>Brazo Comercializador:</strong> Marca lifestyle que transforma el café
+                                    tostado por A Coffee Family en la bebida ideal y saludable para el ciclista.</li>
+                                <li><strong>Expendio Público Oficial:</strong> Responsable del expendio minorista y
+                                    servicio de bebidas preparadas durante las actividades del festival (Gran Fondo, UCI
+                                    2.1, rodadas).</li>
+                                <li><strong>Coffee Bars &amp; Pop-Up Labs:</strong> Estaciones de espresso, filtrados y
+                                    Cold Brew en zonas de salida/llegada, VIP Hospitality y puntos de hidratación.</li>
+                                <li><strong>Tienda Oficial &amp; Rides:</strong> Venta de café en grano/molido, Drip
+                                    Packs y organización de los Coffee Rides oficiales en Colombia y el exterior.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Space for image in Mitico context -->
+                        <div class="image-context-box" style="aspect-ratio: 16/9; margin-top: 20px;">
+                            <img src="../assets/photo-mitico.jpg" alt="Mítico Retail Experience">
+                            <div class="image-overlay-caption">
+                                <h4 class="image-overlay-title">Retail y Experiencia B2C en Ruta</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 5: IMPACTO -->
+        <section id="impacto" class="corp-section">
+            <div class="container-main">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+                    <span class="section-tag">Bloque 05 • Proyecciones Financieras</span>
+                    <h2 class="heading-2">Matriz de Impacto Económico</h2>
+                    <p class="body-main" style="color: rgba(250, 250, 250, 0.75);">
+                        El impacto financiero proyectado se distribuye en sectores clave del desarrollo turístico
+                        regional. Alterna el escenario para visualizar el crecimiento proyectado en la zona de
+                        influencia.
+                    </p>
+                </div>
+
+                <div class="impact-dashboard">
+                    <div class="impact-header">
+                        <div>
+                            <h3 style="margin: 0 0 4px 0; font-family: var(--font-heading); font-size: 1.45rem;">
+                                Proyecciones de Derrama Económica</h3>
+                            <p
+                                style="margin: 0; font-size: 0.85rem; color: rgba(250,250,250,0.5); font-family: var(--font-mono);">
+                                Valores expresados en Millones de Pesos (COP)</p>
+                        </div>
+                        <div class="scenario-selector">
+                            <button id="btn-scenario-base" class="scenario-btn active"
+                                onclick="switchScenario('base')">Escenario Base</button>
+                            <button id="btn-scenario-target" class="scenario-btn"
+                                onclick="switchScenario('target')">Escenario Objetivo</button>
+                        </div>
+                    </div>
+
+                    <div class="chart-layout">
+                        <!-- Custom CSS/HTML Bar Chart -->
+                        <div class="bar-chart-visual">
+                            <!-- Sector 1 -->
+                            <div class="chart-row">
+                                <div class="chart-label-row">
+                                    <span class="chart-label-name">Hotelería</span>
+                                    <span id="txt-hotel" class="chart-label-value" data-base="17,500M"
+                                        data-target="32,000M">COP 17.500M</span>
+                                </div>
+                                <div class="chart-bar-track">
+                                    <!-- Maximum limit base for percentage is 35,000M -->
+                                    <div id="bar-hotel" class="chart-bar-fill" style="width: 50%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 2 -->
+                            <div class="chart-row">
+                                <div class="chart-label-row">
+                                    <span class="chart-label-name">Alimentación</span>
+                                    <span id="txt-food" class="chart-label-value" data-base="8,400M"
+                                        data-target="15,000M">COP 8.400M</span>
+                                </div>
+                                <div class="chart-bar-track">
+                                    <div id="bar-food" class="chart-bar-fill" style="width: 24%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 3 -->
+                            <div class="chart-row">
+                                <div class="chart-label-row">
+                                    <span class="chart-label-name">Transporte</span>
+                                    <span id="txt-trans" class="chart-label-value" data-base="5,000M"
+                                        data-target="9,500M">COP 5.000M</span>
+                                </div>
+                                <div class="chart-bar-track">
+                                    <div id="bar-trans" class="chart-bar-fill" style="width: 14%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 4 -->
+                            <div class="chart-row">
+                                <div class="chart-label-row">
+                                    <span class="chart-label-name">Comercio / Turismo</span>
+                                    <span id="txt-tourism" class="chart-label-value" data-base="7,500M"
+                                        data-target="13,500M">COP 7.500M</span>
+                                </div>
+                                <div class="chart-bar-track">
+                                    <div id="bar-tourism" class="chart-bar-fill" style="width: 21%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gauge Indicators for TV & digital reach -->
+                        <div class="gauges-side">
+                            <!-- Gauge 1 -->
+                            <div class="gauge-widget">
+                                <div class="gauge-circle-container">
+                                    <svg class="gauge-svg" viewBox="0 0 80 80">
+                                        <circle class="gauge-svg-bg" cx="40" cy="40" r="35"></circle>
+                                        <!-- stroke-dasharray calculated as 2 * PI * r = 219.9. Let's use 220 -->
+                                        <!-- For 60% fill: dashoffset = 220 - (220 * 0.6) = 88 -->
+                                        <circle id="gauge-tv-fill" class="gauge-svg-fill" cx="40" cy="40" r="35"
+                                            style="stroke-dashoffset: 88;"></circle>
+                                    </svg>
+                                    <div class="gauge-value-center">30M</div>
+                                </div>
+                                <div class="gauge-text-side">
+                                    <h4 class="gauge-number">20 - 30M</h4>
+                                    <span class="gauge-desc">Espectadores en TV</span>
+                                </div>
+                            </div>
+
+                            <!-- Gauge 2 -->
+                            <div class="gauge-widget">
+                                <div class="gauge-circle-container">
+                                    <svg class="gauge-svg" viewBox="0 0 80 80">
+                                        <circle class="gauge-svg-bg" cx="40" cy="40" r="35"></circle>
+                                        <!-- For 85% fill: dashoffset = 220 - (220 * 0.85) = 33 -->
+                                        <circle id="gauge-dig-fill" class="gauge-svg-fill" cx="40" cy="40" r="35"
+                                            style="stroke-dashoffset: 33;"></circle>
+                                    </svg>
+                                    <div class="gauge-value-center">50M</div>
+                                </div>
+                                <div class="gauge-text-side">
+                                    <h4 class="gauge-number">50M+</h4>
+                                    <span class="gauge-desc">Impresiones Digitales</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spillover-summary-banner">
+                        <div class="total-economic-box">
+                            <div class="total-economic-lbl">Derrama Económica Total Estimada</div>
+                            <div id="val-total" class="total-economic-val" data-base="COP 38.000M - 45.000M"
+                                data-target="COP 60.000M - 80.000M">COP 38.000M - 45.000M</div>
+                        </div>
+
+                        <p
+                            style="max-width: 420px; font-size: 0.95rem; color: rgba(250,250,250,0.6); line-height: 1.6; margin: 0;">
+                            Las proyecciones estiman un retorno de inversión publicitaria y derrama económica turística
+                            sin precedentes en la zona andina colombiana debido al perfil de gasto y permanencia de los
+                            asistentes corporativos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 6: CALENDARIO -->
+        <section id="calendario" class="corp-section">
+            <div class="container-main">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;">
+                    <span class="section-tag">Bloque 06 • Proyección de Eventos</span>
+                    <h2 class="heading-2">Calendario y Activaciones de Promoción</h2>
+                    <p class="body-main" style="color: rgba(250, 250, 250, 0.75);">
+                        A diferencia de eventos de una sola semana, el Tour del Café es una plataforma activa los 365
+                        días del año estructurada en objetivos estratégicos y rutas nacionales e internacionales.
+                    </p>
+                </div>
+
+                <!-- Goals listed clearly -->
+                <div class="pillars-grid" style="margin-bottom: 50px;">
+                    <div class="pillar-card" style="padding: 24px; background: rgba(0,0,0,0.15);">
+                        <h4
+                            style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-accent); margin: 0 0 8px 0;">
+                            Promoción de Destino</h4>
+                        <p style="font-size: 0.85rem; color: rgba(250,250,250,0.6); margin: 0;">Posicionar a Colombia y
+                            regiones sede como referentes globales de turismo y cultura.</p>
+                    </div>
+                    <div class="pillar-card" style="padding: 24px; background: rgba(0,0,0,0.15);">
+                        <h4
+                            style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-accent); margin: 0 0 8px 0;">
+                            Captación de Turistas</h4>
+                        <p style="font-size: 0.85rem; color: rgba(250,250,250,0.6); margin: 0;">Facilitar la llegada de
+                            entusiastas y viajeros de alto gasto para consumir experiencias locales.</p>
+                    </div>
+                    <div class="pillar-card" style="padding: 24px; background: rgba(0,0,0,0.15);">
+                        <h4
+                            style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-accent); margin: 0 0 8px 0;">
+                            Generación de Comunidad</h4>
+                        <p style="font-size: 0.85rem; color: rgba(250,250,250,0.6); margin: 0;">Construir un tejido
+                            permanente de aficionados que conversan alrededor del café y el ciclismo.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <!-- Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Febrero 2027</span>
+                            <h3 class="timeline-title">Hito Fundacional: Gran Fondo Amateur</h3>
+                            <p class="timeline-desc">Estreno del formato por equipos amateur (Teams vs Teams) de 3 a 5
+                                días de duración en el departamento del Quindío, validando el ecosistema de marcas.</p>
+                            <div class="timeline-places">QUINDÍO, COLOMBIA</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Febrero 2028</span>
+                            <h3 class="timeline-title">Evento Profesional Élite UCI 2.1</h3>
+                            <p class="timeline-desc">Integración del evento élite oficial UCI 2.1 Masculino y Femenino
+                                al Gran Fondo amateur, atrayendo equipos profesionales WorldTour y cobertura televisiva
+                                internacional.</p>
+                            <div class="timeline-places">EJE CAFETERO &amp; ANTIOQUIA</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">3.3.2 Ruta Nacional</span>
+                            <h3 class="timeline-title">Activaciones Nacionales Continuas</h3>
+                            <p class="timeline-desc">Rodadas educativas, cataciones urbanas y eventos del sector para
+                                construir comunidad en los centros económicos del país.</p>
+                            <div class="timeline-places">Bogotá, Antioquia, Quindío.</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">3.3.1 Ruta Internacional</span>
+                            <h3 class="timeline-title">Activaciones en Europa y EE.UU.</h3>
+                            <p class="timeline-desc">Fomento del evento en los mercados principales del ciclismo.
+                                Rodadas conjuntas y cataciones especializadas con prensa y marcas asociadas.</p>
+                            <div class="timeline-places">EE.UU: Florida, NY, Filadelfia, Maryland, Athens.<br>Europa:
+                                Bélgica, Países Bajos, Italia.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Download Trigger Dialog/Modal -->
+    <div id="download-modal" class="modal-overlay" onclick="closeDownloadModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-icon">📄</div>
+            <h3 class="modal-title">Dossier Corporativo</h3>
+            <p class="modal-desc">
+                ¿Desea iniciar la descarga directa del dossier comercial oficial del Tour del Café para los años 2027 y
+                2028?
+            </p>
+            <div class="modal-btn-row">
+                <button onclick="triggerActualDownload()" class="btn-primary">Descargar PDF</button>
+                <button onclick="closeDownloadModal()" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript code for page interations -->
+    <script>
+        // Log out handler
+        function handleLogout() {
+            sessionStorage.removeItem('corp_session');
+            sessionStorage.removeItem('corp_user');
+            window.location.href = 'login.html';
+        }
+
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('corp-menu');
+            menu.classList.toggle('mobile-active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('corp-menu');
+            menu.classList.remove('mobile-active');
+        }
+
+        // Interactive switch between Financial Projections Scenarios & Bar Chart anims
+        function switchScenario(scenarioType) {
+            const btnBase = document.getElementById('btn-scenario-base');
+            const btnTarget = document.getElementById('btn-scenario-target');
+
+            const hotelText = document.getElementById('txt-hotel');
+            const foodText = document.getElementById('txt-food');
+            const transText = document.getElementById('txt-trans');
+            const tourismText = document.getElementById('txt-tourism');
+            const total = document.getElementById('val-total');
+
+            const barHotel = document.getElementById('bar-hotel');
+            const barFood = document.getElementById('bar-food');
+            const barTrans = document.getElementById('bar-trans');
+            const barTourism = document.getElementById('bar-tourism');
+
+            // Gauges circles fill offsets
+            const tvFill = document.getElementById('gauge-tv-fill');
+            const digFill = document.getElementById('gauge-dig-fill');
+
+            if (scenarioType === 'base') {
+                btnBase.classList.add('active');
+                btnTarget.classList.remove('active');
+
+                hotelText.textContent = 'COP 17.500M';
+                foodText.textContent = 'COP 8.400M';
+                transText.textContent = 'COP 5.000M';
+                tourismText.textContent = 'COP 7.500M';
+                total.textContent = 'COP 38.000M - 45.000M';
+
+                // Scale values relative to 35,000M max
+                barHotel.style.width = '50%'; // 17.5 / 35
+                barFood.style.width = '24%';  // 8.4 / 35
+                barTrans.style.width = '14%'; // 5 / 35
+                barTourism.style.width = '21%'; // 7.5 / 35
+
+                // Dash offset formula: 220 - (220 * percentage)
+                tvFill.style.strokeDashoffset = '132'; // 40% spectators fill (e.g. 20M / 50M)
+                digFill.style.strokeDashoffset = '88';  // 60% impressions fill
+            } else {
+                btnBase.classList.remove('active');
+                btnTarget.classList.add('active');
+
+                hotelText.textContent = 'COP 32.000M';
+                foodText.textContent = 'COP 15.000M';
+                transText.textContent = 'COP 9.500M';
+                tourismText.textContent = 'COP 13.500M';
+                total.textContent = 'COP 60.000M - 80.000M';
+
+                // Target widths
+                barHotel.style.width = '91%'; // 32 / 35
+                barFood.style.width = '43%';  // 15 / 35
+                barTrans.style.width = '27%'; // 9.5 / 35
+                barTourism.style.width = '39%'; // 13.5 / 35
+
+                tvFill.style.strokeDashoffset = '88'; // 60% spectators fill (30M / 50M)
+                digFill.style.strokeDashoffset = '33'; // 85% impressions fill
+            }
+        }
+
+        // Contact form submission simulator
+        function handleContactSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('corp-name').value;
+            const email = document.getElementById('corp-email').value;
+            const interest = document.getElementById('corp-interest').value;
+            const message = document.getElementById('corp-message').value;
+
+            // Show success toast
+            const toast = document.getElementById('form-success');
+            toast.style.display = 'block';
+
+            // Clear inputs
+            document.getElementById('corp-contact-form').reset();
+
+            // Hide toast after 4 seconds
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 4000);
+        }
+
+        // Download modal logic
+        function openDownloadModal() {
+            document.getElementById('download-modal').classList.add('active');
+        }
+
+        // Trigger animation of values on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                switchScenario('base');
+            }, 200);
+        });
+
+        function closeDownloadModal() {
+            document.getElementById('download-modal').classList.remove('active');
+        }
+
+        function closeDownloadModalOnOverlay(e) {
+            if (e.target.id === 'download-modal') {
+                closeDownloadModal();
+            }
+        }
+
+        function triggerActualDownload() {
+            // Trigger browser download by creating temporary link
+            const a = document.createElement('a');
+            a.href = '../assets/presentacion-tdc-2027-2028.pdf';
+            a.download = 'Presentacion_TDC_2027-2028.pdf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            closeDownloadModal();
+        }
+
+        // Simple indicator updates for smooth scrolling link highlights
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.corp-menu-link');
+
+            let currentSec = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    currentSec = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSec) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

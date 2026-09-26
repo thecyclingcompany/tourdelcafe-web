@@ -1,0 +1,22954 @@
+/**
+ * BASE DE CLIENTES MÍTICO COFFEE
+ * Tour del Café - Módulo de Usuarios y Checkout
+ * Autogenerado a partir de customers_export.csv
+ */
+window.MITICO_CUSTOMERS = [
+  {
+    "id": "9980311896380",
+    "firstName": "Austin",
+    "lastName": "Abel",
+    "fullName": "Austin Abel",
+    "email": "austinabel825@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "shopify-forms-758259"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980311929148",
+    "firstName": "Isabel",
+    "lastName": "Isaza",
+    "fullName": "Isabel Isaza",
+    "email": "isabelisazar@gmail.com",
+    "phone": "+573158173380",
+    "city": "Envigado",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "Carrera 27A, 36sur -150, Bosqueadentro apto 525",
+    "totalSpent": 117800,
+    "totalOrders": 1,
+    "tags": [
+      "shopify-forms-785668"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980311994684",
+    "firstName": "Jeff",
+    "lastName": "Carter",
+    "fullName": "Jeff Carter",
+    "email": "jeff75@sinfytech.com",
+    "phone": "+919140068238",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "shopify-forms-758259"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312027452",
+    "firstName": "oscar miguel",
+    "lastName": "Marín Ortega",
+    "fullName": "oscar miguel Marín Ortega",
+    "email": "ozkarmarin01@gmail.com",
+    "phone": "+573167681725",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "shopify-forms-785668"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312060220",
+    "firstName": "Felix",
+    "lastName": "James",
+    "fullName": "Felix James",
+    "email": "felixjamesshopify63@gmail.com",
+    "phone": "+16062008304",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "shopify-forms-758259"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312092988",
+    "firstName": "Alejandro",
+    "lastName": "Moreno",
+    "fullName": "Alejandro Moreno",
+    "email": "hamlop@yahoo.com",
+    "phone": "+573163746288",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "gravel",
+      "mountain_bike",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312125756",
+    "firstName": "Angela",
+    "lastName": "Martinez",
+    "fullName": "Angela Martinez",
+    "email": "anmartinezru@gmail.com",
+    "phone": "+573223125687",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312158524",
+    "firstName": "Mauricio",
+    "lastName": "Castaño",
+    "fullName": "Mauricio Castaño",
+    "email": "521kofi@gmail.com",
+    "phone": "+573218304354",
+    "city": "Pereira",
+    "provinceCode": "RIS",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312191292",
+    "firstName": "Lorena",
+    "lastName": "Cely",
+    "fullName": "Lorena Cely",
+    "email": "singolare.contabilidad@gmail.com",
+    "phone": "+573134626437",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312224060",
+    "firstName": "Santiago",
+    "lastName": "Gonzales",
+    "fullName": "Santiago Gonzales",
+    "email": "san.gonzalez548@gmail.com",
+    "phone": "+573168778979",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312256828",
+    "firstName": "Ruben Dario",
+    "lastName": "Cardona",
+    "fullName": "Ruben Dario Cardona",
+    "email": "rubend579@hotmail.com",
+    "phone": "+573136417495",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312289596",
+    "firstName": "Fabián Andrés",
+    "lastName": "Cheque",
+    "fullName": "Fabián Andrés Cheque",
+    "email": "fabiandres0916@hotmail.com",
+    "phone": "+573213457072",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312322364",
+    "firstName": "Carlos Alberto",
+    "lastName": "Acosta Rojas",
+    "fullName": "Carlos Alberto Acosta Rojas",
+    "email": "carlosalbertoacostarojas@hotmail.com",
+    "phone": "+573156138827",
+    "city": "Tunja",
+    "provinceCode": "BOY",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312355132",
+    "firstName": "Carlos",
+    "lastName": "Aleman Fajardo",
+    "fullName": "Carlos Aleman Fajardo",
+    "email": "calemanfajardo@gmail.com",
+    "phone": "+573013043697",
+    "city": "Chía",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312387900",
+    "firstName": "Santiago Ivan",
+    "lastName": "Breton Valderrama",
+    "fullName": "Santiago Ivan Breton Valderrama",
+    "email": "bretonvalde@gmail.com",
+    "phone": "+573012706336",
+    "city": "Bucaramanga",
+    "provinceCode": "SAN",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312420668",
+    "firstName": "Andres",
+    "lastName": "Morales Hernandez",
+    "fullName": "Andres Morales Hernandez",
+    "email": "andresmoraleshernandez24@gmail.com",
+    "phone": "+573126031590",
+    "city": "Bello",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312453436",
+    "firstName": "Andrés",
+    "lastName": "Mancipe",
+    "fullName": "Andrés Mancipe",
+    "email": "andres.mancipe@gmail.com",
+    "phone": "+573212426683",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312486204",
+    "firstName": "Andrea Carolina",
+    "lastName": "Tamayo",
+    "fullName": "Andrea Carolina Tamayo",
+    "email": "andreac.tamayo@outlook.es",
+    "phone": "+573015802543",
+    "city": "Barranquilla",
+    "provinceCode": "ATL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312518972",
+    "firstName": "Martha Jannethe",
+    "lastName": "Bernal Olaya",
+    "fullName": "Martha Jannethe Bernal Olaya",
+    "email": "agroblossom@gmail.com",
+    "phone": "+573168204267",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312551740",
+    "firstName": "Sergio",
+    "lastName": "Suarez Lara",
+    "fullName": "Sergio Suarez Lara",
+    "email": "suareztk@hotmail.com",
+    "phone": "+573113701776",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312584508",
+    "firstName": "Samuel",
+    "lastName": "Ramirez Arroyave",
+    "fullName": "Samuel Ramirez Arroyave",
+    "email": "samuelalomiaarroyave@gmail.com",
+    "phone": "+573148015269",
+    "city": "Cartago",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312617276",
+    "firstName": "Daniel Sebastian",
+    "lastName": "Parada",
+    "fullName": "Daniel Sebastian Parada",
+    "email": "s.parada6@gmail.com",
+    "phone": "+573133012810",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312650044",
+    "firstName": "René",
+    "lastName": "Forero Reyes",
+    "fullName": "René Forero Reyes",
+    "email": "reneforero@hotmail.com",
+    "phone": "+573205781938",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312682812",
+    "firstName": "Rafael",
+    "lastName": "Perez",
+    "fullName": "Rafael Perez",
+    "email": "perezfrancorafael@gmail.com",
+    "phone": "+573102019036",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312715580",
+    "firstName": "Omar Fernando",
+    "lastName": "Molano Olaya",
+    "fullName": "Omar Fernando Molano Olaya",
+    "email": "omarmolano11@gmail.com",
+    "phone": "+573132945265",
+    "city": "Neiva",
+    "provinceCode": "HUI",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312748348",
+    "firstName": "Mauro",
+    "lastName": "Martinez",
+    "fullName": "Mauro Martinez",
+    "email": "mmartinez_1975@yahoo.com",
+    "phone": "+573112267551",
+    "city": "Santiago de Cali",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312813884",
+    "firstName": "Oscar",
+    "lastName": "Forero",
+    "fullName": "Oscar Forero",
+    "email": "misuenocafe24@gmail.com",
+    "phone": "+573102442929",
+    "city": "El Rosal",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312846652",
+    "firstName": "Maximiliano",
+    "lastName": "",
+    "fullName": "Maximiliano",
+    "email": "Maxid85@gmail.com",
+    "phone": "+573242828757",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312879420",
+    "firstName": "Mary Luz",
+    "lastName": "Parra Gomez",
+    "fullName": "Mary Luz Parra Gomez",
+    "email": "mary_parra_gomez@yahoo.com",
+    "phone": "+573016496403",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312912188",
+    "firstName": "Mario",
+    "lastName": "Villegas",
+    "fullName": "Mario Villegas",
+    "email": "mariov917@hotmail.com",
+    "phone": "+573015844058",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312944956",
+    "firstName": "Sergio",
+    "lastName": "Saza",
+    "fullName": "Sergio Saza",
+    "email": "juglar876@gmail.com",
+    "phone": "+573002239131",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980312977724",
+    "firstName": "Juan Carlos",
+    "lastName": "Galeano",
+    "fullName": "Juan Carlos Galeano",
+    "email": "juangaleano7395@gmail.com",
+    "phone": "+573118387697",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313010492",
+    "firstName": "Jessi",
+    "lastName": "Rivera",
+    "fullName": "Jessi Rivera",
+    "email": "Jessi-ilove@gmail.com",
+    "phone": "+573134624650",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313043260",
+    "firstName": "Jairo Anibal",
+    "lastName": "Baldoria",
+    "fullName": "Jairo Anibal Baldoria",
+    "email": "jaroanibaldoria@gmail.com",
+    "phone": "+573005436609",
+    "city": "Montería",
+    "provinceCode": "COR",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313076028",
+    "firstName": "Irene",
+    "lastName": "Velez",
+    "fullName": "Irene Velez",
+    "email": "irene@thinka.com.co",
+    "phone": "+573117493252",
+    "city": "Manizales",
+    "provinceCode": "CAL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313108796",
+    "firstName": "Mauricio",
+    "lastName": "Pineda",
+    "fullName": "Mauricio Pineda",
+    "email": "hmauricio.pinedag@gmail.com",
+    "phone": "+573164701997",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313141564",
+    "firstName": "Harbey",
+    "lastName": "Peña Salamanca",
+    "fullName": "Harbey Peña Salamanca",
+    "email": "harbey.pena@gmail.com",
+    "phone": "+573155143126",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313174332",
+    "firstName": "Daniel",
+    "lastName": "Torres Cutiva",
+    "fullName": "Daniel Torres Cutiva",
+    "email": "dfelipetorres@yahoo.com",
+    "phone": "+573117448055",
+    "city": "Santiago de Cali",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313207100",
+    "firstName": "Clímaco",
+    "lastName": "Duque Hidalgo",
+    "fullName": "Clímaco Duque Hidalgo",
+    "email": "climaco.duque@gmail.com",
+    "phone": "+573004068153",
+    "city": "MedellÍn",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313239868",
+    "firstName": "Briyit Rocio",
+    "lastName": "Ramirez",
+    "fullName": "Briyit Rocio Ramirez",
+    "email": "brial.92@hotmail.com",
+    "phone": "+573165377144",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313272636",
+    "firstName": "Ana Maria",
+    "lastName": "",
+    "fullName": "Ana Maria",
+    "email": "anitam185@gmail.com",
+    "phone": "+573216080051",
+    "city": "MedellÍn",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313305404",
+    "firstName": "Coffee Land",
+    "lastName": "",
+    "fullName": "Coffee Land",
+    "email": "silverlyontravel@outlook.es",
+    "phone": "+573183547639",
+    "city": "Cartagena",
+    "provinceCode": "BOL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313338172",
+    "firstName": "Sarita",
+    "lastName": "Vasquez Arango",
+    "fullName": "Sarita Vasquez Arango",
+    "email": "saritavasquez0101@hotmail.com",
+    "phone": "+573045240925",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313370940",
+    "firstName": "Juan",
+    "lastName": "Ospina",
+    "fullName": "Juan Ospina",
+    "email": "juanjoelgrafico@gmail.com",
+    "phone": "+573207997859",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313403708",
+    "firstName": "Jhon Jairo",
+    "lastName": "Henao",
+    "fullName": "Jhon Jairo Henao",
+    "email": "johnj_jaramillo@yahoo.es",
+    "phone": "+573103997748",
+    "city": "Envigado",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313469244",
+    "firstName": "John Harold",
+    "lastName": "Parra Lopez",
+    "fullName": "John Harold Parra Lopez",
+    "email": "haroldparra72@gmail.com",
+    "phone": "+573108811700",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313502012",
+    "firstName": "Giobahana",
+    "lastName": "Ramirez",
+    "fullName": "Giobahana Ramirez",
+    "email": "giobahanarb@gmail.com",
+    "phone": "+573142363052",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313534780",
+    "firstName": "Oscar",
+    "lastName": "Cardenas Gaitan",
+    "fullName": "Oscar Cardenas Gaitan",
+    "email": "cardenasgaitan595@gmail.com",
+    "phone": "+573204746348",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313567548",
+    "firstName": "Camilo",
+    "lastName": "Duque",
+    "fullName": "Camilo Duque",
+    "email": "camilo@duqueabogados.com",
+    "phone": "+573006025694",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313600316",
+    "firstName": "Luis Hebert",
+    "lastName": "Ardila Casallas",
+    "fullName": "Luis Hebert Ardila Casallas",
+    "email": "heberard@hotmail.com",
+    "phone": "+573187120706",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "descafeinado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313633084",
+    "firstName": "Jhon Alexander",
+    "lastName": "Cely Martinez",
+    "fullName": "Jhon Alexander Cely Martinez",
+    "email": "jalexmartinez1983@gmail.com",
+    "phone": "+573212426057",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313665852",
+    "firstName": "Javier",
+    "lastName": "El del Café",
+    "fullName": "Javier El del Café",
+    "email": "yotesirvoelcafe@gmail.com",
+    "phone": "+573112375491",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313698620",
+    "firstName": "William Mauricio",
+    "lastName": "Giraldo Garcia",
+    "fullName": "William Mauricio Giraldo Garcia",
+    "email": "wmgiral@yahoo.es",
+    "phone": "+573128432779",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313731388",
+    "firstName": "Claudia Viviana",
+    "lastName": "Sandoval",
+    "fullName": "Claudia Viviana Sandoval",
+    "email": "vivis152@hotmail.com",
+    "phone": "+573102575156",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313764156",
+    "firstName": "Sebastian",
+    "lastName": "Aguilar",
+    "fullName": "Sebastian Aguilar",
+    "email": "sebas_1708@hotmail.com",
+    "phone": "+573197633689",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313796924",
+    "firstName": "Roberto",
+    "lastName": "Mendoza",
+    "fullName": "Roberto Mendoza",
+    "email": "romendoza42k@gmail.com",
+    "phone": "+573002015884",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313829692",
+    "firstName": "Nelson",
+    "lastName": "Paredes",
+    "fullName": "Nelson Paredes",
+    "email": "neumpac@gmail.com",
+    "phone": "+573026010118",
+    "city": "Yumbo",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313862460",
+    "firstName": "Mario Andrés",
+    "lastName": "Lopez",
+    "fullName": "Mario Andrés Lopez",
+    "email": "marioandreslopez81@gmail.com",
+    "phone": "+573005762333",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313895228",
+    "firstName": "Lobsang",
+    "lastName": "",
+    "fullName": "Lobsang",
+    "email": "lobsangflepa@gmail.com",
+    "phone": "+573158138071",
+    "city": "Barranquilla",
+    "provinceCode": "ATL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313960764",
+    "firstName": "Julaina",
+    "lastName": "Ayala Vargas",
+    "fullName": "Julaina Ayala Vargas",
+    "email": "julainahany@hotmail.com",
+    "phone": "+573153752634",
+    "city": "Facatativá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980313993532",
+    "firstName": "Jorge",
+    "lastName": "Castaño Lara",
+    "fullName": "Jorge Castaño Lara",
+    "email": "jlara.arte1964@gmail.com",
+    "phone": "+573113628344",
+    "city": "Envigado",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314026300",
+    "firstName": "Humberto",
+    "lastName": "Barragan",
+    "fullName": "Humberto Barragan",
+    "email": "humbertobarraganramirez@hotmail.com",
+    "phone": "+573108141990",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314059068",
+    "firstName": "Hernan Andres",
+    "lastName": "Garces",
+    "fullName": "Hernan Andres Garces",
+    "email": "hernanandresgarces@hotmail.com",
+    "phone": "+573113005277",
+    "city": "Santiago de Cali",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314091836",
+    "firstName": "Gilberth",
+    "lastName": "Romero",
+    "fullName": "Gilberth Romero",
+    "email": "gilberthspeedy@hotmail.com",
+    "phone": "+573155874345",
+    "city": "Santiago de Cali",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314124604",
+    "firstName": "Alfonso",
+    "lastName": "Ricaurte Aguirre",
+    "fullName": "Alfonso Ricaurte Aguirre",
+    "email": "fitoal@hotmail.com",
+    "phone": "+573108522931",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314190140",
+    "firstName": "Luis Fernando",
+    "lastName": "Garcia Diaz",
+    "fullName": "Luis Fernando Garcia Diaz",
+    "email": "fercho2782@hotmail.es",
+    "phone": "+573024332389",
+    "city": "Caldas",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314222908",
+    "firstName": "Iván Darío",
+    "lastName": "Florez Pardo",
+    "fullName": "Iván Darío Florez Pardo",
+    "email": "doctorivan8412@gmail.com",
+    "phone": "+573202759801",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314255676",
+    "firstName": "Diego",
+    "lastName": "Gracilieri",
+    "fullName": "Diego Gracilieri",
+    "email": "diego.gracilieri@gmail.com",
+    "phone": "+573116293607",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314288444",
+    "firstName": "Carlos",
+    "lastName": "",
+    "fullName": "Carlos",
+    "email": "cartup@hotmail.com",
+    "phone": "+573153679934",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314321212",
+    "firstName": "Carlos",
+    "lastName": "Calvo",
+    "fullName": "Carlos Calvo",
+    "email": "carlosandcalvo@hotmail.com",
+    "phone": "+573008588550",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314353980",
+    "firstName": "Andres",
+    "lastName": "Patarroyo Feres",
+    "fullName": "Andres Patarroyo Feres",
+    "email": "andrespatarroyo@gmail.com",
+    "phone": "+573124131440",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314386748",
+    "firstName": "Alejandro",
+    "lastName": "Romero Boada",
+    "fullName": "Alejandro Romero Boada",
+    "email": "alejandro.romeroboada@hotmail.com",
+    "phone": "+573174353018",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314419516",
+    "firstName": "Anderson",
+    "lastName": "Villamil",
+    "fullName": "Anderson Villamil",
+    "email": "aervilla@hotmail.com",
+    "phone": "+573183820106",
+    "city": "Chiriguaná",
+    "provinceCode": "CES",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314452284",
+    "firstName": "Héctor Favio",
+    "lastName": "Garcia Alvarez",
+    "fullName": "Héctor Favio Garcia Alvarez",
+    "email": "aerofa2003@yahoo.com",
+    "phone": "+573154085694",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314485052",
+    "firstName": "Pedro",
+    "lastName": "",
+    "fullName": "Pedro",
+    "email": "pedroab79m@gmail.com",
+    "phone": "+573145728074",
+    "city": "Facatativa",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314517820",
+    "firstName": "Paulo",
+    "lastName": "Perez",
+    "fullName": "Paulo Perez",
+    "email": "paucepe@hotmail.com",
+    "phone": "+573155857841",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314550588",
+    "firstName": "Mauricio",
+    "lastName": "Hurtado",
+    "fullName": "Mauricio Hurtado",
+    "email": "mauriciohurtado0816@hotmail.com",
+    "phone": "+573182926216",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314616124",
+    "firstName": "Kyra Margarita",
+    "lastName": "Osorio Gutierrez",
+    "fullName": "Kyra Margarita Osorio Gutierrez",
+    "email": "marco_duvan@hotmail.com",
+    "phone": "+573168216460",
+    "city": "Bucaramanga",
+    "provinceCode": "SAN",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314648892",
+    "firstName": "Luis Fernando",
+    "lastName": "Mena Delgado",
+    "fullName": "Luis Fernando Mena Delgado",
+    "email": "lumena998@gmail.com",
+    "phone": "+573147817817",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314681660",
+    "firstName": "Luis Gerrdo",
+    "lastName": "Velandia Velandia",
+    "fullName": "Luis Gerrdo Velandia Velandia",
+    "email": "luisgerarvel@hotmail.com",
+    "phone": "+573103128222",
+    "city": "Duitama",
+    "provinceCode": "BOY",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314714428",
+    "firstName": "Luis Humberto",
+    "lastName": "Paez",
+    "fullName": "Luis Humberto Paez",
+    "email": "luhpae1970@gmail.com",
+    "phone": "+573125400155",
+    "city": "Ibagué",
+    "provinceCode": "TOL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314779964",
+    "firstName": "Henry",
+    "lastName": "Narvaez Uribe",
+    "fullName": "Henry Narvaez Uribe",
+    "email": "leonarvaez9223@gmail.com",
+    "phone": "+573124221057",
+    "city": "Neiva",
+    "provinceCode": "HUI",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314812732",
+    "firstName": "Xavier",
+    "lastName": "Garzon",
+    "fullName": "Xavier Garzon",
+    "email": "javiergarzonjimenez@gmail.com",
+    "phone": "+573057477769",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314845500",
+    "firstName": "Ingrid Andrea",
+    "lastName": "Carrero Bermudez",
+    "fullName": "Ingrid Andrea Carrero Bermudez",
+    "email": "icarrerob38@gmail.com",
+    "phone": "+573192176427",
+    "city": "Pereira",
+    "provinceCode": "RIS",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314878268",
+    "firstName": "Gustavo",
+    "lastName": "Delgadillo",
+    "fullName": "Gustavo Delgadillo",
+    "email": "gustavodelgadillo.d@gmail.com",
+    "phone": "+573157140035",
+    "city": "Calima",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314911036",
+    "firstName": "Fernando",
+    "lastName": "Gutiérrez .",
+    "fullName": "Fernando Gutiérrez .",
+    "email": "fernandogutierrezt09@gmail.com",
+    "phone": "+573104363063",
+    "city": "Medellin",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980314976572",
+    "firstName": "Daniel",
+    "lastName": "Cubides",
+    "fullName": "Daniel Cubides",
+    "email": "danieleduardocubides@hotmail.com",
+    "phone": "+573133420539",
+    "city": "Miraflores",
+    "provinceCode": "BOY",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315009340",
+    "firstName": "Johan",
+    "lastName": "Castro",
+    "fullName": "Johan Castro",
+    "email": "camilo-2993@hotmail.com",
+    "phone": "",
+    "city": "Soacha",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315042108",
+    "firstName": "Carlos Alberto",
+    "lastName": "Cortes Rios",
+    "fullName": "Carlos Alberto Cortes Rios",
+    "email": "cabetocortes@gmail.com",
+    "phone": "+573135733553",
+    "city": "Pereira",
+    "provinceCode": "RIS",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315107644",
+    "firstName": "Daniel",
+    "lastName": "Toro",
+    "fullName": "Daniel Toro",
+    "email": "archeas2@gmail.com",
+    "phone": "+573113008554",
+    "city": "Manizales",
+    "provinceCode": "CAL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315140412",
+    "firstName": "Wilmar",
+    "lastName": "Quintero Acosta",
+    "fullName": "Wilmar Quintero Acosta",
+    "email": "wqa1985@gmail.com",
+    "phone": "+573113115103",
+    "city": "Medellin",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315173180",
+    "firstName": "Sigifredo",
+    "lastName": "Cruz Garcia",
+    "fullName": "Sigifredo Cruz Garcia",
+    "email": "sigifredocruzg@yahoo.com",
+    "phone": "+573122969112",
+    "city": "Pereira",
+    "provinceCode": "RIS",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315205948",
+    "firstName": "Jhon",
+    "lastName": "Moreno",
+    "fullName": "Jhon Moreno",
+    "email": "morenosolanojairo37@gmail.com",
+    "phone": "+573104332798",
+    "city": "Subachoque",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315238716",
+    "firstName": "Mariangelly",
+    "lastName": "Zubiria",
+    "fullName": "Mariangelly Zubiria",
+    "email": "mjzubiria@gmail.com",
+    "phone": "+573166279542",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315271484",
+    "firstName": "Mauricio",
+    "lastName": "Macias",
+    "fullName": "Mauricio Macias",
+    "email": "mauromacias1@hotmail.com",
+    "phone": "+573104935084",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315304252",
+    "firstName": "Luis Eduardo",
+    "lastName": "Quintero Montoya",
+    "fullName": "Luis Eduardo Quintero Montoya",
+    "email": "luchom53@hotmail.com",
+    "phone": "+573112094212",
+    "city": "Tabio",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315337020",
+    "firstName": "Juan",
+    "lastName": "Alfaro",
+    "fullName": "Juan Alfaro",
+    "email": "juanalfaro86@outlook.com",
+    "phone": "+573175824903",
+    "city": "Zipaquirá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315369788",
+    "firstName": "Javier Leonardo",
+    "lastName": "Guzman",
+    "fullName": "Javier Leonardo Guzman",
+    "email": "javierguzman80@gmail.com",
+    "phone": "+573175015359",
+    "city": "Ibagué",
+    "provinceCode": "TOL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315402556",
+    "firstName": "Juan Esteban",
+    "lastName": "Gallego",
+    "fullName": "Juan Esteban Gallego",
+    "email": "gallego.esteban@hotmail.com",
+    "phone": "+573004887010",
+    "city": "Rionegro",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315435324",
+    "firstName": "Leonardo",
+    "lastName": "Melo",
+    "fullName": "Leonardo Melo",
+    "email": "fabianbmx11@gmail.com",
+    "phone": "+573203896177",
+    "city": "Tibasosa",
+    "provinceCode": "BOY",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315468092",
+    "firstName": "Diana Marcela",
+    "lastName": "Pico Sanchez",
+    "fullName": "Diana Marcela Pico Sanchez",
+    "email": "dianamarpicos@hotmail.com",
+    "phone": "+573005643649",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315500860",
+    "firstName": "Carlitos",
+    "lastName": "Tejada",
+    "fullName": "Carlitos Tejada",
+    "email": "carlitos091289@gmail.com",
+    "phone": "+573147802994",
+    "city": "Pereira",
+    "provinceCode": "RIS",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315566396",
+    "firstName": "Jhon",
+    "lastName": "Bedoya",
+    "fullName": "Jhon Bedoya",
+    "email": "bergoya@gmail.com",
+    "phone": "+573054448480",
+    "city": "Ríonegro",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315599164",
+    "firstName": "Arnulfo",
+    "lastName": "Arroyo",
+    "fullName": "Arnulfo Arroyo",
+    "email": "arnoldbrook29@gmail.com",
+    "phone": "+573017282554",
+    "city": "Santiago de Cali",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "descafeinado",
+      "mountain_bike",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315631932",
+    "firstName": "Ricardo Andrés",
+    "lastName": "Rojas Sanchez",
+    "fullName": "Ricardo Andrés Rojas Sanchez",
+    "email": "rikardoandres@hotmail.com",
+    "phone": "+573005275033",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "gravel",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315664700",
+    "firstName": "Jairo",
+    "lastName": "Quiroz",
+    "fullName": "Jairo Quiroz",
+    "email": "jquirozme@hotmail.com",
+    "phone": "+573132655125",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315697468",
+    "firstName": "Hernando",
+    "lastName": "Moreno",
+    "fullName": "Hernando Moreno",
+    "email": "hamsenichenko@gmail.com",
+    "phone": "+573125800925",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315730236",
+    "firstName": "Jose Gussepi",
+    "lastName": "Calderon",
+    "fullName": "Jose Gussepi Calderon",
+    "email": "gussepi16@gmail.com",
+    "phone": "+573207261812",
+    "city": "Carmen de Viboral",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315763004",
+    "firstName": "Mauricio",
+    "lastName": "Salavarrieta Bejarano",
+    "fullName": "Mauricio Salavarrieta Bejarano",
+    "email": "gerentekayros@gmail.com",
+    "phone": "+573133961495",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315795772",
+    "firstName": "Fredy Steep",
+    "lastName": "Camelo Piedrahita",
+    "fullName": "Fredy Steep Camelo Piedrahita",
+    "email": "fredysteep@gmail.com",
+    "phone": "+573013965040",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315828540",
+    "firstName": "Fabian",
+    "lastName": "Durango",
+    "fullName": "Fabian Durango",
+    "email": "fdurango1@yahoo.com.mx",
+    "phone": "+573146614513",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315861308",
+    "firstName": "Sergio",
+    "lastName": "Cardona",
+    "fullName": "Sergio Cardona",
+    "email": "sacgfbi@yahoo.es",
+    "phone": "+573248573479",
+    "city": "Bello",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "gravel"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315894076",
+    "firstName": "Jimmy",
+    "lastName": "Baldion",
+    "fullName": "Jimmy Baldion",
+    "email": "jimmy.baldion@mamutbike.com",
+    "phone": "+573165385430",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "gravel"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315926844",
+    "firstName": "Ever Armando",
+    "lastName": "Rios Arias",
+    "fullName": "Ever Armando Rios Arias",
+    "email": "ever.rios1990@gmail.co",
+    "phone": "+573155801456",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "gravel"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315959612",
+    "firstName": "Cristian",
+    "lastName": "Tellez Farias",
+    "fullName": "Cristian Tellez Farias",
+    "email": "Ctidaco04@gmail.com",
+    "phone": "+573204416510",
+    "city": "Tocancipá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "gravel"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980315992380",
+    "firstName": "Juan Alonso",
+    "lastName": "Rincon Granados",
+    "fullName": "Juan Alonso Rincon Granados",
+    "email": "alonsorincong@hotmail.com",
+    "phone": "+573057627888",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "gravel"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316025148",
+    "firstName": "Sergio",
+    "lastName": "Marroquin Cabrera",
+    "fullName": "Sergio Marroquin Cabrera",
+    "email": "sergio.marroco@hotmail.com",
+    "phone": "+573172715872",
+    "city": "Bogotá",
+    "provinceCode": "DC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "gravel"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316057916",
+    "firstName": "Aura Maria",
+    "lastName": "Gonzalez",
+    "fullName": "Aura Maria Gonzalez",
+    "email": "maruja8116@gmail.com",
+    "phone": "+573014462181",
+    "city": "Ibagué",
+    "provinceCode": "TOL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "gravel"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316090684",
+    "firstName": "Luis Carlos",
+    "lastName": "Isaza",
+    "fullName": "Luis Carlos Isaza",
+    "email": "luis.isaza@firplak.com",
+    "phone": "+573158173373",
+    "city": "Medellin",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "Cra 15 #19 sur - 54  Urbanización Vallados de Gratamira 2",
+    "totalSpent": 1993120,
+    "totalOrders": 4,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "9980316123452",
+    "firstName": "Fanny",
+    "lastName": "Hurtado",
+    "fullName": "Fanny Hurtado",
+    "email": "falaims2229@hotmail.com",
+    "phone": "+573012333800",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316156220",
+    "firstName": "Sentimiento",
+    "lastName": "Cafetero",
+    "fullName": "Sentimiento Cafetero",
+    "email": "sentimientocafetero@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mitico-code:GREGARIO0010",
+      "mitico-reward:Small Growers Blend - Legado Edición Especial",
+      "newsletter"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316188988",
+    "firstName": "Diana",
+    "lastName": "Cuartas",
+    "fullName": "Diana Cuartas",
+    "email": "cuartas26@yahoo.es",
+    "phone": "+573127677521",
+    "city": "Pereira",
+    "provinceCode": "RIS",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "dulce_y_balanceado",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316221756",
+    "firstName": "Juan Carlos",
+    "lastName": "Restrepo Davila",
+    "fullName": "Juan Carlos Restrepo Davila",
+    "email": "juanrestrepodavila@gmail.com",
+    "phone": "+573105004132",
+    "city": "Medellín",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316254524",
+    "firstName": "WILLIAM Mauricio Giraldo Garcia",
+    "lastName": "",
+    "fullName": "WILLIAM Mauricio Giraldo Garcia",
+    "email": "Wmgiral@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "newsletter",
+      "shopify-forms-743743"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316287292",
+    "firstName": "Johana",
+    "lastName": "Rico Lopez",
+    "fullName": "Johana Rico Lopez",
+    "email": "johanaricolopez@gmail.com",
+    "phone": "+573116156902",
+    "city": "Santiago de Cali",
+    "provinceCode": "VAC",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "fuerte_e_intenso",
+      "ruta"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316320060",
+    "firstName": "Gustavo",
+    "lastName": "Rodriguez Florez",
+    "fullName": "Gustavo Rodriguez Florez",
+    "email": "gustafa21flowers@gmail.comg",
+    "phone": "+573206801742",
+    "city": "Manizales",
+    "provinceCode": "CAL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316352828",
+    "firstName": "Jimena",
+    "lastName": "Lopez",
+    "fullName": "Jimena Lopez",
+    "email": "jime7a@gmail.com",
+    "phone": "+573173630887",
+    "city": "Manizales",
+    "provinceCode": "CAL",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "frutal_y_aromático",
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316385596",
+    "firstName": "Juan David",
+    "lastName": "Rodriguez",
+    "fullName": "Juan David Rodriguez",
+    "email": "Cozte@hotmail.com",
+    "phone": "+573208046449",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 2559380,
+    "totalOrders": 5,
+    "tags": [
+      "shopify-forms-743743"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316418364",
+    "firstName": "Silvana",
+    "lastName": "Salazar Serna",
+    "fullName": "Silvana Salazar Serna",
+    "email": "mana_sss@hotmail.com",
+    "phone": "+573104367410",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 383790,
+    "totalOrders": 2,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "9980316451132",
+    "firstName": "Silvia",
+    "lastName": "Isaza Restrepo",
+    "fullName": "Silvia Isaza Restrepo",
+    "email": "sivo202@hotmail.com",
+    "phone": "+573006112645",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "Calle 23N #15-21, Edificio Oasis de Laureles, Apto 304",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [],
+    "company": "32445849"
+  },
+  {
+    "id": "9980316516668",
+    "firstName": "Alejandro",
+    "lastName": "Isaza",
+    "fullName": "Alejandro Isaza",
+    "email": "alejandro.isaza@firplak.com",
+    "phone": "+573158173383",
+    "city": "Envigado",
+    "provinceCode": "ANT",
+    "countryCode": "CO",
+    "address": "Carrera 27 A # 36 sur 150, Apto 309 - Torre 1 Conjunto Bosque Adentro",
+    "totalSpent": 282600,
+    "totalOrders": 3,
+    "tags": [
+      "Login with Shop",
+      "Shop"
+    ],
+    "company": "FIRPLAK"
+  },
+  {
+    "id": "9980316549436",
+    "firstName": "Larry",
+    "lastName": "Burnett",
+    "fullName": "Larry Burnett",
+    "email": "larrypaulburnett@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "9980316582204",
+    "firstName": "Carlos",
+    "lastName": "ramirez",
+    "fullName": "Carlos ramirez",
+    "email": "candresram@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "9980316614972",
+    "firstName": "erewr",
+    "lastName": "werewr",
+    "fullName": "erewr werewr",
+    "email": "sadasd@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "9980316647740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ngarzon0311@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "newsletter"
+    ],
+    "company": ""
+  },
+  {
+    "id": "9980316680508",
+    "firstName": "Alejandro",
+    "lastName": "Carrizosa",
+    "fullName": "Alejandro Carrizosa",
+    "email": "alejo.carri@gmail.com",
+    "phone": "3104320274",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "Calle 23N #15-21, Edificio Oasis de Laureles",
+    "totalSpent": 339310,
+    "totalOrders": 3,
+    "tags": [
+      "newsletter",
+      "shopify-forms-743743",
+      "Wrote Judge.me web review"
+    ],
+    "company": "4376514"
+  },
+  {
+    "id": "10005097283900",
+    "firstName": "Maria Fernanda",
+    "lastName": "Quiroga",
+    "fullName": "Maria Fernanda Quiroga",
+    "email": "fernandaquiror1986@gmail.com",
+    "phone": "+573213346173",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 127245,
+    "totalOrders": 1,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "10141071573308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "1995mcardenas@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071606076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "a.c.v.quindio1974@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071638844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Aamaria1colorado@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071671612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Abogadojuliantovar@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071704380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "abogadosecada@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071737148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "acevedovsav@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071769916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "acgamboaro@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071835452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "acuariotex@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071868220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "adcares79@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071900988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "adelinaarrecheaupegui@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071966524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "adrianamarcelamoralesramos2023@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141071999292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "adriz310@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072064828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Afcv0721@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072097596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "agomez112@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072130364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "agudelo76@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072163132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Ahenry.atleta@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072195900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "al3millan@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072261436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "albaluzquevedorincon@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072294204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alcalacgs.edwingonzalez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072326972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Alejaaperezz@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072359740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandrabedoya0412@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072392508",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandraherrerac19@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072458044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandramarialopez622@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072490812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandrarojascorrea06@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072523580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandro.serna22@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072556348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Alejandroalvarezwot@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072589116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejomrunningcoach318@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072654652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alequimar0314@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072687420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "aleren@comfenalcoquindio.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072720188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alexander4025@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072752956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alexcabreraburgos13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072785724",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Alexcorreadiaz@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072818492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alexmanu2416@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072884028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alexorjuela22@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072916796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alis-vlujan@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072949564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "allissonrc0406@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141072982332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "almecrasi@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073015100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alrogi0742@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073080636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Alzatevelezjuanpablo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073113404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "amoralosanimales3009@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073146172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "analuciablandon19@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073178940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Anasofiaharenas@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073211708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "anderson.beltran.509@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073277244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andicavictor1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073310012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andre.raz13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073375548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Andreabf0269@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073408316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andreagviria@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073473852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andreinaloverakoch@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073539388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andres.felipe.hernandez2023@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073572156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andrescardozoarq@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073604924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andresfelipe9015@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073637692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andresfelipealvarezchavez5@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073670460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andresfelipeovalle87@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073735996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andresmeji36@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073768764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andresromancardona@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073801532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "angelalicet78@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073834300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Angelicaduque003@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073867068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Angelikmontalvo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073932604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "angelo.inge@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141073998140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "angiesofianino@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074030908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "anli.agudelo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074063676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ansocacampestre@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074096444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ansuvi.9911@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074129212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ardilayenni1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074161980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ariassotokatherine@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074227516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "arizaandres770@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074293052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "armenia.laj1979@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074325820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "armeniafutsalon@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074358588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Arqpablosanchez19@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074391356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "arqwillyvalencia@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074424124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "asistentehigiadistribuciones@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074489660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "astridsacristance@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074555196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "atletismosalentoquindio@hotmail.comail",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074587964",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "atoro3322@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074620732",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "atrapapeces@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074653500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "audid1999@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074686268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "audid99@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074719036",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "aux-biblioteca3@cue.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074784572",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Avmendezh@uqvirtual.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074817340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "awwester@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074850108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ayurany@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074882876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "baurojas62@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074915644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "bergonl84@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074948412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "betancourtguayaraa@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141074981180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "bodega.manzur.co@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075046716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "brandon.manicomio777@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075112252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "breinerestiven95@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075177788",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "brunogviria@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075243324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "bryan226@live.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075276092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "brycarmona99@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075308860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cambo328@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075341628",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "camila12194@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075374396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "camilita_1999@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075439932",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "camiloagonzalez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075472700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "camilogv25@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075505468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "camilonoguerabmw@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075538236",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "caohs70@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075603772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cardozo.carlos@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075669308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Caritotique@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075702076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carlosojedaariza@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075734844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carolinachz@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075767612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Carolinalaserna70@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075833148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carolinauranh@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075865916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carolinazapataveg@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075898684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "caroloaiza88@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075931452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "castajohan197@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141075996988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "catherineleonu92@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076029756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cdtbamur5@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076062524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Cejass_22@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076095292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "celisjairo42@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076160828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cesar290676@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076226364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cesaraugustobeltran7@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076259132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cesarm0515@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076291900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Chavaospina@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076324668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Christian.loaizah@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076390204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "chuchobrandon@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076455740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "clarita.ramirezg1989@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076521276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Claud359@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076554044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "claudia313739@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076586812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "claudiacorrechasst@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076619580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cm100crack@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076652348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Cmaderaguacaneme@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076685116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "compeci31@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076717884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "contabilidad@aralthel.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076750652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "corlocal67@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076783420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "correaylopezabogados@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076816188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Crediandes.admon1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076881724",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristian199888@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076914492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristianaraujopantoja2@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076947260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristiancm11@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141076980028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristianovalentino1490@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077012796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Cristianramirezarq@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077045564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristianramirezm89@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077078332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cronos1828@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077111100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "curia19@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077143868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dagalvis81@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077176636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dalmazzo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077242172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dalvarado0509@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077274940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danielareinagarcia1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077307708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danielfmd94@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077340476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danielly.mb23@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077373244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Danielsuescun@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077406012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danikosadib@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077438780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danimancera95@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077471548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danna151620@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077504316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dannalnm4126@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077537084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "david.florez@utp.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077569852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "davidbustos0220@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077602620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "davidfabianangulo71@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077635388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Davilaherreramateo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077668156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "davilamaryluz@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077733692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dcorrea1102@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077766460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "di.veth2010@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077799228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diana.byron97@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077831996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dianaagaleanoo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077864764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dianacharlottenavarroroa@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077897532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dianacristina36@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077930300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dianamarcela.isaza@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077963068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dianamrubio@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141077995836",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dianapa.munozg@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078028604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Dianaprieto25saldarriaga@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078061372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diar42@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078094140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dibarco@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078126908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diego2012ok1996@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078159676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diegocardenassarmiento@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078192444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diegoenrik@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078225212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diegoespinosacasillas@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078257980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Diegomuchacho517@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078290748",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diegozapata46@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078323516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dieshi2004@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078356284",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dracocurso93@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078389052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "earcilacardenas@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078421820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edilmar19@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078454588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edsoncarlos.ec40@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078487356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "eduardmauriciomorales@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078520124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "eduorozm@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078552892",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edward.abuelo07@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078585660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edwinci252@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078651196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Elianacardonarios@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078716732",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "eliceoacevedo2009@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078749500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "eliceoacevedo2023@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078782268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "elicoflo1986@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078815036",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "elprimohidalgo2009@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078847804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "elrh22@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078880572",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "elsymartinezc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078913340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "erikacastro.csp@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078946108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "erikamariacanoperez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141078978876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "espejismoAPG@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079011644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "estebanhevs@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079044412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Estefa.20.rojas@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079077180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabertunin@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079109948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabianandres7730@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079142716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabiangonzalezavila@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079175484",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabiansantafe@live.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079208252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabio39m@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079241020",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "faisury.593@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079273788",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "felipezapatavega@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079306556",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Felquinra@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079339324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "felsaldarriaga@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079372092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "felxsanz@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079404860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fercho.leo.fc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079437628",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fernandoaguirre.inn@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079470396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fpastrana1998@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079503164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Fralex22@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079568700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Franciscomesa926@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079601468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fred.castillo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079634236",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Freizon2091@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079667004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Frliliana@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079699772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fundasiaq@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079732540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Galarzamejialeonardoalfonso@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079765308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "garciaboteroangelicamaria@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079798076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "garciacarol1518@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079830844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Garciaisabella316@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079863612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "garciajohan1897@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079929148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gatofasb@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079961916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gemoto0922@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141079994684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "georecursoshumanos@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080027452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "georgehurtc3.m@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080060220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "geralmneses@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080092988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gestiondocumentalcrediandes@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080125756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ggiraldog@argos.com.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080158524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ghealth.tri@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080191292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "giovarimu@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080224060",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "giraldoluigy688@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080256828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gjuanchu@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080289596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gladys_martinez83@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080322364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "globenagus13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080355132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gonzalesmilena329@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080387900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gonzo8125@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080420668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "goryuh60l@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080453436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "grimaldoscarodiego@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080486204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gymrockhouse@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080518972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "h.k.1023@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080551740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "handreosorio@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080584508",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hannapardo2407@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080650044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Happivalles@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080682812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "healmartinez@utp.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080715580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hechoparacorrer1821@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080748348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "heinercc108@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080781116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "henaoheber133@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080813884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "henry.atleta@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080846652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "herreraossa@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080879420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hfpereza@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080944956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hugocobo10@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141080977724",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Hugomate1980@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081010492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ing.jefersonagudelo26@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081043260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ingueco@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081076028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "irmarociolopez@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081108796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ivanmauriciomc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081141564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "J.davidcastanedamar@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081174332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jadurang@uqvirtul.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081207100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jairopg13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081239868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jalexanderdulcey@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081272636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jandres087@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081338172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jandrw1@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081370940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "janiermalavera9@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081403708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jaosoriob@uniquindio.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081436476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jars1021@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081469244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javierbedoyaromero@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081502012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javiere.ramosb@uqvirtual.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081534780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javierleon.velez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081567548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Javierymateolosamo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081600316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jdarwinerazo@icloud.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081633084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jdduqueosorio@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081665852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jdgm2089@live.com.ar",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081698620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jeayala@uniquindio.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081731388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jefren101010@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081764156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jeisonpatino@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081796924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jeissonamt24@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081829692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jennifercelis1306@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081862460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jennyale888@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081895228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jennyreyv@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081927996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jennytramirez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081960764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jenyposa4@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141081993532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jessica.hdezbeltran@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082026300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jessigiral95@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082059068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jessik-vargas@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082091836",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jesusgarcia4827@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082124604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jflozanoisa@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082157372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jg.orozcomona@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082190140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhanboca10@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082222908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jharams310@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082255676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jheissonruiz1999@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082288444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhoana.angulo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082321212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jhogil@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082353980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonalesuarez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082386748",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonalexurmo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082419516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonatancsz07@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082452284",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonceballos2285@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082485052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jhoneduargiraldoramirez25@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082517820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jhonjarl10.jr@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082550588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jhosent_torres@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082583356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jimenez.alvarez.nicolas1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082616124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jipa11208@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082648892",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jjduranmolina@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082681660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jnatibu@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082714428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Joanma77@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082747196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "joansebastiandi@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082779964",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "joel.lopez_95@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082812732",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Johanaagudelo13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082845500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Johanaaraque033@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082878268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "johanafgalindo@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082911036",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "johanagm1996@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141082943804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Johannabotero1990@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083042108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "johnmoar72@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083107644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "johnmorenomx@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083140412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jolanyrada888@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083173180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jomajeca@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083205948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jomc5697@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083271484",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jonatanolartesanchez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083304252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jorgebuitragosst@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083337020",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jorgedgrafico89@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083402556",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jorgehcortex@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083435324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Josejairomorenoducuara870@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083468092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jpabloruiz2009@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083500860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jparchitecture97@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083533628",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jparicapa26@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083566396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jrodrigor08@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083599164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jsmontoya@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083697468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juan071029@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083730236",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juancamilo241998@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083763004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juancamilobeltran28@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083795772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanchodiaz200520@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083828540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juand.tabaresr@uqvirtual.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083861308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juandavidcandanozagarizabalo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083926844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juandavidtaresramirez26@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083959612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juanene30@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141083992380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanestebanrruiz@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084025148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanfgonzaga5@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084057916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juanfranciscotoroaraque@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084090684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juangero221090@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084156220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanmabavez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084188988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanmleon.bk@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084221756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juanmontoya1587@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084254524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanpadanig@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084287292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juansegaray87@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084352828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juantapasco1991@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084385596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jucgv69@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084418364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juli_jass@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084451132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julian09426@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084516668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Julian390@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084549436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juliana-2811@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084582204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julianamaria94@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084614972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Julianarleymartinez.jm@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084713276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Julianasofis27@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084746044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juliang5613@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084778812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julianm0610@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084811580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Julianrodrol@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084877116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juliguaro99@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084909884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juliivalencia0@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084942652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julilopez_06@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141084975420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juliobenavides2001@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085040956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julym.sanchezm@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085106492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jusabogalrincon@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085139260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "k2mar.n@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085204796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "K9margarira@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085237564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "karendpelaez@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085270332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "karitoqm123@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085303100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "karlopez123@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085335868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "katheibarra0418@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085401404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "katherine.calderon@correounivalle.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085434172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "katheringrozoguzman@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085466940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "katherondon.1990.666@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085499708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "kcardonagcia@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085532476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "kenaajahoo1937@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085598012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "kike241079@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085630780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "kiketorres.ph@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085663548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Kimberlylondono20@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085696316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "krlsxx@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085729084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Ktrine16-07@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085794620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Laboyana82@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085827388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Ladydianaarizacardona9@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085860156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lalisgarcia17@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085892924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lamigiho@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141085958460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "landrescelisp@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086023996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "larao9309@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086056764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laucafe2020@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086089532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laura.l0205@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086122300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Lauraecheverri524@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086155068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lauramcortes27@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086220604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Laurasaa2007@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086253372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laurasofiabuenoduque@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086286140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lauravc1984@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086318908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laurenz.hsisbaoa@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086351676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lauritaagudeloyara@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086417212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lavidaesbella834@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086482748",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lcbg.0307@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086515516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leidy.trujillo0402@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086548284",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leidy7g7@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086581052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leidygarciaramirez07@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086613820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leidytorres925@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086679356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leidyy824@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086712124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lejoa801@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086744892",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leonardoalvarezlopez@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086777660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leonardoandresvieda@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086810428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lewis2295@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086843196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lidysmunoz16@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086875964",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "liliko2005@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086941500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "limagidu73@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141086974268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lina.chaves98@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087007036",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "linajv@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087039804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "linamro22@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087105340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Linytaramirez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087138108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lisleandravillabedoya@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087170876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lissetsoyjohana96@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087203644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lmartamaria443@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087236412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lmejia1023@cue.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087301948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lmsabogal26@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087334716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lmvelasquer@uqvirtual.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087367484",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lmvelasquezr@uqvirtual.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087400252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Londonoguillermo189@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087433020",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Lopera.sebastian@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087465788",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lopezjuradoluisalfonso@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087498556",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lorenaolarte518@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087531324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lorenasanty_01@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087564092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Losdelsur18@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087596860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Lozanosebastian461@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087629628",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lptoroarias@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087695164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lpulido.flyinn@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087727932",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lpvanegas18@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087760700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luangaro10@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087793468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lucaalos1992@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087826236",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Lui03_14@Hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087859004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luisaospinavigoya@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087891772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Luisaperapop@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087924540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luishernanvillegas1972@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087957308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Lunaariasandres@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141087990076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luz.a77@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088022844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luza7218@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088055612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luzadrianaftp@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088088380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luzpatriciagarciaarbelaez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088121148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lvalenciaa21@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088153916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lvgarcia.18@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088186684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lvrc4888@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088219452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "macdaz07@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088252220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mafalda0284@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088317756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Maggytebe@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088350524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "magnena@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088416060",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mahoyoso18@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088448828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "majocardenastorres2004@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088481596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Maliafer10@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088514364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "malogu76@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088547132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "manuaves@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088579900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "manuellopez182002@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088612668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "manuelrios2626@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088645436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "maogarh@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088678204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "maomao22_5@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088710972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mapava22@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088743740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Marcalderonreyes@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088776508",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Marcelaerazogiraldo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088809276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Marcosrivera1675@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088842044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "margrisales@ensq.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088874812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Mariabrito2492@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141088940348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariacamila.ah24@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089005884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariafernadez452@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089071420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariafernandagomezc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089104188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariajos_cortes@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089136956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariamagdalenaov97@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089169724",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariamercedesqa1989@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089202492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Maria-mfranco@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089235260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariangelica.1988@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089268028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariapcubidesr@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089300796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariatmeneses@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089333564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "marijo6630@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089366332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariovelez1225@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089399100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariovelez1225@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089431868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "maripauacso@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089464636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "marllyandrea@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089497404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "marticarodriguez05@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089530172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "martinez03mauricio03@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089562940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mathias112722@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089628476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Mauricio.bedoyatv@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089661244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mayrabenitez2303@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089694012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mejia0509@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089726780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Melirojas_@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089759548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "melky1988@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089792316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "meneseslunaalejandro616@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089825084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mezadayana723.dm@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089857852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mfajardo16@icloud.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089890620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mfobandos@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089923388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "michaelacebedo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089956156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "michellsalas425@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141089988924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "microfilg@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090021692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "micutea2004@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090087228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Mmonicagfranco@gmsil.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090119996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mondragonari@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090152764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "moni134@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090218300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "monicagfranco@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090283836",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "montoyagm2020@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090316604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "morochos1228@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090349372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Mov281215@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090382140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mtobon82@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090414908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nalia91@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090447676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Nanis1474@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090480444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Nata.x7@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090513212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "natadiazm13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090545980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "natamerva@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090578748",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nati9806@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090611516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "natzasu13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090644284",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nejahur@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090677052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nellyenemisicatabares@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090709820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nestor11isabela@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090742588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nibetru@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090775356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Nicoledayanalozada18@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090808124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nicoltatianapm30@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090840892",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Nikollelopez006@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090873660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "njramirez01@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090906428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "norbeycorredor22@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141090939196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "olgaez2419@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091004732",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Olgaluciaburiticazabala@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091037500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "olvers.a@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091070268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "olvers.a@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091103036",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oplep@live.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091135804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "orjuelaluis40@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091168572",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "orozcowilly175@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091201340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oscarbernal1721@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091234108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oscarcmarulanda90@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091266876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oscardavidavilabedoya@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091299644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oscarfranco33@hotmail.fr",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091332412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Palova07@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091365180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "panchaatle@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091397948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Pango29@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091430716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "paolafrancoas@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091463484",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "paolamartinezcardona360@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091561788",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "paolamesa476@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091627324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Paolaotalvaro64@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091660092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "paolitasaa@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091692860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Paty.gerena@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091725628",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Paulavlmarin@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091758396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "paulazul90@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091791164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "photographygarciac@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091856700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Pimateo258@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091889468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pipebaena0717@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091922236",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "piperoa0905@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091955004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "porlosandes8@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141091987772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Posadabenitezd@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092020540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "quinterobrenda3020@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092118844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "quynteroklau@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092151612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rafaelandresreyes.te@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092184380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rajimenezescobar@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092217148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ramirezkcr57@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092249916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rana.1@live.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092282684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "raynergus0204@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092315452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Rene.sanchez.braussin@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092348220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "reubenalbert1982@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092380988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "richicarvajal05@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092413756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "riosjhenifer94@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092446524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "robchago@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092479292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "robertomorales8509@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092512060",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "robinson1083@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092544828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rockangel458@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092577596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Roosvelta@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092610364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Rorovas.rr@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092643132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rubencanrb21@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092675900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rubendariotoro@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092708668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ruddyan17@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092741436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Rvpaulina@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092774204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "salinasnaranjo.samuel.csp@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092806972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "samuel.murillo.corte@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092839740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "samuellopezjaramillo4@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092872508",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Samuelmcmxcv@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092905276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sandramilena1979ramirez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092938044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sandramisaza05@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141092970812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sandramontoya1516@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093003580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sandrasanchez1831@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093036348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sandro10sur@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093069116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sanrecursos31@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093101884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sansalasmo29@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093134652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santiago191996@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093200188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santiagogiraldotabares647@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093232956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santiagohenao1994@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093298492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santiagopachecoflorez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093331260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sapecu83@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093364028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sbarahonag.04@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093396796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sc5399411@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093429564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sebasauxiliar11@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093462332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sebaselectro1@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093495100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sebashoyos19@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093527868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sebasrunning13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093560636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sebastian235.villa@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093593404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sebastianmatorres@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093626172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "segurosgranadamje@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093658940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sgranadam@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093691708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "silvagclarena@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093724476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "silvanarango@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093757244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sofi.escobar.2503@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093790012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sofiacata098@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093822780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sokra89@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093855548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "spike2680@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093888316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "stellaalvaran12@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093921084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "stevenka2017@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093953852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "stivenarenas@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141093986620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "suedeportivoarmenia@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094052156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "svc16@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094084924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "tapas.07@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094150460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Tatabonita92@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094183228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "tavo.elid@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094248764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "torojulian482@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094314300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "torresacostakimberly91@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094347068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ubrlopez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094412604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "VALENROSAS93@GMAIL.COM",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094445372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Valentina84010@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094510908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "valentinaparejahenao@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094543676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "valentinarestrepocortez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094576444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "valeria.cuellars@uqvirtual.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094609212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Valerinlondono7@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094641980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vanesa-1023@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094707516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Vannevannem1993@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094740284",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vfgutierrezc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094805820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vgonzalez731318@cue.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094871356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "victorhugo34@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094904124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "victoriaquinteroar@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141094969660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "victorvanegas-26@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095002428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "viscaina12@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095035196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Viscayadavid28@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095067964",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vivianaisabella15@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095133500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Vivicardenassofi24@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095166268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "willy_cortes1990@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095231804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "xandrea0979@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095264572",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "xyeribethx@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095297340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yalexa2123@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095330108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yangligomezuribe0@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095362876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yanlibra28@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095428412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yeimyfernandar1111@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095461180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yeissonparra629@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095493948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yenicarolina1703@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095526716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yenitardila16@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095559484",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Yepes.arq@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095592252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yesicavalencialopez5@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095657788",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yesik1537@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095690556",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yolandalondono1@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095723324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Yolisbethocando@gmai.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095756092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yulied.shaiel@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095788860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yulycamacho60@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095854396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "zarpazo10@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141095887164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "zeusote@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "running"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141128851772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "axxel.91@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141128884540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "basica4@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141128917308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "caredo2@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141128950076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "didierjacobo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141128982844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dinancy1227@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129015612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edosorio9416@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129048380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "eduarmauricio78@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129081148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ferneiser@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129113916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "galenopmf@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129146684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "idazafa@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129179452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "imagenvideo394@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129212220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jags102@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129277756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jansot30@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129310524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jomini8@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129376060",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juandavidcossio.95@outlook.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129408828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lejito8818@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129441596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leorksonora@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129474364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "liarbelaez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129507132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "linammi7@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129539900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "m_iguell@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129572668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santio1028@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129605436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "urielyel@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129638204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "wadi_alsalam11@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129670972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yefersondon67@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129703740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "zephiano@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129769276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "zulaygogo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129802044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "1981balin@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129867580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "1984diego@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129900348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "3.lombriz@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129933116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "abog.julietaserna03@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141129998652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "aboteror@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130031420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Abrahamaguirreaguilar@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130064188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ach_0927@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130096956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "adhecapa@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130162492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "admincomercial@cercafe.com.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130195260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "admon.2009@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130228028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "adolfocanomarin@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130260796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "afa968@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130293564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "afguzmanvilla@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130326332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "afzapata8@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130391868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "aga0606@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130424636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alayanandres18@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130457404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "albeirobond@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130490172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandra.guaydiac@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130522940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandrahr82@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130555708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandrojimenezr28@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130588476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejandrovega@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130621244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejaoro@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130654012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejita_wine1909@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130686780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejmaor@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130719548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejo.ea@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130785084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejo_cafe.96@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130817852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejo1315per@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130850620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alejocj99@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130883388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Alejoocampogarcia@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130916156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alexbikex@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141130981692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "almacenbicimario@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131014460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "almorenoj@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131047228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alucardmemories@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131079996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alvaroingc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131112764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "alvarojaramillovelez@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131145532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "anam574@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131178300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ande_fe@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131211068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andreaspineros@live.it",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131243836",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andreitagutu@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131276604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Andres.tabares@outlook.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131309372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andresbargal@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131374908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andrescardozosuarez@Hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131407676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andreshoyose@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131440444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andrestabares1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131473212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andrexgg9@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131505980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "andru.val1215@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131538748",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "angelita4523@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131571516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "angora060609@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131669820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "anlodo89@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131702588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "apachebikes@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131735356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "apolo1319@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131800892",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "arenas2210@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131833660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ariasalvaro16@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131866428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "arqivangarcia@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141131997500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "arsazu_@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132030268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ayalmesa@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132095804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "bagp_0713@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132128572",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "balaguera007@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132161340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Balin1981@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132194108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "bangel88@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132259644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "baniadavila@icloud.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132292412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Benjamingrajales72@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132325180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "bernardosuaza@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132357948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "biciarmenia2003@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132390716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "bionicholls@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132456252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Boterito7@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132489020",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Botero1906@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132554556",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "brayandiaz693@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132587324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "c.a.m.a.56@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132620092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cafetal_53@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132718396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cagudelogil@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132751164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "calg.95@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132783932",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cami.mest-11@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132816700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cami.ocampoarias@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132849468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "c-ami-2080@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132915004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "camiloide1a@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141132947772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "candrecha@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133013308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Caritoz21@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133046076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carlos.aguirre1623@correo.policia.gov.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133078844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Carlos.nunez11@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133111612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carlosamontoyac@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133144380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carlosefreng@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133209916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carlosfabiomb@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133242684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carlosparedesmontoya@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133275452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carlosvillamil4122@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133340988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carmonto@icloud.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133406524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carolina_restrepo0120@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133439292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carolinagallon@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133504828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "carovc1111@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133570364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Castanedabrid@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133603132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "catoveles31@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133635900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cavch_0812@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133668668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cesarcano_0510@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133734204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Chechoprieto11@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133766972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "chuzo.net77@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133799740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Claudialilianal2502@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133832508",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "comerjp@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133865276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "correodiegoduque@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133898044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "correonorbey@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133930812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristancho_loundo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133963580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristian.03.ramos@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141133996348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Cristianfdoramirez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134029116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristian-galviz@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134061884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "cristianmars696@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134094652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "daf_909@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134127420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "damazar8866@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134160188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danielbbatero28@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134192956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Danielbike10@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134225724",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danielfelipegarcia086@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134324028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danielji87.djc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134356796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "danielmoralesgomez@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134389564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "darfa@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134422332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dars12212@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134455100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "datacampana@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134487868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "david.aristi@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134520636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "david4375996@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134553404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Davidaret@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134586172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "davidenkodiaz21@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134618940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "davidescobar30@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134651708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "davidtabares2014@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134684476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "deyanira1982@live.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134717244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dfdel11@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134750012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dgomez.c94@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134782780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diana.riano@cafedecolombia.com.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134815548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diana2013ramirezg@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134848316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dianitasanz1021@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134881084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diazbercarlos@miugca.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134913852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "didieraltrujillo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141134979388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "didiersh0417@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135012156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "die082010@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135044924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diegofelipegarciapalacio@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135077692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "diegovegal@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135143228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dimagueo@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135175996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "distridelquindio@live.com.ar",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135208764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "distrijuanpablo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135274300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "divalen@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135307068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "doble_anis@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135339836",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Doc.leidysilva@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135405372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dorac_@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135470908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dpvdago@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135503676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "drodril83@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135569212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "duke1982.jfd@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135601980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "duque1666@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135667516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "dvictoria6@misena.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135733052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Ecoparquetupais@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135798588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edignaciobarrera@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135831356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edonarvaez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135864124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "eduardowilson416@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135929660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "eduarmauricio78@yahoo.com.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135962428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "edwingermanc@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141135995196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "elalterno@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136060732",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Elimontesflorez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136093500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "elnekin@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136126268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "elyanamarin79@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136159036",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "embobinadosdelcafe@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136257340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "emoreno@ingeomega.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136290108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ericklaverde@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136322876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Ernesto2515@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136421180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "esgumaria@gmail.com.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136453948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "esteban05882705@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136486716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "evalencia18@misena.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136552252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "f.arias@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136683324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabertunin@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136716092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabianortiz84@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136748860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fabiogarciamonsalve@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136847164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Fainerylopezvilla@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136879932",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fega855@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136912700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "felipe.salcedo16@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141136978236",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "felipeallmountain@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137011004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "felipemejiao36@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137076540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Felipetorres891003@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137109308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "felizalamejor@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137142076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ferrexitola26@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137207612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ferrohidalgo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137240380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fesu1973@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137273148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "figube@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137305916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "firedragon2907@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137338684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "franchoflorez14@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137371452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "frankaaglass@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137436988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "frankaco24@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137469756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "freeviasport@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137502524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "fuquen.freddy@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137568060",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "g.david.d.r@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137600828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gabrielramirezsuarez@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137633596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "galvisballesterosjuanesteban@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137666364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "garincon@uniquindio.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137699132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Geli-9914@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137764668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "german_martinez-g@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137797436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gfranco26@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137862972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gialmarin@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137895740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ginetacero2013@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141137961276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gomalejo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138026812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Guillemopra@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138059580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "gzamudiotorres@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138092348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "harold.hja@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138125116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "heanoc.ch@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138190652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hefalpa@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138223420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "henry107.com@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138256188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hernangg8@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138288956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hfariaso@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138354492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hilvar1malaver@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138387260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hover28al@Hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138420028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "hugo.arm@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138452796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ignismagicus@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138485564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Imaginox1088fredy@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138551100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "info@trochaysol.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138583868",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ingindcristianocampo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138616636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Irmaluciahernandez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138649404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ismagalvisballesteros@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138682172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "j.mguarani@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138714940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "J3viton@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138747708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jagoro19@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138780476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jaiderdanielmurcia@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138813244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jaimea81@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138846012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jaimealexanderruiz@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138878780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jaimegallo70@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138911548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jaimehernandezsebastianseviche@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141138977084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jalonsojaramillo95@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139009852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jangel54@cue.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139042620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "janspiers23@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139075388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jarl4@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139108156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jarolgm03@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139140924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javhercam2879@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139173692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javier812481@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139206460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javiercarvajalmoreno@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139239228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javierguerravillegas33@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139271996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "javiermzuluaga@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139304764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Javitoardila@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139337532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jbotero5@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139370300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jcsoriano303@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139403068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jdarwinerazo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139435836",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jdiaz.94@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139468604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jegarcialopez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139501372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jeka19neto@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139534140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jemiliosepulveda@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139566908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jenny_2205@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139599676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jennynet0421@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139632444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jeronimobedoyabotero@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139665212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jfdo8ah@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139697980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jfvilleg@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139730748",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jheanpoolcardonavasquez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139763516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhersonca18@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139796284",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhescobar73@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139829052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhoanahoyos@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139861820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonatanrr@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139894588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonedwardc3@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139960124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonfredy.motos33@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141139992892",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonj2806@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140058428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Jhonjj78@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140091196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonmesa392@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140123964",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonmoncadatt@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140156732",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jhonn17@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140189500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jlara16@cue.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140222268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "joguivalle@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140287804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "johanna_pinilla2@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140320572",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "johnnycarmona86@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140353340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "joma9904@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140386108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jomalo6130@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140418876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jorgeatehortuam@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140451644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "joseacruzmi@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140484412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "josefernandoopezr@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140517180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "joseff84@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140549948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jovitadu@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140582716",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jptrocha@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140615484",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "jrsg1609@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140648252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juabarrase09@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140681020",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juan.socampo@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140713788",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juan_buti93@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140746556",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juan_velez_mejia@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140779324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanboter2@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140812092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanca.arbelaez1998@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140844860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juancamilocquintero@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140877628",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juancho52948@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140910396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanda88-@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140943164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juandelectrica@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141140975932",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanescor@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141008700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanfdov@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141041468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juanfelipegomezs@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141107004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juangabriel313@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141139772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juangie2009@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141172540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanjosejaramillo4@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141205308",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanma3126864921@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141238076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanma5040@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141270844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanmaysacha@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141303612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juanmd21@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141336380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juansymmetry@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141369148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juldabe@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141401916",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julian_bla@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141434684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julian5296@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141467452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juliana28ad@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141500220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "juliand007@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141532988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "JulianIbarra0915@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141565756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "julieth.dr@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141598524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Juparo20092009@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141631292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Karenariascastano@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141664060",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "karlosduran78@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141696828",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Katerineortiz_@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141729596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "kevinmagico2009@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141762364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Krisnazonabike@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141795132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laboratorio@villegasycia.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141827900",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laumorales2007lm@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141860668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laur397@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141893436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "laurav333@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141926204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lechugajuzgado@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141958972",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "leerojas1002@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141141991740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Leonleonfelipe7@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142024508",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Libanielgomez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142090044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lilianacarmonan08@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142122812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "limagori_84@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142155580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "linamaville@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142188348",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "livergara38@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142221116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lizet-7777@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142253884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Lmbedoya.civil@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142286652",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lopezguzmanjh@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142319420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lopezmejiadaniela82@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142352188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luchocb2626@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142384956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "lufese129@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142417724",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luiseduart19@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142450492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luisenrique200109@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142483260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luisfer1906@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142516028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "luisjose973@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142548796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "macristco@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142581564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Maelbe63@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142614332",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mago_0514@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142647100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "maoh29@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142712636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "marcemerchan@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142745404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mariaisabel2884@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142778172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "marianitazu@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142810940",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "markkomaru@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142843708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "marquino14@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142909244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "marso107@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142942012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Martaluciavelasquez@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141142974780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "martinneissa@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143007548",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "maruolondono1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143040316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mateo.bike@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143073084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mateocuadradot95@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143105852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mauriciobedoyagarces@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143138620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mauriciotrujillo1@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143171388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mauriciovl2005@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143204156",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mauro113@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143236924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mauro3170@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143269692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mauroftanco123@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143302460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mecheman23@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143335228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "memo-angel@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143367996",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mercadeo@clubmilenium.org",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143400764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "meru801@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143433532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mhor@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143466300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "miguelgat@outlook.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143499068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "miguemc@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143531836",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "millis-14@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143564604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mirestrepos2@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143597372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "miva926@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143630140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "monibeg@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143662908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "monikavf_75@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143695676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Moratinez13@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143728444",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Mrduquer@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143761212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mvzricardobernal@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143793980",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "mzulu28@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143826748",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "N_nitro15@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143859516",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nac_diego_sierra@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143925052",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "narbuit1965@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143957820",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nata214_21@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141143990588",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nataliaramirez0698@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144023356",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nativo859@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144056124",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ne_1965@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144088892",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ney0004@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144121660",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nicocrack.zx1@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144154428",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nicoravagli@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144187196",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "nikolasmarquez4@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144219964",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "norbeyturs57@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144252732",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "olgayaneths@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144285500",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ortegavictor235@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144318268",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oscar48481@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144351036",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Oscarfabia@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144383804",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oscarhernandomontes@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144449340",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oscarlira1@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144482108",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "osgm95@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144514876",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "oskarmarin@yahoo.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144547644",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ospina.02@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144580412",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pabloa_135@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144613180",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pachoja09@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144645948",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "palafincaquindio@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144711484",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "paochaves0187@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144744252",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "paolatati963@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144777020",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Paulita532@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144809788",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pavlu471@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144842556",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pecas357@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144875324",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Pedro_6913@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144908092",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "personaljmc@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144940860",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "piita1982@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141144973628",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pilaroa81@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145006396",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pinillamarian338@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145039164",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pipasr@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145071932",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pipesantis.01@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145104700",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "pipevallejo07@hotmial.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145137468",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "piyijr1@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145170236",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "raguirre1981@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145203004",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ramirez8619@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145235772",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rebelsonwheels@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145268540",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Renautos2011@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145334076",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rgallego26@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145366844",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "richarg2345@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145399612",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rmoralesb@misena.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145432380",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rodrigarco@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145465148",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rog3rss@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145530684",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rolandofotografia@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145563452",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Rolland@Hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145596220",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "romauropedraza85@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145628988",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ruben.dramirezm@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145661756",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ruiz.juanda@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145694524",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rutaideal2000@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145727292",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "rutasoldador@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145760060",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "ryc-agroexpres_agro@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145825596",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "salcedorealesmarlon@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145858364",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "saloja17@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145891132",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santi-2995@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145956668",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santiagoferan@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141145989436",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santico76@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146022204",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santir0326@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146087740",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "santiuribeso@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146120508",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sebasescobarcolombia@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146153276",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sebastianrestrepo595@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146186044",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Seinaque-arte@hotmail.es",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146218812",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Sepisa20@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146251580",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "silaravel1@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146317116",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "simongonzalezlopez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146349884",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "soccerman808@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146415420",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sotocar_5@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146448188",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "succesalpari@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146480956",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "superbodegadelconcentrado@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146546492",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "sutpy@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146579260",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "taufo78@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146612028",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "tecnicosistemas85@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146644796",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "tecnotebaida-2015@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146677564",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Terra.bike@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146743100",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "thurisaz53@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146808636",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Tike_007@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146841404",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "tipoencucardona@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146874172",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "tomaselipeo@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146939708",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "transportes47@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141146972476",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vanessagaviria93@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147005244",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vic-mejia@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147038012",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "victorauxdimf@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147070780",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "victormanuelocampo2015@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147136316",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vida.enrap@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147169084",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vigucho@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147201852",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vivivargas2012@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147234620",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "vjhc23@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147267388",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "wcarmonan@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147332924",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "wgomez21@outlook.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147365692",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Williamarin1012@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147398460",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "williamtaborda@misena.edu.co",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147431228",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "wilson_millan@yahoo.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147496764",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "wilval_19731999@Hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147529532",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "wpwpelaez@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147562300",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Wtorresalzate@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147595068",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yenni85@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147660604",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Yimi2591@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147693372",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yiyoartesano@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147726140",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "Yiyowilson@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147758908",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yo-marce@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147791676",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "yosianaquintero@gmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10141147857212",
+    "firstName": "",
+    "lastName": "",
+    "fullName": "Cliente Mítico",
+    "email": "zetik_henao@hotmail.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [
+      "mountain_bike"
+    ],
+    "company": ""
+  },
+  {
+    "id": "10265374916924",
+    "firstName": "Jessica",
+    "lastName": "Alexander Barrera Bustamante",
+    "fullName": "Jessica Alexander Barrera Bustamante",
+    "email": "wguerrero@example.com",
+    "phone": "",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 0,
+    "totalOrders": 0,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "10329524175164",
+    "firstName": "Cristhian",
+    "lastName": "Rojas",
+    "fullName": "Cristhian Rojas",
+    "email": "cristhianrojasg@hotmail.com",
+    "phone": "3147249068",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "Cll 45N",
+    "totalSpent": 33915,
+    "totalOrders": 1,
+    "tags": [],
+    "company": "1094946248"
+  },
+  {
+    "id": "10368859963708",
+    "firstName": "Julian",
+    "lastName": "Guzman",
+    "fullName": "Julian Guzman",
+    "email": "julian.0033@hotmail.com",
+    "phone": "3177343080",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "Armenia",
+    "totalSpent": 339500,
+    "totalOrders": 1,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "10514789007676",
+    "firstName": "Kristian",
+    "lastName": "Yustre",
+    "fullName": "Kristian Yustre",
+    "email": "kristi-37@hotmail.com",
+    "phone": "+393342094057",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 550800,
+    "totalOrders": 1,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "10620535308604",
+    "firstName": "Ismael",
+    "lastName": "Correa",
+    "fullName": "Ismael Correa",
+    "email": "ismael.correa@firplak.com",
+    "phone": "+573158173387",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 226440,
+    "totalOrders": 1,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "10765347946812",
+    "firstName": "Cristian Mauricio",
+    "lastName": "López silva",
+    "fullName": "Cristian Mauricio López silva",
+    "email": "cristianlopezsilva50@gmail.com",
+    "phone": "+573128491964",
+    "city": "Armenia",
+    "provinceCode": "QUI",
+    "countryCode": "CO",
+    "address": "Barrio limonar, Etapa 2 mz 4 casa 7",
+    "totalSpent": 97800,
+    "totalOrders": 1,
+    "tags": [],
+    "company": ""
+  },
+  {
+    "id": "10767465546044",
+    "firstName": "Catalina",
+    "lastName": "Carrizosa",
+    "fullName": "Catalina Carrizosa",
+    "email": "ccarrizo9@gmail.com",
+    "phone": "+573003026362",
+    "city": "",
+    "provinceCode": "",
+    "countryCode": "CO",
+    "address": "",
+    "totalSpent": 357300,
+    "totalOrders": 1,
+    "tags": [
+      "Wrote Judge.me email review"
+    ],
+    "company": ""
+  }
+];

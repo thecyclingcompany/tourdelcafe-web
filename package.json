@@ -1,0 +1,12 @@
+{
+  "name": "tour-del-cafe",
+  "version": "1.0.0",
+  "description": "Tour del Café Gran Fondo Web App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "jimp": "^1.6.1"
+  }
+}

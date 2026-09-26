@@ -1,0 +1,42 @@
+[
+  {
+    "code": "SPONSOR100",
+    "description": "Cortesía 100% Patrocinadores Oficiales",
+    "discountPercent": 100,
+    "maxUses": null,
+    "usedCount": 1,
+    "expiryDate": null,
+    "active": true,
+    "createdAt": "2026-09-24T00:00:00.000Z"
+  },
+  {
+    "code": "CAFETEROS15",
+    "description": "Descuento 15% Alianza Caficultores del Quindío",
+    "discountPercent": 15,
+    "maxUses": 100,
+    "usedCount": 0,
+    "expiryDate": "2027-02-01T23:59:59.000Z",
+    "active": true,
+    "createdAt": "2026-09-24T00:00:00.000Z"
+  },
+  {
+    "code": "MITICO20",
+    "description": "Descuento 20% Comunidad Mítico Cycling",
+    "discountPercent": 20,
+    "maxUses": 50,
+    "usedCount": 0,
+    "expiryDate": "2027-01-31T23:59:59.000Z",
+    "active": true,
+    "createdAt": "2026-09-24T00:00:00.000Z"
+  },
+  {
+    "code": "PRENSA100",
+    "description": "Cortesía Prensa, Periodistas y Creadores de Contenido",
+    "discountPercent": 100,
+    "maxUses": 25,
+    "usedCount": 0,
+    "expiryDate": null,
+    "active": true,
+    "createdAt": "2026-09-24T00:00:00.000Z"
+  }
+]

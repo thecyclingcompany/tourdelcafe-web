@@ -1,0 +1,47 @@
+[
+  {
+    "invoiceNumber": "TDC-INS-COR-MUFZ5JIF-9PWB",
+    "refPayco": "CORTESIA-SPONSOR100-MUFZ5JNC",
+    "route": "macchiato",
+    "routeName": "Reto Macchiato (127 km)",
+    "category": "ind-m-19-30",
+    "categoryName": "Individual Masculino (19 - 30 a�os)",
+    "stage": "chapola",
+    "unitPrice": 490000,
+    "totalAmount": 0,
+    "baseAmount": 490000,
+    "discountPercent": 100,
+    "discountAmount": 490000,
+    "couponCode": "SPONSOR100",
+    "paymentType": "COURTESY",
+    "participants": [
+      {
+        "emergencyContactPhone": "3119876543",
+        "birthDate": "2000-05-15",
+        "fullName": "Santiago Restrepo Botero",
+        "eps": "Sura",
+        "calculatedAge2027": 27,
+        "medicalNotes": "Ninguna",
+        "emergencyContactName": "Marta Botero",
+        "termsAccepted": true,
+        "department": "Quind�o",
+        "gender": "M",
+        "bloodType": "O+",
+        "jerseySize": "M Hombre",
+        "docNumber": "1094928172",
+        "city": "Armenia",
+        "country": "Colombia",
+        "email": "santiago.restrepo@patrocinador.com",
+        "phone": "3105551234",
+        "docType": "CC",
+        "registrationId": "TDC-INS-COR-MUFZ5JIF-9PWB-P1",
+        "dorsalNumber": "TDC27-MAC-0101"
+      }
+    ],
+    "payerEmail": "santiago.restrepo@patrocinador.com",
+    "payerPhone": "3105551234",
+    "paymentDate": "2026-09-24T20:18:38.136Z",
+    "franchise": "Cortesía 100%",
+    "status": "CONFIRMED"
+  }
+]

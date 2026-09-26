@@ -1,0 +1,14 @@
+# Dependencias
+node_modules/
+
+# Archivos empaquetados y compilados
+*.zip
+tourdelcafe.zip
+
+# Sistema y temporales
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+package-lock.json

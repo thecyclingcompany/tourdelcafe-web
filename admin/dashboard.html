@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración | Tour del Café Gran Fondo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+  <!-- Fuentes Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0e0d0c;
+      --card-bg: #161413;
+      --card-inner: #1e1b19;
+      --accent: #d35400;
+      --accent-hover: #e67e22;
+      --accent-glow: rgba(211, 84, 0, 0.35);
+      --success: #2ecc71;
+      --warning: #f39c12;
+      --danger: #e74c3c;
+      --info: #3498db;
+      --courtesy: #9b59b6;
+      --text-main: #fafafa;
+      --text-muted: rgba(250, 250, 250, 0.65);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(211, 84, 0, 0.3);
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Courier Prime', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: radial-gradient(circle at 50% 0%, rgba(211, 84, 0, 0.1) 0%, rgba(14, 13, 12, 1) 60%);
+      line-height: 1.5;
+    }
+
+    /* Topbar */
+    .admin-topbar {
+      background: rgba(22, 20, 19, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-group img {
+      height: 38px;
+      width: auto;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .badge-admin {
+      background: rgba(211, 84, 0, 0.2);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-hover);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-topbar {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-topbar:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-topbar-danger {
+      color: #ff7675;
+      border-color: rgba(231, 76, 60, 0.3);
+    }
+
+    .btn-topbar-danger:hover {
+      background: rgba(231, 76, 60, 0.15);
+    }
+
+    /* Contenedor Principal */
+    .admin-main {
+      flex: 1;
+      padding: 28px;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* KPIs */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .kpi-card.success::after { background: var(--success); }
+    .kpi-card.info::after { background: var(--info); }
+    .kpi-card.warning::after { background: var(--warning); }
+    .kpi-card.courtesy::after { background: var(--courtesy); }
+
+    .kpi-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .kpi-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .kpi-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Navigation Tabs */
+    .tabs-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tabs-nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-hover);
+      border-bottom-color: var(--accent-hover);
+    }
+
+    .tab-count-badge {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+    }
+
+    .tab-btn.active .tab-count-badge {
+      background: rgba(211, 84, 0, 0.25);
+      color: #fff;
+    }
+
+    /* Filter Toolbar */
+    .toolbar-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .filters-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      min-width: 260px;
+      flex: 1;
+    }
+
+    .search-input-wrapper input {
+      width: 100%;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 12px 9px 34px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input-wrapper input:focus {
+      border-color: var(--accent-hover);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .filter-select {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 12px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .filter-select:focus {
+      border-color: var(--accent-hover);
+    }
+
+    .btn-export {
+      background: linear-gradient(135deg, #1e824c 0%, #2ecc71 100%);
+      border: none;
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(46, 204, 113, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-export:hover {
+      background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+      transform: translateY(-1px);
+    }
+
+    .btn-export-all {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 9px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-export-all:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    /* Tabla de Datos */
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .data-table th {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 12px 14px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: middle;
+    }
+
+    .data-table tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Badges de Tabla */
+    .dorsal-tag {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      background: rgba(211, 84, 0, 0.18);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-hover);
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .route-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .route-macchiato {
+      background: rgba(211, 84, 0, 0.15);
+      color: #e67e22;
+      border: 1px solid rgba(211, 84, 0, 0.3);
+    }
+
+    .route-espresso {
+      background: rgba(52, 152, 219, 0.15);
+      color: #5dade2;
+      border: 1px solid rgba(52, 152, 219, 0.3);
+    }
+
+    .pay-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pay-epayco {
+      background: rgba(46, 204, 113, 0.15);
+      color: #2ecc71;
+      border: 1px solid rgba(46, 204, 113, 0.3);
+    }
+
+    .pay-courtesy {
+      background: rgba(155, 89, 182, 0.2);
+      color: #bb86fc;
+      border: 1px solid rgba(155, 89, 182, 0.4);
+    }
+
+    .btn-action-view {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-action-view:hover {
+      background: rgba(211, 84, 0, 0.2);
+      border-color: var(--accent);
+      color: var(--accent-hover);
+    }
+
+    .contact-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--accent-hover);
+    }
+
+    .wa-link {
+      color: #2ecc71;
+    }
+
+    /* Modal Generico */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .btn-close-modal {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .btn-close-modal:hover { color: #fff; }
+
+    /* Estilos Gestión de Cupones */
+    .btn-create-coupon {
+      background: linear-gradient(135deg, #d35400 0%, #b84300 100%);
+      border: none;
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(211, 84, 0, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-create-coupon:hover {
+      background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+      transform: translateY(-1px);
+    }
+
+    .coupon-code-badge {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    .percent-badge {
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .percent-courtesy {
+      background: rgba(155, 89, 182, 0.25);
+      border: 1px solid rgba(155, 89, 182, 0.5);
+      color: #d1b2ff;
+    }
+
+    .percent-discount {
+      background: rgba(46, 204, 113, 0.18);
+      border: 1px solid rgba(46, 204, 113, 0.35);
+      color: #2ecc71;
+    }
+
+    .status-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .dot-status {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .dot-active { background: var(--success); box-shadow: 0 0 8px rgba(46, 204, 113, 0.6); }
+    .dot-inactive { background: var(--danger); opacity: 0.6; }
+
+    /* Toast */
+    .toast-box {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--accent);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      gap: 10px;
+      z-index: 2000;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .toast-box.show {
+      display: flex;
+      animation: toastIn 0.3s ease;
+    }
+
+    @keyframes toastIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar Administrativo -->
+  <header class="admin-topbar">
+    <a href="../index.html" class="brand-group" title="Ir al Home Oficial">
+      <img src="../assets/logo-gran-fondo.png" alt="Tour del Café" onerror="this.src='../assets/photo-mitico.jpg'">
+      <span class="badge-admin">ADMIN CONSOLE</span>
+    </a>
+
+    <div class="topbar-actions">
+      <a href="../inscripciones.html" target="_blank" class="btn-topbar">
+        <span>🔗 Portal Inscripciones</span>
+      </a>
+      <button type="button" class="btn-topbar" onclick="AdminApp.refreshAllData()">
+        <span>↻ Refrescar</span>
+      </button>
+      <button type="button" class="btn-topbar btn-topbar-danger" onclick="AdminApp.logout()">
+        <span>Cerrar Sesión</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="admin-main">
+
+    <!-- KPI Summary Cards -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Corredores</div>
+        <div class="kpi-value" id="kpi-total-riders">0</div>
+        <div class="kpi-sub">Participantes confirmados oficiales</div>
+      </div>
+      <div class="kpi-card info">
+        <div class="kpi-label">Reto Macchiato (127K)</div>
+        <div class="kpi-value" id="kpi-macchiato-riders">0</div>
+        <div class="kpi-sub">Prueba reina de alta montaña</div>
+      </div>
+      <div class="kpi-card warning">
+        <div class="kpi-label">Reto Espresso (115K)</div>
+        <div class="kpi-value" id="kpi-espresso-riders">0</div>
+        <div class="kpi-sub">Circuito de resistencia y ritmo</div>
+      </div>
+      <div class="kpi-card success">
+        <div class="kpi-label">Recaudado ePayco</div>
+        <div class="kpi-value" id="kpi-revenue-total">$ 0</div>
+        <div class="kpi-sub" id="kpi-revenue-count">0 pagos confirmados</div>
+      </div>
+      <div class="kpi-card courtesy">
+        <div class="kpi-label">Cortesías 100%</div>
+        <div class="kpi-value" id="kpi-courtesy-count">0</div>
+        <div class="kpi-sub">Patrocinadores, aliados y prensa</div>
+      </div>
+    </section>
+
+    <!-- Pestañas de Navegación -->
+    <div class="tabs-header">
+      <div class="tabs-nav">
+        <button class="tab-btn active" id="tab-btn-riders" onclick="AdminApp.switchTab('riders')">
+          <span>🚴 Participantes Inscritos</span>
+          <span class="tab-count-badge" id="tab-badge-riders">0</span>
+        </button>
+        <button class="tab-btn" id="tab-btn-coupons" onclick="AdminApp.switchTab('coupons')">
+          <span>🎟️ Códigos de Descuento &amp; Cortesías</span>
+          <span class="tab-count-badge" id="tab-badge-coupons">0</span>
+        </button>
+      </div>
+
+      <div id="tab-actions-riders">
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn-export" onclick="AdminApp.exportExcelFiltered()" title="Descargar únicamente lo filtrado en pantalla">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Exportar Vista Filtrada (.csv Excel)
+          </button>
+          <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelAll()" title="Descargar toda la base de datos de inscritos">
+            Base Completa (.csv)
+          </button>
+        </div>
+      </div>
+
+      <div id="tab-actions-coupons" style="display: none;">
+        <button type="button" class="btn-create-coupon" onclick="AdminApp.openCouponModal()">
+          <span>+ Crear Nuevo Cupón</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==============================================
+         VISTA 1: TABLA Y FILTROS DE PARTICIPANTES
+         ============================================== -->
+    <section id="view-riders">
+      <div class="toolbar-box">
+        <div class="filters-group">
+          <!-- Búsqueda -->
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="filter-search" placeholder="Buscar por Nombre, Cédula, Email, Dorsal, Factura..." oninput="AdminApp.applyFilters()">
+          </div>
+
+          <!-- Filtro Recorrido -->
+          <select id="filter-route" class="filter-select" onchange="AdminApp.applyFilters()">
+            <option value="all">Todos los Recorridos</option>
+            <option value="macchiato">Reto Macchiato (127 km)</option>
+            <option value="espresso">Reto Espresso (115 km)</option>
+          </select>
+
+          <!-- Filtro Categoría -->
+          <select id="filter-category" class="filter-select" onchange="AdminApp.applyFilters()">
+            <option value="all">Todas las Categorías</option>
+            <optgroup label="Equipos de 4 (127 km)">
+              <option value="equipo-masc-a">Equipos 4 Masculino A (72-159 años)</option>
+              <option value="equipo-masc-b">Equipos 4 Masculino B (160+ años)</option>
+              <option value="equipo-fem-a">Equipos 4 Femenino A (72-159 años)</option>
+              <option value="equipo-fem-b">Equipos 4 Femenino B (160+ años)</option>
+            </optgroup>
+            <optgroup label="Parejas Mixtas (Hombre + Mujer)">
+              <option value="pareja-sub90">Parejas Mixtas A (Sub-90 años)</option>
+              <option value="pareja-90mas">Parejas Mixtas B (90+ años)</option>
+            </optgroup>
+            <optgroup label="Individuales">
+              <option value="individual-masc">Individual Masculino (Todos)</option>
+              <option value="individual-fem">Individual Femenino (Todos)</option>
+            </optgroup>
+          </select>
+
+          <!-- Filtro Pago -->
+          <select id="filter-payment" class="filter-select" onchange="AdminApp.applyFilters()">
+            <option value="all">Todos los Pagos</option>
+            <option value="epayco">Aprobado ePayco</option>
+            <option value="courtesy">Cortesía 100%</option>
+          </select>
+        </div>
+
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;" id="filter-counter">
+          Mostrando 0 corredores
+        </div>
+      </div>
+
+      <!-- Tabla de Participantes -->
+      <div class="table-container">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dorsal</th>
+                <th>Fecha Reg.</th>
+                <th>Recorrido &amp; Categoría</th>
+                <th>Nombre Corredor</th>
+                <th>Documento</th>
+                <th>Edad 2027 / F. Nac</th>
+                <th>Género / Talla</th>
+                <th>Contacto</th>
+                <th>Datos Médicos</th>
+                <th>Pago &amp; Tarifa</th>
+                <th style="text-align: right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="riders-table-body">
+              <tr>
+                <td colspan="11" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                  Cargando inscripciones oficiales...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         VISTA 2: GESTIÓN DE CUPONES & CORTESÍAS
+         ============================================== -->
+    <section id="view-coupons" style="display: none;">
+      <div class="toolbar-box">
+        <div style="font-size: 14px; font-weight: 600;">
+          Gestor de Cupones de Descuento y Cortesías (1% al 100%)
+        </div>
+        <button type="button" class="btn-create-coupon" onclick="AdminApp.openCouponModal()">
+          <span>+ Crear Nuevo Cupón</span>
+        </button>
+      </div>
+
+      <div class="table-container">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Código Alfanumérico</th>
+                <th>Descripción / Patrocinador</th>
+                <th>Descuento</th>
+                <th>Usos Consumidos / Límite</th>
+                <th>Vigencia / Expiración</th>
+                <th>Estado</th>
+                <th style="text-align: right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="coupons-table-body">
+              <tr>
+                <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                  Cargando códigos de descuento...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       MODAL: FICHA TÉCNICA DEL CORREDOR
+       ============================================== -->
+  <div class="modal-backdrop" id="rider-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title" id="modal-rider-name">Ficha del Corredor</div>
+          <div style="font-size: 12px; color: var(--accent-hover);" id="modal-rider-dorsal">Dorsal</div>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="AdminApp.closeRiderModal()">✕</button>
+      </div>
+
+      <div id="modal-rider-content" style="font-size: 13px; line-height: 1.6;">
+        <!-- Inyectado dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       MODAL: CREAR / EDITAR CUPÓN
+       ============================================== -->
+  <div class="modal-backdrop" id="coupon-modal">
+    <div class="modal-box" style="max-width: 500px;">
+      <div class="modal-header">
+        <div class="modal-title" id="modal-coupon-title">Crear Nuevo Cupón</div>
+        <button type="button" class="btn-close-modal" onclick="AdminApp.closeCouponModal()">✕</button>
+      </div>
+
+      <form id="coupon-form" onsubmit="AdminApp.submitCouponForm(event)">
+        <input type="hidden" id="coupon-edit-mode" value="create">
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            Código de Cupón (Alfanumérico) <span style="color: var(--accent);">*</span>
+          </label>
+          <input type="text" id="coupon-form-code" placeholder="Ej. SPONSOR100" required style="width: 100%; background: var(--card-inner); border: 1px solid var(--border); border-radius: 6px; padding: 10px; color: #fff; font-family: var(--font-mono); font-weight: 700; text-transform: uppercase;">
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            Descripción / Beneficiario <span style="color: var(--accent);">*</span>
+          </label>
+          <input type="text" id="coupon-form-desc" placeholder="Ej. Cortesía Patrocinador Principal" required style="width: 100%; background: var(--card-inner); border: 1px solid var(--border); border-radius: 6px; padding: 10px; color: #fff;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+              Descuento (%) <span style="color: var(--accent);">*</span>
+            </label>
+            <input type="number" id="coupon-form-percent" min="1" max="100" value="100" required style="width: 100%; background: var(--card-inner); border: 1px solid var(--border); border-radius: 6px; padding: 10px; color: #fff; font-weight: 700;">
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Usa 100 para cortesía total ($0 COP).</div>
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+              Límite de Usos
+            </label>
+            <input type="number" id="coupon-form-max" min="1" placeholder="Ilimitado si vacío" style="width: 100%; background: var(--card-inner); border: 1px solid var(--border); border-radius: 6px; padding: 10px; color: #fff;">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            Fecha de Caducidad (Opcional)
+          </label>
+          <input type="datetime-local" id="coupon-form-expiry" style="width: 100%; background: var(--card-inner); border: 1px solid var(--border); border-radius: 6px; padding: 10px; color: #fff;">
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px;">
+            <input type="checkbox" id="coupon-form-active" checked style="accent-color: var(--accent);">
+            <span>Cupón activo para redimir inmediatamente</span>
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button type="button" class="btn-topbar" onclick="AdminApp.closeCouponModal()">Cancelar</button>
+          <button type="submit" class="btn-create-coupon" id="btn-save-coupon">Guardar Cupón</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notificaciones -->
+  <div class="toast-box" id="admin-toast">
+    <span id="toast-message">Operación realizada</span>
+  </div>
+
+  <!-- Lógica Principal del Dashboard -->
+  <script>
+    const AdminApp = (() => {
+      let rawRegistrations = [];
+      let flattenedRiders = [];
+      let filteredRiders = [];
+      let rawCoupons = [];
+      let currentTab = 'riders';
+
+      // ==========================================
+      // AUTENTICACIÓN Y SESIÓN
+      // ==========================================
+      const getAuthHeaders = () => {
+        const token = localStorage.getItem('tdc_admin_token') || sessionStorage.getItem('tdc_admin_token');
+        const headers = { 'Content-Type': 'application/json' };
+        if (token) {
+          headers['Authorization'] = `Bearer ${token}`;
+          headers['x-admin-key'] = token;
+        }
+        return headers;
+      };
+
+      const checkAuth = async () => {
+        try {
+          const res = await fetch('/api/admin/check-session', { headers: getAuthHeaders() });
+          const data = await res.json();
+          if (!data.authenticated) {
+            window.location.href = '/admin/login.html';
+            return false;
+          }
+          return true;
+        } catch (e) {
+          window.location.href = '/admin/login.html';
+          return false;
+        }
+      };
+
+      const logout = async () => {
+        try {
+          await fetch('/api/admin/logout', { method: 'POST', headers: getAuthHeaders() });
+        } catch (e) {}
+        localStorage.removeItem('tdc_admin_token');
+        sessionStorage.removeItem('tdc_admin_token');
+        window.location.href = '/admin/login.html';
+      };
+
+      const showToast = (msg) => {
+        const toast = document.getElementById('admin-toast');
+        const msgEl = document.getElementById('toast-message');
+        if (!toast || !msgEl) return;
+        msgEl.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      };
+
+      // ==========================================
+      // CARGA DE DATOS
+      // ==========================================
+      const loadRegistrations = async () => {
+        try {
+          const res = await fetch('/api/admin/registrations', { headers: getAuthHeaders() });
+          const data = await res.json();
+
+          if (data.success) {
+            rawRegistrations = data.registrations || [];
+
+            // Aplanar corredores individuales con los metadatos de su orden
+            flattenedRiders = [];
+            rawRegistrations.forEach(order => {
+              const participants = order.participants || [];
+              participants.forEach((p, idx) => {
+                flattenedRiders.push({
+                  ...p,
+                  orderInvoice: order.invoiceNumber,
+                  orderRef: order.refPayco,
+                  orderDate: order.paymentDate || order.createdAt,
+                  orderRoute: order.route,
+                  orderRouteName: order.routeName || (order.route === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)'),
+                  orderCategory: order.category,
+                  orderCategoryName: order.categoryName,
+                  orderPaymentType: order.paymentType || (order.totalAmount === 0 ? 'COURTESY' : 'EPAYCO'),
+                  orderTotalPaid: order.totalAmount,
+                  orderBaseAmount: order.baseAmount || order.totalAmount,
+                  orderCoupon: order.couponCode || null,
+                  orderDiscountPercent: order.discountPercent || 0,
+                  payerEmail: order.payerEmail,
+                  payerPhone: order.payerPhone,
+                  participantIndex: idx + 1,
+                  totalInOrder: participants.length,
+                  orderTeamName: order.teamName || p.teamName || null
+                });
+              });
+            });
+
+            // Actualizar KPIs
+            updateKPIs(data.kpis);
+            applyFilters();
+          }
+        } catch (err) {
+          console.error('Error cargando inscripciones:', err);
+        }
+      };
+
+      const loadCoupons = async () => {
+        try {
+          const res = await fetch('/api/admin/coupons', { headers: getAuthHeaders() });
+          const data = await res.json();
+          if (data.success) {
+            rawCoupons = data.coupons || [];
+            document.getElementById('tab-badge-coupons').textContent = rawCoupons.length;
+            renderCouponsTable(rawCoupons);
+          }
+        } catch (err) {
+          console.error('Error cargando cupones:', err);
+        }
+      };
+
+      const refreshAllData = async () => {
+        await Promise.all([loadRegistrations(), loadCoupons()]);
+        showToast('Datos actualizados en tiempo real.');
+      };
+
+      // ==========================================
+      // ACTUALIZACIÓN DE KPIS
+      // ==========================================
+      const updateKPIs = (serverKpis) => {
+        const totalRiders = flattenedRiders.length;
+        const macchiatoRiders = flattenedRiders.filter(r => r.orderRoute === 'macchiato').length;
+        const espressoRiders = flattenedRiders.filter(r => r.orderRoute === 'espresso').length;
+        const courtesyRiders = flattenedRiders.filter(r => r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100).length;
+
+        // Calcular recaudación real ePayco
+        const revenue = rawRegistrations
+          .filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0)
+          .reduce((sum, o) => sum + (o.totalAmount || 0), 0);
+
+        const revenueCount = rawRegistrations.filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0).length;
+
+        document.getElementById('kpi-total-riders').textContent = totalRiders;
+        document.getElementById('kpi-macchiato-riders').textContent = macchiatoRiders;
+        document.getElementById('kpi-espresso-riders').textContent = espressoRiders;
+        document.getElementById('kpi-courtesy-count').textContent = courtesyRiders;
+        document.getElementById('kpi-revenue-total').textContent = formatCOP(revenue);
+        document.getElementById('kpi-revenue-count').textContent = `${revenueCount} órdenes pagadas`;
+        document.getElementById('tab-badge-riders').textContent = totalRiders;
+      };
+
+      // ==========================================
+      // FILTRADO DINÁMICO DE CORREDORES
+      // ==========================================
+      const applyFilters = () => {
+        const search = (document.getElementById('filter-search')?.value || '').toLowerCase().trim();
+        const route = document.getElementById('filter-route')?.value || 'all';
+        const category = document.getElementById('filter-category')?.value || 'all';
+        const payment = document.getElementById('filter-payment')?.value || 'all';
+
+        filteredRiders = flattenedRiders.filter(r => {
+          // Filtro por Recorrido
+          if (route !== 'all' && r.orderRoute !== route) return false;
+
+          // Filtro por Categoría
+          if (category !== 'all') {
+            if (category === 'individual-masc' && !r.orderCategory.startsWith('ind-m-')) return false;
+            if (category === 'individual-fem' && !r.orderCategory.startsWith('ind-f-')) return false;
+            if (category !== 'individual-masc' && category !== 'individual-fem' && r.orderCategory !== category) return false;
+          }
+
+          // Filtro por Pago
+          if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
+          if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
+
+          // Búsqueda en vivo
+          if (search) {
+            const matchName = (r.fullName || '').toLowerCase().includes(search);
+            const matchDoc = (r.docNumber || '').toLowerCase().includes(search);
+            const matchEmail = (r.email || '').toLowerCase().includes(search);
+            const matchDorsal = (r.dorsalNumber || '').toLowerCase().includes(search);
+            const matchInvoice = (r.orderInvoice || '').toLowerCase().includes(search);
+            const matchRef = (r.orderRef || '').toLowerCase().includes(search);
+            const matchTeam = (r.orderTeamName || '').toLowerCase().includes(search);
+            if (!matchName && !matchDoc && !matchEmail && !matchDorsal && !matchInvoice && !matchRef && !matchTeam) return false;
+          }
+
+          return true;
+        });
+
+        document.getElementById('filter-counter').textContent = `Mostrando ${filteredRiders.length} de ${flattenedRiders.length} corredores`;
+        renderRidersTable(filteredRiders);
+      };
+
+      // ==========================================
+      // RENDERIZADO DE TABLA DE CORREDORES
+      // ==========================================
+      const renderRidersTable = (riders) => {
+        const tbody = document.getElementById('riders-table-body');
+        if (!tbody) return;
+
+        if (riders.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="11" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                No se encontraron participantes con los filtros seleccionados.
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        tbody.innerHTML = riders.map((r, i) => {
+          const isMacchiato = r.orderRoute === 'macchiato';
+          const routeBadge = isMacchiato 
+            ? `<span class="route-chip route-macchiato">127K Macchiato</span>`
+            : `<span class="route-chip route-espresso">115K Espresso</span>`;
+
+          const isCourtesy = r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100;
+          const payBadge = isCourtesy
+            ? `<span class="pay-badge pay-courtesy">🎁 Cortesía 100%</span>`
+            : `<span class="pay-badge pay-epayco">✓ ePayco Aprobado</span>`;
+
+          const couponInfo = r.orderCoupon ? `<div style="font-size: 10px; color: var(--accent-hover); font-family: var(--font-mono); margin-top: 2px;">Cupón: ${r.orderCoupon}</div>` : '';
+
+          const regDate = r.orderDate ? new Date(r.orderDate).toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A';
+
+          return `
+            <tr>
+              <td>
+                <span class="dorsal-tag">${r.dorsalNumber || 'POR ASIGNAR'}</span>
+                <div style="font-size: 10px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 3px;">${r.registrationId || r.orderInvoice}</div>
+              </td>
+              <td style="white-space: nowrap; color: var(--text-muted); font-size: 12px;">
+                ${regDate}
+              </td>
+              <td>
+                ${routeBadge}
+                <div style="font-size: 11px; font-weight: 600; color: #fff; margin-top: 3px;">${r.orderCategoryName || r.orderCategory}</div>
+                ${r.orderTeamName ? `<div style="font-size: 10px; color: var(--color-accent-light); font-weight: 700; margin-top: 3px;">👥 ${r.orderTeamName}</div>` : ''}
+              </td>
+              <td>
+                <strong style="color: #fff; font-size: 14px;">${r.fullName}</strong>
+                ${r.totalInOrder > 1 ? `<span style="font-size: 10px; color: var(--accent-hover); display: block;">(Integrante ${r.participantIndex}/${r.totalInOrder})</span>` : ''}
+              </td>
+              <td style="white-space: nowrap;">
+                <span style="font-family: var(--font-mono);">${r.docType || 'CC'} ${r.docNumber}</span>
+              </td>
+              <td style="white-space: nowrap;">
+                <strong style="color: #fff;">${r.calculatedAge2027 || r.age || '--'} años</strong>
+                <div style="font-size: 11px; color: var(--text-muted);">${r.birthDate || '--'}</div>
+              </td>
+              <td style="white-space: nowrap;">
+                <span>${r.gender === 'M' ? '♂ Masculino' : '♀ Femenino'}</span>
+                <div style="font-size: 11px; color: var(--accent-hover); font-weight: 700;">Talla: ${r.jerseySize || '--'}</div>
+              </td>
+              <td>
+                <div><a href="mailto:${r.email}" class="contact-link" title="Enviar Correo">✉ ${r.email}</a></div>
+                <div style="margin-top: 2px;"><a href="https://wa.me/57${(r.phone || '').replace(/\D/g, '')}" target="_blank" class="contact-link wa-link" title="Abrir WhatsApp">💬 ${r.phone || '--'}</a></div>
+              </td>
+              <td style="font-size: 12px;">
+                <div><strong style="color: #fff;">EPS:</strong> ${r.eps || 'N/A'} (RH: <strong style="color: var(--accent-hover);">${r.bloodType || '--'}</strong>)</div>
+                <div style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">Emerg: ${r.emergencyContactName || '--'} (${r.emergencyContactPhone || '--'})</div>
+              </td>
+              <td>
+                ${payBadge}
+                <div style="font-weight: 700; margin-top: 3px; font-size: 12px;">${formatCOP(r.orderTotalPaid)}</div>
+                ${couponInfo}
+              </td>
+              <td style="text-align: right;">
+                <button type="button" class="btn-action-view" onclick="AdminApp.openRiderModal(${i})">
+                  Ver Ficha
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      };
+
+      // ==========================================
+      // MODAL DE DETALLE DEL CORREDOR
+      // ==========================================
+      const openRiderModal = (index) => {
+        const r = filteredRiders[index];
+        if (!r) return;
+
+        document.getElementById('modal-rider-name').textContent = r.fullName;
+        document.getElementById('modal-rider-dorsal').textContent = `Dorsal Oficial: ${r.dorsalNumber || 'N/A'} • ${r.orderRouteName}`;
+
+        const isCourtesy = r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100;
+
+        document.getElementById('modal-rider-content').innerHTML = `
+          <div style="background: var(--card-inner); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+              <div><strong>Documento:</strong> ${r.docType}: ${r.docNumber}</div>
+              <div><strong>Fecha de Nacimiento:</strong> ${r.birthDate}</div>
+              <div><strong>Edad al 31/12/2027:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.calculatedAge2027} años</span></div>
+              <div><strong>Género:</strong> ${r.gender === 'M' ? 'Masculino' : 'Femenino'}</div>
+              <div><strong>Talla Jersey Oficial:</strong> <span style="color: #2ecc71; font-weight: 700;">${r.jerseySize}</span></div>
+              <div><strong>Grupo Sanguíneo (RH):</strong> ${r.bloodType}</div>
+              <div><strong>EPS / Póliza:</strong> ${r.eps}</div>
+              <div><strong>Ubicación:</strong> ${r.city || '--'}, ${r.department || '--'} (${r.country || 'Colombia'})</div>
+              ${r.orderTeamName ? `<div style="grid-column: span 2;"><strong>Nombre del Equipo / Dupla:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.orderTeamName}</span></div>` : ''}
+            </div>
+          </div>
+
+          <div style="background: var(--card-inner); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+            <h4 style="font-size: 13px; color: var(--accent-hover); text-transform: uppercase; margin-bottom: 8px;">Contacto de Emergencia y Salud</h4>
+            <div><strong>Contacto Emergencia:</strong> ${r.emergencyContactName} (Tel: ${r.emergencyContactPhone})</div>
+            <div style="margin-top: 6px;"><strong>Alergias / Observaciones Médicas:</strong> ${r.medicalNotes || 'Ninguna'}</div>
+          </div>
+
+          <div style="background: var(--card-inner); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+            <h4 style="font-size: 13px; color: var(--accent-hover); text-transform: uppercase; margin-bottom: 8px;">Detalles de la Transacción</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+              <div><strong>Factura / ID:</strong> <span style="font-family: var(--font-mono);">${r.orderInvoice}</span></div>
+              <div><strong>Referencia Pago:</strong> <span style="font-family: var(--font-mono);">${r.orderRef}</span></div>
+              <div><strong>Estado:</strong> ${isCourtesy ? '<span style="color: #bb86fc;">Cortesía 100%</span>' : '<span style="color: #2ecc71;">Aprobado ePayco</span>'}</div>
+              <div><strong>Valor Pagado:</strong> ${formatCOP(r.orderTotalPaid)} ${r.orderCoupon ? `(Cupón: ${r.orderCoupon} -${r.orderDiscountPercent}%)` : ''}</div>
+              <div><strong>Email Titular:</strong> ${r.payerEmail || r.email}</div>
+              <div><strong>Teléfono Titular:</strong> ${r.payerPhone || r.phone}</div>
+            </div>
+          </div>
+        `;
+
+        document.getElementById('rider-modal').classList.add('active');
+      };
+
+      const closeRiderModal = () => {
+        document.getElementById('rider-modal').classList.remove('active');
+      };
+
+      // ==========================================
+      // EXPORTACIÓN A EXCEL / CSV CON UTF-8 BOM
+      // ==========================================
+      const exportToCSV = (ridersToExport, filename = 'Inscritos_Tour_del_Cafe_2027.csv') => {
+        if (!ridersToExport || ridersToExport.length === 0) {
+          alert('No hay participantes para exportar.');
+          return;
+        }
+
+        const headers = [
+          'Dorsal',
+          'Factura Consecutivo',
+          'Referencia Pago',
+          'Tipo de Pago',
+          'Valor Pagado (COP)',
+          'Cupón Aplicado',
+          'Descuento %',
+          'Fecha Registro',
+          'Recorrido',
+          'Categoría Oficial',
+          'Nombre del Equipo',
+          'Integrante #',
+          'Nombre Completo',
+          'Tipo Doc',
+          'Número Documento',
+          'Género',
+          'Fecha Nacimiento',
+          'Edad Oficial 2027',
+          'Talla Jersey',
+          'Email Corredor',
+          'Teléfono / WhatsApp',
+          'País',
+          'Departamento',
+          'Ciudad',
+          'EPS o Seguro',
+          'Grupo Sanguíneo RH',
+          'Contacto Emergencia',
+          'Teléfono Emergencia',
+          'Observaciones Médicas / Alergias'
+        ];
+
+        const escapeCSV = (val) => {
+          if (val === null || val === undefined) return '""';
+          const str = String(val).replace(/"/g, '""');
+          return `"${str}"`;
+        };
+
+        const rows = ridersToExport.map(r => [
+          escapeCSV(r.dorsalNumber || ''),
+          escapeCSV(r.orderInvoice || ''),
+          escapeCSV(r.orderRef || ''),
+          escapeCSV(r.orderPaymentType === 'COURTESY' ? 'Cortesía 100%' : 'ePayco Aprobado'),
+          escapeCSV(r.orderTotalPaid || 0),
+          escapeCSV(r.orderCoupon || 'Ninguno'),
+          escapeCSV(r.orderDiscountPercent || 0),
+          escapeCSV(r.orderDate || ''),
+          escapeCSV(r.orderRouteName || ''),
+          escapeCSV(r.orderCategoryName || ''),
+          escapeCSV(r.orderTeamName || 'N/A'),
+          escapeCSV(`${r.participantIndex}/${r.totalInOrder}`),
+          escapeCSV(r.fullName || ''),
+          escapeCSV(r.docType || 'CC'),
+          escapeCSV(r.docNumber || ''),
+          escapeCSV(r.gender === 'M' ? 'Masculino' : 'Femenino'),
+          escapeCSV(r.birthDate || ''),
+          escapeCSV(r.calculatedAge2027 || ''),
+          escapeCSV(r.jerseySize || ''),
+          escapeCSV(r.email || ''),
+          escapeCSV(r.phone || ''),
+          escapeCSV(r.country || 'Colombia'),
+          escapeCSV(r.department || ''),
+          escapeCSV(r.city || ''),
+          escapeCSV(r.eps || ''),
+          escapeCSV(r.bloodType || ''),
+          escapeCSV(r.emergencyContactName || ''),
+          escapeCSV(r.emergencyContactPhone || ''),
+          escapeCSV(r.medicalNotes || 'Ninguna')
+        ]);
+
+        // Separador ';' estándar en Excel para evitar conflictos con comas decimales
+        const csvContent = '\uFEFF' + [headers.map(escapeCSV).join(';'), ...rows.map(row => row.join(';'))].join('\r\n');
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        showToast(`Exportación completada: ${ridersToExport.length} corredores.`);
+      };
+
+      const exportExcelFiltered = () => {
+        const dateStr = new Date().toISOString().slice(0, 10);
+        exportToCSV(filteredRiders, `Inscritos_Filtrados_TDC_${dateStr}.csv`);
+      };
+
+      const exportExcelAll = () => {
+        const dateStr = new Date().toISOString().slice(0, 10);
+        exportToCSV(flattenedRiders, `Base_Completa_Inscritos_TDC_${dateStr}.csv`);
+      };
+
+      // ==========================================
+      // PESTAÑAS
+      // ==========================================
+      const switchTab = (tab) => {
+        currentTab = tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+        if (tab === 'riders') {
+          document.getElementById('tab-btn-riders').classList.add('active');
+          document.getElementById('view-riders').style.display = 'block';
+          document.getElementById('view-coupons').style.display = 'none';
+          document.getElementById('tab-actions-riders').style.display = 'block';
+          document.getElementById('tab-actions-coupons').style.display = 'none';
+        } else {
+          document.getElementById('tab-btn-coupons').classList.add('active');
+          document.getElementById('view-riders').style.display = 'none';
+          document.getElementById('view-coupons').style.display = 'block';
+          document.getElementById('tab-actions-riders').style.display = 'none';
+          document.getElementById('tab-actions-coupons').style.display = 'block';
+          loadCoupons();
+        }
+      };
+
+      // ==========================================
+      // GESTIÓN DE CUPONES
+      // ==========================================
+      const renderCouponsTable = (coupons) => {
+        const tbody = document.getElementById('coupons-table-body');
+        if (!tbody) return;
+
+        if (coupons.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">No hay cupones creados aún.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = coupons.map(c => {
+          const isCourtesy = c.discountPercent === 100;
+          const percentBadge = isCourtesy
+            ? `<span class="percent-badge percent-courtesy">🎁 100% CORTESÍA</span>`
+            : `<span class="percent-badge percent-discount">-${c.discountPercent}% OFF</span>`;
+
+          const usesText = c.maxUses !== null ? `${c.usedCount || 0} / ${c.maxUses}` : `${c.usedCount || 0} (Ilimitado)`;
+          const expiryText = c.expiryDate ? new Date(c.expiryDate).toLocaleDateString('es-CO') : 'Sin expiración';
+
+          const statusDot = c.active ? '<span class="dot-status dot-active"></span> Activo' : '<span class="dot-status dot-inactive"></span> Inactivo';
+
+          return `
+            <tr>
+              <td><span class="coupon-code-badge">${c.code}</span></td>
+              <td><strong style="color: #fff;">${c.description}</strong></td>
+              <td>${percentBadge}</td>
+              <td style="font-family: var(--font-mono); font-size: 13px;">${usesText}</td>
+              <td style="color: var(--text-muted); font-size: 12px;">${expiryText}</td>
+              <td>
+                <span class="status-switch" onclick="AdminApp.toggleCouponStatus('${c.code}', ${!c.active})" title="Clic para alternar estado">
+                  ${statusDot}
+                </span>
+              </td>
+              <td style="text-align: right; white-space: nowrap;">
+                <button type="button" class="btn-topbar" onclick="AdminApp.editCoupon('${c.code}')" style="padding: 4px 8px; font-size: 11px;">Editar</button>
+                <button type="button" class="btn-topbar btn-topbar-danger" onclick="AdminApp.deleteCoupon('${c.code}')" style="padding: 4px 8px; font-size: 11px;">Eliminar</button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      };
+
+      const openCouponModal = (coupon = null) => {
+        const modal = document.getElementById('coupon-modal');
+        const titleEl = document.getElementById('modal-coupon-title');
+        const modeEl = document.getElementById('coupon-edit-mode');
+        const codeInput = document.getElementById('coupon-form-code');
+        const descInput = document.getElementById('coupon-form-desc');
+        const percentInput = document.getElementById('coupon-form-percent');
+        const maxInput = document.getElementById('coupon-form-max');
+        const expiryInput = document.getElementById('coupon-form-expiry');
+        const activeCheck = document.getElementById('coupon-form-active');
+
+        if (coupon) {
+          titleEl.textContent = `Editar Cupón: ${coupon.code}`;
+          modeEl.value = 'edit';
+          codeInput.value = coupon.code;
+          codeInput.readOnly = true;
+          descInput.value = coupon.description || '';
+          percentInput.value = coupon.discountPercent || 100;
+          maxInput.value = coupon.maxUses !== null ? coupon.maxUses : '';
+          expiryInput.value = coupon.expiryDate ? coupon.expiryDate.slice(0, 16) : '';
+          activeCheck.checked = Boolean(coupon.active);
+        } else {
+          titleEl.textContent = 'Crear Nuevo Cupón';
+          modeEl.value = 'create';
+          codeInput.value = '';
+          codeInput.readOnly = false;
+          descInput.value = '';
+          percentInput.value = '100';
+          maxInput.value = '';
+          expiryInput.value = '';
+          activeCheck.checked = true;
+        }
+
+        modal.classList.add('active');
+      };
+
+      const closeCouponModal = () => {
+        document.getElementById('coupon-modal').classList.remove('active');
+        document.getElementById('coupon-form').reset();
+      };
+
+      const editCoupon = (code) => {
+        const c = rawCoupons.find(x => x.code === code);
+        if (c) openCouponModal(c);
+      };
+
+      const submitCouponForm = async (e) => {
+        e.preventDefault();
+        const mode = document.getElementById('coupon-edit-mode').value;
+        const code = document.getElementById('coupon-form-code').value.trim().toUpperCase();
+        const description = document.getElementById('coupon-form-desc').value.trim();
+        const discountPercent = parseInt(document.getElementById('coupon-form-percent').value, 10);
+        const maxUsesVal = document.getElementById('coupon-form-max').value;
+        const maxUses = maxUsesVal ? parseInt(maxUsesVal, 10) : null;
+        const expiryVal = document.getElementById('coupon-form-expiry').value;
+        const expiryDate = expiryVal ? new Date(expiryVal).toISOString() : null;
+        const active = document.getElementById('coupon-form-active').checked;
+
+        const payload = { code, description, discountPercent, maxUses, expiryDate, active };
+        const endpoint = mode === 'create' ? '/api/admin/coupons' : '/api/admin/coupons/update';
+
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if (data.success) {
+            closeCouponModal();
+            showToast(mode === 'create' ? `Cupón "${code}" creado con éxito` : `Cupón "${code}" actualizado`);
+            await loadCoupons();
+          } else {
+            alert(`Error: ${data.error || 'No se pudo guardar el cupón.'}`);
+          }
+        } catch (err) {
+          alert('Error de red: ' + err.message);
+        }
+      };
+
+      const toggleCouponStatus = async (code, newStatus) => {
+        try {
+          const res = await fetch('/api/admin/coupons/update', {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify({ code, active: newStatus })
+          });
+          const data = await res.json();
+          if (data.success) {
+            showToast(`Estado de "${code}" actualizado`);
+            await loadCoupons();
+          }
+        } catch (e) {
+          alert('Error actualizando estado.');
+        }
+      };
+
+      const deleteCoupon = async (code) => {
+        if (!confirm(`¿Estás seguro de eliminar permanentemente el cupón "${code}"?`)) return;
+        try {
+          const res = await fetch('/api/admin/coupons/delete', {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify({ code })
+          });
+          const data = await res.json();
+          if (data.success) {
+            showToast(`Cupón "${code}" eliminado`);
+            await loadCoupons();
+          } else {
+            alert(`Error: ${data.error}`);
+          }
+        } catch (e) {
+          alert('Error al eliminar cupón.');
+        }
+      };
+
+      const formatCOP = (val) => {
+        return '$ ' + Number(val || 0).toLocaleString('es-CO') + ' COP';
+      };
+
+      // Inicialización
+      document.addEventListener('DOMContentLoaded', async () => {
+        const ok = await checkAuth();
+        if (ok) {
+          await Promise.all([loadRegistrations(), loadCoupons()]);
+        }
+      });
+
+      return {
+        logout,
+        refreshAllData,
+        switchTab,
+        applyFilters,
+        openRiderModal,
+        closeRiderModal,
+        openCouponModal,
+        closeCouponModal,
+        editCoupon,
+        submitCouponForm,
+        toggleCouponStatus,
+        deleteCoupon,
+        exportExcelFiltered,
+        exportExcelAll
+      };
+    })();
+  </script>
+
+</body>
+</html>

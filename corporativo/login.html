@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Corporativo - Tour del Café</title>
+    <meta name="description" content="Acceso restringido para patrocinadores e inversionistas del Tour del Café.">
+    
+    <!-- Global CSS Stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!-- Custom styling to ensure a stunning, premium login interface -->
+    <style>
+        body.login-body {
+            background-color: #121212;
+            color: #FAFAFA;
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle animated background shapes for a premium look */
+        .bg-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(211, 84, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .bg-glow-1 {
+            top: -100px;
+            right: -100px;
+        }
+
+        .bg-glow-2 {
+            bottom: -150px;
+            left: -150px;
+        }
+
+        .login-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 460px;
+            margin: auto;
+        }
+
+        .login-card {
+            background: rgba(22, 22, 22, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .login-logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 24px;
+            object-fit: contain;
+        }
+
+        .login-header-text {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .login-title {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #FAFAFA;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.01em;
+        }
+
+        .login-subtitle {
+            font-size: 0.95rem;
+            color: rgba(250, 250, 250, 0.6);
+            margin: 0;
+        }
+
+        .login-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(250, 250, 250, 0.7);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 14px 16px;
+            color: #FAFAFA;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 8px rgba(211, 84, 0, 0.2);
+        }
+
+        .alert-box {
+            background-color: rgba(211, 47, 47, 0.15);
+            border: 1px solid rgba(211, 47, 47, 0.4);
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            width: 100%;
+            display: none;
+            color: #FFCDD2;
+            font-size: 0.9rem;
+            align-items: center;
+            gap: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .alert-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px 28px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: rgba(250, 250, 250, 0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            text-align: center;
+            font-family: var(--font-mono);
+            letter-spacing: 0.5px;
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body class="login-body">
+    <!-- Glow Background Effects -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <!-- Brand Logo -->
+            <img src="../assets/logo-festival-index.png" alt="Tour del Café" class="login-logo">
+            
+            <div class="login-header-text">
+                <h1 class="login-title">Portal Corporativo</h1>
+                <p class="login-subtitle">Acceso restringido para aliados y patrocinadores</p>
+            </div>
+
+            <!-- Custom alert for validation errors -->
+            <div id="login-alert" class="alert-box">
+                <span class="alert-icon">⚠️</span>
+                <span id="login-alert-text">Credenciales inválidas. Intente nuevamente.</span>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username" class="form-label">Usuario / Empresa</label>
+                    <input type="text" id="username" class="form-input" placeholder="Ingrese su usuario o empresa" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" id="password" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="btn-primary btn-submit">Ingresar al Portal</button>
+            </form>
+
+            <a href="../index.html" class="back-link">← Volver al sitio principal</a>
+        </div>
+    </div>
+
+    <!-- Login Authentication Script -->
+    <script>
+        // Simple authentication check - redirect to dashboard if session exists
+        if (sessionStorage.getItem('corp_session') === 'active') {
+            window.location.href = 'index.html';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const userField = document.getElementById('username');
+            const passField = document.getElementById('password');
+            const alertBox = document.getElementById('login-alert');
+            const alertText = document.getElementById('login-alert-text');
+            
+            const username = userField.value.trim();
+            const password = passField.value.trim();
+            
+            // Expected credentials: Usuario: "invitado" | Password: "TDC2027-2028"
+            if (username === 'invitado' && password === 'TDC2027-2028') {
+                // Successful Login
+                sessionStorage.setItem('corp_session', 'active');
+                
+                // Optional: Save user info
+                sessionStorage.setItem('corp_user', username);
+                
+                // Hide alert
+                alertBox.style.display = 'none';
+                
+                // Highlight success and redirect
+                const btn = document.querySelector('.btn-submit');
+                btn.textContent = 'Verificando...';
+                btn.style.backgroundColor = '#2E7D32';
+                btn.style.boxShadow = '0 0 15px rgba(46, 125, 50, 0.4)';
+                
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 800);
+            } else {
+                // Failed Login
+                alertText.textContent = 'Credenciales incorrectas. Verifique el usuario y contraseña.';
+                alertBox.style.display = 'flex';
+                
+                // Shake effect on card for a premium interactive feel
+                const card = document.querySelector('.login-card');
+                card.style.transform = 'translateX(10px)';
+                setTimeout(() => card.style.transform = 'translateX(-10px)', 100);
+                setTimeout(() => card.style.transform = 'translateX(5px)', 200);
+                setTimeout(() => card.style.transform = 'translateX(-5px)', 300);
+                setTimeout(() => card.style.transform = 'translateX(0)', 400);
+                
+                // Clear password field for security
+                passField.value = '';
+                passField.focus();
+            }
+        }
+    </script>
+</body>
+
+</html>

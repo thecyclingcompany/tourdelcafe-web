@@ -1,0 +1,19 @@
+{
+  "TDC-TEST-4513": {
+    "items": [
+      {
+        "sku": "VOL-GRA-250",
+        "variantId": "mitico-ciclamino-volata-castillo-1",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "email": "comprador@ejemplo.com",
+      "name": "Carlos Gomez"
+    },
+    "createdAt": "2026-09-21T18:09:14.507Z",
+    "status": "completed",
+    "epaycoRef": "REF-EPAYCO-1790014154513",
+    "processedAt": "2026-09-21T18:09:14.711Z"
+  }
+}
