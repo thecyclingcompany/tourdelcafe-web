@@ -1260,6 +1260,9 @@
         confirmationUrl: window.location.origin + '/api/epayco/confirmacion'
       };
 
+      // Forzar estrictamente modo pruebas como booleano nativo true
+      epaycoConfig.test = true;
+
       // 2. Configurar e invocar ePayco Checkout
       if (!window.ePayco) {
         throw new Error('La pasarela de pagos ePayco no se ha cargado. Verifica tu conexión a internet.');
@@ -1267,7 +1270,7 @@
 
       const handler = window.ePayco.checkout.configure({
         key: epaycoConfig.publicKey,
-        test: true // Booleano nativo explícito para habilitar el simulador de pruebas
+        test: true // Booleano nativo explícito estricto
       });
 
       const routeLabel = STATE.selectedRoute === 'macchiato' ? 'Reto Macchiato 127K' : 'Reto Espresso 115K';
