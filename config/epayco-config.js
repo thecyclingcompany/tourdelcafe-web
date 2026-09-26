@@ -13,7 +13,7 @@ window.EPAYCO_CONFIG = {
   publicKey: '13eb3817ffe672d7b10376797e57a082',
   pKey: '3a7a28b3c17941d4e19a851bb234e3fd02cec3d4',
   privateKey: '7b3a37a8d7618225a2864015bcd7f2e0',
-  test: false, // Modo Producción Activado
+  test: true, // Modo Pruebas Activado (Simulador de Pagos)
 
   // Parámetros de cobro
   currency: 'COP',

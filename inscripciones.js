@@ -1252,7 +1252,7 @@
       const totalAmount = prepData.totalAmount;
       const epaycoConfig = window.EPAYCO_CONFIG || {
         publicKey: '13eb3817ffe672d7b10376797e57a082',
-        test: false,
+        test: true,
         currency: 'cop',
         country: 'co',
         lang: 'es',
@@ -1267,12 +1267,24 @@
 
       const handler = window.ePayco.checkout.configure({
         key: epaycoConfig.publicKey,
-        test: Boolean(epaycoConfig.test)
+        test: true // Booleano nativo explícito para habilitar el simulador de pruebas
       });
 
       const routeLabel = STATE.selectedRoute === 'macchiato' ? 'Reto Macchiato 127K' : 'Reto Espresso 115K';
       const count = check.participants.length;
       const teamSuffix = check.teamName ? ` | Equipo: ${check.teamName}` : '';
+
+      // Validación y valores por defecto para datos de facturación tomados del formulario
+      const billingDocType = (payer.docType || 'CC').toString().trim().toLowerCase();
+      const billingDocNumber = String(payer.docNumber || '1000000000').trim();
+      const billingCity = (payer.city || 'Armenia').trim();
+      const billingDept = (payer.department || 'Quindío').trim();
+      const billingCountry = (payer.country || 'Colombia').trim();
+      const billingAddress = (
+        payer.address
+          ? `${payer.address}, ${billingCity}, ${billingDept}, ${billingCountry}`
+          : `Calle Principal, ${billingCity}, ${billingDept}, ${billingCountry}`
+      );
 
       const epaycoPayload = {
         name: `Inscripción Tour del Café Gran Fondo 2027`,
@@ -1285,6 +1297,7 @@
         country: (epaycoConfig.country || 'co').toLowerCase(),
         lang: epaycoConfig.lang || 'es',
         external: 'false', // Modal nativo dentro del portal
+        test: true, // Booleano nativo explícito en el objeto data del checkout
 
         // Metadatos
         extra1: `${STATE.selectedCategory.name}${teamSuffix} | ${routeLabel}`,
@@ -1302,12 +1315,12 @@
         response: epaycoConfig.responseUrl,
 
         // Datos del Pagador / Titular de la inscripción
-        name_billing: payer.fullName,
-        type_doc_billing: (payer.docType || 'cc').toLowerCase(),
-        number_doc_billing: payer.docNumber,
-        mobilephone_billing: payer.phone,
-        email_billing: payer.email,
-        address_billing: `${payer.city}, ${payer.department}, ${payer.country}`,
+        name_billing: (payer.fullName || 'Participante Tour del Café').trim(),
+        type_doc_billing: billingDocType,
+        number_doc_billing: billingDocNumber,
+        mobilephone_billing: (payer.phone || '3000000000').trim(),
+        email_billing: (payer.email || 'inscripciones@tourdelcafe.co').trim(),
+        address_billing: billingAddress,
 
         methodsDisable: []
       };
