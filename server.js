@@ -262,11 +262,24 @@ const server = http.createServer(async (req, res) => {
         }
       }
 
-      // 3. Generar número de factura único para inscripciones
+      // 3. Sanitizar y desagregar nombres/apellidos por participante
+      const sanitizedParticipants = (participants || []).map(p => {
+        const nombres = (p.nombres || '').trim();
+        const apellidos = (p.apellidos || '').trim();
+        const fullName = (p.fullName || `${nombres} ${apellidos}`).trim();
+        return {
+          ...p,
+          nombres: nombres || (fullName ? fullName.split(/\s+/).slice(0, -1).join(' ') : ''),
+          apellidos: apellidos || (fullName ? fullName.split(/\s+/).slice(-1).join(' ') : ''),
+          fullName
+        };
+      });
+
+      // 4. Generar número de factura único para inscripciones
       const randomSuffix = Math.random().toString(36).substring(2, 6).toUpperCase();
       const invoiceNumber = `TDC-INS-${Date.now().toString(36).toUpperCase()}-${randomSuffix}`;
 
-      // 4. Guardar orden pendiente
+      // 5. Guardar orden pendiente
       const savedPending = registrationService.savePendingRegistration(invoiceNumber, {
         route,
         categoryId,
@@ -280,9 +293,9 @@ const server = http.createServer(async (req, res) => {
         discountAmount: appliedCoupon ? appliedCoupon.discountAmount : 0,
         couponCode: appliedCoupon ? appliedCoupon.code : null,
         totalAmount: finalTotal,
-        participants,
-        payerEmail: payerEmail || participants[0].email,
-        payerPhone: payerPhone || participants[0].phone
+        participants: sanitizedParticipants,
+        payerEmail: payerEmail || sanitizedParticipants[0].email,
+        payerPhone: payerPhone || sanitizedParticipants[0].phone
       });
 
       return sendJson(res, 200, {
@@ -343,6 +356,18 @@ const server = http.createServer(async (req, res) => {
       const randomSuffix = Math.random().toString(36).substring(2, 6).toUpperCase();
       targetInvoice = `TDC-INS-COR-${Date.now().toString(36).toUpperCase()}-${randomSuffix}`;
 
+      const sanitizedParticipants = (participants || []).map(p => {
+        const nombres = (p.nombres || '').trim();
+        const apellidos = (p.apellidos || '').trim();
+        const fullName = (p.fullName || `${nombres} ${apellidos}`).trim();
+        return {
+          ...p,
+          nombres: nombres || (fullName ? fullName.split(/\s+/).slice(0, -1).join(' ') : ''),
+          apellidos: apellidos || (fullName ? fullName.split(/\s+/).slice(-1).join(' ') : ''),
+          fullName
+        };
+      });
+
       registrationService.savePendingRegistration(targetInvoice, {
         route,
         categoryId,
@@ -356,9 +381,9 @@ const server = http.createServer(async (req, res) => {
         discountAmount: baseTotal,
         couponCode: coupon.code,
         totalAmount: 0,
-        participants,
-        payerEmail: payerEmail || participants[0].email,
-        payerPhone: payerPhone || participants[0].phone
+        participants: sanitizedParticipants,
+        payerEmail: payerEmail || sanitizedParticipants[0].email,
+        payerPhone: payerPhone || sanitizedParticipants[0].phone
       });
 
       const result = registrationService.processCourtesyRegistration(targetInvoice, coupon.code);
@@ -673,7 +698,7 @@ const server = http.createServer(async (req, res) => {
         'Dorsal', 'Factura Consecutivo', 'Referencia Pago', 'Tipo de Pago', 'Valor Pagado (COP)',
         'Cupón Aplicado', 'Descuento %', 'Fecha Registro', 'Recorrido', 'Categoría Oficial',
         'Nombre del Equipo',
-        'Integrante #', 'Nombre Completo', 'Tipo Doc', 'Número Documento', 'Género',
+        'Integrante #', 'Nombres', 'Apellidos', 'Nombre Completo', 'Tipo Doc', 'Número Documento', 'Género',
         'Fecha Nacimiento', 'Edad Oficial 2027', 'Talla Jersey', 'Email Corredor', 'Teléfono WhatsApp',
         'País', 'Departamento', 'Ciudad', 'EPS o Seguro', 'Grupo Sanguíneo RH',
         'Contacto Emergencia', 'Teléfono Emergencia', 'Observaciones Médicas'
@@ -687,6 +712,9 @@ const server = http.createServer(async (req, res) => {
       const rows = [];
       registrations.forEach(order => {
         (order.participants || []).forEach((p, idx) => {
+          const pNombres = p.nombres || (p.fullName ? p.fullName.trim().split(/\s+/).slice(0, -1).join(' ') : '');
+          const pApellidos = p.apellidos || (p.fullName ? p.fullName.trim().split(/\s+/).slice(-1).join(' ') : '');
+          const pFullName = p.fullName || `${pNombres} ${pApellidos}`.trim();
           rows.push([
             escapeCSV(p.dorsalNumber || ''),
             escapeCSV(order.invoiceNumber || ''),
@@ -700,7 +728,9 @@ const server = http.createServer(async (req, res) => {
             escapeCSV(order.categoryName || order.category),
             escapeCSV(order.teamName || p.teamName || 'N/A'),
             escapeCSV(`${idx + 1}/${order.participants.length}`),
-            escapeCSV(p.fullName || ''),
+            escapeCSV(pNombres),
+            escapeCSV(pApellidos),
+            escapeCSV(pFullName),
             escapeCSV(p.docType || 'CC'),
             escapeCSV(p.docNumber || ''),
             escapeCSV(p.gender === 'M' ? 'Masculino' : 'Femenino'),

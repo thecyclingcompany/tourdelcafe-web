@@ -526,13 +526,17 @@
 
           <!-- 1. DATOS PERSONALES -->
           <div class="form-grid-row">
-            <div class="form-group" style="grid-column: span 2;">
-              <label class="form-label">Nombre Completo <span class="req">*</span></label>
-              <input type="text" class="form-control field-fullName" placeholder="Nombres y Apellidos completos" value="${existing.fullName || ''}" required>
+            <div class="form-group">
+              <label class="form-label" for="p-${i}-nombres">Nombres <span class="req">*</span></label>
+              <input type="text" id="p-${i}-nombres" name="nombres_p${num}" class="form-control field-nombres" placeholder="Primer y segundo nombre" value="${existing.nombres || (existing.fullName ? existing.fullName.split(' ').slice(0, -1).join(' ') : '')}" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Tipo de Documento <span class="req">*</span></label>
-              <select class="form-control field-docType" required>
+              <label class="form-label" for="p-${i}-apellidos">Apellidos <span class="req">*</span></label>
+              <input type="text" id="p-${i}-apellidos" name="apellidos_p${num}" class="form-control field-apellidos" placeholder="Primer y segundo apellido" value="${existing.apellidos || (existing.fullName ? existing.fullName.split(' ').slice(-1).join(' ') : '')}" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-${i}-docType">Tipo de Documento <span class="req">*</span></label>
+              <select id="p-${i}-docType" name="docType_p${num}" class="form-control field-docType" required>
                 <option value="">Seleccione...</option>
                 <option value="CC" ${existing.docType === 'CC' ? 'selected' : ''}>Cédula de Ciudadanía</option>
                 <option value="CE" ${existing.docType === 'CE' ? 'selected' : ''}>Cédula de Extranjería</option>
@@ -540,8 +544,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Número de Documento <span class="req">*</span></label>
-              <input type="text" class="form-control field-docNumber" placeholder="Número de identificación" value="${existing.docNumber || ''}" required>
+              <label class="form-label" for="p-${i}-docNumber">Número de Documento <span class="req">*</span></label>
+              <input type="text" id="p-${i}-docNumber" name="docNumber_p${num}" class="form-control field-docNumber" placeholder="Número de identificación" value="${existing.docNumber || ''}" required>
             </div>
           </div>
 
@@ -1100,7 +1104,9 @@
 
     cards.forEach((card, idx) => {
       const num = idx + 1;
-      const fullName = card.querySelector('.field-fullName')?.value.trim();
+      const nombres = card.querySelector('.field-nombres')?.value.trim();
+      const apellidos = card.querySelector('.field-apellidos')?.value.trim();
+      const fullName = `${nombres || ''} ${apellidos || ''}`.trim();
       const docType = card.querySelector('.field-docType')?.value;
       const docNumber = card.querySelector('.field-docNumber')?.value.trim();
       const birthDate = card.querySelector('.field-birthDate')?.value;
@@ -1120,7 +1126,8 @@
       const jerseySize = card.querySelector('.field-jerseySize')?.value;
       const termsAccepted = card.querySelector('.field-termsAccepted')?.checked;
 
-      if (!fullName) errors.push(`Participante #${num}: Falta el nombre completo.`);
+      if (!nombres) errors.push(`Participante #${num}: Falta el nombre (o nombres).`);
+      if (!apellidos) errors.push(`Participante #${num}: Falta el apellido (o apellidos).`);
       if (!docType) errors.push(`Participante #${num}: Selecciona el tipo de documento.`);
       if (!docNumber) errors.push(`Participante #${num}: Falta el número de documento.`);
       if (!birthDate) errors.push(`Participante #${num}: Falta la fecha de nacimiento.`);
@@ -1139,6 +1146,8 @@
       }
 
       participants.push({
+        nombres,
+        apellidos,
         fullName,
         docType,
         docNumber,
@@ -1278,6 +1287,11 @@
       const teamSuffix = check.teamName ? ` | Equipo: ${check.teamName}` : '';
 
       // Validación y valores por defecto para datos de facturación tomados del formulario
+      const payerFullName = (
+        payer.nombres && payer.apellidos
+          ? `${payer.nombres} ${payer.apellidos}`
+          : (payer.fullName || 'Participante Tour del Café')
+      ).trim();
       const billingDocType = (payer.docType || 'CC').toString().trim().toLowerCase();
       const billingDocNumber = String(payer.docNumber || '1000000000').trim();
       const billingCity = (payer.city || 'Armenia').trim();
@@ -1304,7 +1318,7 @@
 
         // Metadatos
         extra1: `${STATE.selectedCategory.name}${teamSuffix} | ${routeLabel}`,
-        extra2: `Titular: ${payer.fullName} | Tel: ${payer.phone}`,
+        extra2: `Titular: ${payerFullName} | Tel: ${payer.phone}`,
         extra3: JSON.stringify({
           type: 'registration',
           invoice: invoiceNumber,
@@ -1317,8 +1331,8 @@
         confirmation: epaycoConfig.confirmationUrl,
         response: epaycoConfig.responseUrl,
 
-        // Datos del Pagador / Titular de la inscripción
-        name_billing: (payer.fullName || 'Participante Tour del Café').trim(),
+        // Datos del Pagador / Titular de la inscripción (Concatenación nombres y apellidos)
+        name_billing: payerFullName,
         type_doc_billing: billingDocType,
         number_doc_billing: billingDocNumber,
         mobilephone_billing: (payer.phone || '3000000000').trim(),

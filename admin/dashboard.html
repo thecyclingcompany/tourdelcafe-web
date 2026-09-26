@@ -751,7 +751,7 @@
           <!-- Búsqueda -->
           <div class="search-input-wrapper">
             <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="filter-search" placeholder="Buscar por Nombre, Cédula, Email, Dorsal, Factura..." oninput="AdminApp.applyFilters()">
+            <input type="text" id="filter-search" placeholder="Buscar por Nombres, Apellidos, Cédula, Email, Dorsal, Factura..." oninput="AdminApp.applyFilters()">
           </div>
 
           <!-- Filtro Recorrido -->
@@ -802,7 +802,8 @@
                 <th>Dorsal</th>
                 <th>Fecha Reg.</th>
                 <th>Recorrido &amp; Categoría</th>
-                <th>Nombre Corredor</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
                 <th>Documento</th>
                 <th>Edad 2027 / F. Nac</th>
                 <th>Género / Talla</th>
@@ -814,7 +815,7 @@
             </thead>
             <tbody id="riders-table-body">
               <tr>
-                <td colspan="11" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                <td colspan="12" style="text-align: center; padding: 40px; color: var(--text-muted);">
                   Cargando inscripciones oficiales...
                 </td>
               </tr>
@@ -1025,8 +1026,14 @@
             rawRegistrations.forEach(order => {
               const participants = order.participants || [];
               participants.forEach((p, idx) => {
+                const nombres = p.nombres || (p.fullName ? p.fullName.trim().split(/\s+/).slice(0, -1).join(' ') : '');
+                const apellidos = p.apellidos || (p.fullName ? p.fullName.trim().split(/\s+/).slice(-1).join(' ') : '');
+                const fullName = p.fullName || `${nombres} ${apellidos}`.trim();
                 flattenedRiders.push({
                   ...p,
+                  nombres,
+                  apellidos,
+                  fullName,
                   orderInvoice: order.invoiceNumber,
                   orderRef: order.refPayco,
                   orderDate: order.paymentDate || order.createdAt,
@@ -1125,16 +1132,18 @@
           if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
           if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
 
-          // Búsqueda en vivo
+          // Búsqueda en vivo por nombres, apellidos, doc, email, dorsal, factura, ref, equipo
           if (search) {
             const matchName = (r.fullName || '').toLowerCase().includes(search);
+            const matchNombres = (r.nombres || '').toLowerCase().includes(search);
+            const matchApellidos = (r.apellidos || '').toLowerCase().includes(search);
             const matchDoc = (r.docNumber || '').toLowerCase().includes(search);
             const matchEmail = (r.email || '').toLowerCase().includes(search);
             const matchDorsal = (r.dorsalNumber || '').toLowerCase().includes(search);
             const matchInvoice = (r.orderInvoice || '').toLowerCase().includes(search);
             const matchRef = (r.orderRef || '').toLowerCase().includes(search);
             const matchTeam = (r.orderTeamName || '').toLowerCase().includes(search);
-            if (!matchName && !matchDoc && !matchEmail && !matchDorsal && !matchInvoice && !matchRef && !matchTeam) return false;
+            if (!matchName && !matchNombres && !matchApellidos && !matchDoc && !matchEmail && !matchDorsal && !matchInvoice && !matchRef && !matchTeam) return false;
           }
 
           return true;
@@ -1154,7 +1163,7 @@
         if (riders.length === 0) {
           tbody.innerHTML = `
             <tr>
-              <td colspan="11" style="text-align: center; padding: 40px; color: var(--text-muted);">
+              <td colspan="12" style="text-align: center; padding: 40px; color: var(--text-muted);">
                 No se encontraron participantes con los filtros seleccionados.
               </td>
             </tr>
@@ -1192,8 +1201,11 @@
                 ${r.orderTeamName ? `<div style="font-size: 10px; color: var(--color-accent-light); font-weight: 700; margin-top: 3px;">👥 ${r.orderTeamName}</div>` : ''}
               </td>
               <td>
-                <strong style="color: #fff; font-size: 14px;">${r.fullName}</strong>
+                <strong style="color: #fff; font-size: 14px;">${r.nombres || r.fullName || '--'}</strong>
                 ${r.totalInOrder > 1 ? `<span style="font-size: 10px; color: var(--accent-hover); display: block;">(Integrante ${r.participantIndex}/${r.totalInOrder})</span>` : ''}
+              </td>
+              <td>
+                <strong style="color: #fff; font-size: 14px;">${r.apellidos || '--'}</strong>
               </td>
               <td style="white-space: nowrap;">
                 <span style="font-family: var(--font-mono);">${r.docType || 'CC'} ${r.docNumber}</span>
@@ -1236,7 +1248,7 @@
         const r = filteredRiders[index];
         if (!r) return;
 
-        document.getElementById('modal-rider-name').textContent = r.fullName;
+        document.getElementById('modal-rider-name').textContent = `${r.nombres || ''} ${r.apellidos || ''}`.trim() || r.fullName;
         document.getElementById('modal-rider-dorsal').textContent = `Dorsal Oficial: ${r.dorsalNumber || 'N/A'} • ${r.orderRouteName}`;
 
         const isCourtesy = r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100;
@@ -1244,6 +1256,8 @@
         document.getElementById('modal-rider-content').innerHTML = `
           <div style="background: var(--card-inner); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+              <div><strong>Nombres:</strong> <span style="color: #fff; font-weight: 700;">${r.nombres || '--'}</span></div>
+              <div><strong>Apellidos:</strong> <span style="color: #fff; font-weight: 700;">${r.apellidos || '--'}</span></div>
               <div><strong>Documento:</strong> ${r.docType}: ${r.docNumber}</div>
               <div><strong>Fecha de Nacimiento:</strong> ${r.birthDate}</div>
               <div><strong>Edad al 31/12/2027:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.calculatedAge2027} años</span></div>
@@ -1304,6 +1318,8 @@
           'Categoría Oficial',
           'Nombre del Equipo',
           'Integrante #',
+          'Nombres',
+          'Apellidos',
           'Nombre Completo',
           'Tipo Doc',
           'Número Documento',
@@ -1342,7 +1358,9 @@
           escapeCSV(r.orderCategoryName || ''),
           escapeCSV(r.orderTeamName || 'N/A'),
           escapeCSV(`${r.participantIndex}/${r.totalInOrder}`),
-          escapeCSV(r.fullName || ''),
+          escapeCSV(r.nombres || ''),
+          escapeCSV(r.apellidos || ''),
+          escapeCSV(r.fullName || `${r.nombres || ''} ${r.apellidos || ''}`.trim()),
           escapeCSV(r.docType || 'CC'),
           escapeCSV(r.docNumber || ''),
           escapeCSV(r.gender === 'M' ? 'Masculino' : 'Femenino'),

@@ -169,7 +169,27 @@ function validateRegistrationRules(route, categoryId, participants, teamName = n
   // Validaciones básicas de campos por participante
   participants.forEach((p, idx) => {
     const num = idx + 1;
-    if (!p.fullName || p.fullName.trim().length < 3) errors.push(`Participante #${num}: Ingrese el nombre completo.`);
+    const nombres = (p.nombres || '').trim();
+    const apellidos = (p.apellidos || '').trim();
+
+    // Desagregar automáticamente si viene fullName por retrocompatibilidad
+    if ((!nombres || !apellidos) && p.fullName) {
+      const parts = p.fullName.trim().split(/\s+/);
+      if (parts.length > 1) {
+        if (!nombres) p.nombres = parts.slice(0, -1).join(' ');
+        if (!apellidos) p.apellidos = parts.slice(-1).join(' ');
+      } else {
+        if (!nombres) p.nombres = parts[0] || '';
+        if (!apellidos) p.apellidos = '';
+      }
+    }
+    // Asegurar fullName consolidado siempre
+    if (!p.fullName && (p.nombres || p.apellidos)) {
+      p.fullName = `${p.nombres || ''} ${p.apellidos || ''}`.trim();
+    }
+
+    if (!p.nombres || p.nombres.trim().length < 2) errors.push(`Participante #${num}: Ingrese los nombres.`);
+    if (!p.apellidos || p.apellidos.trim().length < 2) errors.push(`Participante #${num}: Ingrese los apellidos.`);
     if (!p.docType) errors.push(`Participante #${num}: Seleccione el tipo de documento.`);
     if (!p.docNumber || p.docNumber.trim().length < 4) errors.push(`Participante #${num}: Ingrese el número de documento.`);
     if (!p.birthDate) errors.push(`Participante #${num}: Ingrese la fecha de nacimiento.`);
