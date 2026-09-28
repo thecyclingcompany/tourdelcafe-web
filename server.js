@@ -7,6 +7,20 @@ const crypto = require('crypto');
 const inventoryService = require('./inventory-service');
 const registrationService = require('./registration-service');
 const couponService = require('./coupon-service');
+const nodemailer = require('nodemailer');
+const { sendWelcomeEmail } = require('./email-service');
+
+// Configuración SMTP Hostinger
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.hostinger.com',
+  port: parseInt(process.env.SMTP_PORT || '465'),
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER || 'info@tourdelcafe.org',
+    pass: process.env.SMTP_PASS // Recuerda configurarlo en tu .env o Hostinger
+  }
+});
+
 
 const port = process.env.PORT || 8080;
 const root = __dirname;
@@ -454,16 +468,16 @@ const server = http.createServer(async (req, res) => {
 
       if (!isApproved) {
         console.log(`[ePayco Webhook] Transacción ${refPayco} estado no aprobado: ${transactionState} (cod: ${codResponse}).`);
-        return sendJson(res, 200, { 
-          status: 'ignored', 
+        return sendJson(res, 200, {
+          status: 'ignored',
           message: `Transacción con estado "${transactionState || codResponse}".`,
-          ref: refPayco 
+          ref: refPayco
         });
       }
 
       // DISCRIMINACIÓN: ¿Es una orden de Inscripción o de Tienda?
       const isRegistration = (invoiceNumber && invoiceNumber.startsWith('TDC-INS')) ||
-                             Boolean(registrationService.getPendingRegistration(invoiceNumber));
+        Boolean(registrationService.getPendingRegistration(invoiceNumber));
 
       if (isRegistration) {
         console.log(`[ePayco Webhook] Procesando confirmación de INSCRIPCIÓN: ${invoiceNumber} (Ref: ${refPayco})`);
@@ -473,6 +487,18 @@ const server = http.createServer(async (req, res) => {
         });
 
         console.log(`[ePayco Webhook Success] Resultado de inscripción:`, regResult);
+        // Enviar correo de confirmación al participante
+        try {
+          const emailCliente = (body && (body.x_customer_email || body.email)) || (regResult && regResult.email);
+          const nombreCliente = (body && (body.x_customer_name || body.name)) || (regResult && (regResult.name || regResult.nombre)) || 'Ciclista';
+          const categoriaCliente = (regResult && (regResult.category || regResult.categoria || regResult.reto)) || (body && body.x_description) || 'Gran Fondo';
+
+          if (emailCliente) {
+            sendWelcomeEmail(emailCliente, nombreCliente, refPayco, categoriaCliente);
+          }
+        } catch (errEmail) {
+          console.error('[Webhook Email Error]:', errEmail);
+        }
         return sendJson(res, 200, {
           status: 'success',
           type: 'registration',
@@ -590,7 +616,7 @@ const server = http.createServer(async (req, res) => {
       const username = (body.username || '').trim();
       const password = (body.password || '').trim();
 
-      const isValid = 
+      const isValid =
         (username === ADMIN_USER && (password === ADMIN_PASS || password === ADMIN_SECRET)) ||
         (password === ADMIN_SECRET && (!username || username === 'admin'));
 
@@ -885,7 +911,7 @@ const server = http.createServer(async (req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || 'application/octet-stream';
 
-    res.writeHead(200, { 
+    res.writeHead(200, {
       'Content-Type': contentType,
       'Cache-Control': 'no-cache, no-store, must-revalidate'
     });
