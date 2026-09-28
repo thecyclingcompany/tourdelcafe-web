@@ -7,6 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "jimp": "^1.6.1"
+    "jimp": "^1.6.1",
+    "nodemailer": "^10.0.11"
   }
 }
