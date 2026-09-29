@@ -7,7 +7,7 @@
     <title>Tour del Café - World's Coffee & Cycling Festival</title>
     <meta name="description"
         content="Sitio web oficial del Tour del Café: El festival de café de especialidad y ciclismo más inmersivo del mundo en el Eje Cafetero.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3.0">
     <link rel="stylesheet" href="tienda.css">
 </head>
 
@@ -128,7 +128,8 @@
         <!-- HERO SECTION INMERSIVA -->
         <section id="inicio" class="hero-section">
             <!-- Background Video -->
-            <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline preload="auto">
+            <video class="hero-video-bg" src="assets/video-hero-tdc.mp4" autoplay muted loop playsinline
+                webkit-playsinline preload="auto">
                 <source src="assets/video-hero-tdc.mp4" type="video/mp4">
                 Tu navegador no soporta reproducción de video.
             </video>
@@ -136,7 +137,8 @@
             <div class="hero-overlay"></div>
 
             <!-- Logo Animation Overlay -->
-            <video class="hero-logo-animation" autoplay muted loop playsinline webkit-playsinline preload="auto">
+            <video class="hero-logo-animation" src="assets/animacion-logo-tdc.mp4" autoplay muted loop playsinline
+                webkit-playsinline preload="auto">
                 <source src="assets/animacion-logo-tdc.mp4" type="video/mp4">
                 Tu navegador no soporta reproducción de video.
             </video>
@@ -380,8 +382,8 @@
 
                                 <!-- Botón Descarga el Brochure -->
                                 <div class="acerca-gf-cta" style="text-align: center; margin: 30px 0 28px 0;">
-                                    <a href="assets/brochure tdc gf 2027.pdf" download="brochure tdc gf 2027.pdf"
-                                        class="btn-primary"
+                                    <a href="assets/brochure%20tdc%202027.pdf" download="brochure tdc 2027.pdf"
+                                        target="_blank" class="btn-primary"
                                         style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 15px 32px; background: linear-gradient(135deg, #d35400 0%, #e67e22 100%); border: 1px solid rgba(243, 156, 18, 0.4); border-radius: 6px; box-shadow: 0 6px 20px rgba(211, 84, 0, 0.35); text-decoration: none; color: #ffffff; cursor: pointer; transition: all 0.3s ease;">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
@@ -2872,7 +2874,7 @@ l-84 87 -33 123 c-47 182 -42 172 -101 172 -50 0 -50 0 -50 33 0 17 -3 42 -6
 
     <!-- ARCHIVOS DE JAVASCRIPT -->
     <script src="data.js" type="module"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=3.0"></script>
 
     <!-- MODAL B2B: RESERVA ESPACIO EXPO TDC -->
     <div id="modal-b2b-expo" class="b2b-modal-overlay">
