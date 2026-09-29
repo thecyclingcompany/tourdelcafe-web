@@ -6326,133 +6326,133 @@ select.b2b-form-control option {
     gap: 10px;
   }
 
-  /* 2. Botón Sticky Flotante que acompaña el scroll abajo a la derecha */
+  /* ===================================================
+   CORRECCIÓN RESPONSIVE: MENÚ, SUBMENÚ Y BOTÓN STICKY
+=================================================== */
+
+  /* Ocultar botón sticky en pantallas grandes */
   .sticky-mobile-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 24px;
-    right: 18px;
-    z-index: 9999;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
-    color: #ffffff !important;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 50px;
-    box-shadow: 0 6px 18px rgba(211, 84, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: none;
   }
 
-  .sticky-mobile-cta:active {
-    transform: scale(0.96);
+  @media (max-width: 991px) {
+
+    /* 1. Ocultar el botón antiguo del header */
+    .header-cta-btn {
+      display: none !important;
+    }
+
+    /* 2. Botón Sticky Flotante en Móvil (Bien anclado a la pantalla) */
+    .sticky-mobile-cta {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 18px !important;
+      z-index: 2147483647 !important;
+      /* Máxima prioridad sobre cualquier capa */
+      padding: 12px 22px !important;
+      background: linear-gradient(135deg, #d35400 0%, #e67e22 100%) !important;
+      color: #ffffff !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      text-decoration: none !important;
+      border-radius: 50px !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      pointer-events: auto !important;
+    }
+
+    /* 3. Menú principal alineado a la izquierda */
+    .nav-menu {
+      text-align: left !important;
+      align-items: flex-start !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+
+    .nav-menu .nav-item {
+      width: 100% !important;
+      text-align: left !important;
+      display: block !important;
+    }
+
+    .nav-menu .nav-link {
+      display: block !important;
+      width: 100% !important;
+      text-align: left !important;
+      padding: 12px 0 !important;
+    }
+
+    /* 4. REPARAR SUBMENÚ "GRAN FONDO" EN MÓVIL (Para que no se salga a la izquierda) */
+    .nav-menu .dropdown-menu,
+    .nav-menu .submenu,
+    .nav-menu ul {
+      position: static !important;
+      transform: none !important;
+      left: 0 !important;
+      right: auto !important;
+      top: auto !important;
+      width: 100% !important;
+      box-shadow: none !important;
+      background: rgba(0, 0, 0, 0.25) !important;
+      border: none !important;
+      padding-left: 15px !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+
+    .nav-menu .dropdown-menu li,
+    .nav-menu .submenu li,
+    .nav-menu ul li {
+      width: 100% !important;
+      text-align: left !important;
+    }
+
+    .nav-menu .dropdown-menu a,
+    .nav-menu .submenu a,
+    .nav-menu ul a {
+      display: block !important;
+      text-align: left !important;
+      padding: 10px 0 !important;
+      color: rgba(255, 255, 255, 0.85) !important;
+      font-size: 14px !important;
+    }
   }
 
-  /* 3. Menú desplegable móvil ordenado y justificado a la izquierda */
-  .nav-menu {
-    text-align: left !important;
-    align-items: flex-start !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
+  /* Forzar visibilidad y dimensiones del video en móviles */
+  @media (max-width: 991px) {
+    .hero-section {
+      position: relative !important;
+      min-height: 100vh !important;
+      overflow: hidden !important;
+    }
 
-  .nav-menu .nav-item {
-    width: 100%;
-    text-align: left !important;
-  }
+    .hero-video-bg {
+      display: block !important;
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      transform: translate(-50%, -50%) !important;
+      z-index: 1 !important;
+    }
 
-  .nav-menu .nav-link {
-    display: block;
-    width: 100%;
-    text-align: left !important;
-    padding: 12px 0 !important;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  /* Acciones internas del menú móvil también alineadas a la izquierda */
-  .nav-actions-mobile {
-    width: 100%;
-    text-align: left !important;
-    padding-top: 15px;
-  }
-
-  .nav-actions-mobile .btn-primary {
-    width: 100%;
-    text-align: center !important;
-  }
-}
-
-/* Oculto en computador */
-.sticky-mobile-cta {
-  display: none;
-}
-
-/* Visible y flotante en celulares (menor a 992px) */
-@media (max-width: 991px) {
-
-  /* Oculta el boton viejo que estaba metido en el header */
-  .header-cta-btn {
-    display: none !important;
-  }
-
-  /* Hace flotar el nuevo boton abajo a la derecha */
-  .sticky-mobile-cta {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    position: fixed !important;
-    bottom: 24px !important;
-    right: 18px !important;
-    z-index: 99999 !important;
-    padding: 12px 22px;
-    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
-    color: #ffffff !important;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(211, 84, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-  }
-}
-
-/* Forzar visibilidad y dimensiones del video en móviles */
-@media (max-width: 991px) {
-  .hero-section {
-    position: relative !important;
-    min-height: 100vh !important;
-    overflow: hidden !important;
-  }
-
-  .hero-video-bg {
-    display: block !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 1 !important;
-  }
-
-  .hero-logo-animation {
-    display: block !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    max-width: 85% !important;
-    width: 320px !important;
-    height: auto !important;
-    z-index: 3 !important;
+    .hero-logo-animation {
+      display: block !important;
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      max-width: 85% !important;
+      width: 320px !important;
+      height: auto !important;
+      z-index: 3 !important;
+    }
   }
 }
