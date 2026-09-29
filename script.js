@@ -266,156 +266,156 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!coffeeRidesSection) return;
 
     const filterCoffeeRides = (country = 'colombia', city = 'all') => {
-    if (!ridesGrid) return;
-    
-    let visibleCount = 0;
-    
-    rideCards.forEach(card => {
-      const cardCountry = card.getAttribute('data-country');
-      const cardCity = card.getAttribute('data-city');
-      
-      const countryMatch = (country === 'colombia' && cardCountry === 'colombia') ||
-                           (country === 'internacional' && cardCountry === 'internacional');
-                           
-      const cityMatch = (city === 'all') || (cardCity === city);
-      
-      if (countryMatch && cityMatch) {
-        card.style.display = '';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
+      if (!ridesGrid) return;
+
+      let visibleCount = 0;
+
+      rideCards.forEach(card => {
+        const cardCountry = card.getAttribute('data-country');
+        const cardCity = card.getAttribute('data-city');
+
+        const countryMatch = (country === 'colombia' && cardCountry === 'colombia') ||
+          (country === 'internacional' && cardCountry === 'internacional');
+
+        const cityMatch = (city === 'all') || (cardCity === city);
+
+        if (countryMatch && cityMatch) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const existingMsg = ridesGrid.querySelector('.no-rides-msg');
+      if (visibleCount === 0) {
+        if (!existingMsg) {
+          const msg = document.createElement('p');
+          msg.className = 'body-main no-rides-msg';
+          msg.style.cssText = 'grid-column: 1/-1; text-align: center; color: rgba(250,250,250,0.6);';
+          msg.textContent = 'No hay rodadas programadas para esta región por el momento.';
+          ridesGrid.appendChild(msg);
+        }
+      } else if (existingMsg) {
+        existingMsg.remove();
       }
+    };
+
+    const updateFilters = (country) => {
+      cityButtons.forEach(btn => {
+        const btnCountry = btn.getAttribute('data-country');
+        const btnCity = btn.getAttribute('data-city');
+
+        if (btnCity === 'all') {
+          btn.classList.add('active');
+          btn.style.display = '';
+        } else if (btnCountry === country) {
+          btn.style.display = '';
+          btn.classList.remove('active');
+        } else {
+          btn.style.display = 'none';
+          btn.classList.remove('active');
+        }
+      });
+
+      filterCoffeeRides(country, 'all');
+    };
+
+    // Inicializar filtros con Colombia por defecto
+    updateFilters('colombia');
+
+    // Listeners para pestañas de país
+    countryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        countryButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const country = button.getAttribute('data-country');
+
+        ridesGrid.style.opacity = '0';
+        setTimeout(() => {
+          updateFilters(country);
+          ridesGrid.style.opacity = '1';
+        }, 200);
+      });
     });
 
-    const existingMsg = ridesGrid.querySelector('.no-rides-msg');
-    if (visibleCount === 0) {
-      if (!existingMsg) {
-        const msg = document.createElement('p');
-        msg.className = 'body-main no-rides-msg';
-        msg.style.cssText = 'grid-column: 1/-1; text-align: center; color: rgba(250,250,250,0.6);';
-        msg.textContent = 'No hay rodadas programadas para esta región por el momento.';
-        ridesGrid.appendChild(msg);
-      }
-    } else if (existingMsg) {
-      existingMsg.remove();
-    }
-  };
+    // Listeners para pestañas de ciudades
+    cityButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        cityButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-  const updateFilters = (country) => {
-    cityButtons.forEach(btn => {
-      const btnCountry = btn.getAttribute('data-country');
-      const btnCity = btn.getAttribute('data-city');
-      
-      if (btnCity === 'all') {
-        btn.classList.add('active');
-        btn.style.display = '';
-      } else if (btnCountry === country) {
-        btn.style.display = '';
-        btn.classList.remove('active');
-      } else {
-        btn.style.display = 'none';
-        btn.classList.remove('active');
-      }
+        const countryActive = document.querySelector('.country-tab.active').getAttribute('data-country');
+        const cityValue = button.getAttribute('data-city');
+
+        ridesGrid.style.opacity = '0';
+        setTimeout(() => {
+          filterCoffeeRides(countryActive, cityValue);
+          ridesGrid.style.opacity = '1';
+        }, 200);
+      });
     });
-    
-    filterCoffeeRides(country, 'all');
-  };
 
-  // Inicializar filtros con Colombia por defecto
-  updateFilters('colombia');
+    // ==========================================
+    // LÓGICA DE NAVEGACIÓN Y DETALLES INDIVIDUALES
+    // ==========================================
 
-  // Listeners para pestañas de país
-  countryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      countryButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      const country = button.getAttribute('data-country');
-      
-      ridesGrid.style.opacity = '0';
+    const showRideDetail = (rideId) => {
+      if (!coffeeRidesSection) return;
+
+      // Activar modo detalle en la sección
+      coffeeRidesSection.classList.add('detail-active');
+
+      // Activar sección detallada específica y ocultar las demás
+      rideDetailSections.forEach(section => {
+        if (section.id === `ride-detail-${rideId}`) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+
+      // Scroll suave hasta el encabezado de Coffee Rides
       setTimeout(() => {
-        updateFilters(country);
-        ridesGrid.style.opacity = '1';
-      }, 200);
-    });
-  });
+        coffeeRidesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    };
 
-  // Listeners para pestañas de ciudades
-  cityButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      cityButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+    const showRideGrid = () => {
+      if (!coffeeRidesSection) return;
 
-      const countryActive = document.querySelector('.country-tab.active').getAttribute('data-country');
-      const cityValue = button.getAttribute('data-city');
+      // Desactivar modo detalle en la sección
+      coffeeRidesSection.classList.remove('detail-active');
 
-      ridesGrid.style.opacity = '0';
-      setTimeout(() => {
-        filterCoffeeRides(countryActive, cityValue);
-        ridesGrid.style.opacity = '1';
-      }, 200);
-    });
-  });
-
-  // ==========================================
-  // LÓGICA DE NAVEGACIÓN Y DETALLES INDIVIDUALES
-  // ==========================================
-  
-  const showRideDetail = (rideId) => {
-    if (!coffeeRidesSection) return;
-    
-    // Activar modo detalle en la sección
-    coffeeRidesSection.classList.add('detail-active');
-    
-    // Activar sección detallada específica y ocultar las demás
-    rideDetailSections.forEach(section => {
-      if (section.id === `ride-detail-${rideId}`) {
-        section.classList.add('active');
-      } else {
+      // Ocultar todas las secciones detalladas
+      rideDetailSections.forEach(section => {
         section.classList.remove('active');
+      });
+
+      // Scroll suave hasta el encabezado de Coffee Rides
+      setTimeout(() => {
+        coffeeRidesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    };
+
+    // Escuchar el botón de regresar
+    document.querySelectorAll('.ride-detail-back-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = '#coffee-rides';
+      });
+    });
+
+    // Manejar Hash de la URL para navegación directa
+    const handleRideHash = () => {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#ride-detail-')) {
+        const rideId = hash.replace('#ride-detail-', '');
+        showRideDetail(rideId);
+      } else if (hash === '#coffee-rides') {
+        showRideGrid();
       }
-    });
-    
-    // Scroll suave hasta el encabezado de Coffee Rides
-    setTimeout(() => {
-      coffeeRidesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  };
-
-  const showRideGrid = () => {
-    if (!coffeeRidesSection) return;
-    
-    // Desactivar modo detalle en la sección
-    coffeeRidesSection.classList.remove('detail-active');
-    
-    // Ocultar todas las secciones detalladas
-    rideDetailSections.forEach(section => {
-      section.classList.remove('active');
-    });
-    
-    // Scroll suave hasta el encabezado de Coffee Rides
-    setTimeout(() => {
-      coffeeRidesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  };
-
-  // Escuchar el botón de regresar
-  document.querySelectorAll('.ride-detail-back-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.hash = '#coffee-rides';
-    });
-  });
-
-  // Manejar Hash de la URL para navegación directa
-  const handleRideHash = () => {
-    const hash = window.location.hash;
-    if (hash && hash.startsWith('#ride-detail-')) {
-      const rideId = hash.replace('#ride-detail-', '');
-      showRideDetail(rideId);
-    } else if (hash === '#coffee-rides') {
-      showRideGrid();
-    }
-  };
+    };
 
     window.addEventListener('hashchange', handleRideHash);
     window.addEventListener('load', handleRideHash);
@@ -1188,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', () => {
           kitMediaImg.src = config.src;
           kitMediaImg.style.display = 'block';
           kitMediaText.style.display = 'none';
-          
+
           // Force a reflow for transition to kick in
           kitMediaImg.offsetHeight;
           kitMediaImg.style.opacity = '1';
@@ -1197,7 +1197,7 @@ document.addEventListener('DOMContentLoaded', () => {
           kitMediaText.textContent = config.text;
           kitMediaText.style.display = 'block';
           kitMediaText.style.color = config.color;
-          
+
           // Force a reflow for transition to kick in
           kitMediaText.offsetHeight;
           kitMediaText.style.opacity = '1';
@@ -1270,12 +1270,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Interactions from Family Cards to Map Hotspots
     familyCards.forEach(card => {
       const familyId = card.getAttribute('data-family');
-      
+
       card.addEventListener('mouseenter', () => {
         clearActiveStates();
         card.classList.add('active-card');
         mapSvg.classList.add('active-map');
-        
+
         const matchingHotspot = document.querySelector(`.map-hotspot-group[data-family="${familyId}"]`);
         if (matchingHotspot) {
           matchingHotspot.classList.add('active-hotspot');
@@ -1314,20 +1314,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const initHospitalityInteractive = () => {
     const perks = document.querySelectorAll('.hospitality-perks li');
     const previewImg = document.getElementById('hospitality-preview-img');
-    
+
     if (!perks.length || !previewImg) return;
-    
+
     perks.forEach(perk => {
       perk.addEventListener('mouseenter', () => {
         // Remove active class from all perks
         perks.forEach(p => p.classList.remove('active'));
         // Add active class to hovered perk
         perk.classList.add('active');
-        
+
         // Change image source and alt with smooth transition
         const newSrc = perk.getAttribute('data-image');
         const newAlt = perk.textContent.trim();
-        
+
         if (newSrc && previewImg.getAttribute('src') !== newSrc) {
           previewImg.style.opacity = '0';
           setTimeout(() => {
@@ -1338,7 +1338,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-    
+
     // Set first item active on load
     if (perks[0]) {
       perks[0].classList.add('active');
@@ -1617,7 +1617,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Campos solicitados para tostadores (soporte para selecciones múltiples o únicas)
         const coffeeType = (document.getElementById('b2b-roaster-coffee-type') || formRoaster.querySelector('[name="tipo_cafe"]'))?.value.trim() || '';
         const profiles = (document.getElementById('b2b-roaster-profiles') || formRoaster.querySelector('[name="perfiles_deseados"]'))?.value.trim() || '';
-        
+
         const selectedPresentations = Array.from(formRoaster.querySelectorAll('input[name="presentacion_cafe"]:checked')).map(cb => cb.value);
         const presentation = selectedPresentations.length > 0 ? selectedPresentations.join(', ') : ((document.getElementById('b2b-roaster-presentation') || formRoaster.querySelector('[name="presentacion_cafe"]'))?.value || '');
 
@@ -1710,9 +1710,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initB2BModals();
 
-  
-    // ==========================================
-    // ==========================================
+
+  // ==========================================
+  // ==========================================
   // PARALLAX MOTOR - DON JOSÉ & COFFEE PLANT (IMPACTO SOCIAL)
   // ==========================================
   const initImpactoParallax = () => {
@@ -1917,4 +1917,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initComunidadForm();
 
+});
+// Forzar reproduccion de videos en navegadores moviles
+document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('.hero-video-bg, .hero-logo-animation');
+
+  videos.forEach(video => {
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        const unlock = () => {
+          video.play();
+          window.removeEventListener('touchstart', unlock);
+          window.removeEventListener('click', unlock);
+        };
+        window.addEventListener('touchstart', unlock, { once: true });
+        window.addEventListener('click', unlock, { once: true });
+      });
+    }
+  });
 });
