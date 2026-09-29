@@ -6387,3 +6387,39 @@ select.b2b-form-control option {
     text-align: center !important;
   }
 }
+
+/* Oculto en computador */
+.sticky-mobile-cta {
+  display: none;
+}
+
+/* Visible y flotante en celulares (menor a 992px) */
+@media (max-width: 991px) {
+
+  /* Oculta el boton viejo que estaba metido en el header */
+  .header-cta-btn {
+    display: none !important;
+  }
+
+  /* Hace flotar el nuevo boton abajo a la derecha */
+  .sticky-mobile-cta {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 18px !important;
+    z-index: 99999 !important;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(211, 84, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+}
