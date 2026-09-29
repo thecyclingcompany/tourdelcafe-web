@@ -1918,25 +1918,38 @@ document.addEventListener('DOMContentLoaded', () => {
   initComunidadForm();
 
 });
-// Forzar reproduccion de videos en navegadores moviles
-document.addEventListener('DOMContentLoaded', () => {
-  const videos = document.querySelectorAll('.hero-video-bg, .hero-logo-animation');
+// Forzar arranque garantizado de videos en moviles
+function iniciarVideosMovil() {
+  const videoBg = document.querySelector('.hero-video-bg');
+  const videoLogo = document.querySelector('.hero-logo-animation');
+  const videos = [videoBg, videoLogo].filter(Boolean);
 
-  videos.forEach(video => {
-    video.muted = true;
-    video.defaultMuted = true;
+  videos.forEach(v => {
+    v.muted = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
 
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        const unlock = () => {
-          video.play();
-          window.removeEventListener('touchstart', unlock);
-          window.removeEventListener('click', unlock);
-        };
-        window.addEventListener('touchstart', unlock, { once: true });
-        window.addEventListener('click', unlock, { once: true });
+    // Intento de reproducción nativa
+    const promesa = v.play();
+    if (promesa !== undefined) {
+      promesa.catch(error => {
+        console.warn('Autoplay bloqueado por el movil, esperando toque:', error);
       });
     }
   });
+}
+
+// Ejecutar apenas cargue el DOM
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', iniciarVideosMovil);
+} else {
+  iniciarVideosMovil();
+}
+
+// Respaldo infalible: al primer toque del usuario en la pantalla
+['touchstart', 'click', 'scroll'].forEach(evento => {
+  window.addEventListener(evento, () => {
+    iniciarVideosMovil();
+  }, { once: true, passive: true });
 });
