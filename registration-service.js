@@ -93,7 +93,7 @@ function writeJsonAtomic(filePath, data) {
     console.error(`[RegistrationService] Error escribiendo ${filePath}:`, err.message);
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
     if (fs.existsSync(tempFile)) {
-      try { fs.unlinkSync(tempFile); } catch (e) {}
+      try { fs.unlinkSync(tempFile); } catch (e) { }
     }
   }
 }
@@ -145,7 +145,7 @@ function calculateAgeAtCutOff(birthDateString) {
   if (parts.length < 3) return null;
   const birthYear = parseInt(parts[0], 10);
   if (isNaN(birthYear) || birthYear < 1920 || birthYear > 2027) return null;
-  
+
   // Al 31 de diciembre de 2027, la persona habrá cumplido (2027 - birthYear) años
   return CUT_OFF_YEAR - birthYear;
 }
@@ -155,7 +155,7 @@ function calculateAgeAtCutOff(birthDateString) {
  */
 function validateRegistrationRules(route, categoryId, participants, teamName = null) {
   const errors = [];
-  
+
   if (!['macchiato', 'espresso'].includes(route)) {
     errors.push('El recorrido seleccionado no es válido (Reto Macchiato o Reto Espresso).');
     return { valid: false, errors };
@@ -330,7 +330,7 @@ function validateRegistrationRules(route, categoryId, participants, teamName = n
 function savePendingRegistration(invoiceNumber, data) {
   ensureDataDir();
   const pending = readJsonSafe(PENDING_REGISTRATIONS_FILE, {});
-  
+
   pending[invoiceNumber] = {
     ...data,
     createdAt: new Date().toISOString(),
@@ -364,7 +364,7 @@ function generateDorsal(route, index) {
 function processPaidRegistration(invoiceNumber, refPayco, paymentDetails = {}) {
   ensureDataDir();
   const registrations = readJsonSafe(REGISTRATIONS_FILE, []);
-  
+
   // Evitar duplicados si el webhook reenvía la notificación
   const existing = registrations.find(r => r.invoiceNumber === invoiceNumber || r.refPayco === refPayco);
   if (existing) {
@@ -543,91 +543,35 @@ function processCourtesyRegistration(invoiceNumber, couponCode, customDetails = 
  * Plantilla HTML de correo de confirmación de inscripción
  */
 function buildEmailTemplate(registration, participant) {
-  return `
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <title>¡Inscripción Confirmada! - Tour del Café Gran Fondo 2027</title>
-  <style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #121212; color: #FAFAFA; margin: 0; padding: 20px; }
-    .card { max-width: 600px; margin: 0 auto; background-color: #1c1817; border-radius: 12px; border: 1px solid #332d2b; overflow: hidden; }
-    .header { background: linear-gradient(135deg, #d35400 0%, #b84300 100%); padding: 30px 20px; text-align: center; }
-    .header h1 { margin: 0; font-size: 24px; color: #FFFFFF; letter-spacing: 1px; }
-    .header p { margin: 6px 0 0 0; font-size: 14px; color: rgba(255,255,255,0.9); }
-    .content { padding: 30px 24px; }
-    .dorsal-box { background-color: #0f0e0d; border: 2px dashed #e67e22; border-radius: 10px; padding: 18px; text-align: center; margin: 20px 0; }
-    .dorsal-number { font-size: 32px; font-weight: bold; color: #e67e22; letter-spacing: 2px; }
-    .detail-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-    .detail-table td { padding: 10px 0; border-bottom: 1px solid #2a2524; font-size: 14px; }
-    .detail-label { color: rgba(250,250,250,0.6); }
-    .detail-val { text-align: right; font-weight: 600; color: #FFFFFF; }
-    .footer { padding: 20px; text-align: center; font-size: 12px; color: rgba(250,250,250,0.5); background-color: #121212; border-top: 1px solid #2a2524; }
-    .badge { display: inline-block; padding: 4px 10px; background: rgba(211,84,0,0.25); color: #e67e22; border-radius: 4px; font-size: 12px; font-weight: bold; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="header">
-      <h1>TOUR DEL CAFÉ GRAN FONDO</h1>
-      <p>World's Coffee & Cycling Festival</p>
-    </div>
-    <div class="content">
-      <p style="font-size: 18px; margin-top: 0;">¡Hola, <strong>${participant.fullName}</strong>!</p>
-      <p>Tu inscripción oficial ha sido confirmada con éxito. Ya eres parte del pelotón del festival de café y ciclismo más inmersivo del mundo en el Eje Cafetero.</p>
-      
-      <div class="dorsal-box">
-        <div style="font-size: 12px; text-transform: uppercase; color: #a09893; margin-bottom: 4px;">Tu Dorsal Oficial</div>
-        <div class="dorsal-number">${participant.dorsalNumber}</div>
-        <div style="font-size: 13px; color: #FAFAFA; margin-top: 4px;">${registration.routeName}</div>
-      </div>
+  const teamRow = (registration.teamName || participant.teamName)
+    ? Buffer.from('PHRyPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgY29sb3I6IHJnYmEoMjUwLDI1MCwyNTAsMC43KTsgZm9udC1zaXplOiAxNHB4OyI+Tm9tYnJlIGRlbCBFcXVpcG8gLyBEdXBsYTo8L3RkPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgdGV4dC1hbGlnbjogcmlnaHQ7IGZvbnQtd2VpZ2h0OiA2MDA7IGNvbG9yOiAjZTY3ZTIyOyBmb250LXNpemU6IDE0cHg7Ij57e1RFQU1fTkFNRX19PC90ZD48L3RyPg==', 'base64')
+      .toString('utf-8')
+      .replace('{{TEAM_NAME}}', registration.teamName || participant.teamName)
+    : '';
 
-      <table class="detail-table">
-        <tr>
-          <td class="detail-label">Categoría Oficial:</td>
-          <td class="detail-val"><span class="badge">${registration.categoryName}</span></td>
-        </tr>
-        ${(registration.teamName || participant.teamName) ? `
-        <tr>
-          <td class="detail-label">Nombre del Equipo / Dupla:</td>
-          <td class="detail-val"><strong style="color: #e67e22;">${registration.teamName || participant.teamName}</strong></td>
-        </tr>
-        ` : ''}
-        <tr>
-          <td class="detail-label">Documento:</td>
-          <td class="detail-val">${participant.docType}: ${participant.docNumber}</td>
-        </tr>
-        <tr>
-          <td class="detail-label">Talla de Jersey Seleccionada:</td>
-          <td class="detail-val">${participant.jerseySize}</td>
-        </tr>
-        <tr>
-          <td class="detail-label">Grupo Sanguíneo:</td>
-          <td class="detail-val">${participant.bloodType}</td>
-        </tr>
-        <tr>
-          <td class="detail-label">Referencia de Pago:</td>
-          <td class="detail-val">${registration.refPayco}</td>
-        </tr>
-        <tr>
-          <td class="detail-label">Factura / Consecutivo:</td>
-          <td class="detail-val">${registration.invoiceNumber}</td>
-        </tr>
-      </table>
+  const tplB64Part1 = 'PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVzIj4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT7CoUluc2NyaXBjacOzbiBDb25maXJtYWRhISAtIFRvdXIgZGVsIENhZsOpIEdyYW4gRm9uZG8gMjAyNzwvdGl0bGU+CiAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgo8L2hlYWQ+Cjxib2R5IHN0eWxlPSJtYXJnaW46IDA7IHBhZGRpbmc6IDIwcHggMDsgYmFja2dyb3VuZC1jb2xvcjogIzEyMTIxMjsgZm9udC1mYW1pbHk6ICdIZWx2ZXRpY2EgTmV1ZScsIEFyaWFsLCBzYW5zLXNlcmlmOyBjb2xvcjogI2ZmZmZmZjsiPgogIDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIHdpZHRoPSIxMDAlIiBib3JkZXI9IjAiIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICMxMjEyMTI7Ij4KICAgIDx0cj4KICAgICAgPHRkIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWRkaW5nOiAxMHB4OyI+CiAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgd2lkdGg9IjEwMCUiIGJvcmRlcj0iMCIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBzdHlsZT0ibWF4LXdpZHRoOiA2MDBweDsgYmFja2dyb3VuZC1jb2xvcjogIzFjMTgxNzsgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCByZ2JhKDI4LCAyNCwgMjMsIDAuOTYpIDU1JSwgcmdiYSgyOCwgMjQsIDIzLCAwLjc4KSAxMDAlKSwgdXJsKCdodHRwczovL3RvdXJkZWxjYWZlLm9yZy9hc3NldHMvQ29mZmVlX3BsYW50LmpwZWcnKTsgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQgY2VudGVyOyBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0OyBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyOyBib3JkZXItcmFkaXVzOiA4cHg7IG92ZXJmbG93OiBoaWRkZW47IGJveC1zaGFkb3c6IDAgNHB4IDIwcHggcmdiYSgwLDAsMCwwLjUpOyI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBhbGlnbj0iY2VudGVyIiBzdHlsZT0icGFkZGluZzogMzBweCAyMHB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJkMjQxZTsiPgogICAgICAgICAgICAgIDxpbWcgc3JjPSJodHRwczovL3RvdXJkZWxjYWZlLm9yZy9hc3NldHMvbG9nby1mZXN0aXZhbC1oZWFkZXIucG5nIiBhbHQ9IlRvdXIgZGVsIENhZsOpIEdyYW4gRm9uZG8iIHN0eWxlPSJtYXgtd2lkdGg6IDI4MHB4OyB3aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBkaXNwbGF5OiBibG9jazsgYm9yZGVyOiAwOyIgLz4KICAgICAgICAgICAgPC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogMzBweCAyNHB4OyI+CiAgICAgICAgICAgICAgPHAgc3R5bGU9ImZvbnQtc2l6ZTogMThweDsgbWFyZ2luLXRvcDogMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsiPsKhSG9sYSwgPHN0cm9uZyBzdHlsZT0iY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsiPnt7Tk9NQlJFX0NPTVBMRVRPfX08L3N0cm9uZz4hPC9wPgogICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50OyBsaW5lLWhlaWdodDogMS42OyBmb250LXNpemU6IDE1cHg7IG1hcmdpbi1ib3R0b206IDIwcHg7Ij4KICAgICAgICAgICAgICAgIFR1IGluc2NyaXBjacOzbiBvZmljaWFsIGhhIHNpZG8gY29uZmlybWFkYSBjb24gw6l4aXRvLiBZYSBlcmVzIHBhcnRlIGRlbCBwZWxvdMOzbiBxdWUgdml2aXLDoSBsYSBleHBlcmllbmNpYSBtw6FzIGljw7NuaWNhIGRlbCBjaWNsaXNtbyB5IGVsIGNhZsOpIGVuIENvbG9tYmlhLgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDE1LCAxNCwgMTMsIDAuOTIpOyBib3JkZXI6IDJweCBkYXNoZWQgI2U2N2UyMjsgYm9yZGVyLXJhZGl1czogNnB4OyBwYWRkaW5nOiAyMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IG1hcmdpbjogMjBweCAwOyI+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6IDEycHg7IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGNvbG9yOiAjYTc5MDc3OyBtYXJnaW4tYm90dG9tOiA0cHg7IGxldHRlci1zcGFjaW5nOiAxcHg7Ij5UVSBSRUdJU1RSTyBPRklDSUFMPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6IDM2cHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogI2U2N2UyMjsgbGV0dGVyLXNwYWNpbmc6IDJweDsgbWFyZ2luOiA4cHggMDsiPnt7RE9SU0FMX05VTUJFUn19PC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6IDE0cHg7IGNvbG9yOiAjZmZmZmZmICFpbXBvcnRhbnQ7IG1hcmdpbi10b3A6IDZweDsgZm9udC13ZWlnaHQ6IDUwMDsiPnt7Q0FURUdPUllfTkFNRX19PC9kaXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgd2lkdGg9IjEwMCUiIGJvcmRlcj0iMCIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBzdHlsZT0id2lkdGg6IDEwMCU7IGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IG1hcmdpbi10b3A6IDE1cHg7Ij4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyBjb2xvcjogcmdiYSgyNTAsMjUwLDI1MCwwLjcpOyBmb250LXNpemU6IDE0cHg7Ij5DYXRlZ29yw61hIE9maWNpYWw6PC90ZD4KICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC13ZWlnaHQ6IDYwMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyI+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgcGFkZGluZzogNHB4IDEwcHg7IGJhY2tncm91bmQ6IHJnYmEoMjExLDg0LDAsMC4yNSk7IGNvbG9yOiAjZTY3ZTIyOyBib3JkZXItcmFkaXVzOiA0cHg7Ij57e0NBVEVHT1JZX05BTUV9fTwvc3Bhbj4KICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+';
 
-      <div style="margin-top: 25px; padding: 15px; background: rgba(61, 74, 62, 0.35); border-left: 4px solid #2ecc71; border-radius: 4px; font-size: 13px; line-height: 1.5;">
-        <strong>Información Importante de Acreditación:</strong><br>
-        La entrega de kits oficiales y acreditación se realizará en el Roaster's Lounge & Expo previo al evento. Debes presentar tu documento original de identidad y este comprobante.
-      </div>
-    </div>
-    <div class="footer">
-      © 2026-2027 Tour del Café • Eje Cafetero, Colombia.<br>
-      Por consultas o soporte escríbenos a: <a href="mailto:soporte@tourdelcafe.org" style="color: #e67e22;">soporte@tourdelcafe.org</a>
-    </div>
-  </div>
-</body>
-</html>
-  `;
+  const tplB64Part2 = 'e3tURUFNX1JPV319CjwvdGFibGU+CiAgICAgICAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLXRvcDogMjVweDsgcGFkZGluZzogMThweDsgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgzMCwgMjQsIDIxLCAwLjkpOyBib3JkZXI6IDFweCBkYXNoZWQgIzU5NDUzNzsgYm9yZGVyLXJhZGl1czogNnB4OyI+CiAgICAgICAgICAgICAgICA8aDQgc3R5bGU9ImNvbG9yOiAjZDRhMzczOyBmb250LXNpemU6IDE0cHg7IG1hcmdpbjogMCAwIDEwcHggMDsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgbGV0dGVyLXNwYWNpbmc6IDAuNXB4OyI+SW5mb3JtYWNpw7NuIEltcG9ydGFudGUgZGUgQWNyZWRpdGFjacOzbjwvaDQ+CiAgICAgICAgICAgICAgICA8cCBzdHlsZT0iY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyBsaW5lLWhlaWdodDogMS42OyBtYXJnaW46IDAgMCA4cHggMDsiPgogICAgICAgICAgICAgICAgICDigKIgR3VhcmRhIGVzdGUgY29ycmVvIHkgdHUgY29tcHJvYmFudGUgZGUgcGFnbyBjb21vIHNvcG9ydGUgb2ZpY2lhbCBkZSByZWdpc3Ryby4KICAgICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2NmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7IGxpbmUtaGVpZ2h0OiAxLjY7IG1hcmdpbjogMCAwIDhweCAwOyI+CiAgICAgICAgICAgICAgICAgIOKAoiBFbiBsYXMgcHLDs3hpbWFzIHNlbWFuYXMgdGUgZW52aWFyZW1vcyBwb3IgZXN0ZSBtZWRpbyBsYSBjaXRhY2nDs24gcGFyYSBsYSBlbnRyZWdhIGRlIGtpdHMgZGUgY2FycmVyYSB5IGxhIGFjcmVkaXRhY2nDs24gb2ZpY2lhbC4KICAgICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2NmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7IGxpbmUtaGVpZ2h0OiAxLjY7IG1hcmdpbjogMDsiPgogICAgICAgICAgICAgICAgICDigKIgUmVjdWVyZGEgcHJlc2VudGFyIHR1IGRvY3VtZW50byBkZSBpZGVudGlkYWQgcGFyYSByZWNsYW1hciB0dSBraXQgZW4gbG9zIGTDrWFzIHByZXZpb3MgYSBsYSBjYXJyZXJhLgogICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWRkaW5nOiAyNXB4IDIwcHggMzVweCAyMHB4OyBib3JkZXItdG9wOiAxcHggc29saWQgIzJkMjQxZTsiPgogICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2NmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7IG1hcmdpbjogMCAwIDhweCAwOyBmb250LXdlaWdodDogNTAwOyI+CiAgICAgICAgICAgICAgICDCkVRpZW5lcyBkdWRhcyBvIG5lY2VzaXRhcyBhc2lzdGVuY2lhPyBFc2Nyw6liZW5vcyBhPGJyPgogICAgICAgICAgICAgICAgPGEgaHJlZj0ibWFpbHRvOmluZm9AdG91cmRlbGNhZmUub3JnIiBzdHlsZT0iY29sb3I6ICNkNGEzNzM7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgZm9udC13ZWlnaHQ6IDYwMDsiPmluZm9AdG91cmRlbGNhZmUub3JnPC9hPgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICA8cCBzdHlsZT0iY29sb3I6ICNhODlmOTE7IGZvbnQtc2l6ZTogMTNweDsgbWFyZ2luOiAxMnB4IDAgNHB4IDA7Ij4KICAgICAgICAgICAgICAgIFRvdXIgZGVsIENhZsOpIEdyYW4gRm9uZG8g4oCiIFF1aW5kw61vLCBDb2xvbWJpYQogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICA8cCBzdHlsZT0iY29sb3I6ICM3YTcwNjU7IGZvbnQtc2l6ZTogMTJweDsgbWFyZ2luOiAwOyI+CiAgICAgICAgICAgICAgICBPcmdhbml6YWRvIHBvciA8c3Ryb25nPlRoZSBDeWNsaW5nIENvbXBhbnk8L3N0cm9uZz4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgIDwvdGFibGU+CiAgICAgIDwvdGQ+CiAgICA8L3RyPgogIDwvdGFibGU+CjwvYm9keT4KPC9odG1sPg==';
+
+  const rowsB64 = 'PHRyPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgY29sb3I6IHJnYmEoMjUwLDI1MCwyNTAsMC43KTsgZm9udC1zaXplOiAxNHB4OyI+RG9jdW1lbnRvOjwvdGQ+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC13ZWlnaHQ6IDYwMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyI+e3tET0NfVFlQRX19OiB7e0RPQ19OVU1CRVJ9fTwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyBjb2xvcjogcmdiYSgyNTAsMjUwLDI1MCwwLjcpOyBmb250LXNpemU6IDE0cHg7Ij5UYWxsYSBkZSBKZXJzZXkgU2VsZWNjaW9uYWRhOjwvdGQ+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC13ZWlnaHQ6IDYwMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyI+e3tKRVJTRVlfU0laRX19PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IGNvbG9yOiByZ2JhKDI1MCwyNTAsMjUwLDAuNyk7IGZvbnQtc2l6ZTogMTRweDsiPkdydXBvIFNhbmd1w61uZW86PC90ZD48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IHRleHQtYWxpZ246IHJpZ2h0OyBmb250LXdlaWdodDogNjAwOyBjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7Ij57e0JMT09EX1RZUEV9fTwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyBjb2xvcjogcmdiYSgyNTAsMjUwLDI1MCwwLjcpOyBmb250LXNpemU6IDE0cHg7Ij5SZWZlcmVuY2lhIGRlIFBhZ286PC90ZD48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IHRleHQtYWxpZ246IHJpZ2h0OyBmb250LXdlaWdodDogNjAwOyBjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7Ij57e1JFRl9QQVlDT319PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IGNvbG9yOiByZ2JhKDI1MCwyNTAsMjUwLDAuNyk7IGZvbnQtc2l6ZTogMTRweDsiPkZhY3R1cmEgLyBDb25zZWN1dGl2bzo8L3RkPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgdGV4dC1hbGlnbjogcmlnaHQ7IGZvbnQtd2VpZ2h0OiA2MDA7IGNvbG9yOiAjZmZmZmZmICFpbXBvcnRhbnQ7IGZvbnQtc2l6ZTogMTRweDsiPnt7SU5WT0lDRV9OVU1CRVJ9fTwvdGQ+PC90cj4=';
+
+  const decodedPart1 = Buffer.from(tplB64Part1, 'base64').toString('utf-8');
+  const decodedPart2 = Buffer.from(tplB64Part2, 'base64').toString('utf-8');
+  const decodedRows = Buffer.from(rowsB64, 'base64').toString('utf-8');
+
+  const fullHtml = decodedPart1 + decodedPart2;
+
+  return fullHtml
+    .replace('{{NOMBRE_COMPLETO}}', participant.fullName || 'Ciclista')
+    .replace('{{DORSAL_NUMBER}}', participant.dorsalNumber || 'POR ASIGNAR')
+    .replace(/\{\{CATEGORY_NAME\}\}/g, registration.categoryName || 'Gran Fondo')
+    .replace('{{TEAM_ROW}}', teamRow + decodedRows)
+    .replace('{{DOC_TYPE}}', participant.docType || 'ID')
+    .replace('{{DOC_NUMBER}}', participant.docNumber || 'N/A')
+    .replace('{{JERSEY_SIZE}}', participant.jerseySize || 'M')
+    .replace('{{BLOOD_TYPE}}', participant.bloodType || 'N/A')
+    .replace('{{REF_PAYCO}}', registration.refPayco || 'N/A')
+    .replace('{{INVOICE_NUMBER}}', registration.invoiceNumber || 'N/A');
 }
 
 /**

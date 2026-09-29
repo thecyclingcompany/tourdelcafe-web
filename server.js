@@ -8,7 +8,6 @@ const inventoryService = require('./inventory-service');
 const registrationService = require('./registration-service');
 const couponService = require('./coupon-service');
 const nodemailer = require('nodemailer');
-const { sendWelcomeEmail } = require('./email-service');
 
 // Configuración SMTP Hostinger
 const transporter = nodemailer.createTransport({
@@ -487,18 +486,7 @@ const server = http.createServer(async (req, res) => {
         });
 
         console.log(`[ePayco Webhook Success] Resultado de inscripción:`, regResult);
-        // Enviar correo de confirmación al participante
-        try {
-          const emailCliente = (body && (body.x_customer_email || body.email)) || (regResult && regResult.email);
-          const nombreCliente = (body && (body.x_customer_name || body.name)) || (regResult && (regResult.name || regResult.nombre)) || 'Ciclista';
-          const categoriaCliente = (regResult && (regResult.category || regResult.categoria || regResult.reto)) || (body && body.x_description) || 'Gran Fondo';
 
-          if (emailCliente) {
-            sendWelcomeEmail(emailCliente, nombreCliente, refPayco, categoriaCliente);
-          }
-        } catch (errEmail) {
-          console.error('[Webhook Email Error]:', errEmail);
-        }
         return sendJson(res, 200, {
           status: 'success',
           type: 'registration',
