@@ -6358,31 +6358,27 @@ select.b2b-form-control option {
     }
 
     /* ========================================================
-   BLOQUEO TEMPORAL DE SUBMENU Y PESTANAS DE GRAN FONDO
+   BLOQUEO DEFINITIVO DE SUBMENÚ Y TABS DE GRAN FONDO
    ======================================================== */
 
-    /* 1. Submenú superior: forzar color blanco, anular color azul y bloquear clics */
-    .nav-menu ul a,
-    .nav-menu .dropdown-menu a,
-    .nav-menu .submenu a,
+    /* 1. Submenú superior: forzar letras blancas, quitar azul y bloquear clics */
+    header nav .dropdown-menu,
+    header nav .dropdown-menu li,
+    header nav .dropdown-menu a,
+    header nav ul ul,
+    header nav ul ul li,
     header nav ul ul a {
       color: #ffffff !important;
       text-decoration: none !important;
       pointer-events: none !important;
       cursor: default !important;
-      opacity: 0.85 !important;
     }
 
-    /* 2. Pestañas inferiores de Gran Fondo: bloquear interacción */
-    .gf-tabs-nav .gf-tab,
-    .gf-tabs-nav button {
+    /* 2. Pestañas inferiores de Gran Fondo: bloquear clics en todos los botones */
+    .gf-tabs-nav button,
+    .gf-tabs-nav .gf-tab {
       pointer-events: none !important;
       cursor: default !important;
-    }
-
-    /* Atenuar los botones secundarios y dejar fija la primera pestaña */
-    .gf-tabs-nav .gf-tab:not(.active) {
-      opacity: 0.5 !important;
     }
   }
 }
