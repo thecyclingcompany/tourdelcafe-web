@@ -1,6 +1,0 @@
-# Habilitar streaming por rangos de bytes para navegadores móviles
-Header set Accept-Ranges bytes
-
-# Asegurar tipo MIME estándar para video MP4
-AddType video/mp4 .mp4
-AddType video/webm .webm
