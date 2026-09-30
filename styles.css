@@ -6364,5 +6364,31 @@ select.b2b-form-control option {
       opacity: 0.55 !important;
       text-decoration: none !important;
     }
+
+    /* ESTILOS PARA SUBMENÚ Y PESTAÑAS INHABILITADAS TEMPORALMENTE */
+
+    /* Mantiene el color blanco y formato original del submenú */
+    .nav-menu .dropdown-menu a.disabled-tab,
+    .nav-menu .submenu a.disabled-tab {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      pointer-events: none !important;
+      cursor: default !important;
+      opacity: 0.8 !important;
+    }
+
+    /* Evita que cambien al pasar el ratón por encima */
+    .nav-menu .dropdown-menu a.disabled-tab:hover,
+    .nav-menu .submenu a.disabled-tab:hover {
+      color: #ffffff !important;
+      background: transparent !important;
+    }
+
+    /* Bloquea las pestañas inferiores de la sección Gran Fondo */
+    .disabled-tab {
+      pointer-events: none !important;
+      cursor: default !important;
+      text-decoration: none !important;
+    }
   }
 }
