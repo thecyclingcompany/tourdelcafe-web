@@ -1918,38 +1918,3 @@ document.addEventListener('DOMContentLoaded', () => {
   initComunidadForm();
 
 });
-// Forzar arranque garantizado de videos en moviles
-function iniciarVideosMovil() {
-  const videoBg = document.querySelector('.hero-video-bg');
-  const videoLogo = document.querySelector('.hero-logo-animation');
-  const videos = [videoBg, videoLogo].filter(Boolean);
-
-  videos.forEach(v => {
-    v.muted = true;
-    v.setAttribute('muted', '');
-    v.setAttribute('playsinline', '');
-    v.setAttribute('webkit-playsinline', '');
-
-    // Intento de reproducción nativa
-    const promesa = v.play();
-    if (promesa !== undefined) {
-      promesa.catch(error => {
-        console.warn('Autoplay bloqueado por el movil, esperando toque:', error);
-      });
-    }
-  });
-}
-
-// Ejecutar apenas cargue el DOM
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', iniciarVideosMovil);
-} else {
-  iniciarVideosMovil();
-}
-
-// Respaldo infalible: al primer toque del usuario en la pantalla
-['touchstart', 'click', 'scroll'].forEach(evento => {
-  window.addEventListener(evento, () => {
-    iniciarVideosMovil();
-  }, { once: true, passive: true });
-});
