@@ -6357,38 +6357,32 @@ select.b2b-form-control option {
       font-size: 14px !important;
     }
 
-    /* ENLACES INHABILITADOS TEMPORALMENTE */
-    .disabled-link {
-      pointer-events: none !important;
-      cursor: default !important;
-      opacity: 0.55 !important;
-      text-decoration: none !important;
-    }
+    /* ========================================================
+   BLOQUEO TEMPORAL DE SUBMENU Y PESTANAS DE GRAN FONDO
+   ======================================================== */
 
-    /* ESTILOS PARA SUBMENÚ Y PESTAÑAS INHABILITADAS TEMPORALMENTE */
-
-    /* Mantiene el color blanco y formato original del submenú */
-    .nav-menu .dropdown-menu a.disabled-tab,
-    .nav-menu .submenu a.disabled-tab {
+    /* 1. Submenú superior: forzar color blanco, anular color azul y bloquear clics */
+    .nav-menu ul a,
+    .nav-menu .dropdown-menu a,
+    .nav-menu .submenu a,
+    header nav ul ul a {
       color: #ffffff !important;
       text-decoration: none !important;
       pointer-events: none !important;
       cursor: default !important;
-      opacity: 0.8 !important;
+      opacity: 0.85 !important;
     }
 
-    /* Evita que cambien al pasar el ratón por encima */
-    .nav-menu .dropdown-menu a.disabled-tab:hover,
-    .nav-menu .submenu a.disabled-tab:hover {
-      color: #ffffff !important;
-      background: transparent !important;
-    }
-
-    /* Bloquea las pestañas inferiores de la sección Gran Fondo */
-    .disabled-tab {
+    /* 2. Pestañas inferiores de Gran Fondo: bloquear interacción */
+    .gf-tabs-nav .gf-tab,
+    .gf-tabs-nav button {
       pointer-events: none !important;
       cursor: default !important;
-      text-decoration: none !important;
+    }
+
+    /* Atenuar los botones secundarios y dejar fija la primera pestaña */
+    .gf-tabs-nav .gf-tab:not(.active) {
+      opacity: 0.5 !important;
     }
   }
 }
