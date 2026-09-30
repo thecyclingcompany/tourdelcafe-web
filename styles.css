@@ -6422,37 +6422,4 @@ select.b2b-form-control option {
       font-size: 14px !important;
     }
   }
-
-  /* Forzar visibilidad y dimensiones del video en móviles */
-  @media (max-width: 991px) {
-    .hero-section {
-      position: relative !important;
-      min-height: 100vh !important;
-      overflow: hidden !important;
-    }
-
-    .hero-video-bg {
-      display: block !important;
-      position: absolute !important;
-      top: 50% !important;
-      left: 50% !important;
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      transform: translate(-50%, -50%) !important;
-      z-index: 1 !important;
-    }
-
-    .hero-logo-animation {
-      display: block !important;
-      position: absolute !important;
-      top: 50% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      max-width: 85% !important;
-      width: 320px !important;
-      height: auto !important;
-      z-index: 3 !important;
-    }
-  }
 }
