@@ -259,8 +259,10 @@ const server = http.createServer(async (req, res) => {
 
       // 2. Determinar etapa activa y valor total
       const stageInfo = registrationService.getCurrentPricingStage();
-      const unitPrice = stageInfo.current.prices[route] || 490000;
-      const baseTotal = unitPrice * participants.length;
+      const unitPrice = (stageInfo.current.prices && stageInfo.current.prices[route]) || 490000;
+      const jerseyPrice = Number(body.jerseyPrice) || 0;
+      const hasJersey = Boolean(body.hasJersey || body.includeJersey || route === 'vip');
+      const baseTotal = (unitPrice * participants.length) + (hasJersey && jerseyPrice > 0 ? jerseyPrice : 0);
       let finalTotal = baseTotal;
       let appliedCoupon = null;
 
@@ -284,7 +286,9 @@ const server = http.createServer(async (req, res) => {
           ...p,
           nombres: nombres || (fullName ? fullName.split(/\s+/).slice(0, -1).join(' ') : ''),
           apellidos: apellidos || (fullName ? fullName.split(/\s+/).slice(-1).join(' ') : ''),
-          fullName
+          fullName,
+          hasJersey,
+          jerseySize: p.jerseySize || (hasJersey ? 'Seleccionada' : 'No incluido')
         };
       });
 
@@ -301,6 +305,8 @@ const server = http.createServer(async (req, res) => {
         stage: stageInfo.current.id,
         stageName: stageInfo.current.name,
         unitPrice,
+        hasJersey,
+        jerseyPrice,
         baseAmount: baseTotal,
         discountPercent: appliedCoupon ? appliedCoupon.discountPercent : 0,
         discountAmount: appliedCoupon ? appliedCoupon.discountAmount : 0,

@@ -1662,3 +1662,400 @@ select.form-control:disabled {
     padding: 20px 16px;
   }
 }
+
+/* ==========================================================================
+   ESTILOS GENESIS COFFEE RIDE (STANDARD & EXPERIENCIA VIP)
+   ========================================================================== */
+.genesis-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.genesis-option-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.genesis-option-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(211, 84, 0, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.genesis-option-card.selected {
+  border-color: var(--color-accent);
+  background: linear-gradient(135deg, rgba(32, 27, 24, 0.95) 0%, rgba(20, 18, 17, 0.98) 100%);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(211, 84, 0, 0.25);
+}
+
+/* Experiencia VIP Highlight */
+.genesis-option-card.vip-highlight {
+  border-color: rgba(243, 156, 18, 0.35);
+  background: linear-gradient(145deg, rgba(30, 24, 18, 0.95) 0%, rgba(20, 18, 17, 0.98) 100%);
+}
+
+.genesis-option-card.vip-highlight:hover {
+  border-color: rgba(243, 156, 18, 0.7);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(243, 156, 18, 0.2);
+}
+
+.genesis-option-card.vip-highlight.selected {
+  border-color: #f39c12;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(243, 156, 18, 0.3);
+  background: linear-gradient(145deg, rgba(40, 31, 22, 0.95) 0%, rgba(22, 19, 17, 0.98) 100%);
+}
+
+.vip-glow-pill {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: linear-gradient(90deg, #d35400, #f39c12);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(243, 156, 18, 0.4);
+}
+
+.genesis-option-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.genesis-option-badge {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  color: var(--color-accent-light);
+  background: rgba(211, 84, 0, 0.12);
+  border: 1px solid var(--border-accent);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+}
+
+.genesis-option-badge.vip-badge {
+  color: #f1c40f;
+  background: rgba(241, 196, 15, 0.15);
+  border-color: rgba(241, 196, 15, 0.35);
+}
+
+.genesis-option-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.genesis-option-radio {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.genesis-option-card.selected .genesis-option-radio {
+  border-color: var(--color-accent-light);
+  background: var(--color-accent);
+}
+
+.genesis-option-card.vip-highlight.selected .genesis-option-radio {
+  border-color: #f39c12;
+  background: #f39c12;
+}
+
+.genesis-option-card.selected .genesis-option-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.genesis-option-lead {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.genesis-option-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+
+.genesis-price-label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.genesis-price-val {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-gold);
+}
+
+.genesis-inclusions-block {
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.genesis-inclusions-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--text-subtle);
+  margin-bottom: 10px;
+}
+
+.genesis-inclusions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.genesis-inclusions-list > li {
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.45;
+}
+
+.genesis-inclusions-list > li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent-light);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.genesis-option-card.vip-highlight .genesis-inclusions-list > li::before {
+  color: #f39c12;
+}
+
+.genesis-subinclusions-list {
+  list-style: none;
+  padding-left: 12px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  color: rgba(250, 250, 250, 0.7);
+}
+
+.genesis-subinclusions-list > li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.genesis-subinclusions-list > li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+  font-size: 14px;
+}
+
+.genesis-jersey-note {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  margin-top: auto;
+}
+
+.genesis-jersey-note.vip-note {
+  background: rgba(243, 156, 18, 0.08);
+  border-color: rgba(243, 156, 18, 0.3);
+  color: #fad390;
+}
+
+/* ==========================================================================
+   COMPONENTE: SELECTOR DE JERSEY OFICIAL EN EL FORMULARIO
+   ========================================================================== */
+.jersey-addon-card {
+  background: rgba(26, 24, 22, 0.85);
+  border: 1.5px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.jersey-addon-card.active {
+  border-color: var(--color-accent-light);
+  background: rgba(35, 30, 26, 0.95);
+  box-shadow: 0 4px 20px rgba(211, 84, 0, 0.15);
+}
+
+.jersey-addon-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.jersey-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+/* Switch Toggle Slider */
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.switch-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.18);
+  transition: .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.switch-slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  transition: .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.switch-toggle input:checked + .switch-slider {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent-light);
+}
+
+.switch-toggle input:checked + .switch-slider::before {
+  transform: translateX(24px);
+}
+
+.jersey-toggle-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.jersey-toggle-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.jersey-toggle-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.jersey-addon-price-chip {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-gold);
+  background: rgba(243, 156, 18, 0.12);
+  border: 1px solid rgba(243, 156, 18, 0.35);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.jersey-size-picker-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+  animation: fadeInStep 0.3s ease;
+}
+
+/* Card VIP Jersey Incluido */
+.jersey-vip-included-card {
+  background: linear-gradient(135deg, rgba(38, 30, 22, 0.8) 0%, rgba(24, 20, 18, 0.9) 100%);
+  border: 1.5px solid rgba(243, 156, 18, 0.4);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.jersey-vip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #f39c12;
+  background: rgba(243, 156, 18, 0.15);
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+
+.jersey-vip-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+

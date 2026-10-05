@@ -13,12 +13,21 @@
   const CUT_OFF_YEAR = 2027;
 
   const STATE = {
-    currentStep: 0, // 0: Evento, 1: Recorrido, 2: Categoría, 3: Corredores
-    selectedEvent: 'gran-fondo',
-    selectedRoute: 'macchiato', // 'macchiato' | 'espresso'
-    selectedCategory: null, // ej: 'ind-m-19-30', 'pareja-sub90', 'equipo-masc-a'
-    categoryGroup: 'individual', // 'individual' | 'parejas' | 'equipos'
-    teamName: '', // Nombre del Equipo para Equipos (4) o Parejas Mixtas (2)
+    currentStep: 0, // 0: Evento, 1: Opción Genesis (Paso 1 de 2), 2: Registro & Pago (Paso 2 de 2)
+    selectedEvent: 'genesis-coffee-ride',
+    genesisOption: 'standard', // 'standard' | 'vip'
+    includeJersey: false, // Adición opcional para Standard (+ $100.000 COP)
+    jerseySize: '',
+    jerseyPrice: 100000,
+    selectedRoute: 'standard',
+    selectedCategory: {
+      id: 'genesis-standard',
+      name: 'Inscripción Standard',
+      participantsCount: 1,
+      rule: 'Edad mínima 18 años cumplidos al 31/Dic/2027.'
+    },
+    categoryGroup: 'individual',
+    teamName: '',
     currentStage: null,
     unitPrice: 490000,
     appliedCoupon: null,
@@ -211,12 +220,12 @@
       console.warn('Usando configuración local de tarifas:', e);
     }
 
-    // Fallback local: Etapa Chapola
+    // Fallback local: Genesis Coffee Ride
     STATE.currentStage = {
       id: 'chapola',
-      name: 'Etapa Chapola',
+      name: 'Genesis Coffee Ride',
       badge: 'Tarifa Especial de Apertura',
-      prices: { macchiato: 490000, espresso: 490000 },
+      prices: { macchiato: 490000, espresso: 490000, standard: 490000, vip: 490000 },
       startDate: '2026-09-28T00:00:00-05:00',
       endDate: '2026-10-25T23:59:59-05:00'
     };
@@ -236,78 +245,108 @@
       const end = new Date(stage.endDate).toLocaleDateString('es-CO', { day: 'numeric', month: 'short', year: 'numeric' });
       datesEl.textContent = `Vigencia: ${start} - ${end}`;
     }
-    const currentPrice = stage.prices[STATE.selectedRoute] || 490000;
+    const currentPrice = (stage.prices && (stage.prices[STATE.genesisOption] || stage.prices[STATE.selectedRoute])) || 490000;
     STATE.unitPrice = currentPrice;
     if (priceEl) priceEl.textContent = formatCOP(currentPrice);
+
+    // Actualizar precios en las tarjetas de opción Genesis
+    const priceStandardEl = document.getElementById('price-genesis-standard');
+    const priceVipEl = document.getElementById('price-genesis-vip');
+    if (priceStandardEl) priceStandardEl.textContent = formatCOP(currentPrice);
+    if (priceVipEl) priceVipEl.textContent = formatCOP(currentPrice);
 
     updateSummary();
   }
 
   // ==========================================
-  // CONTROL DE PASOS DEL FLUJO
+  // SELECCIÓN DE MODALIDAD GENESIS COFFEE RIDE
+  // ==========================================
+  function selectGenesisOption(optionKey) {
+    STATE.genesisOption = optionKey;
+    STATE.selectedRoute = optionKey;
+
+    const cardStandard = document.getElementById('card-opt-standard');
+    const cardVip = document.getElementById('card-opt-vip');
+
+    if (cardStandard && cardVip) {
+      if (optionKey === 'standard') {
+        cardStandard.classList.add('selected');
+        cardVip.classList.remove('selected');
+      } else {
+        cardStandard.classList.remove('selected');
+        cardVip.classList.add('selected');
+      }
+    }
+
+    if (optionKey === 'vip') {
+      STATE.selectedCategory = {
+        id: 'genesis-vip',
+        name: 'Experiencia VIP',
+        participantsCount: 1,
+        rule: 'Mayor de 18 años al 31 de diciembre de 2027.'
+      };
+      // En VIP el jersey está incluido en el paquete
+      STATE.includeJersey = true;
+    } else {
+      STATE.selectedCategory = {
+        id: 'genesis-standard',
+        name: 'Inscripción Standard',
+        participantsCount: 1,
+        rule: 'Mayor de 18 años al 31 de diciembre de 2027.'
+      };
+    }
+
+    updateSummary();
+  }
+
+  // ==========================================
+  // CONTROL DE PASOS DEL FLUJO (2 PASOS PARA GENESIS)
   // ==========================================
   function goToStep(stepIndex) {
-    if (stepIndex === 1 && !STATE.selectedEvent) {
-      showToast('Selecciona el evento Tour del Café Gran Fondo para continuar.', true);
-      return;
-    }
-
-    if (stepIndex === 2 && !STATE.selectedRoute) {
-      showToast('Por favor selecciona un recorrido (Reto Macchiato o Reto Espresso).', true);
-      return;
-    }
-
-    if (stepIndex === 3 && !STATE.selectedCategory) {
-      showToast('Por favor selecciona una categoría deportiva.', true);
-      return;
-    }
-
     STATE.currentStep = stepIndex;
 
-    // Actualizar Vistas
-    document.querySelectorAll('.view-step').forEach((el, idx) => {
-      if (idx === stepIndex) {
-        el.classList.add('active-step');
-      } else {
-        el.classList.remove('active-step');
-      }
-    });
+    // Ocultar todas las vistas
+    document.querySelectorAll('.view-step').forEach(el => el.classList.remove('active-step'));
 
-    // Actualizar Barra de Progreso
     const stepperContainer = document.getElementById('stepper-container');
-    if (stepperContainer) {
-      stepperContainer.style.display = stepIndex === 0 ? 'none' : 'block';
-    }
-
-    const stepNodes = document.querySelectorAll('.step-node');
-    stepNodes.forEach((node, idx) => {
-      // Step 0 es Evento, los nodos visuales 1, 2, 3 representan Recorrido, Categoría, Registro
-      const logicalStep = idx + 1;
-      node.classList.remove('active', 'completed');
-      if (stepIndex === logicalStep) {
-        node.classList.add('active');
-      } else if (stepIndex > logicalStep) {
-        node.classList.add('completed');
-      }
-    });
-
     const fillLine = document.getElementById('stepper-fill');
-    if (fillLine) {
-      if (stepIndex <= 1) fillLine.style.width = '0%';
-      else if (stepIndex === 2) fillLine.style.width = '50%';
-      else if (stepIndex >= 3) fillLine.style.width = '100%';
+    const node1 = document.getElementById('node-step-1');
+    const node2 = document.getElementById('node-step-2');
+    const label1 = document.getElementById('node-label-1');
+    const label2 = document.getElementById('node-label-2');
+
+    if (label1) label1.textContent = 'Inscripción';
+    if (label2) label2.textContent = 'Registro & Pago';
+
+    if (stepIndex === 0) {
+      // Paso 0: Selección de Evento
+      const step0 = document.getElementById('step-0-eventos');
+      if (step0) step0.classList.add('active-step');
+      if (stepperContainer) stepperContainer.style.display = 'none';
+    } else if (stepIndex === 1) {
+      // Paso 1 de 2: Standard vs Experiencia VIP
+      const step1 = document.getElementById('step-1-genesis');
+      if (step1) step1.classList.add('active-step');
+      if (stepperContainer) stepperContainer.style.display = 'block';
+
+      if (node1) node1.className = 'step-node active';
+      if (node2) node2.className = 'step-node';
+      if (fillLine) fillLine.style.width = '0%';
+    } else if (stepIndex === 2) {
+      // Paso 2 de 2: Formulario & Pago
+      const stepForm = document.getElementById('step-3-formulario');
+      if (stepForm) stepForm.classList.add('active-step');
+      if (stepperContainer) stepperContainer.style.display = 'block';
+
+      if (node1) node1.className = 'step-node completed';
+      if (node2) node2.className = 'step-node active';
+      if (fillLine) fillLine.style.width = '100%';
+
+      generateParticipantForms();
     }
 
     // Scroll suave arriba
     window.scrollTo({ top: 120, behavior: 'smooth' });
-
-    // Acciones específicas por paso
-    if (stepIndex === 2) {
-      renderCategories();
-    } else if (stepIndex === 3) {
-      generateParticipantForms();
-    }
-
     updateSummary();
   }
 
@@ -642,20 +681,53 @@
             <input type="text" class="form-control field-medicalNotes" placeholder="Medicamentos, alergias, o escribe 'Ninguna'" value="${existing.medicalNotes || ''}">
           </div>
 
-          <!-- 3. SELECCIÓN DEPORTIVA -->
+          <!-- 3. TALLA DE JERSEY OFICIAL CICLISTA -->
           <div class="form-section-divider">
             <span>🚴 Talla de Jersey Oficial Ciclista</span>
           </div>
 
-          <div class="form-grid-row">
-            <div class="form-group" style="grid-column: span 2;">
-              <label class="form-label">Talla de Jersey Oficial <span class="req">*</span></label>
-              <select class="form-control field-jerseySize" required>
-                <option value="">Selecciona tu talla oficial...</option>
-                ${JERSEY_SIZES.map(s => `<option value="${s}" ${existing.jerseySize === s ? 'selected' : ''}>${s}</option>`).join('')}
-              </select>
+          ${STATE.genesisOption === 'vip' ? `
+            <div class="jersey-vip-included-card">
+              <div class="jersey-vip-badge">✨ Incluido en Experiencia VIP</div>
+              <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 4px 0 6px 0;">Jersey Conmemorativo Oficial by Hincapie</h4>
+              <p class="jersey-vip-desc">
+                Tu inscripción Experiencia VIP ya incluye el Jersey Oficial Conmemorativo de alta gama. Por favor selecciona tu talla:
+              </p>
+              <div style="margin-top: 14px;">
+                <label class="form-label" for="p-${i}-jerseySize">Talla de Jersey Oficial <span class="req">*</span></label>
+                <select id="p-${i}-jerseySize" class="form-control field-jerseySize" required>
+                  <option value="">Selecciona tu talla oficial...</option>
+                  ${JERSEY_SIZES.map(s => `<option value="${s}" ${existing.jerseySize === s ? 'selected' : ''}>${s}</option>`).join('')}
+                </select>
+              </div>
             </div>
-          </div>
+          ` : `
+            <div class="jersey-addon-card ${STATE.includeJersey ? 'active' : ''}" id="jersey-card-${i}">
+              <div class="jersey-addon-header">
+                <div class="jersey-toggle-wrapper">
+                  <label class="switch-toggle" for="toggle-jersey-${i}">
+                    <input type="checkbox" id="toggle-jersey-${i}" class="field-toggle-jersey" data-index="${i}" ${STATE.includeJersey ? 'checked' : ''}>
+                    <span class="switch-slider"></span>
+                  </label>
+                  <div class="jersey-toggle-text">
+                    <label for="toggle-jersey-${i}" class="jersey-toggle-title">¿Deseas incluir el Jersey Oficial Ciclista?</label>
+                    <span class="jersey-toggle-desc">Jersey oficial conmemorativo Genesis Coffee Ride by Hincapie</span>
+                  </div>
+                </div>
+                <div class="jersey-addon-price-chip">+ $ 100.000 COP</div>
+              </div>
+
+              <div class="jersey-size-picker-container" id="jersey-picker-wrap-${i}" style="${STATE.includeJersey ? 'display: block;' : 'display: none;'}">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="p-${i}-jerseySize">Talla de Jersey Oficial <span class="req">*</span></label>
+                  <select id="p-${i}-jerseySize" class="form-control field-jerseySize" ${STATE.includeJersey ? 'required' : ''}>
+                    <option value="">Selecciona tu talla oficial...</option>
+                    ${JERSEY_SIZES.map(s => `<option value="${s}" ${existing.jerseySize === s ? 'selected' : ''}>${s}</option>`).join('')}
+                  </select>
+                </div>
+              </div>
+            </div>
+          `}
 
           <!-- 4. TÉRMINOS Y CONSENTIMIENTO -->
           <div class="terms-checkbox-group">
@@ -670,6 +742,30 @@
     }
 
     container.innerHTML = formsHtml;
+
+    // Vincular toggle de jersey para Standard
+    container.querySelectorAll('.field-toggle-jersey').forEach(toggle => {
+      toggle.addEventListener('change', (e) => {
+        const isChecked = e.target.checked;
+        STATE.includeJersey = isChecked;
+        const idx = e.target.dataset.index || 0;
+        const pickerWrap = document.getElementById(`jersey-picker-wrap-${idx}`);
+        const jerseyCard = document.getElementById(`jersey-card-${idx}`);
+        const card = document.getElementById(`p-card-${idx}`);
+        const sizeSelect = card ? card.querySelector('.field-jerseySize') : null;
+
+        if (pickerWrap) pickerWrap.style.display = isChecked ? 'block' : 'none';
+        if (jerseyCard) {
+          if (isChecked) jerseyCard.classList.add('active');
+          else jerseyCard.classList.remove('active');
+        }
+        if (sizeSelect) {
+          sizeSelect.required = isChecked;
+          if (!isChecked) sizeSelect.value = '';
+        }
+        updateSummary();
+      });
+    });
 
     // Vincular listener para Nombre del Equipo en tiempo real
     const teamInput = document.getElementById('field-team-name');
@@ -855,11 +951,17 @@
   // ==========================================
   function updateSummary() {
     const routeNameEl = document.getElementById('summary-route-name');
+    const labelInscription = document.getElementById('summary-label-inscription');
     const catNameEl = document.getElementById('summary-cat-name');
     const stageNameEl = document.getElementById('summary-stage-name');
     const unitPriceEl = document.getElementById('summary-unit-price');
     const participantsQtyEl = document.getElementById('summary-qty-participants');
     const totalAmountEl = document.getElementById('summary-total-amount');
+
+    const rowCat = document.getElementById('row-category-name');
+    const rowJersey = document.getElementById('row-jersey-addon');
+    const jerseyPriceEl = document.getElementById('summary-jersey-addon-val');
+    const rowTeam = document.getElementById('row-team-name');
 
     const rowSubtotal = document.getElementById('row-subtotal');
     const rowDiscount = document.getElementById('row-discount');
@@ -871,24 +973,23 @@
     const btnCourtesy = document.getElementById('btn-checkout-courtesy');
     const securityBadges = document.getElementById('checkout-security-badges');
 
-    const routeDisplayName = STATE.selectedRoute === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)';
-    if (routeNameEl) routeNameEl.textContent = routeDisplayName;
-
-    if (catNameEl) {
-      catNameEl.textContent = STATE.selectedCategory ? STATE.selectedCategory.name : 'Por seleccionar';
+    // Requisito usuario: cambiar el texto "Recorrido" por "Inscripción" (Standard o Experiencia VIP) y retirar texto "categoría"
+    if (labelInscription) {
+      labelInscription.textContent = 'Inscripción:';
     }
 
-    // Reflejar Nombre del Equipo / Pareja en el resumen
-    const rowTeam = document.getElementById('row-team-name');
-    const teamNameEl = document.getElementById('summary-team-name');
-    const isPareja = STATE.selectedCategory && (STATE.selectedCategory.gender === 'MIXTO' || (STATE.selectedCategory.id && STATE.selectedCategory.id.startsWith('pareja-')));
-    const isEquipo = STATE.selectedCategory && (STATE.selectedCategory.participantsCount === 4 || (STATE.selectedCategory.id && STATE.selectedCategory.id.startsWith('equipo-')));
-    if (rowTeam && teamNameEl) {
-      if (isPareja || isEquipo) {
-        rowTeam.style.display = 'flex';
-        teamNameEl.textContent = STATE.teamName ? STATE.teamName : 'Por diligenciar';
-      } else {
-        rowTeam.style.display = 'none';
+    const isGenesis = STATE.selectedEvent === 'genesis-coffee-ride' || !STATE.selectedEvent;
+    if (isGenesis) {
+      const inscriptionText = STATE.genesisOption === 'vip' ? 'Experiencia VIP' : 'Standard';
+      if (routeNameEl) routeNameEl.textContent = inscriptionText;
+      if (rowCat) rowCat.style.display = 'none';
+      if (rowTeam) rowTeam.style.display = 'none';
+    } else {
+      const routeDisplayName = STATE.selectedRoute === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)';
+      if (routeNameEl) routeNameEl.textContent = routeDisplayName;
+      if (rowCat) {
+        rowCat.style.display = 'flex';
+        if (catNameEl) catNameEl.textContent = STATE.selectedCategory ? STATE.selectedCategory.name : 'Por seleccionar';
       }
     }
 
@@ -902,7 +1003,18 @@
     const unitPrice = STATE.unitPrice || 490000;
     if (unitPriceEl) unitPriceEl.textContent = formatCOP(unitPrice);
 
-    const baseTotal = unitPrice * count;
+    // Jersey addon (+ $100.000 COP sólo si es Standard y se activó)
+    const jerseyAddon = (STATE.genesisOption === 'standard' && STATE.includeJersey) ? STATE.jerseyPrice : 0;
+    if (rowJersey) {
+      if (jerseyAddon > 0) {
+        rowJersey.style.display = 'flex';
+        if (jerseyPriceEl) jerseyPriceEl.textContent = `+ ${formatCOP(jerseyAddon)}`;
+      } else {
+        rowJersey.style.display = 'none';
+      }
+    }
+
+    const baseTotal = (unitPrice * count) + jerseyAddon;
 
     if (STATE.appliedCoupon) {
       const discountPercent = STATE.appliedCoupon.discountPercent;
@@ -1029,12 +1141,19 @@
 
     try {
       const payer = check.participants[0];
+      const hasJersey = (STATE.genesisOption === 'vip') || Boolean(STATE.includeJersey);
+      const jerseyPrice = (STATE.genesisOption === 'standard' && STATE.includeJersey) ? STATE.jerseyPrice : 0;
+
       const payload = {
+        event: 'genesis-coffee-ride',
+        genesisOption: STATE.genesisOption,
         couponCode: STATE.appliedCoupon.code,
-        route: STATE.selectedRoute,
+        route: STATE.genesisOption,
         categoryId: STATE.selectedCategory.id,
         categoryName: STATE.selectedCategory.name,
         teamName: check.teamName || null,
+        includeJersey: hasJersey,
+        jerseyPrice: jerseyPrice,
         participants: check.participants,
         payerEmail: payer.email,
         payerPhone: payer.phone
@@ -1074,146 +1193,7 @@
   // ==========================================
   // RECOLECCIÓN Y VALIDACIÓN PRE-PAGO
   // ==========================================
-  function collectFormData() {
-    const cards = document.querySelectorAll('.participant-form-card');
-    const participants = [];
-    const errors = [];
-    const cat = STATE.selectedCategory;
-
-    if (!cat) {
-      return { valid: false, errors: ['Por favor selecciona una categoría oficial.'], participants: [], teamName: null };
-    }
-
-    // Modalidad Equipos o Parejas Mixtas
-    const isPareja = cat.gender === 'MIXTO' || (cat.id && cat.id.startsWith('pareja-'));
-    const isEquipo = cat.participantsCount === 4 || (cat.id && cat.id.startsWith('equipo-'));
-    const isTeamCategory = Boolean(isPareja || isEquipo);
-
-    let teamName = '';
-    if (isTeamCategory) {
-      const teamInput = document.getElementById('field-team-name');
-      teamName = (teamInput?.value || STATE.teamName || '').trim();
-      if (!teamName) {
-        errors.push(isEquipo
-          ? 'Por favor ingresa el Nombre del Equipo para los 4 integrantes.'
-          : 'Por favor ingresa el Nombre del Equipo para la Pareja Mixta.');
-      } else {
-        STATE.teamName = teamName;
-      }
-    }
-
-    cards.forEach((card, idx) => {
-      const num = idx + 1;
-      const nombres = card.querySelector('.field-nombres')?.value.trim();
-      const apellidos = card.querySelector('.field-apellidos')?.value.trim();
-      const fullName = `${nombres || ''} ${apellidos || ''}`.trim();
-      const docType = card.querySelector('.field-docType')?.value;
-      const docNumber = card.querySelector('.field-docNumber')?.value.trim();
-      const birthDate = card.querySelector('.field-birthDate')?.value;
-      const genderSelect = card.querySelector('.field-gender');
-      const hiddenGender = card.querySelector('.hidden-locked-gender');
-      const gender = (genderSelect?.dataset.lockedGender || hiddenGender?.value || genderSelect?.value || '');
-      const bloodType = card.querySelector('.field-bloodType')?.value;
-      const phone = card.querySelector('.field-phone')?.value.trim();
-      const email = card.querySelector('.field-email')?.value.trim();
-      const country = card.querySelector('.field-country')?.value.trim();
-      const department = card.querySelector('.field-department')?.value.trim();
-      const city = card.querySelector('.field-city')?.value.trim();
-      const eps = card.querySelector('.field-eps')?.value.trim();
-      const emergencyContactName = card.querySelector('.field-emergencyContactName')?.value.trim();
-      const emergencyContactPhone = card.querySelector('.field-emergencyContactPhone')?.value.trim();
-      const medicalNotes = card.querySelector('.field-medicalNotes')?.value.trim();
-      const jerseySize = card.querySelector('.field-jerseySize')?.value;
-      const termsAccepted = card.querySelector('.field-termsAccepted')?.checked;
-
-      if (!nombres) errors.push(`Participante #${num}: Falta el nombre (o nombres).`);
-      if (!apellidos) errors.push(`Participante #${num}: Falta el apellido (o apellidos).`);
-      if (!docType) errors.push(`Participante #${num}: Selecciona el tipo de documento.`);
-      if (!docNumber) errors.push(`Participante #${num}: Falta el número de documento.`);
-      if (!birthDate) errors.push(`Participante #${num}: Falta la fecha de nacimiento.`);
-      if (!gender) errors.push(`Participante #${num}: Selecciona el género.`);
-      if (!bloodType) errors.push(`Participante #${num}: Selecciona el grupo y RH sanguíneo.`);
-      if (!phone) errors.push(`Participante #${num}: Falta el número de WhatsApp.`);
-      if (!email || !email.includes('@')) errors.push(`Participante #${num}: Ingrese un correo electrónico válido.`);
-      if (!eps) errors.push(`Participante #${num}: Ingrese su EPS o seguro médico.`);
-      if (!emergencyContactName || !emergencyContactPhone) errors.push(`Participante #${num}: Ingrese el contacto de emergencia completo.`);
-      if (!jerseySize) errors.push(`Participante #${num}: Seleccione la talla de Jersey oficial.`);
-      if (!termsAccepted) errors.push(`Participante #${num}: Debe aceptar el reglamento y exoneración médica.`);
-
-      const age = calculateAge(birthDate);
-      if (age !== null && age < 18) {
-        errors.push(`Participante #${num}: Debe ser mayor de edad al corte del evento.`);
-      }
-
-      participants.push({
-        nombres,
-        apellidos,
-        fullName,
-        docType,
-        docNumber,
-        birthDate,
-        gender,
-        bloodType,
-        phone,
-        email,
-        country: country || 'Colombia',
-        department: department || '',
-        city: city || '',
-        eps,
-        emergencyContactName,
-        emergencyContactPhone,
-        medicalNotes: medicalNotes || 'Ninguna',
-        jerseySize,
-        termsAccepted: Boolean(termsAccepted),
-        calculatedAge2027: age,
-        teamName: isTeamCategory ? teamName : null
-      });
-    });
-
-    // Validaciones de regla de categoría
-    if (cat.participantsCount === 1) {
-      const p = participants[0];
-      if (p && p.calculatedAge2027) {
-        if (p.calculatedAge2027 < cat.minAge || p.calculatedAge2027 > cat.maxAge) {
-          errors.push(`La edad (${p.calculatedAge2027} años) no corresponde al rango de la categoría (${cat.minAge}-${cat.maxAge} años).`);
-        }
-      }
-    } else if (cat.gender === 'MIXTO' && participants.length === 2) {
-      const g1 = participants[0].gender;
-      const g2 = participants[1].gender;
-      if (g1 !== 'F') {
-        errors.push('En Parejas Mixtas, el Corredor 1 debe ser mujer (género Femenino).');
-      }
-      if (g2 !== 'M') {
-        errors.push('En Parejas Mixtas, el Corredor 2 debe ser hombre (género Masculino).');
-      }
-      const sum = (participants[0].calculatedAge2027 || 0) + (participants[1].calculatedAge2027 || 0);
-      if (cat.id === 'pareja-sub90' && sum >= 90) {
-        errors.push(`La suma combinada (${sum} años) excede los 89 años para la categoría Sub-90.`);
-      } else if (cat.id === 'pareja-90mas' && sum < 90) {
-        errors.push(`La suma combinada (${sum} años) es menor a 90 años para la categoría 90+.`);
-      }
-    } else if (cat.participantsCount === 4) {
-      const expected = cat.gender;
-      const notMatching = participants.filter(p => p.gender !== expected);
-      if (notMatching.length > 0) {
-        errors.push(`Todos los 4 corredores deben ser de género ${expected === 'M' ? 'Masculino' : 'Femenino'}.`);
-      }
-      const sum = participants.reduce((acc, p) => acc + (p.calculatedAge2027 || 0), 0);
-      if (cat.id.endsWith('-a') && (sum < 72 || sum > 159)) {
-        errors.push(`La suma combinada del equipo (${sum} años) debe estar entre 72 y 159 años para Equipo A.`);
-      } else if (cat.id.endsWith('-b') && sum < 160) {
-        errors.push(`La suma combinada del equipo (${sum} años) debe ser de 160 años en adelante para Equipo B.`);
-      }
-    }
-
-    return {
-      valid: errors.length === 0,
-      errors,
-      participants,
-      teamName: isTeamCategory ? teamName : null
-    };
-  }
+  // (collectFormData defined above)
 
   // ==========================================
   // INICIAR CHECKOUT CON EPAYCO
@@ -1234,11 +1214,18 @@
 
     try {
       const payer = check.participants[0];
+      const hasJersey = (STATE.genesisOption === 'vip') || Boolean(STATE.includeJersey);
+      const jerseyPrice = (STATE.genesisOption === 'standard' && STATE.includeJersey) ? STATE.jerseyPrice : 0;
+
       const payload = {
-        route: STATE.selectedRoute,
+        event: 'genesis-coffee-ride',
+        genesisOption: STATE.genesisOption,
+        route: STATE.genesisOption,
         categoryId: STATE.selectedCategory.id,
         categoryName: STATE.selectedCategory.name,
         teamName: check.teamName || null,
+        includeJersey: hasJersey,
+        jerseyPrice: jerseyPrice,
         participants: check.participants,
         payerEmail: payer.email,
         payerPhone: payer.phone,
@@ -1282,9 +1269,9 @@
         test: true // Booleano nativo explícito estricto
       });
 
-      const routeLabel = STATE.selectedRoute === 'macchiato' ? 'Reto Macchiato 127K' : 'Reto Espresso 115K';
+      const optionLabel = STATE.genesisOption === 'vip' ? 'Experiencia VIP' : 'Standard';
+      const jerseyText = (STATE.genesisOption === 'standard' && STATE.includeJersey) ? ' + Jersey Oficial' : (STATE.genesisOption === 'vip' ? ' (Jersey Incluido)' : '');
       const count = check.participants.length;
-      const teamSuffix = check.teamName ? ` | Equipo: ${check.teamName}` : '';
 
       // Validación y valores por defecto para datos de facturación tomados del formulario
       const payerFullName = (
@@ -1304,8 +1291,8 @@
       );
 
       const epaycoPayload = {
-        name: `Inscripción Tour del Café Gran Fondo 2027`,
-        description: `${routeLabel} - ${STATE.selectedCategory.name}${teamSuffix} (${count} corredor/es)`,
+        name: `Genesis Coffee Ride 2027`,
+        description: `Genesis Coffee Ride - ${optionLabel}${jerseyText}`,
         invoice: invoiceNumber,
         currency: (epaycoConfig.currency || 'cop').toLowerCase(),
         amount: totalAmount.toString(),
@@ -1317,21 +1304,23 @@
         test: true, // Booleano nativo explícito en el objeto data del checkout
 
         // Metadatos
-        extra1: `${STATE.selectedCategory.name}${teamSuffix} | ${routeLabel}`,
+        extra1: `Genesis Coffee Ride | ${optionLabel}`,
         extra2: `Titular: ${payerFullName} | Tel: ${payer.phone}`,
         extra3: JSON.stringify({
           type: 'registration',
+          event: 'genesis-coffee-ride',
+          genesisOption: STATE.genesisOption,
           invoice: invoiceNumber,
-          route: STATE.selectedRoute,
+          route: STATE.genesisOption,
           category: STATE.selectedCategory.id,
-          teamName: check.teamName || null,
+          hasJersey: hasJersey,
           participantsCount: count
         }),
 
         confirmation: epaycoConfig.confirmationUrl,
         response: epaycoConfig.responseUrl,
 
-        // Datos del Pagador / Titular de la inscripción (Concatenación nombres y apellidos)
+        // Datos del Pagador / Titular de la inscripción
         name_billing: payerFullName,
         type_doc_billing: billingDocType,
         number_doc_billing: billingDocNumber,
@@ -1342,7 +1331,7 @@
         methodsDisable: []
       };
 
-      console.log('[Inscripciones ePayco] Abriendo modal de pago:', epaycoPayload);
+      console.log('[Inscripciones ePayco] Abriendo modal de pago Genesis:', epaycoPayload);
       handler.open(epaycoPayload);
 
       // Restaurar botón
@@ -1373,15 +1362,15 @@
     loadPricingStage();
 
     // 1. Selección de Evento
-    const btnStartGf = document.getElementById('btn-start-gran-fondo');
-    if (btnStartGf) {
-      btnStartGf.addEventListener('click', () => {
-        STATE.selectedEvent = 'gran-fondo';
+    const btnStartCoffeeRide = document.getElementById('btn-start-coffee-ride');
+    if (btnStartCoffeeRide) {
+      btnStartCoffeeRide.addEventListener('click', () => {
+        STATE.selectedEvent = 'genesis-coffee-ride';
         goToStep(1);
       });
     }
 
-    // Tarjetas deshabilitadas (Junior)
+    // Tarjetas deshabilitadas (Gran Fondo & Junior)
     document.querySelectorAll('.event-card.disabled').forEach(card => {
       card.addEventListener('click', (e) => {
         e.preventDefault();
@@ -1389,52 +1378,41 @@
       });
     });
 
-    // 2. Selección de Recorrido
-    document.querySelectorAll('.route-card').forEach(card => {
-      card.addEventListener('click', () => {
-        selectRoute(card.dataset.route);
-      });
-    });
-
-    // 3. Botones de Navegación entre Pasos
-    const btnNextStep1 = document.getElementById('btn-next-step-1');
-    if (btnNextStep1) {
-      btnNextStep1.addEventListener('click', () => goToStep(2));
+    // 2. Selección de Opción Genesis (Paso 1 de 2)
+    const cardStandard = document.getElementById('card-opt-standard');
+    if (cardStandard) {
+      cardStandard.addEventListener('click', () => selectGenesisOption('standard'));
     }
 
-    const btnBackStep1 = document.getElementById('btn-back-step-1');
-    if (btnBackStep1) {
-      btnBackStep1.addEventListener('click', () => goToStep(0));
+    const cardVip = document.getElementById('card-opt-vip');
+    if (cardVip) {
+      cardVip.addEventListener('click', () => selectGenesisOption('vip'));
     }
 
-    const btnNextStep2 = document.getElementById('btn-next-step-2');
-    if (btnNextStep2) {
-      btnNextStep2.addEventListener('click', () => {
-        if (!STATE.selectedCategory) {
-          showToast('Por favor selecciona una categoría antes de continuar.', true);
-          return;
-        }
-        goToStep(3);
-      });
+    // Botones de Navegación del Paso 1 (Genesis)
+    const btnBackGenesisStep1 = document.getElementById('btn-back-genesis-step1');
+    if (btnBackGenesisStep1) {
+      btnBackGenesisStep1.addEventListener('click', () => goToStep(0));
     }
 
-    const btnBackStep2 = document.getElementById('btn-back-step-2');
-    if (btnBackStep2) {
-      btnBackStep2.addEventListener('click', () => goToStep(1));
+    const btnNextGenesisStep1 = document.getElementById('btn-next-genesis-step1');
+    if (btnNextGenesisStep1) {
+      btnNextGenesisStep1.addEventListener('click', () => goToStep(2));
     }
 
+    // Botón Volver del Paso 2 (Formulario a Opción Genesis)
     const btnBackStep3 = document.getElementById('btn-back-step-3');
     if (btnBackStep3) {
-      btnBackStep3.addEventListener('click', () => goToStep(2));
+      btnBackStep3.addEventListener('click', () => goToStep(1));
     }
 
-    // 4. Botón ePayco
+    // 3. Botón ePayco
     const btnCheckoutEpayco = document.getElementById('btn-checkout-epayco');
     if (btnCheckoutEpayco) {
       btnCheckoutEpayco.addEventListener('click', submitRegistrationToEpayco);
     }
 
-    // 5. Módulo de Cupón de Descuento
+    // 4. Módulo de Cupón de Descuento
     const btnApplyCoupon = document.getElementById('btn-apply-coupon');
     if (btnApplyCoupon) {
       btnApplyCoupon.addEventListener('click', applyCouponCode);
@@ -1450,7 +1428,7 @@
       });
     }
 
-    // 6. Botón de Cortesía 100%
+    // 5. Botón de Cortesía 100%
     const btnCheckoutCourtesy = document.getElementById('btn-checkout-courtesy');
     if (btnCheckoutCourtesy) {
       btnCheckoutCourtesy.addEventListener('click', submitCourtesyRegistration);

@@ -420,20 +420,17 @@
                                 } catch (e) {}
 
                                 if (isRegistration) {
-                                    // Intentar consultar dorsales asignados desde el backend
                                     fetch(`/api/inscripciones/consultar?ref=${encodeURIComponent(refPayco)}&invoice=${encodeURIComponent(invoiceStr)}`)
                                         .then(r => r.json())
                                         .then(regData => {
-                                            let dorsalDetails = '';
-                                            if (regData.success && regData.registration && regData.registration.participants) {
-                                                const dorsals = regData.registration.participants.map(p => `${p.fullName} (Dorsal: <strong>${p.dorsalNumber}</strong>)`).join('<br>');
-                                                dorsalDetails = `<div class="detail-row"><span class="detail-label">Corredores y Dorsales:</span><span class="detail-value" style="color: #e67e22;">${dorsals}</span></div>`;
-                                            }
+                                            const reg = regData && regData.registration;
+                                            const isGenesis = reg && ((reg.routeName && reg.routeName.includes('Genesis')) || (reg.categoryName && reg.categoryName.includes('VIP')) || (reg.route && ['standard', 'vip'].includes(reg.route)));
+                                            const eventName = isGenesis ? 'Genesis Coffee Ride 2027' : 'Tour del Café Gran Fondo 2027';
 
                                             renderCard(
                                                 'success',
                                                 '¡Inscripción Confirmada con Éxito!',
-                                                'Tu participación en el Tour del Café Gran Fondo 2027 ha sido confirmada. Hemos enviado el comprobante oficial y recomendaciones técnicas a tu correo electrónico.',
+                                                `Tu participación en el ${eventName} ha sido confirmada. Hemos enviado el comprobante oficial y recomendaciones técnicas a tu correo electrónico.`,
                                                 orderInfo
                                             );
                                         })
@@ -441,7 +438,7 @@
                                             renderCard(
                                                 'success',
                                                 '¡Inscripción Confirmada con Éxito!',
-                                                'Tu participación en el Tour del Café Gran Fondo 2027 ha sido confirmada. Hemos enviado el comprobante oficial a tu correo electrónico.',
+                                                'Tu participación en el Tour del Café - Genesis Coffee Ride ha sido confirmada. Hemos enviado el comprobante oficial a tu correo electrónico.',
                                                 orderInfo
                                             );
                                         });

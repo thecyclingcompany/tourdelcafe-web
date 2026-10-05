@@ -65,21 +65,17 @@
 
     <!-- STEP PROGRESS INDICATOR -->
     <div class="progress-stepper-container" id="stepper-container" style="display: none;">
-        <div class="stepper-track">
+        <div class="stepper-track" id="stepper-track">
             <div class="stepper-line">
                 <div class="stepper-line-fill" id="stepper-fill"></div>
             </div>
             <div class="step-node active" id="node-step-1">
                 <div class="step-circle">1</div>
-                <span class="step-label">Recorrido</span>
+                <span class="step-label" id="node-label-1">Inscripción</span>
             </div>
             <div class="step-node" id="node-step-2">
                 <div class="step-circle">2</div>
-                <span class="step-label">Categoría</span>
-            </div>
-            <div class="step-node" id="node-step-3">
-                <div class="step-circle">3</div>
-                <span class="step-label">Corredores & Pago</span>
+                <span class="step-label" id="node-label-2">Registro &amp; Pago</span>
             </div>
         </div>
     </div>
@@ -102,12 +98,39 @@
 
             <div class="events-selection-grid">
 
-                <!-- 1. Gran Fondo (HABILITADO) -->
+                <!-- 1. Genesis Coffee Ride (HABILITADO) -->
                 <div class="event-card enabled">
+                    <div class="event-card-img-wrapper">
+                        <img src="assets/coffee-rides-tdc-index.jpg" alt="Genesis Coffee Ride" class="event-card-img">
+                        <span class="event-card-badge badge-open">Inscripciones Abiertas</span>
+                    </div>
+                    <div class="event-card-body">
+                        <span class="event-card-subtitle">Lanzamiento &amp; Oficial • Febrero 12-14, 2027</span>
+                        <h3 class="event-card-title">Genesis Coffee Ride</h3>
+                        <p class="event-card-desc">
+                            El Genesis Ride es el hito fundacional donde comienza el movimiento del Tour del Café,
+                            World´s First Coffee &amp; Cycling Festival. En febrero de 2027, abrimos las puertas del
+                            Quindío para reunir a un grupo exclusivo de ciclistas, apasionados del café especial y
+                            leyendas del pelotón mundial en una experiencia íntima e irrepetible.
+                        </p>
+                        <div class="event-card-meta">
+                            <span class="meta-chip">📍 Quindío, Colombia</span>
+                            <span class="meta-chip">☕ World´s First Coffee &amp; Cycling Festival</span>
+                            <span class="meta-chip">⭐ Pelotón Exclusivo con Leyendas</span>
+                        </div>
+                        <button type="button" class="btn-portal-primary" id="btn-start-coffee-ride"
+                            style="justify-content: center;">
+                            Iniciar Registro Coffee Ride →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. Tour del Café Gran Fondo (DESHABILITADO) -->
+                <div class="event-card disabled">
                     <div class="event-card-img-wrapper">
                         <img src="assets/photo-cyclists-house.jpg" alt="Tour del Café Gran Fondo"
                             class="event-card-img">
-                        <span class="event-card-badge badge-open">Inscripciones Abiertas</span>
+                        <span class="event-card-badge badge-soon">Próximamente</span>
                     </div>
                     <div class="event-card-body">
                         <span class="event-card-subtitle">Ciclismo de Ruta • 2027</span>
@@ -119,16 +142,16 @@
                         <div class="event-card-meta">
                             <span class="meta-chip">📍 Quindío, Colombia</span>
                             <span class="meta-chip">🏁 127 km y 115 km</span>
-                            <span class="meta-chip">☕ Expo & Roaster's Lounge</span>
+                            <span class="meta-chip">☕ Expo &amp; Roaster's Lounge</span>
                         </div>
-                        <button type="button" class="btn-portal-primary" id="btn-start-gran-fondo"
+                        <button type="button" class="btn-portal-primary btn-event-action" disabled
                             style="justify-content: center;">
-                            Iniciar Registro Gran Fondo →
+                            Próximamente (Apertura Próxima)
                         </button>
                     </div>
                 </div>
 
-                <!-- 2. Tour del Café Junior (DESHABILITADO) -->
+                <!-- 3. Tour del Café Junior (DESHABILITADO) -->
                 <div class="event-card disabled">
                     <div class="event-card-img-wrapper">
                         <img src="assets/photo-cyclist-worker.jpg" alt="Tour del Café Junior" class="event-card-img">
@@ -156,9 +179,111 @@
         </div>
 
         <!-- ==========================================
-             PASO 1: SELECCIÓN DEL RECORRIDO (GRAN FONDO)
+             PASO 1 DE 2: SELECCIÓN DE MODALIDAD (GENESIS COFFEE RIDE)
              ========================================== -->
-        <div class="view-step" id="step-1-recorrido">
+        <div class="view-step" id="step-1-genesis">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <span class="portal-eyebrow">Paso 1 de 2</span>
+                <h2 style="font-family: var(--font-heading); font-size: 28px; font-weight: 800;">
+                    Selecciona tu Opción de Registro
+                </h2>
+                <p style="color: var(--text-muted); font-size: 15px;">
+                    Elige el formato en el que deseas vivir la experiencia fundacional del Genesis Coffee Ride.
+                </p>
+            </div>
+
+            <div class="genesis-options-grid">
+                <!-- Opción 1: Inscripción Standard -->
+                <div class="genesis-option-card selected" id="card-opt-standard" data-option="standard">
+                    <div class="genesis-option-header">
+                        <div>
+                            <span class="genesis-option-badge">Modalidad Esencial</span>
+                            <h3 class="genesis-option-title">Inscripción Standard</h3>
+                        </div>
+                        <div class="genesis-option-radio"></div>
+                    </div>
+                    <p class="genesis-option-lead">
+                        Vive la esencia del Tour del Café pedaleando en un pelotón selecto junto a nuestros invitados de
+                        honor internacionales.
+                    </p>
+                    <div class="genesis-option-price-row">
+                        <div class="genesis-price-label">Tarifa Oficial:</div>
+                        <div class="genesis-price-val" id="price-genesis-standard">$ 490.000 COP</div>
+                    </div>
+                    <div class="genesis-inclusions-block">
+                        <div class="genesis-inclusions-title">Incluye:</div>
+                        <ul class="genesis-inclusions-list">
+                            <li>Kit básico.</li>
+                            <li>Rodada junto a las estrellas del ciclismo.</li>
+                            <li>Asistencia mecánica neutral.</li>
+                            <li>Seguro de accidentes.</li>
+                            <li>Puntos de hidratación, alimentación en ruta.</li>
+                            <li>Café de especialidad por Mítico Cycling Coffee.</li>
+                            <li>Acceso a la presentación oficial del Tour del Café.</li>
+                        </ul>
+                    </div>
+                    <div class="genesis-jersey-note">
+                        💡 <strong>Adición opcional:</strong> Puedes añadir el Jersey Oficial Conmemorativo en el
+                        formulario (+ $100.000 COP).
+                    </div>
+                </div>
+
+                <!-- Opción 2: Experiencia VIP -->
+                <div class="genesis-option-card vip-highlight" id="card-opt-vip" data-option="vip">
+                    <div class="vip-glow-pill">⭐ Máxima Exclusividad</div>
+                    <div class="genesis-option-header">
+                        <div>
+                            <span class="genesis-option-badge vip-badge">Experiencia VIP</span>
+                            <h3 class="genesis-option-title">Experiencia VIP</h3>
+                        </div>
+                        <div class="genesis-option-radio"></div>
+                    </div>
+                    <p class="genesis-option-lead">
+                        Diseñada para quienes buscan la mejor experiencia, cercanía y hospitalidad en el corazón del
+                        colombia.
+                    </p>
+                    <div class="genesis-option-price-row">
+                        <div class="genesis-price-label">Tarifa Oficial:</div>
+                        <div class="genesis-price-val" id="price-genesis-vip">$ 490.000 COP</div>
+                    </div>
+                    <div class="genesis-inclusions-block">
+                        <div class="genesis-inclusions-title">Incluye:</div>
+                        <ul class="genesis-inclusions-list">
+                            <li><strong>KIT Genesis VIP + Jersey Conmemorativo by Hincapie.</strong></li>
+                            <li><strong>Dos Rodadas:</strong>
+                                <ul class="genesis-subinclusions-list">
+                                    <li><strong>Sábado:</strong> Rodada VIP junto a las estrellas del ciclismo con
+                                        selección de cafés especiales y maridaje en finca.</li>
+                                    <li><strong>Domingo:</strong> Social Ride.</li>
+                                </ul>
+                            </li>
+                            <li>Asistencia mecánica neutral.</li>
+                            <li>Seguro de accidentes.</li>
+                            <li>Puntos de hidratación, alimentación en ruta.</li>
+                            <li>Acceso preferencial a la presentación oficial del Tour del Café.</li>
+                            <li>Cena de lanzamiento Tour del Café.</li>
+                        </ul>
+                    </div>
+                    <div class="genesis-jersey-note vip-note">
+                        ✨ <strong>Jersey Conmemorativo by Hincapie incluido</strong> directamente en tu experiencia.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-navigation-bar">
+                <button type="button" class="btn-portal-secondary" id="btn-back-genesis-step1">
+                    ← Cambiar Evento
+                </button>
+                <button type="button" class="btn-portal-primary" id="btn-next-genesis-step1">
+                    Continuar al Formulario →
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             PASO 1: SELECCIÓN DEL RECORRIDO (GRAN FONDO - LEGACY)
+             ========================================== -->
+        <div class="view-step" id="step-1-recorrido" style="display: none;">
             <div style="text-align: center; margin-bottom: 24px;">
                 <span class="portal-eyebrow">Paso 1 de 3</span>
                 <h2 style="font-family: var(--font-heading); font-size: 28px; font-weight: 800;">
@@ -283,13 +408,12 @@
              ========================================== -->
         <div class="view-step" id="step-3-formulario">
             <div style="text-align: center; margin-bottom: 26px;">
-                <span class="portal-eyebrow">Paso 3 de 3</span>
-                <h2 style="font-family: var(--font-heading); font-size: 28px; font-weight: 800;">
-                    Datos de los Corredores
+                <span class="portal-eyebrow" id="form-step-eyebrow">Paso 2 de 2</span>
+                <h2 id="form-step-title" style="font-family: var(--font-heading); font-size: 28px; font-weight: 800;">
+                    Datos del Participante
                 </h2>
-                <p style="color: var(--text-muted); font-size: 15px;">
-                    Diligencia la información de cada corredor. El sistema certifica automáticamente las reglas de edad
-                    y género.
+                <p id="form-step-desc" style="color: var(--text-muted); font-size: 15px;">
+                    Diligencia la información oficial para tu acreditación y seguro médico en el Genesis Coffee Ride.
                 </p>
             </div>
 
@@ -304,39 +428,42 @@
                         <span style="font-size: 12px; color: var(--color-accent-light);">ePayco</span>
                     </h3>
 
-                    <div class="summary-row">
-                        <span class="summary-label">Recorrido:</span>
-                        <span class="summary-val" id="summary-route-name">Reto Macchiato</span>
+                    <!-- En Genesis Coffee Ride: 'Inscripción' (Standard o Experiencia VIP) y se retira 'Categoría' -->
+                    <div class="summary-row" id="row-inscription-type">
+                        <span class="summary-label" id="summary-label-inscription">Inscripción:</span>
+                        <span class="summary-val" id="summary-route-name">Standard</span>
                     </div>
 
-                    <div class="summary-row">
+                    <div class="summary-row" id="row-category-name" style="display: none;">
                         <span class="summary-label">Categoría:</span>
                         <span class="summary-val" id="summary-cat-name">-</span>
                     </div>
 
+                    <div class="summary-row" id="row-jersey-addon" style="display: none;">
+                        <span class="summary-label">Jersey Oficial:</span>
+                        <span class="summary-val" id="summary-jersey-addon-val"
+                            style="color: var(--color-accent-light); font-weight: 700;">+ $ 100.000 COP</span>
+                    </div>
+
                     <div class="summary-row" id="row-team-name" style="display: none;">
                         <span class="summary-label">Equipo / Dupla:</span>
-                        <span class="summary-val" id="summary-team-name" style="color: var(--color-accent-light); font-weight: 700;">-</span>
+                        <span class="summary-val" id="summary-team-name"
+                            style="color: var(--color-accent-light); font-weight: 700;">-</span>
                     </div>
 
                     <div class="summary-row">
                         <span class="summary-label">Etapa Tarifaria:</span>
-                        <span class="summary-val" id="summary-stage-name">Etapa Chapola</span>
+                        <span class="summary-val" id="summary-stage-name">Chapola</span>
                     </div>
 
                     <div class="summary-row">
-                        <span class="summary-label">Valor Individual:</span>
+                        <span class="summary-label">Valor Base:</span>
                         <span class="summary-val" id="summary-unit-price">$ 490.000 COP</span>
                     </div>
 
                     <div class="summary-row">
-                        <span class="summary-label">Corredores:</span>
-                        <span class="summary-val" id="summary-qty-participants">1</span>
-                    </div>
-
-                    <!-- Estado Matemático en Vivo -->
-                    <div class="category-math-status math-status-valid" id="summary-math-status">
-                        Diligencia las fechas de nacimiento para validar la categoría.
+                        <span class="summary-label">Participantes:</span>
+                        <span class="summary-val" id="summary-qty-participants">1 Corredor</span>
                     </div>
 
                     <!-- Módulo de Código de Descuento / Cortesía -->
@@ -402,7 +529,7 @@
 
             <div class="step-navigation-bar">
                 <button type="button" class="btn-portal-secondary" id="btn-back-step-3">
-                    ← Cambiar Categoría
+                    ← Cambiar Modalidad
                 </button>
             </div>
         </div>

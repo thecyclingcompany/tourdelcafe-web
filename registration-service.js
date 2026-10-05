@@ -22,12 +22,14 @@ const CUT_OFF_YEAR = 2027;
 const PRICING_STAGES = [
   {
     id: 'chapola',
-    name: 'Etapa Chapola',
+    name: 'Genesis Coffee Ride',
     startDate: '2026-09-28T00:00:00-05:00',
     endDate: '2026-10-25T23:59:59-05:00',
     prices: {
       macchiato: 490000,
-      espresso: 490000
+      espresso: 490000,
+      standard: 490000,
+      vip: 490000
     },
     badge: 'Tarifa Especial de Apertura'
   },
@@ -38,7 +40,9 @@ const PRICING_STAGES = [
     endDate: '2026-11-22T23:59:59-05:00',
     prices: {
       macchiato: 540000,
-      espresso: 540000
+      espresso: 540000,
+      standard: 540000,
+      vip: 540000
     },
     badge: 'Segunda Etapa'
   },
@@ -155,9 +159,10 @@ function calculateAgeAtCutOff(birthDateString) {
  */
 function validateRegistrationRules(route, categoryId, participants, teamName = null) {
   const errors = [];
+  const isGenesis = ['standard', 'vip'].includes(route) || (categoryId && categoryId.startsWith('genesis-'));
 
-  if (!['macchiato', 'espresso'].includes(route)) {
-    errors.push('El recorrido seleccionado no es válido (Reto Macchiato o Reto Espresso).');
+  if (!['macchiato', 'espresso', 'standard', 'vip'].includes(route) && !isGenesis) {
+    errors.push('El evento o recorrido seleccionado no es válido.');
     return { valid: false, errors };
   }
 
@@ -197,7 +202,18 @@ function validateRegistrationRules(route, categoryId, participants, teamName = n
     if (!p.bloodType) errors.push(`Participante #${num}: Ingrese el tipo de sangre y RH.`);
     if (!p.email || !p.email.includes('@')) errors.push(`Participante #${num}: Ingrese un correo electrónico válido.`);
     if (!p.phone || p.phone.trim().length < 7) errors.push(`Participante #${num}: Ingrese el número de WhatsApp.`);
-    if (!p.jerseySize) errors.push(`Participante #${num}: Seleccione la talla de jersey.`);
+
+    // En Genesis: VIP o Standard con jersey requieren talla
+    if (isGenesis) {
+      const isVip = route === 'vip' || categoryId === 'genesis-vip';
+      const hasJersey = p.hasJersey || p.jerseyPrice > 0 || isVip;
+      if (hasJersey && (!p.jerseySize || p.jerseySize === 'No incluido')) {
+        errors.push(`Participante #${num}: Seleccione la talla de Jersey oficial.`);
+      }
+    } else {
+      if (!p.jerseySize) errors.push(`Participante #${num}: Seleccione la talla de jersey.`);
+    }
+
     if (!p.emergencyContactName || !p.emergencyContactPhone) errors.push(`Participante #${num}: Ingrese el contacto de emergencia completo.`);
     if (!p.termsAccepted) errors.push(`Participante #${num}: Debe aceptar el reglamento y exoneración médica.`);
 
@@ -209,6 +225,15 @@ function validateRegistrationRules(route, categoryId, participants, teamName = n
 
   if (errors.length > 0) {
     return { valid: false, errors };
+  }
+
+  // Si es Genesis Coffee Ride, validación completada para 1 corredor
+  if (isGenesis) {
+    if (participants.length !== 1) {
+      errors.push('La inscripción individual de Genesis Coffee Ride requiere exactamente 1 participante.');
+      return { valid: false, errors };
+    }
+    return { valid: true, errors: [] };
   }
 
   // Validaciones de Modalidad
@@ -353,7 +378,11 @@ function getPendingRegistration(invoiceNumber) {
  * Asigna número de dorsal consecutivo único
  */
 function generateDorsal(route, index) {
-  const prefix = route === 'macchiato' ? 'MAC' : 'ESP';
+  let prefix = 'GEN';
+  if (route === 'macchiato') prefix = 'MAC';
+  else if (route === 'espresso') prefix = 'ESP';
+  else if (route === 'vip') prefix = 'VIP';
+  else if (route === 'standard') prefix = 'STD';
   const padded = String(index).padStart(4, '0');
   return `TDC27-${prefix}-${padded}`;
 }
@@ -394,14 +423,21 @@ function processPaidRegistration(invoiceNumber, refPayco, paymentDetails = {}) {
     };
   });
 
+  const isGenesis = ['standard', 'vip'].includes(pending.route) || (pending.categoryId && pending.categoryId.startsWith('genesis-'));
+  const routeDisplayName = isGenesis
+    ? `Genesis Coffee Ride - ${pending.categoryName || (pending.route === 'vip' ? 'Experiencia VIP' : 'Inscripción Standard')}`
+    : (pending.route === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)');
+
   const finalRecord = {
     invoiceNumber,
     refPayco,
     route: pending.route,
-    routeName: pending.route === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)',
+    routeName: routeDisplayName,
     category: pending.categoryId || pending.category,
-    categoryName: pending.categoryName,
+    categoryName: pending.categoryName || (pending.route === 'vip' ? 'Experiencia VIP' : 'Inscripción Standard'),
     teamName: pending.teamName || null,
+    hasJersey: pending.hasJersey || false,
+    jerseyPrice: pending.jerseyPrice || 0,
     stage: pending.stage,
     unitPrice: pending.unitPrice,
     totalAmount: pending.totalAmount,
@@ -486,14 +522,21 @@ function processCourtesyRegistration(invoiceNumber, couponCode, customDetails = 
   const refPayco = `CORTESIA-${(couponCode || '100').toUpperCase()}-${Date.now().toString(36).toUpperCase()}`;
   const baseValue = pending.baseAmount || pending.totalAmount || (pending.unitPrice * pending.participants.length);
 
+  const isGenesis = ['standard', 'vip'].includes(pending.route) || (pending.categoryId && pending.categoryId.startsWith('genesis-'));
+  const routeDisplayName = isGenesis
+    ? `Genesis Coffee Ride - ${pending.categoryName || (pending.route === 'vip' ? 'Experiencia VIP' : 'Inscripción Standard')}`
+    : (pending.route === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)');
+
   const finalRecord = {
     invoiceNumber,
     refPayco,
     route: pending.route,
-    routeName: pending.route === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)',
+    routeName: routeDisplayName,
     category: pending.categoryId || pending.category,
-    categoryName: pending.categoryName,
+    categoryName: pending.categoryName || (pending.route === 'vip' ? 'Experiencia VIP' : 'Inscripción Standard'),
     teamName: pending.teamName || null,
+    hasJersey: pending.hasJersey || false,
+    jerseyPrice: pending.jerseyPrice || 0,
     stage: pending.stage,
     unitPrice: pending.unitPrice,
     totalAmount: 0,
@@ -543,35 +586,109 @@ function processCourtesyRegistration(invoiceNumber, couponCode, customDetails = 
  * Plantilla HTML de correo de confirmación de inscripción
  */
 function buildEmailTemplate(registration, participant) {
+  const isGenesis = ['standard', 'vip'].includes(registration.route) ||
+    (registration.category && registration.category.startsWith('genesis-')) ||
+    (registration.routeName && registration.routeName.includes('Genesis')) ||
+    (registration.categoryName && registration.categoryName.includes('VIP'));
+
+  const eventTitle = isGenesis ? 'Genesis Coffee Ride 2027' : 'Tour del Café Gran Fondo 2027';
+  const categoryLabel = isGenesis ? 'Tipo de Inscripción:' : 'Categoría Oficial:';
+  const categoryDisplay = registration.categoryName || (registration.route === 'vip' ? 'Experiencia VIP' : 'Inscripción Standard');
+  const jerseySizeDisplay = participant.jerseySize || (registration.hasJersey ? 'Seleccionada' : 'No incluido');
+
   const teamRow = (registration.teamName || participant.teamName)
-    ? Buffer.from('PHRyPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgY29sb3I6IHJnYmEoMjUwLDI1MCwyNTAsMC43KTsgZm9udC1zaXplOiAxNHB4OyI+Tm9tYnJlIGRlbCBFcXVpcG8gLyBEdXBsYTo8L3RkPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgdGV4dC1hbGlnbjogcmlnaHQ7IGZvbnQtd2VpZ2h0OiA2MDA7IGNvbG9yOiAjZTY3ZTIyOyBmb250LXNpemU6IDE0cHg7Ij57e1RFQU1fTkFNRX19PC90ZD48L3RyPg==', 'base64')
-      .toString('utf-8')
-      .replace('{{TEAM_NAME}}', registration.teamName || participant.teamName)
+    ? `<tr><td style="padding: 10px 0; border-bottom: 1px solid #2a2524; color: rgba(250,250,250,0.7); font-size: 14px;">Nombre del Equipo / Dupla:</td><td style="padding: 10px 0; border-bottom: 1px solid #2a2524; text-align: right; font-weight: 600; color: #e67e22; font-size: 14px;">${registration.teamName || participant.teamName}</td></tr>`
     : '';
 
-  const tplB64Part1 = 'PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVzIj4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT7CoUluc2NyaXBjacOzbiBDb25maXJtYWRhISAtIFRvdXIgZGVsIENhZsOpIEdyYW4gRm9uZG8gMjAyNzwvdGl0bGU+CiAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgo8L2hlYWQ+Cjxib2R5IHN0eWxlPSJtYXJnaW46IDA7IHBhZGRpbmc6IDIwcHggMDsgYmFja2dyb3VuZC1jb2xvcjogIzEyMTIxMjsgZm9udC1mYW1pbHk6ICdIZWx2ZXRpY2EgTmV1ZScsIEFyaWFsLCBzYW5zLXNlcmlmOyBjb2xvcjogI2ZmZmZmZjsiPgogIDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIHdpZHRoPSIxMDAlIiBib3JkZXI9IjAiIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICMxMjEyMTI7Ij4KICAgIDx0cj4KICAgICAgPHRkIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWRkaW5nOiAxMHB4OyI+CiAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgd2lkdGg9IjEwMCUiIGJvcmRlcj0iMCIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBzdHlsZT0ibWF4LXdpZHRoOiA2MDBweDsgYmFja2dyb3VuZC1jb2xvcjogIzFjMTgxNzsgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCByZ2JhKDI4LCAyNCwgMjMsIDAuOTYpIDU1JSwgcmdiYSgyOCwgMjQsIDIzLCAwLjc4KSAxMDAlKSwgdXJsKCdodHRwczovL3RvdXJkZWxjYWZlLm9yZy9hc3NldHMvQ29mZmVlX3BsYW50LmpwZWcnKTsgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQgY2VudGVyOyBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0OyBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyOyBib3JkZXItcmFkaXVzOiA4cHg7IG92ZXJmbG93OiBoaWRkZW47IGJveC1zaGFkb3c6IDAgNHB4IDIwcHggcmdiYSgwLDAsMCwwLjUpOyI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBhbGlnbj0iY2VudGVyIiBzdHlsZT0icGFkZGluZzogMzBweCAyMHB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJkMjQxZTsiPgogICAgICAgICAgICAgIDxpbWcgc3JjPSJodHRwczovL3RvdXJkZWxjYWZlLm9yZy9hc3NldHMvbG9nby1mZXN0aXZhbC1oZWFkZXIucG5nIiBhbHQ9IlRvdXIgZGVsIENhZsOpIEdyYW4gRm9uZG8iIHN0eWxlPSJtYXgtd2lkdGg6IDI4MHB4OyB3aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBkaXNwbGF5OiBibG9jazsgYm9yZGVyOiAwOyIgLz4KICAgICAgICAgICAgPC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogMzBweCAyNHB4OyI+CiAgICAgICAgICAgICAgPHAgc3R5bGU9ImZvbnQtc2l6ZTogMThweDsgbWFyZ2luLXRvcDogMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsiPsKhSG9sYSwgPHN0cm9uZyBzdHlsZT0iY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsiPnt7Tk9NQlJFX0NPTVBMRVRPfX08L3N0cm9uZz4hPC9wPgogICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50OyBsaW5lLWhlaWdodDogMS42OyBmb250LXNpemU6IDE1cHg7IG1hcmdpbi1ib3R0b206IDIwcHg7Ij4KICAgICAgICAgICAgICAgIFR1IGluc2NyaXBjacOzbiBvZmljaWFsIGhhIHNpZG8gY29uZmlybWFkYSBjb24gw6l4aXRvLiBZYSBlcmVzIHBhcnRlIGRlbCBwZWxvdMOzbiBxdWUgdml2aXLDoSBsYSBleHBlcmllbmNpYSBtw6FzIGljw7NuaWNhIGRlbCBjaWNsaXNtbyB5IGVsIGNhZsOpIGVuIENvbG9tYmlhLgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDE1LCAxNCwgMTMsIDAuOTIpOyBib3JkZXI6IDJweCBkYXNoZWQgI2U2N2UyMjsgYm9yZGVyLXJhZGl1czogNnB4OyBwYWRkaW5nOiAyMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IG1hcmdpbjogMjBweCAwOyI+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6IDEycHg7IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGNvbG9yOiAjYTc5MDc3OyBtYXJnaW4tYm90dG9tOiA0cHg7IGxldHRlci1zcGFjaW5nOiAxcHg7Ij5UVSBSRUdJU1RSTyBPRklDSUFMPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6IDM2cHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogI2U2N2UyMjsgbGV0dGVyLXNwYWNpbmc6IDJweDsgbWFyZ2luOiA4cHggMDsiPnt7RE9SU0FMX05VTUJFUn19PC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6IDE0cHg7IGNvbG9yOiAjZmZmZmZmICFpbXBvcnRhbnQ7IG1hcmdpbi10b3A6IDZweDsgZm9udC13ZWlnaHQ6IDUwMDsiPnt7Q0FURUdPUllfTkFNRX19PC9kaXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgd2lkdGg9IjEwMCUiIGJvcmRlcj0iMCIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBzdHlsZT0id2lkdGg6IDEwMCU7IGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IG1hcmdpbi10b3A6IDE1cHg7Ij4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyBjb2xvcjogcmdiYSgyNTAsMjUwLDI1MCwwLjcpOyBmb250LXNpemU6IDE0cHg7Ij5DYXRlZ29yw61hIE9maWNpYWw6PC90ZD4KICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC13ZWlnaHQ6IDYwMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyI+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgcGFkZGluZzogNHB4IDEwcHg7IGJhY2tncm91bmQ6IHJnYmEoMjExLDg0LDAsMC4yNSk7IGNvbG9yOiAjZTY3ZTIyOyBib3JkZXItcmFkaXVzOiA0cHg7Ij57e0NBVEVHT1JZX05BTUV9fTwvc3Bhbj4KICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+';
-
-  const tplB64Part2 = 'e3tURUFNX1JPV319CjwvdGFibGU+CiAgICAgICAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLXRvcDogMjVweDsgcGFkZGluZzogMThweDsgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgzMCwgMjQsIDIxLCAwLjkpOyBib3JkZXI6IDFweCBkYXNoZWQgIzU5NDUzNzsgYm9yZGVyLXJhZGl1czogNnB4OyI+CiAgICAgICAgICAgICAgICA8aDQgc3R5bGU9ImNvbG9yOiAjZDRhMzczOyBmb250LXNpemU6IDE0cHg7IG1hcmdpbjogMCAwIDEwcHggMDsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgbGV0dGVyLXNwYWNpbmc6IDAuNXB4OyI+SW5mb3JtYWNpw7NuIEltcG9ydGFudGUgZGUgQWNyZWRpdGFjacOzbjwvaDQ+CiAgICAgICAgICAgICAgICA8cCBzdHlsZT0iY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyBsaW5lLWhlaWdodDogMS42OyBtYXJnaW46IDAgMCA4cHggMDsiPgogICAgICAgICAgICAgICAgICDigKIgR3VhcmRhIGVzdGUgY29ycmVvIHkgdHUgY29tcHJvYmFudGUgZGUgcGFnbyBjb21vIHNvcG9ydGUgb2ZpY2lhbCBkZSByZWdpc3Ryby4KICAgICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2NmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7IGxpbmUtaGVpZ2h0OiAxLjY7IG1hcmdpbjogMCAwIDhweCAwOyI+CiAgICAgICAgICAgICAgICAgIOKAoiBFbiBsYXMgcHLDs3hpbWFzIHNlbWFuYXMgdGUgZW52aWFyZW1vcyBwb3IgZXN0ZSBtZWRpbyBsYSBjaXRhY2nDs24gcGFyYSBsYSBlbnRyZWdhIGRlIGtpdHMgZGUgY2FycmVyYSB5IGxhIGFjcmVkaXRhY2nDs24gb2ZpY2lhbC4KICAgICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2NmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7IGxpbmUtaGVpZ2h0OiAxLjY7IG1hcmdpbjogMDsiPgogICAgICAgICAgICAgICAgICDigKIgUmVjdWVyZGEgcHJlc2VudGFyIHR1IGRvY3VtZW50byBkZSBpZGVudGlkYWQgcGFyYSByZWNsYW1hciB0dSBraXQgZW4gbG9zIGTDrWFzIHByZXZpb3MgYSBsYSBjYXJyZXJhLgogICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWRkaW5nOiAyNXB4IDIwcHggMzVweCAyMHB4OyBib3JkZXItdG9wOiAxcHggc29saWQgIzJkMjQxZTsiPgogICAgICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjogI2NmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7IG1hcmdpbjogMCAwIDhweCAwOyBmb250LXdlaWdodDogNTAwOyI+CiAgICAgICAgICAgICAgICDCkVRpZW5lcyBkdWRhcyBvIG5lY2VzaXRhcyBhc2lzdGVuY2lhPyBFc2Nyw6liZW5vcyBhPGJyPgogICAgICAgICAgICAgICAgPGEgaHJlZj0ibWFpbHRvOmluZm9AdG91cmRlbGNhZmUub3JnIiBzdHlsZT0iY29sb3I6ICNkNGEzNzM7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgZm9udC13ZWlnaHQ6IDYwMDsiPmluZm9AdG91cmRlbGNhZmUub3JnPC9hPgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICA8cCBzdHlsZT0iY29sb3I6ICNhODlmOTE7IGZvbnQtc2l6ZTogMTNweDsgbWFyZ2luOiAxMnB4IDAgNHB4IDA7Ij4KICAgICAgICAgICAgICAgIFRvdXIgZGVsIENhZsOpIEdyYW4gRm9uZG8g4oCiIFF1aW5kw61vLCBDb2xvbWJpYQogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICA8cCBzdHlsZT0iY29sb3I6ICM3YTcwNjU7IGZvbnQtc2l6ZTogMTJweDsgbWFyZ2luOiAwOyI+CiAgICAgICAgICAgICAgICBPcmdhbml6YWRvIHBvciA8c3Ryb25nPlRoZSBDeWNsaW5nIENvbXBhbnk8L3N0cm9uZz4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgIDwvdGFibGU+CiAgICAgIDwvdGQ+CiAgICA8L3RyPgogIDwvdGFibGU+CjwvYm9keT4KPC9odG1sPg==';
-
-  const rowsB64 = 'PHRyPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgY29sb3I6IHJnYmEoMjUwLDI1MCwyNTAsMC43KTsgZm9udC1zaXplOiAxNHB4OyI+RG9jdW1lbnRvOjwvdGQ+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC13ZWlnaHQ6IDYwMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyI+e3tET0NfVFlQRX19OiB7e0RPQ19OVU1CRVJ9fTwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyBjb2xvcjogcmdiYSgyNTAsMjUwLDI1MCwwLjcpOyBmb250LXNpemU6IDE0cHg7Ij5UYWxsYSBkZSBKZXJzZXkgU2VsZWNjaW9uYWRhOjwvdGQ+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC13ZWlnaHQ6IDYwMDsgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsgZm9udC1zaXplOiAxNHB4OyI+e3tKRVJTRVlfU0laRX19PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IGNvbG9yOiByZ2JhKDI1MCwyNTAsMjUwLDAuNyk7IGZvbnQtc2l6ZTogMTRweDsiPkdydXBvIFNhbmd1w61uZW86PC90ZD48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IHRleHQtYWxpZ246IHJpZ2h0OyBmb250LXdlaWdodDogNjAwOyBjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7Ij57e0JMT09EX1RZUEV9fTwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSJwYWRkaW5nOiAxMHB4IDA7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmEyNTI0OyBjb2xvcjogcmdiYSgyNTAsMjUwLDI1MCwwLjcpOyBmb250LXNpemU6IDE0cHg7Ij5SZWZlcmVuY2lhIGRlIFBhZ286PC90ZD48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IHRleHQtYWxpZ246IHJpZ2h0OyBmb250LXdlaWdodDogNjAwOyBjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50OyBmb250LXNpemU6IDE0cHg7Ij57e1JFRl9QQVlDT319PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9InBhZGRpbmc6IDEwcHggMDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYTI1MjQ7IGNvbG9yOiByZ2JhKDI1MCwyNTAsMjUwLDAuNyk7IGZvbnQtc2l6ZTogMTRweDsiPkZhY3R1cmEgLyBDb25zZWN1dGl2bzo8L3RkPjx0ZCBzdHlsZT0icGFkZGluZzogMTBweCAwOyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzJhMjUyNDsgdGV4dC1hbGlnbjogcmlnaHQ7IGZvbnQtd2VpZ2h0OiA2MDA7IGNvbG9yOiAjZmZmZmZmICFpbXBvcnRhbnQ7IGZvbnQtc2l6ZTogMTRweDsiPnt7SU5WT0lDRV9OVU1CRVJ9fTwvdGQ+PC90cj4=';
-
-  const decodedPart1 = Buffer.from(tplB64Part1, 'base64').toString('utf-8');
-  const decodedPart2 = Buffer.from(tplB64Part2, 'base64').toString('utf-8');
-  const decodedRows = Buffer.from(rowsB64, 'base64').toString('utf-8');
-
-  const fullHtml = decodedPart1 + decodedPart2;
-
-  return fullHtml
-    .replace('{{NOMBRE_COMPLETO}}', participant.fullName || 'Ciclista')
-    .replace('{{DORSAL_NUMBER}}', participant.dorsalNumber || 'POR ASIGNAR')
-    .replace(/\{\{CATEGORY_NAME\}\}/g, registration.categoryName || 'Gran Fondo')
-    .replace('{{TEAM_ROW}}', teamRow + decodedRows)
-    .replace('{{DOC_TYPE}}', participant.docType || 'ID')
-    .replace('{{DOC_NUMBER}}', participant.docNumber || 'N/A')
-    .replace('{{JERSEY_SIZE}}', participant.jerseySize || 'M')
-    .replace('{{BLOOD_TYPE}}', participant.bloodType || 'N/A')
-    .replace('{{REF_PAYCO}}', registration.refPayco || 'N/A')
-    .replace('{{INVOICE_NUMBER}}', registration.invoiceNumber || 'N/A');
+  return `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>¡Inscripción Confirmada! - ${eventTitle}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 20px 0; background-color: #121212; font-family: 'Helvetica Neue', Arial, sans-serif; color: #ffffff;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #121212;">
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #1c1817; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+          <tr>
+            <td align="center" style="padding: 30px 20px; border-bottom: 1px solid #2d241e; background: #151312;">
+              <img src="https://tourdelcafe.org/assets/logo-festival-header.png" alt="Tour del Café" style="max-width: 260px; width: 100%; height: auto; display: block; border: 0;" />
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 30px 24px;">
+              <p style="font-size: 18px; margin-top: 0; color: #ffffff !important;">¡Hola, <strong>${participant.fullName || 'Ciclista'}</strong>!</p>
+              <p style="color: #e0dcd9; line-height: 1.6; font-size: 15px; margin-bottom: 20px;">
+                ${isGenesis
+                  ? 'Tu inscripción oficial para el <strong>Genesis Coffee Ride</strong> ha sido confirmada con éxito. Ya eres parte del grupo selecto que vivirá el hito fundacional del movimiento <em>World\'s First Coffee &amp; Cycling Festival</em> en el Quindío.'
+                  : 'Tu inscripción oficial para el <strong>Tour del Café Gran Fondo 2027</strong> ha sido confirmada con éxito. Ya eres parte del pelotón que vivirá la experiencia más icónica del ciclismo y el café en Colombia.'}
+              </p>
+              <div style="background-color: rgba(15, 14, 13, 0.92); border: 2px dashed #e67e22; border-radius: 6px; padding: 20px; text-align: center; margin: 20px 0;">
+                <div style="font-size: 12px; text-transform: uppercase; color: #a79077; margin-bottom: 4px; letter-spacing: 1px;">TU REGISTRO OFICIAL</div>
+                <div style="font-size: 34px; font-weight: bold; color: #e67e22; letter-spacing: 2px; margin: 8px 0;">${participant.dorsalNumber || 'POR ASIGNAR'}</div>
+                <div style="font-size: 15px; color: #ffffff !important; margin-top: 6px; font-weight: 600;">${categoryDisplay}</div>
+              </div>
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; color: rgba(250,250,250,0.7); font-size: 14px;">${categoryLabel}</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; text-align: right; font-weight: 600; color: #ffffff !important; font-size: 14px;">
+                    <span style="display: inline-block; padding: 4px 10px; background: rgba(211,84,0,0.25); color: #e67e22; border-radius: 4px;">${categoryDisplay}</span>
+                  </td>
+                </tr>
+                ${teamRow}
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; color: rgba(250,250,250,0.7); font-size: 14px;">Documento:</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; text-align: right; font-weight: 600; color: #ffffff !important; font-size: 14px;">${participant.docType || 'ID'}: ${participant.docNumber || 'N/A'}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; color: rgba(250,250,250,0.7); font-size: 14px;">Talla de Jersey Oficial:</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; text-align: right; font-weight: 600; color: #ffffff !important; font-size: 14px;">${jerseySizeDisplay}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; color: rgba(250,250,250,0.7); font-size: 14px;">Grupo Sanguíneo:</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; text-align: right; font-weight: 600; color: #ffffff !important; font-size: 14px;">${participant.bloodType || 'N/A'}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; color: rgba(250,250,250,0.7); font-size: 14px;">Referencia de Pago:</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; text-align: right; font-weight: 600; color: #ffffff !important; font-size: 14px;">${registration.refPayco || 'N/A'}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; color: rgba(250,250,250,0.7); font-size: 14px;">Factura / Consecutivo:</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #2a2524; text-align: right; font-weight: 600; color: #ffffff !important; font-size: 14px;">${registration.invoiceNumber || 'N/A'}</td>
+                </tr>
+              </table>
+              <div style="margin-top: 25px; padding: 18px; background-color: rgba(30, 24, 21, 0.9); border: 1px dashed #594537; border-radius: 6px;">
+                <h4 style="color: #d4a373; font-size: 14px; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px;">Información Importante de Acreditación</h4>
+                <p style="color: #ffffff !important; font-size: 14px; line-height: 1.6; margin: 0 0 8px 0;">• Guarda este correo y tu comprobante de pago como soporte oficial de registro.</p>
+                <p style="color: #cfffff !important; font-size: 14px; line-height: 1.6; margin: 0 0 8px 0;">• Te enviaremos por este medio la citación para la entrega de kits y la acreditación oficial.</p>
+                <p style="color: #cfffff !important; font-size: 14px; line-height: 1.6; margin: 0;">• Recuerda presentar tu documento de identidad para reclamar tu kit en los días previos al evento.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 25px 20px 35px 20px; border-top: 1px solid #2d241e; background: #151312;">
+              <p style="color: #ffffff !important; font-size: 14px; margin: 0 0 8px 0; font-weight: 500;">
+                ¿Tienes dudas o necesitas asistencia? Escríbenos a<br>
+                <a href="mailto:info@tourdelcafe.org" style="color: #d4a373; text-decoration: none; font-weight: 600;">info@tourdelcafe.org</a>
+              </p>
+              <p style="color: #a89f91; font-size: 13px; margin: 12px 0 4px 0;">
+                ${isGenesis ? 'Genesis Coffee Ride • Quindío, Colombia • Febrero 2027' : 'Tour del Café Gran Fondo • Quindío, Colombia • 2027'}
+              </p>
+              <p style="color: #7a7065; font-size: 12px; margin: 0;">
+                Organizado por <strong>The Cycling Company</strong>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `;
 }
 
 /**
@@ -581,43 +698,60 @@ async function sendRegistrationEmails(registration) {
   ensureDataDir();
   const sentLogs = readJsonSafe(EMAILS_LOG_FILE, []);
 
+  const isGenesis = ['standard', 'vip'].includes(registration.route) ||
+    (registration.category && registration.category.startsWith('genesis-')) ||
+    (registration.routeName && registration.routeName.includes('Genesis'));
+
+  const eventTitle = isGenesis ? 'Genesis Coffee Ride 2027' : 'Tour del Café 2027';
+
   for (const p of registration.participants) {
     const emailData = {
       to: p.email,
       fullName: p.fullName,
-      subject: `¡Inscripción Confirmada! Tour del Café 2027 - Dorsal ${p.dorsalNumber}`,
+      subject: `¡Inscripción Confirmada! ${eventTitle} - Dorsal ${p.dorsalNumber}`,
       dorsal: p.dorsalNumber,
       invoiceNumber: registration.invoiceNumber,
       refPayco: registration.refPayco,
       sentAt: new Date().toISOString()
     };
 
-    // Intentar envío real con Nodemailer si las credenciales de entorno de Hostinger existen
+    // Envío real con Nodemailer desde info@tourdelcafe.org
     let dispatchedViaSmtp = false;
-    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+    const smtpHost = process.env.SMTP_HOST || 'smtp.hostinger.com';
+    const smtpUser = process.env.SMTP_USER || 'info@tourdelcafe.org';
+    const smtpPass = process.env.SMTP_PASS;
+
+    if (smtpHost && smtpUser && smtpPass) {
       try {
         const nodemailer = require('nodemailer');
         const transporter = nodemailer.createTransport({
-          host: process.env.SMTP_HOST,
+          host: smtpHost,
           port: parseInt(process.env.SMTP_PORT || '465', 10),
           secure: (process.env.SMTP_PORT || '465') === '465',
           auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS
+            user: smtpUser,
+            pass: smtpPass
           }
         });
 
+        const fromSender = isGenesis
+          ? `"Genesis Coffee Ride - Tour del Café" <${smtpUser}>`
+          : `"Tour del Café Gran Fondo" <${smtpUser}>`;
+
         await transporter.sendMail({
-          from: `"Tour del Café Oficial" <${process.env.SMTP_USER}>`,
+          from: fromSender,
           to: p.email,
+          replyTo: 'info@tourdelcafe.org',
           subject: emailData.subject,
           html: buildEmailTemplate(registration, p)
         });
         dispatchedViaSmtp = true;
-        console.log(`[RegistrationEmail] Enviado por SMTP con éxito a ${p.email}`);
+        console.log(`[RegistrationEmail] Enviado por SMTP con éxito a ${p.email} desde ${smtpUser}`);
       } catch (smtpErr) {
         console.warn(`[RegistrationEmail] No se pudo enviar por SMTP a ${p.email}:`, smtpErr.message);
       }
+    } else {
+      console.log(`[RegistrationEmail Simulación] Credenciales SMTP no configuradas. Email preparado para ${p.email} desde ${smtpUser}`);
     }
 
     emailData.dispatchedViaSmtp = dispatchedViaSmtp;
