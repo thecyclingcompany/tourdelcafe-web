@@ -128,7 +128,7 @@
         <!-- HERO SECTION INMERSIVA -->
         <section id="inicio" class="hero-section">
             <!-- Background Video -->
-            <video class="hero-video-bg" autoplay muted loop playsinline>
+            <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline preload="auto">
                 <source src="assets/video-hero-tdc.mp4" type="video/mp4">
                 Tu navegador no soporta reproducción de video.
             </video>
@@ -136,7 +136,7 @@
             <div class="hero-overlay"></div>
 
             <!-- Logo Animation Overlay -->
-            <video class="hero-logo-animation" autoplay muted loop playsinline>
+            <video class="hero-logo-animation" autoplay muted loop playsinline webkit-playsinline preload="auto">
                 <source src="assets/animacion-logo-tdc.mp4" type="video/mp4">
                 Tu navegador no soporta reproducción de video.
             </video>
@@ -462,8 +462,11 @@
                             <div class="challenge-card general-winner">
                                 <div class="challenge-badge gold">Campeón General</div>
                                 <div class="challenge-logo-container">
-                                    <video src="assets/animacion-trofeo-tcc.mp4" autoplay loop muted playsinline
-                                        class="challenge-logo-video"></video>
+                                    <video src="assets/animacion-trofeo-tcc.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto"
+                                        class="challenge-logo-video">
+                                        <source src="assets/animacion-trofeo-tcc.mp4" type="video/mp4">
+                                        Tu navegador no soporta reproducción de video.
+                                    </video>
                                 </div>
                                 <h4 class="challenge-card-title">Campeones Generales Tour del Café GF</h4>
                                 <p class="challenge-card-desc">
