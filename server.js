@@ -898,10 +898,41 @@ const server = http.createServer(async (req, res) => {
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || 'application/octet-stream';
+    const totalSize = stats.size;
+
+    // Soporte obligatorio de HTTP 206 Partial Content para streaming en iOS Safari y Android
+    const range = req.headers.range;
+    if (range) {
+      const parts = range.replace(/bytes=/, '').split('-');
+      const start = parseInt(parts[0], 10);
+      const end = parts[1] ? parseInt(parts[1], 10) : totalSize - 1;
+
+      if (isNaN(start) || start >= totalSize || end >= totalSize || start > end) {
+        res.writeHead(416, {
+          'Content-Range': `bytes */${totalSize}`
+        });
+        res.end();
+        return;
+      }
+
+      const chunkSize = (end - start) + 1;
+      const fileStream = fs.createReadStream(filePath, { start, end });
+      res.writeHead(206, {
+        'Content-Range': `bytes ${start}-${end}/${totalSize}`,
+        'Accept-Ranges': 'bytes',
+        'Content-Length': chunkSize,
+        'Content-Type': contentType,
+        'Cache-Control': 'public, max-age=3600'
+      });
+      fileStream.pipe(res);
+      return;
+    }
 
     res.writeHead(200, {
       'Content-Type': contentType,
-      'Cache-Control': 'no-cache, no-store, must-revalidate'
+      'Content-Length': totalSize,
+      'Accept-Ranges': 'bytes',
+      'Cache-Control': ext === '.mp4' ? 'public, max-age=3600' : 'no-cache, no-store, must-revalidate'
     });
     fs.createReadStream(filePath).pipe(res);
   });

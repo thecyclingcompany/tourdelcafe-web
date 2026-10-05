@@ -1941,24 +1941,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!mobileVideos.length) return;
 
     const playVideoSafe = (video) => {
-      if (!video) return;
-      // Requerimientos técnicos obligatorios para móviles iOS y Android
-      video.muted = true;
-      video.defaultMuted = true;
-      video.volume = 0;
-      video.playsInline = true;
-      video.setAttribute('muted', '');
-      video.setAttribute('playsinline', '');
-      video.setAttribute('webkit-playsinline', '');
-      video.setAttribute('x5-playsinline', '');
-
-      // Invocar play() directamente para forzar inicio del buffering en motores móviles
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          // Autoplay desatendido restringido por el SO (ej. modo ahorro de energía)
-          console.warn('Autoplay móvil requiere interacción previa del usuario:', error);
-        });
+      if (typeof window.safeStartVideo === 'function') {
+        window.safeStartVideo(video);
+      } else {
+        if (!video || !video.paused || video._playLock) return;
+        video.muted = true;
+        video.defaultMuted = true;
+        video.volume = 0;
+        video.playsInline = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video._playLock = true;
+        try {
+          const p = video.play();
+          if (p && typeof p.then === 'function') {
+            p.then(() => { video._playLock = false; })
+             .catch(() => { video._playLock = false; });
+          } else {
+            video._playLock = false;
+          }
+        } catch (e) {
+          video._playLock = false;
+        }
       }
     };
 
@@ -2003,8 +2008,8 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileVideos.forEach(video => observer.observe(video));
     }
 
-    // 5. Desbloqueo universal en la primera interacción (toque, scroll o clic) en fase de captura
-    const unlockOnFirstGesture = () => {
+    // 5. Desbloqueo universal en la primera interacción táctil genuina del usuario (iOS low power mode)
+    const unlockOnFirstTouch = () => {
       mobileVideos.forEach(video => {
         if (video.paused) {
           playVideoSafe(video);
@@ -2012,8 +2017,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    ['touchstart', 'touchend', 'click', 'scroll'].forEach(evt => {
-      window.addEventListener(evt, unlockOnFirstGesture, { capture: true, passive: true });
+    // Gestos válidos en iOS/Android para desbloquear reproducción protegida
+    ['touchend', 'click'].forEach(evt => {
+      document.addEventListener(evt, unlockOnFirstTouch, { capture: true, passive: true });
     });
   };
 

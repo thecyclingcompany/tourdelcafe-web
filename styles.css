@@ -1065,6 +1065,7 @@ p,
   justify-content: center;
   overflow: hidden;
   background-color: var(--color-dark-bg);
+  isolation: isolate;
 }
 
 .hero-video-bg {
@@ -1087,6 +1088,7 @@ p,
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
   width: auto;
@@ -1096,6 +1098,9 @@ p,
   object-fit: cover;
   mix-blend-mode: screen;
   pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 /* Helper class to visually hide elements for accessibility/SEO */
@@ -3544,6 +3549,7 @@ p,
   margin-bottom: 20px;
   position: relative;
   z-index: 2;
+  isolation: isolate;
 }
 
 .challenge-logo-img {
@@ -3954,6 +3960,9 @@ p,
   transition: var(--transition-smooth);
   mix-blend-mode: screen;
   display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .challenge-card:hover .challenge-logo-video {

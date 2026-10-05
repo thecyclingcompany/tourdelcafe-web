@@ -128,7 +128,7 @@
         <!-- HERO SECTION INMERSIVA -->
         <section id="inicio" class="hero-section">
             <!-- Background Video -->
-            <video class="hero-video-bg" src="assets/video-hero-tdc.mp4" autoplay muted loop playsinline
+            <video class="hero-video-bg" src="assets/video-hero-tdc.mp4" poster="assets/header-tdc-index.jpg" autoplay muted loop playsinline
                 webkit-playsinline preload="auto">
                 <source src="assets/video-hero-tdc.mp4" type="video/mp4">
                 Tu navegador no soporta reproducción de video.
@@ -143,20 +143,33 @@
                 Tu navegador no soporta reproducción de video.
             </video>
 
-            <!-- Disparo inmediato de reproducción para motores móviles durante parsing -->
+            <!-- Disparo seguro de reproducción para motores móviles durante parsing -->
             <script>
-                (function () {
-                    var vids = [document.querySelector('.hero-video-bg'), document.querySelector('.hero-logo-animation')];
-                    vids.forEach(function (v) {
-                        if (v) {
-                            v.muted = true;
-                            v.defaultMuted = true;
-                            v.volume = 0;
-                            v.playsInline = true;
-                            var p = v.play();
-                            if (p && typeof p.catch === 'function') p.catch(function () { });
+                window.safeStartVideo = function (v) {
+                    if (!v || !v.paused || v._playLock) return;
+                    v.muted = true;
+                    v.defaultMuted = true;
+                    v.volume = 0;
+                    v.playsInline = true;
+                    v.setAttribute('muted', '');
+                    v.setAttribute('playsinline', '');
+                    v.setAttribute('webkit-playsinline', '');
+                    v._playLock = true;
+                    try {
+                        var p = v.play();
+                        if (p && typeof p.then === 'function') {
+                            p.then(function () { v._playLock = false; })
+                             .catch(function () { v._playLock = false; });
+                        } else {
+                            v._playLock = false;
                         }
-                    });
+                    } catch (e) {
+                        v._playLock = false;
+                    }
+                };
+                (function () {
+                    var vids = document.querySelectorAll('.hero-video-bg, .hero-logo-animation');
+                    vids.forEach(function (v) { window.safeStartVideo(v); });
                 })();
             </script>
 
@@ -481,7 +494,7 @@
                             <div class="challenge-card general-winner">
                                 <div class="challenge-badge gold">Campeón General</div>
                                 <div class="challenge-logo-container">
-                                    <video src="assets/animacion-trofeo-tcc.mp4" autoplay loop muted playsinline
+                                    <video src="assets/animacion-trofeo-tcc.mp4" poster="assets/trofeo-tdc-front.png" autoplay loop muted playsinline
                                         webkit-playsinline preload="auto" class="challenge-logo-video">
                                         <source src="assets/animacion-trofeo-tcc.mp4" type="video/mp4">
                                         Tu navegador no soporta reproducción de video.
