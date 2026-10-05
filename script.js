@@ -451,10 +451,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const panelVideos = panel.querySelectorAll('video');
             panelVideos.forEach(v => {
               v.muted = true;
-              const p = v.play();
-              if (p !== undefined) {
-                p.catch(err => console.warn('Autoplay en panel de pestaña prevenido:', err));
-              }
+              v.defaultMuted = true;
+              v.volume = 0;
+              v.playsInline = true;
+              requestAnimationFrame(() => {
+                const p = v.play();
+                if (p !== undefined) {
+                  p.catch(err => console.warn('Autoplay en panel de pestaña prevenido:', err));
+                }
+              });
             });
           } else {
             panel.classList.remove('active-panel');
@@ -1935,55 +1940,80 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     if (!mobileVideos.length) return;
 
-    mobileVideos.forEach(video => {
+    const playVideoSafe = (video) => {
+      if (!video) return;
       // Requerimientos técnicos obligatorios para móviles iOS y Android
       video.muted = true;
       video.defaultMuted = true;
+      video.volume = 0;
+      video.playsInline = true;
+      video.setAttribute('muted', '');
       video.setAttribute('playsinline', '');
       video.setAttribute('webkit-playsinline', '');
+      video.setAttribute('x5-playsinline', '');
 
-      const safePlay = () => {
-        // Asegurar 'muted = true' estrictamente antes de .play()
-        video.muted = true;
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(error => {
-            // Captura de promesa obligatoria para evitar bloqueos por políticas de autoplay de iOS/Android
-            console.warn('Autoplay móvil no permitido de forma desatendida por el navegador:', error);
-          });
-        }
-      };
-
-      // Si ya cargó la metadata o primer frame, intentar reproducir
-      if (video.readyState >= 2) {
-        safePlay();
-      } else {
-        video.addEventListener('loadeddata', safePlay, { once: true });
-        video.addEventListener('canplay', safePlay, { once: true });
+      // Invocar play() directamente para forzar inicio del buffering en motores móviles
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay desatendido restringido por el SO (ej. modo ahorro de energía)
+          console.warn('Autoplay móvil requiere interacción previa del usuario:', error);
+        });
       }
+    };
 
-      // Reproducción garantizada al ingresar al viewport mediante IntersectionObserver
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && video.paused) {
-              safePlay();
-            }
-          });
-        }, { threshold: 0.15 });
-        observer.observe(video);
-      }
+    // 1. Ejecución inmediata en todos los videos al inicializar
+    mobileVideos.forEach(video => {
+      playVideoSafe(video);
+    });
 
-      // Fallback ante modo ahorro de batería o restricción de interacción del usuario
-      const triggerPlaybackOnGesture = () => {
+    // 2. Reintento una vez la ventana complete la carga total de recursos
+    window.addEventListener('load', () => {
+      mobileVideos.forEach(video => {
         if (video.paused) {
-          safePlay();
+          playVideoSafe(video);
         }
-      };
-
-      ['touchstart', 'touchend', 'click'].forEach(evt => {
-        document.addEventListener(evt, triggerPlaybackOnGesture, { once: true, passive: true });
       });
+    }, { once: true });
+
+    // 3. Reanudación si la pestaña o app vuelve a primer plano
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        mobileVideos.forEach(video => {
+          if (video.paused) {
+            playVideoSafe(video);
+          }
+        });
+      }
+    });
+
+    // 4. Observador de visibilidad (IntersectionObserver)
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const vid = entry.target;
+            if (vid.paused) {
+              playVideoSafe(vid);
+            }
+          }
+        });
+      }, { threshold: 0.1 });
+
+      mobileVideos.forEach(video => observer.observe(video));
+    }
+
+    // 5. Desbloqueo universal en la primera interacción (toque, scroll o clic) en fase de captura
+    const unlockOnFirstGesture = () => {
+      mobileVideos.forEach(video => {
+        if (video.paused) {
+          playVideoSafe(video);
+        }
+      });
+    };
+
+    ['touchstart', 'touchend', 'click', 'scroll'].forEach(evt => {
+      window.addEventListener(evt, unlockOnFirstGesture, { capture: true, passive: true });
     });
   };
 

@@ -1828,7 +1828,10 @@ p,
 }
 
 .gf-tab-panel {
-  display: none;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(15px);
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -1836,6 +1839,9 @@ p,
 
 .gf-tab-panel.active-panel {
   display: block;
+  visibility: visible;
+  height: auto;
+  overflow: visible;
   opacity: 1;
   transform: translateY(0);
 }
