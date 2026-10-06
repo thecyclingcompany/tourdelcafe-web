@@ -220,10 +220,10 @@
       console.warn('Usando configuración local de tarifas:', e);
     }
 
-    // Fallback local: Genesis Coffee Ride
+    // Fallback local: Chapola
     STATE.currentStage = {
       id: 'chapola',
-      name: 'Genesis Coffee Ride',
+      name: 'Chapola',
       badge: 'Tarifa Especial de Apertura',
       prices: { macchiato: 490000, espresso: 490000, standard: 490000, vip: 490000 },
       startDate: '2026-09-28T00:00:00-05:00',
@@ -245,15 +245,18 @@
       const end = new Date(stage.endDate).toLocaleDateString('es-CO', { day: 'numeric', month: 'short', year: 'numeric' });
       datesEl.textContent = `Vigencia: ${start} - ${end}`;
     }
-    const currentPrice = (stage.prices && (stage.prices[STATE.genesisOption] || stage.prices[STATE.selectedRoute])) || 490000;
+    const standardPrice = (stage.prices && (stage.prices.standard || stage.prices.macchiato)) || 490000;
+    const currentPrice = (stage.prices && (stage.prices[STATE.genesisOption] || stage.prices[STATE.selectedRoute])) || standardPrice;
     STATE.unitPrice = currentPrice;
-    if (priceEl) priceEl.textContent = formatCOP(currentPrice);
+
+    // Tarifa por Corredor a Partir de (tarifa correspondiente a la opción Standard)
+    if (priceEl) priceEl.textContent = formatCOP(standardPrice);
 
     // Actualizar precios en las tarjetas de opción Genesis
     const priceStandardEl = document.getElementById('price-genesis-standard');
     const priceVipEl = document.getElementById('price-genesis-vip');
-    if (priceStandardEl) priceStandardEl.textContent = formatCOP(currentPrice);
-    if (priceVipEl) priceVipEl.textContent = formatCOP(currentPrice);
+    if (priceStandardEl) priceStandardEl.textContent = formatCOP(standardPrice);
+    if (priceVipEl) priceVipEl.textContent = formatCOP((stage.prices && (stage.prices.vip || stage.prices.standard)) || 490000);
 
     updateSummary();
   }
@@ -276,6 +279,10 @@
         cardStandard.classList.remove('selected');
         cardVip.classList.add('selected');
       }
+    }
+
+    if (STATE.currentStage && STATE.currentStage.prices) {
+      STATE.unitPrice = STATE.currentStage.prices[optionKey] || STATE.currentStage.prices.standard || 490000;
     }
 
     if (optionKey === 'vip') {

@@ -22,7 +22,7 @@ const CUT_OFF_YEAR = 2027;
 const PRICING_STAGES = [
   {
     id: 'chapola',
-    name: 'Genesis Coffee Ride',
+    name: 'Chapola',
     startDate: '2026-09-28T00:00:00-05:00',
     endDate: '2026-10-25T23:59:59-05:00',
     prices: {
