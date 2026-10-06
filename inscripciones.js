@@ -531,12 +531,14 @@
       `;
     }
 
+    const isGenesis = STATE.selectedEvent === 'genesis-coffee-ride' || !STATE.selectedEvent;
+
     for (let i = 0; i < count; i++) {
       const num = i + 1;
       const existing = oldData[i] || {};
 
       // Determinación de título y bloqueo estricto de género según modalidad
-      let participantTitle = `Corredor #${num}`;
+      let participantTitle = isGenesis ? 'Corredor' : `Corredor #${num}`;
       let lockedGender = null; // 'F' | 'M' | null
 
       if (isPareja) {
@@ -558,6 +560,12 @@
 
       const defaultGender = lockedGender || existing.gender || '';
 
+      const ageBadgeHtml = isGenesis ? '' : `
+            <div class="age-calc-badge age-badge-neutral" id="age-badge-${i}">
+              Edad corte 31/Dic/2027: Pendiente
+            </div>
+      `;
+
       formsHtml += `
         <div class="participant-form-card" data-index="${i}" id="p-card-${i}">
           <div class="participant-card-header">
@@ -565,9 +573,7 @@
               <span class="p-number">${num}</span>
               <span class="p-title">${participantTitle}</span>
             </div>
-            <div class="age-calc-badge age-badge-neutral" id="age-badge-${i}">
-              Edad corte 31/Dic/2027: Pendiente
-            </div>
+            ${ageBadgeHtml}
           </div>
 
           <!-- 1. DATOS PERSONALES -->
@@ -814,20 +820,22 @@
     if (!card) return;
 
     const birthInput = card.querySelector('.field-birthDate');
+    if (!birthInput) return;
+
     const badge = document.getElementById(`age-badge-${idx}`);
-    if (!birthInput || !badge) return;
+    if (badge) {
+      const age = calculateAge(birthInput.value);
 
-    const age = calculateAge(birthInput.value);
-
-    if (age === null) {
-      badge.className = 'age-calc-badge age-badge-neutral';
-      badge.textContent = 'Edad corte 31/Dic/2027: Pendiente';
-    } else if (age < 18) {
-      badge.className = 'age-calc-badge age-badge-warning';
-      badge.textContent = `Edad calculada: ${age} años (Debe ser mayor de edad)`;
-    } else {
-      badge.className = 'age-calc-badge age-badge-valid';
-      badge.textContent = `Edad calculada al 31/Dic/2027: ${age} años`;
+      if (age === null) {
+        badge.className = 'age-calc-badge age-badge-neutral';
+        badge.textContent = 'Edad corte 31/Dic/2027: Pendiente';
+      } else if (age < 18) {
+        badge.className = 'age-calc-badge age-badge-warning';
+        badge.textContent = `Edad calculada: ${age} años (Debe ser mayor de edad)`;
+      } else {
+        badge.className = 'age-calc-badge age-badge-valid';
+        badge.textContent = `Edad calculada al 31/Dic/2027: ${age} años`;
+      }
     }
 
     // Validar suma global y reglas de categoría
