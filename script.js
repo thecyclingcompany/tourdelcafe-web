@@ -436,8 +436,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!gfTabs.length || !gfPanels.length) return;
 
     gfTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
         const targetTabId = tab.getAttribute('data-tab');
+        if (!targetTabId || targetTabId !== 'tab-acerca-gf') {
+          return;
+        }
 
         // Activar tab
         gfTabs.forEach(t => t.classList.remove('active'));
@@ -447,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gfPanels.forEach(panel => {
           if (panel.id === targetTabId) {
             panel.classList.add('active-panel');
-            // Si el panel contiene videos (como animacion-trofeo-tcc.mp4 en tab-categorias), iniciar reproducción segura
+            // Si el panel contiene videos, iniciar reproducción segura
             const panelVideos = panel.querySelectorAll('video');
             panelVideos.forEach(v => {
               v.muted = true;
@@ -474,18 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const hashToTabMap = {
         '#acerca-gf': 'tab-acerca-gf',
-        '#acerca-del-gf': 'tab-acerca-gf',
-        '#categorias': 'tab-categorias',
-        '#recorridos': 'tab-recorridos',
-        '#que-incluye': 'tab-kit',
-        '#kit': 'tab-kit', // compatibilidad
-        '#experiencias-vip': 'tab-vip',
-        '#roasters-expo': 'tab-expo',
-        '#expo': 'tab-expo',
-        '#hoteleria': 'tab-hoteles',
-        '#hoteles': 'tab-hoteles', // compatibilidad
-        '#invitados-vip': 'tab-invitados',
-        '#vip': 'tab-invitados' // compatibilidad
+        '#acerca-del-gf': 'tab-acerca-gf'
       };
 
       const targetTabId = hashToTabMap[hash];
