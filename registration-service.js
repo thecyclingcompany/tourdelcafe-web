@@ -22,29 +22,16 @@ const CUT_OFF_YEAR = 2027;
 const PRICING_STAGES = [
   {
     id: 'chapola',
-    name: 'Chapola',
-    startDate: '2026-09-28T00:00:00-05:00',
-    endDate: '2026-10-25T23:59:59-05:00',
-    prices: {
-      macchiato: 490000,
-      espresso: 490000,
-      standard: 490000,
-      vip: 490000
-    },
-    badge: 'Tarifa Especial de Apertura'
-  },
-  {
-    id: 'almacigo',
-    name: 'Etapa Almácigo',
-    startDate: '2026-10-26T00:00:00-05:00',
+    name: 'Etapa Chapola',
+    startDate: '2026-10-19T00:00:00-05:00',
     endDate: '2026-11-22T23:59:59-05:00',
     prices: {
-      macchiato: 540000,
-      espresso: 540000,
-      standard: 540000,
-      vip: 540000
+      standard: 150000,
+      vip: 890000,
+      macchiato: 490000,
+      espresso: 490000
     },
-    badge: 'Segunda Etapa'
+    badge: 'Tarifa Especial de Apertura'
   },
   {
     id: 'floracion',
@@ -52,10 +39,12 @@ const PRICING_STAGES = [
     startDate: '2026-11-23T00:00:00-05:00',
     endDate: '2026-12-20T23:59:59-05:00',
     prices: {
+      standard: 180000,
+      vip: 920000,
       macchiato: 590000,
       espresso: 590000
     },
-    badge: 'Tercera Etapa'
+    badge: 'Segunda Etapa'
   },
   {
     id: 'cosecha',
@@ -63,6 +52,8 @@ const PRICING_STAGES = [
     startDate: '2026-12-21T00:00:00-05:00',
     endDate: '2027-01-24T23:59:59-05:00',
     prices: {
+      standard: 210000,
+      vip: 950000,
       macchiato: 650000,
       espresso: 650000
     },
@@ -109,10 +100,11 @@ function getCurrentPricingStage(now = new Date()) {
   const nowMs = now.getTime();
   const firstStageStart = new Date(PRICING_STAGES[0].startDate).getTime();
 
-  // Si estamos antes del 28 de sep 2026, la etapa activa para pruebas y apertura es Chapola
+  // Si estamos antes del 19 de oct 2026, la etapa activa para pruebas y apertura es Chapola
   if (nowMs < firstStageStart) {
     return {
       current: PRICING_STAGES[0],
+      next: PRICING_STAGES[1] || null,
       isPreLaunch: true,
       allStages: PRICING_STAGES
     };

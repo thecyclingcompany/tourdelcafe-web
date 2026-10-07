@@ -5541,6 +5541,142 @@ p,
   color: #f39c12;
 }
 
+.plan-btn-stage {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #f39c12;
+  background: rgba(243, 156, 18, 0.12);
+  border: 1px solid rgba(243, 156, 18, 0.3);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.plan-btn-price {
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.plan-btn-price.vip-price {
+  color: #f39c12;
+}
+
+/* Invitados Especiales en Genesis Coffee Ride */
+.genesis-guests-block {
+  margin-top: 28px;
+}
+
+.genesis-guests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+
+@media (max-width: 680px) {
+  .genesis-guests-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.genesis-guest-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.genesis-guest-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(243, 156, 18, 0.5);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.genesis-guest-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
+}
+
+.genesis-guest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.genesis-guest-card:hover .genesis-guest-img {
+  transform: scale(1.05);
+}
+
+.genesis-guest-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.genesis-guest-name {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.genesis-guest-role {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #f39c12;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.genesis-guest-desc {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(250, 250, 250, 0.7);
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.genesis-guest-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(250, 250, 250, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genesis-guest-btn:hover {
+  background: #f39c12;
+  color: #121212;
+  border-color: #f39c12;
+  transform: translateY(-2px);
+}
+
 /* Modales Genesis */
 .genesis-modal-card {
   max-width: 660px;

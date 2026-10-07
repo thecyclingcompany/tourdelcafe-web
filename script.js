@@ -483,6 +483,94 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initGenesisModals();
+
+    // ==========================================
+    // ETAPAS Y PRECIOS AUTOMÁTICOS GENESIS COFFEE RIDE (INDEX)
+    // ==========================================
+    const GENESIS_PRICING_STAGES = [
+      {
+        id: 'chapola',
+        name: 'Etapa Chapola',
+        startDate: '2026-10-19T00:00:00-05:00',
+        endDate: '2026-11-22T23:59:59-05:00',
+        prices: { standard: 150000, vip: 890000 }
+      },
+      {
+        id: 'floracion',
+        name: 'Etapa Floración',
+        startDate: '2026-11-23T00:00:00-05:00',
+        endDate: '2026-12-20T23:59:59-05:00',
+        prices: { standard: 180000, vip: 920000 }
+      },
+      {
+        id: 'cosecha',
+        name: 'Etapa Cosecha',
+        startDate: '2026-12-21T00:00:00-05:00',
+        endDate: '2027-01-24T23:59:59-05:00',
+        prices: { standard: 210000, vip: 950000 }
+      }
+    ];
+
+    const getGenesisActiveStage = (now = new Date()) => {
+      const nowMs = now.getTime();
+      for (let i = 0; i < GENESIS_PRICING_STAGES.length; i++) {
+        const stage = GENESIS_PRICING_STAGES[i];
+        const start = new Date(stage.startDate).getTime();
+        const end = new Date(stage.endDate).getTime();
+        if (nowMs >= start && nowMs <= end) {
+          return stage;
+        }
+      }
+      const firstStart = new Date(GENESIS_PRICING_STAGES[0].startDate).getTime();
+      if (nowMs < firstStart) {
+        return GENESIS_PRICING_STAGES[0];
+      }
+      return GENESIS_PRICING_STAGES[GENESIS_PRICING_STAGES.length - 1];
+    };
+
+    const formatPriceCOP = (amount) => {
+      return '$' + new Intl.NumberFormat('es-CO').format(amount);
+    };
+
+    const updateGenesisIndexPricing = async () => {
+      let stage = getGenesisActiveStage();
+      try {
+        const res = await fetch('/api/inscripciones/etapas');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && data.current && data.current.prices) {
+            stage = {
+              id: data.current.id,
+              name: data.current.name,
+              prices: {
+                standard: data.current.prices.standard || 150000,
+                vip: data.current.prices.vip || 890000
+              }
+            };
+          }
+        }
+      } catch (e) {
+        // Fallback al cálculo local exacto por calendario
+      }
+
+      const stageLabels = document.querySelectorAll('.genesis-index-stage');
+      stageLabels.forEach(el => {
+        el.textContent = stage.name;
+      });
+
+      const standardPriceEl = document.getElementById('genesis-price-label-standard');
+      const vipPriceEl = document.getElementById('genesis-price-label-vip');
+
+      if (standardPriceEl) {
+        standardPriceEl.textContent = formatPriceCOP(stage.prices.standard);
+      }
+      if (vipPriceEl) {
+        vipPriceEl.textContent = formatPriceCOP(stage.prices.vip);
+      }
+    };
+
+    updateGenesisIndexPricing();
+    setInterval(updateGenesisIndexPricing, 60000);
   };
 
   // ==========================================
@@ -672,17 +760,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   };
 
-  // Escuchar el clic en los botones "Ver más" por delegación de eventos
-  const vipGridElement = document.getElementById('vip-grid');
-  if (vipGridElement) {
-    vipGridElement.addEventListener('click', (e) => {
-      const btn = e.target.closest('.btn-ver-mas');
-      if (btn) {
-        const riderId = btn.getAttribute('data-id');
+  // Escuchar el clic en los botones "Ver más" por delegación de eventos global
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-ver-mas');
+    if (btn) {
+      const riderId = btn.getAttribute('data-id');
+      if (riderId) {
         openRiderModal(riderId);
       }
-    });
-  }
+    }
+  });
 
   // Listener para cerrar modal al hacer clic en el botón (X)
   if (modalCloseBtn) {

@@ -259,7 +259,8 @@ const server = http.createServer(async (req, res) => {
 
       // 2. Determinar etapa activa y valor total
       const stageInfo = registrationService.getCurrentPricingStage();
-      const unitPrice = (stageInfo.current.prices && stageInfo.current.prices[route]) || 490000;
+      const defaultPrice = route === 'vip' ? 890000 : (route === 'standard' ? 150000 : 490000);
+      const unitPrice = (stageInfo.current.prices && stageInfo.current.prices[route]) || defaultPrice;
       const jerseyPrice = Number(body.jerseyPrice) || 0;
       const hasJersey = Boolean(body.hasJersey || body.includeJersey || route === 'vip');
       const baseTotal = (unitPrice * participants.length) + (hasJersey && jerseyPrice > 0 ? jerseyPrice : 0);
@@ -374,7 +375,8 @@ const server = http.createServer(async (req, res) => {
       }
 
       const stageInfo = registrationService.getCurrentPricingStage();
-      const unitPrice = stageInfo.current.prices[route] || 490000;
+      const defaultPrice = route === 'vip' ? 890000 : (route === 'standard' ? 150000 : 490000);
+      const unitPrice = (stageInfo.current.prices && stageInfo.current.prices[route]) || defaultPrice;
       const baseTotal = unitPrice * participants.length;
       const randomSuffix = Math.random().toString(36).substring(2, 6).toUpperCase();
       targetInvoice = `TDC-INS-COR-${Date.now().toString(36).toUpperCase()}-${randomSuffix}`;

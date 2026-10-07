@@ -203,8 +203,52 @@
   }
 
   // ==========================================
-  // CARGA DE ETAPAS TARIFARIAS DESDE EL SERVIDOR
+  // CARGA DE ETAPAS TARIFARIAS (LOCAL Y SERVIDOR)
   // ==========================================
+  const LOCAL_PRICING_STAGES = [
+    {
+      id: 'chapola',
+      name: 'Etapa Chapola',
+      badge: 'Tarifa Especial de Apertura',
+      startDate: '2026-10-19T00:00:00-05:00',
+      endDate: '2026-11-22T23:59:59-05:00',
+      prices: { standard: 150000, vip: 890000, macchiato: 490000, espresso: 490000 }
+    },
+    {
+      id: 'floracion',
+      name: 'Etapa Floración',
+      badge: 'Segunda Etapa',
+      startDate: '2026-11-23T00:00:00-05:00',
+      endDate: '2026-12-20T23:59:59-05:00',
+      prices: { standard: 180000, vip: 920000, macchiato: 590000, espresso: 590000 }
+    },
+    {
+      id: 'cosecha',
+      name: 'Etapa Cosecha',
+      badge: 'Última Etapa Regular',
+      startDate: '2026-12-21T00:00:00-05:00',
+      endDate: '2027-01-24T23:59:59-05:00',
+      prices: { standard: 210000, vip: 950000, macchiato: 650000, espresso: 650000 }
+    }
+  ];
+
+  function calculateLocalPricingStage(now = new Date()) {
+    const nowMs = now.getTime();
+    for (let i = 0; i < LOCAL_PRICING_STAGES.length; i++) {
+      const stage = LOCAL_PRICING_STAGES[i];
+      const start = new Date(stage.startDate).getTime();
+      const end = new Date(stage.endDate).getTime();
+      if (nowMs >= start && nowMs <= end) {
+        return stage;
+      }
+    }
+    const firstStart = new Date(LOCAL_PRICING_STAGES[0].startDate).getTime();
+    if (nowMs < firstStart) {
+      return LOCAL_PRICING_STAGES[0];
+    }
+    return LOCAL_PRICING_STAGES[LOCAL_PRICING_STAGES.length - 1];
+  }
+
   async function loadPricingStage() {
     try {
       const res = await fetch('/api/inscripciones/etapas');
@@ -220,15 +264,8 @@
       console.warn('Usando configuración local de tarifas:', e);
     }
 
-    // Fallback local: Chapola
-    STATE.currentStage = {
-      id: 'chapola',
-      name: 'Chapola',
-      badge: 'Tarifa Especial de Apertura',
-      prices: { macchiato: 490000, espresso: 490000, standard: 490000, vip: 490000 },
-      startDate: '2026-09-28T00:00:00-05:00',
-      endDate: '2026-10-25T23:59:59-05:00'
-    };
+    // Fallback local con cálculo automático de fecha
+    STATE.currentStage = calculateLocalPricingStage();
     updateStageBanner(STATE.currentStage);
   }
 
@@ -245,8 +282,9 @@
       const end = new Date(stage.endDate).toLocaleDateString('es-CO', { day: 'numeric', month: 'short', year: 'numeric' });
       datesEl.textContent = `Vigencia: ${start} - ${end}`;
     }
-    const standardPrice = (stage.prices && (stage.prices.standard || stage.prices.macchiato)) || 490000;
-    const currentPrice = (stage.prices && (stage.prices[STATE.genesisOption] || stage.prices[STATE.selectedRoute])) || standardPrice;
+    const standardPrice = (stage.prices && (stage.prices.standard || stage.prices.macchiato)) || 150000;
+    const vipPrice = (stage.prices && (stage.prices.vip || stage.prices.standard)) || 890000;
+    const currentPrice = (stage.prices && (stage.prices[STATE.genesisOption] || stage.prices[STATE.selectedRoute])) || (STATE.genesisOption === 'vip' ? vipPrice : standardPrice);
     STATE.unitPrice = currentPrice;
 
     // Tarifa por Corredor a Partir de (tarifa correspondiente a la opción Standard)
@@ -256,10 +294,13 @@
     const priceStandardEl = document.getElementById('price-genesis-standard');
     const priceVipEl = document.getElementById('price-genesis-vip');
     if (priceStandardEl) priceStandardEl.textContent = formatCOP(standardPrice);
-    if (priceVipEl) priceVipEl.textContent = formatCOP((stage.prices && (stage.prices.vip || stage.prices.standard)) || 490000);
+    if (priceVipEl) priceVipEl.textContent = formatCOP(vipPrice);
 
     updateSummary();
   }
+
+  // Comprobar periódicamente para actualizar automáticamente a las 12:00 am de apertura
+  setInterval(loadPricingStage, 60000);
 
   // ==========================================
   // SELECCIÓN DE MODALIDAD GENESIS COFFEE RIDE
@@ -282,7 +323,7 @@
     }
 
     if (STATE.currentStage && STATE.currentStage.prices) {
-      STATE.unitPrice = STATE.currentStage.prices[optionKey] || STATE.currentStage.prices.standard || 490000;
+      STATE.unitPrice = STATE.currentStage.prices[optionKey] || (optionKey === 'vip' ? 890000 : 150000);
     }
 
     if (optionKey === 'vip') {
@@ -1015,7 +1056,7 @@
     const count = STATE.selectedCategory ? STATE.selectedCategory.participantsCount : 1;
     if (participantsQtyEl) participantsQtyEl.textContent = `${count} Corredor(es)`;
 
-    const unitPrice = STATE.unitPrice || 490000;
+    const unitPrice = STATE.unitPrice || (STATE.genesisOption === 'vip' ? 890000 : 150000);
     if (unitPriceEl) unitPriceEl.textContent = formatCOP(unitPrice);
 
     // Jersey addon (+ $100.000 COP sólo si es Standard y se activó)
