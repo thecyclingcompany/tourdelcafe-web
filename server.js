@@ -295,9 +295,13 @@ const server = http.createServer(async (req, res) => {
       // 4. Generar número de factura único para inscripciones
       const randomSuffix = Math.random().toString(36).substring(2, 6).toUpperCase();
       const invoiceNumber = `TDC-INS-${Date.now().toString(36).toUpperCase()}-${randomSuffix}`;
+      const eventName = (body.event === 'genesis-coffee-ride' || body.event === 'coffee-ride' || ['standard', 'vip'].includes(route))
+        ? 'coffee-ride'
+        : (body.event === 'junior' ? 'junior' : 'gran-fondo');
 
       // 5. Guardar orden pendiente
       const savedPending = registrationService.savePendingRegistration(invoiceNumber, {
+        event: eventName,
         route,
         categoryId,
         categoryName,
@@ -387,7 +391,12 @@ const server = http.createServer(async (req, res) => {
         };
       });
 
+      const eventName = (body.event === 'genesis-coffee-ride' || body.event === 'coffee-ride' || ['standard', 'vip'].includes(route))
+        ? 'coffee-ride'
+        : (body.event === 'junior' ? 'junior' : 'gran-fondo');
+
       registrationService.savePendingRegistration(targetInvoice, {
+        event: eventName,
         route,
         categoryId,
         categoryName,
@@ -417,8 +426,8 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'POST' && decodedUrl === '/api/coupons/validate') {
     try {
       const body = await parseRequestBody(req);
-      const { code, totalAmount } = body;
-      const result = couponService.validateCoupon(code, totalAmount);
+      const { code, totalAmount, event } = body;
+      const result = couponService.validateCoupon(code, totalAmount, event);
       if (!result.valid) {
         return sendJson(res, 400, { success: false, error: result.error });
       }
@@ -667,24 +676,52 @@ const server = http.createServer(async (req, res) => {
     try {
       const registrations = registrationService.getAllRegistrations();
 
-      // Métricas KPI agregadas
+      // Métricas KPI segmentadas por evento y globales
       let totalRiders = 0;
-      let macchiatoRiders = 0;
-      let espressoRiders = 0;
       let courtesyRiders = 0;
       let totalRevenue = 0;
 
+      const granFondo = { totalRiders: 0, macchiatoRiders: 0, espressoRiders: 0, courtesyRiders: 0, totalRevenue: 0 };
+      const coffeeRide = { totalRiders: 0, vipRiders: 0, standardRiders: 0, withJerseyRiders: 0, courtesyRiders: 0, totalRevenue: 0 };
+      const junior = { totalRiders: 0, courtesyRiders: 0, totalRevenue: 0 };
+
       registrations.forEach(r => {
+        const ev = r.event || (['standard', 'vip'].includes(r.route) || (r.categoryId && r.categoryId.startsWith('genesis-')) ? 'coffee-ride' : (r.route === 'junior' ? 'junior' : 'gran-fondo'));
+        r.event = ev;
+
         const count = r.participants ? r.participants.length : 1;
         totalRiders += count;
 
-        if (r.route === 'macchiato') macchiatoRiders += count;
-        if (r.route === 'espresso') espressoRiders += count;
-
-        if (r.paymentType === 'COURTESY' || r.discountPercent === 100 || r.totalAmount === 0) {
+        const isCourtesy = r.paymentType === 'COURTESY' || r.discountPercent === 100 || r.totalAmount === 0;
+        if (isCourtesy) {
           courtesyRiders += count;
         } else {
           totalRevenue += (r.totalAmount || 0);
+        }
+
+        if (ev === 'coffee-ride') {
+          coffeeRide.totalRiders += count;
+          const isVip = r.route === 'vip' || (r.categoryName && r.categoryName.toLowerCase().includes('vip'));
+          if (isVip) {
+            coffeeRide.vipRiders += count;
+          } else {
+            coffeeRide.standardRiders += count;
+          }
+          if (r.hasJersey || (r.participants && r.participants.some(p => p.hasJersey || (p.jerseySize && !p.jerseySize.toLowerCase().includes('no'))))) {
+            coffeeRide.withJerseyRiders += count;
+          }
+          if (isCourtesy) coffeeRide.courtesyRiders += count;
+          else coffeeRide.totalRevenue += (r.totalAmount || 0);
+        } else if (ev === 'junior') {
+          junior.totalRiders += count;
+          if (isCourtesy) junior.courtesyRiders += count;
+          else junior.totalRevenue += (r.totalAmount || 0);
+        } else {
+          granFondo.totalRiders += count;
+          if (r.route === 'macchiato') granFondo.macchiatoRiders += count;
+          if (r.route === 'espresso') granFondo.espressoRiders += count;
+          if (isCourtesy) granFondo.courtesyRiders += count;
+          else granFondo.totalRevenue += (r.totalAmount || 0);
         }
       });
 
@@ -694,10 +731,11 @@ const server = http.createServer(async (req, res) => {
         kpis: {
           totalRegistrations: registrations.length,
           totalRiders,
-          macchiatoRiders,
-          espressoRiders,
           courtesyRiders,
-          totalRevenue
+          totalRevenue,
+          granFondo,
+          coffeeRide,
+          junior
         }
       });
     } catch (err) {

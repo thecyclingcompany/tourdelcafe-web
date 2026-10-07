@@ -654,6 +654,272 @@
       from { transform: translateY(20px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+
+    /* ========================================================
+       SELECTOR DE EVENTOS DEPORTIVOS (EVENT SWITCHER TABS)
+       ======================================================== */
+    .event-nav-section {
+      margin-bottom: 24px;
+    }
+
+    .event-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .event-nav-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-hover);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .event-nav-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 960px) {
+      .event-nav-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .event-nav-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      color: var(--text-main);
+    }
+
+    .event-nav-btn:hover {
+      background: var(--card-inner);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .event-nav-btn.active {
+      background: linear-gradient(135deg, rgba(211, 84, 0, 0.16) 0%, rgba(22, 20, 19, 0.95) 100%);
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(211, 84, 0, 0.25);
+    }
+
+    .event-nav-btn.active::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #d35400, #f39c12);
+    }
+
+    .event-nav-icon {
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .event-nav-btn.active .event-nav-icon {
+      background: rgba(211, 84, 0, 0.2);
+      border-color: var(--border-accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .event-nav-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .event-nav-title {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .event-nav-sub {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .event-nav-btn.active .event-nav-sub {
+      color: rgba(250, 250, 250, 0.85);
+    }
+
+    .event-nav-badge {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .event-nav-btn.active .event-nav-badge {
+      background: rgba(211, 84, 0, 0.3);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .event-nav-badge.badge-soon {
+      background: rgba(155, 89, 182, 0.15);
+      border-color: rgba(155, 89, 182, 0.35);
+      color: #d1b2ff;
+      font-size: 10px;
+    }
+
+    /* Event Context Banner */
+    .event-context-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .context-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .context-pill {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .context-pill-active {
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid rgba(46, 204, 113, 0.3);
+      color: #2ecc71;
+    }
+
+    .context-pill-soon {
+      background: rgba(155, 89, 182, 0.15);
+      border: 1px solid rgba(155, 89, 182, 0.3);
+      color: #bb86fc;
+    }
+
+    /* Badges de Coffee Ride */
+    .badge-cr-vip {
+      background: linear-gradient(135deg, rgba(243, 156, 18, 0.25) 0%, rgba(211, 84, 0, 0.3) 100%);
+      border: 1px solid rgba(243, 156, 18, 0.5);
+      color: #f1c40f;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-cr-standard {
+      background: rgba(52, 152, 219, 0.15);
+      border: 1px solid rgba(52, 152, 219, 0.35);
+      color: #3498db;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .jersey-badge-vip {
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid rgba(46, 204, 113, 0.35);
+      color: #2ecc71;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .jersey-badge-addon {
+      background: rgba(211, 84, 0, 0.2);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-hover);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .jersey-badge-none {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-style: italic;
+    }
+
+    /* Card bienvenida Junior */
+    .junior-welcome-card {
+      background: linear-gradient(135deg, rgba(22, 20, 19, 0.95) 0%, rgba(30, 27, 25, 0.8) 100%);
+      border: 1px solid rgba(155, 89, 182, 0.3);
+      border-radius: 14px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .junior-welcome-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #9b59b6, #e67e22);
+    }
   </style>
 </head>
 <body>
@@ -681,36 +947,157 @@
   <!-- Contenedor Principal -->
   <main class="admin-main">
 
-    <!-- KPI Summary Cards -->
-    <section class="kpi-grid">
+    <!-- ==============================================
+         SELECTOR SUPERIOR DE EVENTOS DEPORTIVOS
+         ============================================== -->
+    <section class="event-nav-section">
+      <div class="event-nav-header">
+        <div class="event-nav-eyebrow">
+          <span>🏆 ESPACIO DE ADMINISTRACIÓN POR EVENTO</span>
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">
+          Selecciona el evento para gestionar sus participantes y cupones independientes
+        </div>
+      </div>
+
+      <div class="event-nav-bar">
+        <!-- 1. Tour del Café Gran Fondo -->
+        <button type="button" class="event-nav-btn active" id="event-btn-gran-fondo" onclick="AdminApp.switchEvent('gran-fondo')">
+          <div class="event-nav-icon">🚴</div>
+          <div class="event-nav-text">
+            <span class="event-nav-title">Tour del Café Gran Fondo</span>
+            <span class="event-nav-sub">Retos Macchiato 127K &bull; Espresso 115K</span>
+          </div>
+          <span class="event-nav-badge" id="event-nav-badge-gran-fondo">0</span>
+        </button>
+
+        <!-- 2. Genesis Coffee Ride -->
+        <button type="button" class="event-nav-btn" id="event-btn-coffee-ride" onclick="AdminApp.switchEvent('coffee-ride')">
+          <div class="event-nav-icon">☕</div>
+          <div class="event-nav-text">
+            <span class="event-nav-title">Genesis Coffee Ride</span>
+            <span class="event-nav-sub">Inscripción Standard &bull; Experiencia VIP</span>
+          </div>
+          <span class="event-nav-badge" id="event-nav-badge-coffee-ride">0</span>
+        </button>
+
+        <!-- 3. Tour del Café Junior -->
+        <button type="button" class="event-nav-btn" id="event-btn-junior" onclick="AdminApp.switchEvent('junior')">
+          <div class="event-nav-icon">🌟</div>
+          <div class="event-nav-text">
+            <span class="event-nav-title">Tour del Café Junior</span>
+            <span class="event-nav-sub">Semillero Oficial &bull; Próxima Apertura</span>
+          </div>
+          <span class="event-nav-badge badge-soon" id="event-nav-badge-junior">Próximamente</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Context Banner del Evento Activo -->
+    <div class="event-context-banner" id="event-context-banner">
+      <div class="context-left">
+        <span class="context-pill context-pill-active" id="context-banner-status">Inscripciones Oficiales</span>
+        <strong style="color: #fff; font-size: 14px;" id="context-banner-title">Tour del Café Gran Fondo 2027</strong>
+        <span style="color: var(--text-muted); font-size: 12px;" id="context-banner-desc">• Circuito Oficial de Ciclismo de Ruta</span>
+      </div>
+      <div style="font-size: 12px; color: var(--accent-hover); font-weight: 700;" id="context-banner-meta">
+        Quindío, Colombia &bull; 2027
+      </div>
+    </div>
+
+    <!-- ==============================================
+         KPIs DINÁMICOS POR EVENTO
+         ============================================== -->
+    <!-- 1. KPIs Gran Fondo -->
+    <section class="kpi-grid" id="kpi-block-gran-fondo">
       <div class="kpi-card">
-        <div class="kpi-label">Total Corredores</div>
-        <div class="kpi-value" id="kpi-total-riders">0</div>
-        <div class="kpi-sub">Participantes confirmados oficiales</div>
+        <div class="kpi-label">Corredores Gran Fondo</div>
+        <div class="kpi-value" id="kpi-gf-total">0</div>
+        <div class="kpi-sub">Total inscritos en ruta oficial</div>
       </div>
       <div class="kpi-card info">
         <div class="kpi-label">Reto Macchiato (127K)</div>
-        <div class="kpi-value" id="kpi-macchiato-riders">0</div>
+        <div class="kpi-value" id="kpi-gf-macchiato">0</div>
         <div class="kpi-sub">Prueba reina de alta montaña</div>
       </div>
       <div class="kpi-card warning">
         <div class="kpi-label">Reto Espresso (115K)</div>
-        <div class="kpi-value" id="kpi-espresso-riders">0</div>
+        <div class="kpi-value" id="kpi-gf-espresso">0</div>
         <div class="kpi-sub">Circuito de resistencia y ritmo</div>
       </div>
       <div class="kpi-card success">
-        <div class="kpi-label">Recaudado ePayco</div>
-        <div class="kpi-value" id="kpi-revenue-total">$ 0</div>
-        <div class="kpi-sub" id="kpi-revenue-count">0 pagos confirmados</div>
+        <div class="kpi-label">Recaudado ePayco GF</div>
+        <div class="kpi-value" id="kpi-gf-revenue">$ 0</div>
+        <div class="kpi-sub" id="kpi-gf-revenue-count">0 pagos confirmados</div>
       </div>
       <div class="kpi-card courtesy">
-        <div class="kpi-label">Cortesías 100%</div>
-        <div class="kpi-value" id="kpi-courtesy-count">0</div>
-        <div class="kpi-sub">Patrocinadores, aliados y prensa</div>
+        <div class="kpi-label">Cortesías 100% GF</div>
+        <div class="kpi-value" id="kpi-gf-courtesy">0</div>
+        <div class="kpi-sub">Patrocinadores y prensa</div>
       </div>
     </section>
 
-    <!-- Pestañas de Navegación -->
+    <!-- 2. KPIs Coffee Ride -->
+    <section class="kpi-grid" id="kpi-block-coffee-ride" style="display: none;">
+      <div class="kpi-card">
+        <div class="kpi-label">Participantes Coffee Ride</div>
+        <div class="kpi-value" id="kpi-cr-total">0</div>
+        <div class="kpi-sub">Festival Coffee &amp; Cycling</div>
+      </div>
+      <div class="kpi-card warning">
+        <div class="kpi-label">Experiencia VIP</div>
+        <div class="kpi-value" id="kpi-cr-vip">0</div>
+        <div class="kpi-sub">Incluye Jersey, Cena &amp; Catación</div>
+      </div>
+      <div class="kpi-card info">
+        <div class="kpi-label">Inscripción Standard</div>
+        <div class="kpi-value" id="kpi-cr-standard">0</div>
+        <div class="kpi-sub">Modalidad regular del festival</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Jerseys Adicionales</div>
+        <div class="kpi-value" id="kpi-cr-jerseys">0</div>
+        <div class="kpi-sub">Add-on oficial (+ $100K COP)</div>
+      </div>
+      <div class="kpi-card success">
+        <div class="kpi-label">Recaudado ePayco CR</div>
+        <div class="kpi-value" id="kpi-cr-revenue">$ 0</div>
+        <div class="kpi-sub" id="kpi-cr-revenue-count">0 órdenes pagadas</div>
+      </div>
+      <div class="kpi-card courtesy">
+        <div class="kpi-label">Cortesías 100% CR</div>
+        <div class="kpi-value" id="kpi-cr-courtesy">0</div>
+        <div class="kpi-sub">Invitados especiales &amp; VIP</div>
+      </div>
+    </section>
+
+    <!-- 3. KPIs Junior -->
+    <section class="kpi-grid" id="kpi-block-junior" style="display: none;">
+      <div class="kpi-card">
+        <div class="kpi-label">Inscritos Semillero Junior</div>
+        <div class="kpi-value" id="kpi-jr-total">0</div>
+        <div class="kpi-sub">Apertura en próxima fase</div>
+      </div>
+      <div class="kpi-card info">
+        <div class="kpi-label">Cupos Proyectados</div>
+        <div class="kpi-value">100</div>
+        <div class="kpi-sub">Categorías Pre-infantil a Juvenil</div>
+      </div>
+      <div class="kpi-card success">
+        <div class="kpi-label">Recaudado ePayco Junior</div>
+        <div class="kpi-value" id="kpi-jr-revenue">$ 0</div>
+        <div class="kpi-sub">0 pagos registrados</div>
+      </div>
+      <div class="kpi-card courtesy">
+        <div class="kpi-label">Estado Registro</div>
+        <div class="kpi-value" style="font-size: 16px; color: #bb86fc;">PRÓXIMAMENTE</div>
+        <div class="kpi-sub">Espacio administrativo configurado</div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         PESTAÑAS DE NAVEGACIÓN Y ACCIONES DEL EVENTO
+         ============================================== -->
     <div class="tabs-header">
       <div class="tabs-nav">
         <button class="tab-btn active" id="tab-btn-riders" onclick="AdminApp.switchTab('riders')">
@@ -723,18 +1110,42 @@
         </button>
       </div>
 
-      <div id="tab-actions-riders">
+      <!-- Acciones Gran Fondo -->
+      <div id="tab-actions-gran-fondo">
         <div style="display: flex; gap: 8px;">
           <button type="button" class="btn-export" onclick="AdminApp.exportExcelFiltered()" title="Descargar únicamente lo filtrado en pantalla">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Exportar Vista Filtrada (.csv Excel)
+            Exportar Filtrados GF (.csv)
           </button>
-          <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelAll()" title="Descargar toda la base de datos de inscritos">
-            Base Completa (.csv)
+          <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelEventAll()" title="Descargar todos los inscritos en Gran Fondo">
+            Base Gran Fondo (.csv)
           </button>
         </div>
       </div>
 
+      <!-- Acciones Coffee Ride -->
+      <div id="tab-actions-coffee-ride" style="display: none;">
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn-export" onclick="AdminApp.exportExcelFiltered()" title="Descargar lo filtrado de Coffee Ride">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Exportar Filtrados CR (.csv)
+          </button>
+          <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelEventAll()" title="Descargar toda la base de Coffee Ride">
+            Base Coffee Ride (.csv)
+          </button>
+        </div>
+      </div>
+
+      <!-- Acciones Junior -->
+      <div id="tab-actions-junior" style="display: none;">
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelAll()" title="Descargar base consolidada">
+            Base Consolidada (.csv)
+          </button>
+        </div>
+      </div>
+
+      <!-- Acciones Cupones -->
       <div id="tab-actions-coupons" style="display: none;">
         <button type="button" class="btn-create-coupon" onclick="AdminApp.openCouponModal()">
           <span>+ Crear Nuevo Cupón</span>
@@ -743,26 +1154,26 @@
     </div>
 
     <!-- ==============================================
-         VISTA 1: TABLA Y FILTROS DE PARTICIPANTES
+         VISTA 1-A: PARTICIPANTES GRAN FONDO
          ============================================== -->
-    <section id="view-riders">
+    <section id="view-riders-gran-fondo">
       <div class="toolbar-box">
         <div class="filters-group">
           <!-- Búsqueda -->
           <div class="search-input-wrapper">
             <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="filter-search" placeholder="Buscar por Nombres, Apellidos, Cédula, Email, Dorsal, Factura..." oninput="AdminApp.applyFilters()">
+            <input type="text" id="filter-gf-search" placeholder="Buscar en Gran Fondo por Nombre, Cédula, Email, Dorsal, Factura, Equipo..." oninput="AdminApp.applyFilters()">
           </div>
 
           <!-- Filtro Recorrido -->
-          <select id="filter-route" class="filter-select" onchange="AdminApp.applyFilters()">
+          <select id="filter-gf-route" class="filter-select" onchange="AdminApp.applyFilters()">
             <option value="all">Todos los Recorridos</option>
             <option value="macchiato">Reto Macchiato (127 km)</option>
             <option value="espresso">Reto Espresso (115 km)</option>
           </select>
 
           <!-- Filtro Categoría -->
-          <select id="filter-category" class="filter-select" onchange="AdminApp.applyFilters()">
+          <select id="filter-gf-category" class="filter-select" onchange="AdminApp.applyFilters()">
             <option value="all">Todas las Categorías</option>
             <optgroup label="Equipos de 4 (127 km)">
               <option value="equipo-masc-a">Equipos 4 Masculino A (72-159 años)</option>
@@ -781,19 +1192,19 @@
           </select>
 
           <!-- Filtro Pago -->
-          <select id="filter-payment" class="filter-select" onchange="AdminApp.applyFilters()">
+          <select id="filter-gf-payment" class="filter-select" onchange="AdminApp.applyFilters()">
             <option value="all">Todos los Pagos</option>
             <option value="epayco">Aprobado ePayco</option>
             <option value="courtesy">Cortesía 100%</option>
           </select>
         </div>
 
-        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;" id="filter-counter">
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;" id="filter-counter-gran-fondo">
           Mostrando 0 corredores
         </div>
       </div>
 
-      <!-- Tabla de Participantes -->
+      <!-- Tabla de Participantes Gran Fondo -->
       <div class="table-container">
         <div class="table-responsive">
           <table class="data-table">
@@ -813,10 +1224,154 @@
                 <th style="text-align: right;">Acciones</th>
               </tr>
             </thead>
-            <tbody id="riders-table-body">
+            <tbody id="riders-table-body-gran-fondo">
               <tr>
                 <td colspan="12" style="text-align: center; padding: 40px; color: var(--text-muted);">
-                  Cargando inscripciones oficiales...
+                  Cargando inscripciones oficiales de Gran Fondo...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         VISTA 1-B: PARTICIPANTES GENESIS COFFEE RIDE
+         ============================================== -->
+    <section id="view-riders-coffee-ride" style="display: none;">
+      <div class="toolbar-box">
+        <div class="filters-group">
+          <!-- Búsqueda -->
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="filter-cr-search" placeholder="Buscar en Coffee Ride por Nombre, Cédula, Email, Factura, Acreditación..." oninput="AdminApp.applyFilters()">
+          </div>
+
+          <!-- Filtro Modalidad Coffee Ride -->
+          <select id="filter-cr-option" class="filter-select" onchange="AdminApp.applyFilters()">
+            <option value="all">Todas las Modalidades</option>
+            <option value="vip">Experiencia VIP</option>
+            <option value="standard">Inscripción Standard</option>
+          </select>
+
+          <!-- Filtro Jersey Oficial Ciclista -->
+          <select id="filter-cr-jersey" class="filter-select" onchange="AdminApp.applyFilters()">
+            <option value="all">Todos los Jerseys</option>
+            <option value="with-jersey">Con Jersey Oficial (Incluido VIP / Adicional)</option>
+            <option value="without-jersey">Sin Jersey Adicional</option>
+          </select>
+
+          <!-- Filtro Pago -->
+          <select id="filter-cr-payment" class="filter-select" onchange="AdminApp.applyFilters()">
+            <option value="all">Todos los Pagos</option>
+            <option value="epayco">Aprobado ePayco</option>
+            <option value="courtesy">Cortesía 100%</option>
+          </select>
+        </div>
+
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;" id="filter-counter-coffee-ride">
+          Mostrando 0 participantes
+        </div>
+      </div>
+
+      <!-- Tabla de Participantes Coffee Ride con sus propios campos -->
+      <div class="table-container">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Acreditación / ID</th>
+                <th>Fecha Reg.</th>
+                <th>Modalidad Inscripción</th>
+                <th>Jersey Oficial Conmemorativo</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Documento</th>
+                <th>F. Nac. / Género</th>
+                <th>Contacto (WhatsApp / Email)</th>
+                <th>Ubicación &amp; Salud</th>
+                <th>Pago &amp; Descuento</th>
+                <th style="text-align: right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="riders-table-body-coffee-ride">
+              <tr>
+                <td colspan="12" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                  Cargando inscripciones oficiales de Genesis Coffee Ride...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         VISTA 1-C: PARTICIPANTES TOUR DEL CAFÉ JUNIOR
+         ============================================== -->
+    <section id="view-riders-junior" style="display: none;">
+      <!-- Welcome Card informativa del espacio Junior -->
+      <div class="junior-welcome-card">
+        <div style="display: inline-block; background: rgba(155, 89, 182, 0.2); border: 1px solid rgba(155, 89, 182, 0.5); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #d1b2ff; text-transform: uppercase; margin-bottom: 12px;">
+          🌟 ESPACIO DE ADMINISTRACIÓN OFICIAL CONFIGURADO
+        </div>
+        <h2 style="font-family: var(--font-heading); font-size: 22px; color: #fff; margin-bottom: 8px;">
+          Tour del Café Junior (Semillero y Categorías Menores)
+        </h2>
+        <p style="color: var(--text-muted); max-width: 760px; margin: 0 auto 18px auto; font-size: 13.5px; line-height: 1.6;">
+          Este espacio administrativo está 100% estructurado para recibir, filtrar y gestionar los participantes del Tour del Café Junior. 
+          El formulario público en el portal de inscripciones se habilitará en la siguiente fase de lanzamiento. Mientras tanto, puedes configurar Códigos de Descuento &amp; Cortesías específicos para convenios de escuelas o colegios.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button type="button" class="btn-topbar" onclick="AdminApp.switchTab('coupons')">
+            <span>🎟️ Ver / Crear Cupones para Junior</span>
+          </button>
+          <a href="../inscripciones.html" target="_blank" class="btn-topbar">
+            <span>🔗 Ver Estado en Portal</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="toolbar-box">
+        <div style="font-size: 13px; font-weight: 600; color: var(--text-muted);">
+          Registro de Participantes: <span style="color: #fff;">Categoría Semillero Infantil y Juvenil</span>
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;" id="filter-counter-junior">
+          0 participantes registrados
+        </div>
+      </div>
+
+      <!-- Tabla Junior (Lista para poblarse al habilitar el formulario) -->
+      <div class="table-container">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dorsal Junior</th>
+                <th>Fecha Reg.</th>
+                <th>Categoría Semillero</th>
+                <th>Nombres Participante</th>
+                <th>Apellidos</th>
+                <th>Documento</th>
+                <th>Edad / F. Nac</th>
+                <th>Tutor / Acudiente Responsable</th>
+                <th>Contacto Tutor</th>
+                <th>EPS &amp; Emergencia</th>
+                <th>Pago &amp; Estado</th>
+                <th style="text-align: right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="riders-table-body-junior">
+              <tr>
+                <td colspan="12" style="text-align: center; padding: 50px 20px; color: var(--text-muted);">
+                  <div style="font-size: 32px; margin-bottom: 10px;">🌟</div>
+                  <strong style="color: #fff; font-size: 15px; display: block; margin-bottom: 6px;">
+                    Aún no hay inscripciones registradas en el Tour del Café Junior
+                  </strong>
+                  <span style="font-size: 13px; color: var(--text-muted); display: block; max-width: 500px; margin: 0 auto;">
+                    Tan pronto como se habilite el formulario público en el portal, los registros de niños y jóvenes ingresarán automáticamente en este módulo con sus tutores y categorías.
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -830,9 +1385,17 @@
          ============================================== -->
     <section id="view-coupons" style="display: none;">
       <div class="toolbar-box">
-        <div style="font-size: 14px; font-weight: 600;">
-          Gestor de Cupones de Descuento y Cortesías (1% al 100%)
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <div style="font-size: 14px; font-weight: 700;">
+            Gestor de Cupones de Descuento y Cortesías (1% al 100%)
+          </div>
+          <!-- Filtro de Cupones por Evento -->
+          <select id="filter-coupons-event" class="filter-select" onchange="AdminApp.renderCouponsTable()">
+            <option value="current">Mostrando Cupones del Evento Activo</option>
+            <option value="all">Ver Todos los Cupones (Globales y Específicos)</option>
+          </select>
         </div>
+
         <button type="button" class="btn-create-coupon" onclick="AdminApp.openCouponModal()">
           <span>+ Crear Nuevo Cupón</span>
         </button>
@@ -844,6 +1407,7 @@
             <thead>
               <tr>
                 <th>Código Alfanumérico</th>
+                <th>Evento Aplicable</th>
                 <th>Descripción / Patrocinador</th>
                 <th>Descuento</th>
                 <th>Usos Consumidos / Límite</th>
@@ -854,7 +1418,7 @@
             </thead>
             <tbody id="coupons-table-body">
               <tr>
-                <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">
                   Cargando códigos de descuento...
                 </td>
               </tr>
@@ -867,13 +1431,13 @@
   </main>
 
   <!-- ==============================================
-       MODAL: FICHA TÉCNICA DEL CORREDOR
+       MODAL: FICHA TÉCNICA DEL PARTICIPANTE
        ============================================== -->
   <div class="modal-backdrop" id="rider-modal">
     <div class="modal-box">
       <div class="modal-header">
         <div>
-          <div class="modal-title" id="modal-rider-name">Ficha del Corredor</div>
+          <div class="modal-title" id="modal-rider-name">Ficha del Participante</div>
           <div style="font-size: 12px; color: var(--accent-hover);" id="modal-rider-dorsal">Dorsal</div>
         </div>
         <button type="button" class="btn-close-modal" onclick="AdminApp.closeRiderModal()">✕</button>
@@ -889,7 +1453,7 @@
        MODAL: CREAR / EDITAR CUPÓN
        ============================================== -->
   <div class="modal-backdrop" id="coupon-modal">
-    <div class="modal-box" style="max-width: 500px;">
+    <div class="modal-box" style="max-width: 520px;">
       <div class="modal-header">
         <div class="modal-title" id="modal-coupon-title">Crear Nuevo Cupón</div>
         <button type="button" class="btn-close-modal" onclick="AdminApp.closeCouponModal()">✕</button>
@@ -897,6 +1461,22 @@
 
       <form id="coupon-form" onsubmit="AdminApp.submitCouponForm(event)">
         <input type="hidden" id="coupon-edit-mode" value="create">
+
+        <!-- Selector de Evento Deportivo Aplicable -->
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            Evento Deportivo Aplicable <span style="color: var(--accent);">*</span>
+          </label>
+          <select id="coupon-form-event" class="form-control" style="width: 100%; background: var(--card-inner); border: 1px solid var(--border); border-radius: 6px; padding: 10px; color: #fff; font-size: 13px;">
+            <option value="all">🌐 Todos los Eventos (Válido Globalmente)</option>
+            <option value="gran-fondo">🚴 Tour del Café Gran Fondo (Exclusivo)</option>
+            <option value="coffee-ride">☕ Genesis Coffee Ride (Exclusivo)</option>
+            <option value="junior">🌟 Tour del Café Junior (Exclusivo)</option>
+          </select>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">
+            Define si el cupón aplica a todos los eventos o sólo a uno de ellos.
+          </div>
+        </div>
 
         <div style="margin-bottom: 16px;">
           <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
@@ -960,9 +1540,11 @@
     const AdminApp = (() => {
       let rawRegistrations = [];
       let flattenedRiders = [];
-      let filteredRiders = [];
+      let gfFilteredRiders = [];
+      let crFilteredRiders = [];
       let rawCoupons = [];
-      let currentTab = 'riders';
+      let currentEvent = 'gran-fondo'; // 'gran-fondo' | 'coffee-ride' | 'junior'
+      let currentTab = 'riders'; // 'riders' | 'coupons'
 
       // ==========================================
       // AUTENTICACIÓN Y SESIÓN
@@ -1011,6 +1593,27 @@
       };
 
       // ==========================================
+      // CLASIFICACIÓN DE EVENTO
+      // ==========================================
+      const classifyEvent = (order) => {
+        if (order.event === 'junior' || order.route === 'junior' || (order.category && order.category.startsWith('junior-'))) {
+          return 'junior';
+        }
+        if (
+          order.event === 'coffee-ride' ||
+          order.event === 'genesis-coffee-ride' ||
+          order.route === 'standard' ||
+          order.route === 'vip' ||
+          (order.category && order.category.startsWith('genesis-')) ||
+          (order.categoryId && order.categoryId.startsWith('genesis-')) ||
+          (order.routeName && order.routeName.toLowerCase().includes('coffee ride'))
+        ) {
+          return 'coffee-ride';
+        }
+        return 'gran-fondo';
+      };
+
+      // ==========================================
       // CARGA DE DATOS
       // ==========================================
       const loadRegistrations = async () => {
@@ -1021,26 +1624,37 @@
           if (data.success) {
             rawRegistrations = data.registrations || [];
 
-            // Aplanar corredores individuales con los metadatos de su orden
+            // Aplanar corredores individuales con los metadatos de su orden y evento
             flattenedRiders = [];
             rawRegistrations.forEach(order => {
+              const ev = order.event || classifyEvent(order);
               const participants = order.participants || [];
               participants.forEach((p, idx) => {
                 const nombres = p.nombres || (p.fullName ? p.fullName.trim().split(/\s+/).slice(0, -1).join(' ') : '');
                 const apellidos = p.apellidos || (p.fullName ? p.fullName.trim().split(/\s+/).slice(-1).join(' ') : '');
                 const fullName = p.fullName || `${nombres} ${apellidos}`.trim();
+
+                // Detección de campos de Coffee Ride
+                const isCR = ev === 'coffee-ride';
+                const isVIP = isCR && (order.route === 'vip' || order.genesisOption === 'vip' || (order.categoryName && order.categoryName.toLowerCase().includes('vip')));
+                const hasJersey = isVIP || Boolean(order.hasJersey || order.includeJersey || p.hasJersey || (p.jerseySize && !p.jerseySize.toLowerCase().includes('no')));
+                let jerseyType = 'none';
+                if (isVIP) jerseyType = 'vip_included';
+                else if (hasJersey) jerseyType = 'addon';
+
                 flattenedRiders.push({
                   ...p,
                   nombres,
                   apellidos,
                   fullName,
+                  orderEvent: ev,
                   orderInvoice: order.invoiceNumber,
                   orderRef: order.refPayco,
                   orderDate: order.paymentDate || order.createdAt,
                   orderRoute: order.route,
-                  orderRouteName: order.routeName || (order.route === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)'),
-                  orderCategory: order.category,
-                  orderCategoryName: order.categoryName,
+                  orderRouteName: order.routeName || (ev === 'coffee-ride' ? (isVIP ? 'Experiencia VIP' : 'Inscripción Standard') : (order.route === 'macchiato' ? 'Reto Macchiato (127 km)' : 'Reto Espresso (115 km)')),
+                  orderCategory: order.category || order.categoryId,
+                  orderCategoryName: order.categoryName || (ev === 'coffee-ride' ? (isVIP ? 'Experiencia VIP' : 'Inscripción Standard') : order.category),
                   orderPaymentType: order.paymentType || (order.totalAmount === 0 ? 'COURTESY' : 'EPAYCO'),
                   orderTotalPaid: order.totalAmount,
                   orderBaseAmount: order.baseAmount || order.totalAmount,
@@ -1050,12 +1664,17 @@
                   payerPhone: order.payerPhone,
                   participantIndex: idx + 1,
                   totalInOrder: participants.length,
-                  orderTeamName: order.teamName || p.teamName || null
+                  orderTeamName: order.teamName || p.teamName || null,
+                  // Metadatos Coffee Ride
+                  crOption: isVIP ? 'vip' : 'standard',
+                  crHasJersey: hasJersey,
+                  crJerseyType: jerseyType,
+                  crJerseySize: p.jerseySize || (hasJersey ? 'Por asignar' : 'No solicitado')
                 });
               });
             });
 
-            // Actualizar KPIs
+            // Actualizar KPIs y renderizar
             updateKPIs(data.kpis);
             applyFilters();
           }
@@ -1070,8 +1689,8 @@
           const data = await res.json();
           if (data.success) {
             rawCoupons = data.coupons || [];
-            document.getElementById('tab-badge-coupons').textContent = rawCoupons.length;
-            renderCouponsTable(rawCoupons);
+            updateTabBadges();
+            renderCouponsTable();
           }
         } catch (err) {
           console.error('Error cargando cupones:', err);
@@ -1080,59 +1699,214 @@
 
       const refreshAllData = async () => {
         await Promise.all([loadRegistrations(), loadCoupons()]);
-        showToast('Datos actualizados en tiempo real.');
+        showToast('Datos sincronizados en tiempo real.');
       };
 
       // ==========================================
-      // ACTUALIZACIÓN DE KPIS
+      // ACTUALIZACIÓN DE KPIS POR EVENTO
       // ==========================================
       const updateKPIs = (serverKpis) => {
-        const totalRiders = flattenedRiders.length;
-        const macchiatoRiders = flattenedRiders.filter(r => r.orderRoute === 'macchiato').length;
-        const espressoRiders = flattenedRiders.filter(r => r.orderRoute === 'espresso').length;
-        const courtesyRiders = flattenedRiders.filter(r => r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100).length;
+        // Conteo por eventos
+        const gfRiders = flattenedRiders.filter(r => r.orderEvent === 'gran-fondo');
+        const crRiders = flattenedRiders.filter(r => r.orderEvent === 'coffee-ride');
+        const jrRiders = flattenedRiders.filter(r => r.orderEvent === 'junior');
 
-        // Calcular recaudación real ePayco
-        const revenue = rawRegistrations
-          .filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0)
-          .reduce((sum, o) => sum + (o.totalAmount || 0), 0);
+        // Badges del selector superior de eventos
+        document.getElementById('event-nav-badge-gran-fondo').textContent = gfRiders.length;
+        document.getElementById('event-nav-badge-coffee-ride').textContent = crRiders.length;
+        const jrBadge = document.getElementById('event-nav-badge-junior');
+        if (jrRiders.length > 0) {
+          jrBadge.textContent = jrRiders.length;
+          jrBadge.classList.remove('badge-soon');
+        } else {
+          jrBadge.textContent = 'Próximamente';
+          jrBadge.classList.add('badge-soon');
+        }
 
-        const revenueCount = rawRegistrations.filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0).length;
+        // 1. KPIs Gran Fondo
+        const gfMacchiato = gfRiders.filter(r => r.orderRoute === 'macchiato').length;
+        const gfEspresso = gfRiders.filter(r => r.orderRoute === 'espresso').length;
+        const gfCourtesy = gfRiders.filter(r => r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100).length;
+        const gfOrders = rawRegistrations.filter(o => (o.event || classifyEvent(o)) === 'gran-fondo');
+        const gfRevenue = gfOrders.filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0).reduce((s, o) => s + (o.totalAmount || 0), 0);
+        const gfRevenueCount = gfOrders.filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0).length;
 
-        document.getElementById('kpi-total-riders').textContent = totalRiders;
-        document.getElementById('kpi-macchiato-riders').textContent = macchiatoRiders;
-        document.getElementById('kpi-espresso-riders').textContent = espressoRiders;
-        document.getElementById('kpi-courtesy-count').textContent = courtesyRiders;
-        document.getElementById('kpi-revenue-total').textContent = formatCOP(revenue);
-        document.getElementById('kpi-revenue-count').textContent = `${revenueCount} órdenes pagadas`;
-        document.getElementById('tab-badge-riders').textContent = totalRiders;
+        document.getElementById('kpi-gf-total').textContent = gfRiders.length;
+        document.getElementById('kpi-gf-macchiato').textContent = gfMacchiato;
+        document.getElementById('kpi-gf-espresso').textContent = gfEspresso;
+        document.getElementById('kpi-gf-courtesy').textContent = gfCourtesy;
+        document.getElementById('kpi-gf-revenue').textContent = formatCOP(gfRevenue);
+        document.getElementById('kpi-gf-revenue-count').textContent = `${gfRevenueCount} órdenes pagadas`;
+
+        // 2. KPIs Coffee Ride
+        const crVip = crRiders.filter(r => r.crOption === 'vip').length;
+        const crStandard = crRiders.filter(r => r.crOption === 'standard').length;
+        const crJerseys = crRiders.filter(r => r.crJerseyType === 'addon').length;
+        const crCourtesy = crRiders.filter(r => r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100).length;
+        const crOrders = rawRegistrations.filter(o => (o.event || classifyEvent(o)) === 'coffee-ride');
+        const crRevenue = crOrders.filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0).reduce((s, o) => s + (o.totalAmount || 0), 0);
+        const crRevenueCount = crOrders.filter(o => o.paymentType !== 'COURTESY' && o.totalAmount > 0).length;
+
+        document.getElementById('kpi-cr-total').textContent = crRiders.length;
+        document.getElementById('kpi-cr-vip').textContent = crVip;
+        document.getElementById('kpi-cr-standard').textContent = crStandard;
+        document.getElementById('kpi-cr-jerseys').textContent = crJerseys;
+        document.getElementById('kpi-cr-courtesy').textContent = crCourtesy;
+        document.getElementById('kpi-cr-revenue').textContent = formatCOP(crRevenue);
+        document.getElementById('kpi-cr-revenue-count').textContent = `${crRevenueCount} órdenes pagadas`;
+
+        // 3. KPIs Junior
+        document.getElementById('kpi-jr-total').textContent = jrRiders.length;
+
+        updateTabBadges();
+      };
+
+      const updateTabBadges = () => {
+        // Badge de participantes en la pestaña activa
+        const currentEventRiders = flattenedRiders.filter(r => r.orderEvent === currentEvent);
+        document.getElementById('tab-badge-riders').textContent = currentEventRiders.length;
+
+        // Badge de cupones válidos para el evento activo
+        const applicableCoupons = rawCoupons.filter(c => {
+          const app = c.applicableEvent || 'all';
+          return app === 'all' || app === currentEvent;
+        });
+        document.getElementById('tab-badge-coupons').textContent = applicableCoupons.length;
+      };
+
+      // ==========================================
+      // SWITCHER DE EVENTO PRINCIPAL
+      // ==========================================
+      const switchEvent = (eventKey) => {
+        currentEvent = eventKey;
+
+        // 1. Botones del selector superior
+        document.querySelectorAll('.event-nav-btn').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById(`event-btn-${eventKey}`);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        // 2. Banner contextual
+        const bannerTitle = document.getElementById('context-banner-title');
+        const bannerDesc = document.getElementById('context-banner-desc');
+        const bannerStatus = document.getElementById('context-banner-status');
+        const bannerMeta = document.getElementById('context-banner-meta');
+
+        if (eventKey === 'gran-fondo') {
+          bannerTitle.textContent = 'Tour del Café Gran Fondo 2027';
+          bannerDesc.textContent = '• Circuito Oficial de Ciclismo de Ruta';
+          bannerStatus.className = 'context-pill context-pill-active';
+          bannerStatus.textContent = 'Inscripciones Oficiales';
+          bannerMeta.textContent = 'Quindío, Colombia • Febrero 2027';
+        } else if (eventKey === 'coffee-ride') {
+          bannerTitle.textContent = 'Genesis Coffee Ride 2027';
+          bannerDesc.textContent = '• Experiencia Fundacional Coffee & Cycling';
+          bannerStatus.className = 'context-pill context-pill-active';
+          bannerStatus.textContent = 'Lanzamiento Abierto';
+          bannerMeta.textContent = '12 - 14 Febrero 2027 • Quindío';
+        } else {
+          bannerTitle.textContent = 'Tour del Café Junior';
+          bannerDesc.textContent = '• Semillero Infantil & Juvenil Oficial';
+          bannerStatus.className = 'context-pill context-pill-soon';
+          bannerStatus.textContent = 'Próxima Apertura';
+          bannerMeta.textContent = 'Espacio de Administración Listo';
+        }
+
+        // 3. Bloques de KPIs
+        document.getElementById('kpi-block-gran-fondo').style.display = eventKey === 'gran-fondo' ? 'grid' : 'none';
+        document.getElementById('kpi-block-coffee-ride').style.display = eventKey === 'coffee-ride' ? 'grid' : 'none';
+        document.getElementById('kpi-block-junior').style.display = eventKey === 'junior' ? 'grid' : 'none';
+
+        // 4. Vistas de Participantes
+        const isRidersTab = currentTab === 'riders';
+        document.getElementById('view-riders-gran-fondo').style.display = (isRidersTab && eventKey === 'gran-fondo') ? 'block' : 'none';
+        document.getElementById('view-riders-coffee-ride').style.display = (isRidersTab && eventKey === 'coffee-ride') ? 'block' : 'none';
+        document.getElementById('view-riders-junior').style.display = (isRidersTab && eventKey === 'junior') ? 'block' : 'none';
+
+        // 5. Botones de acciones de participantes
+        document.getElementById('tab-actions-gran-fondo').style.display = (isRidersTab && eventKey === 'gran-fondo') ? 'flex' : 'none';
+        document.getElementById('tab-actions-coffee-ride').style.display = (isRidersTab && eventKey === 'coffee-ride') ? 'flex' : 'none';
+        document.getElementById('tab-actions-junior').style.display = (isRidersTab && eventKey === 'junior') ? 'flex' : 'none';
+
+        // 6. Si estamos en cupones, refrescar lista
+        if (currentTab === 'coupons') {
+          renderCouponsTable();
+        }
+
+        updateTabBadges();
+        applyFilters();
+      };
+
+      // ==========================================
+      // SWITCHER DE PESTAÑAS (RIDERS / CUPONES)
+      // ==========================================
+      const switchTab = (tab) => {
+        currentTab = tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+        if (tab === 'riders') {
+          document.getElementById('tab-btn-riders').classList.add('active');
+          document.getElementById('view-coupons').style.display = 'none';
+          document.getElementById('tab-actions-coupons').style.display = 'none';
+
+          document.getElementById('view-riders-gran-fondo').style.display = currentEvent === 'gran-fondo' ? 'block' : 'none';
+          document.getElementById('view-riders-coffee-ride').style.display = currentEvent === 'coffee-ride' ? 'block' : 'none';
+          document.getElementById('view-riders-junior').style.display = currentEvent === 'junior' ? 'block' : 'none';
+
+          document.getElementById('tab-actions-gran-fondo').style.display = currentEvent === 'gran-fondo' ? 'flex' : 'none';
+          document.getElementById('tab-actions-coffee-ride').style.display = currentEvent === 'coffee-ride' ? 'flex' : 'none';
+          document.getElementById('tab-actions-junior').style.display = currentEvent === 'junior' ? 'flex' : 'none';
+        } else {
+          document.getElementById('tab-btn-coupons').classList.add('active');
+          document.getElementById('view-riders-gran-fondo').style.display = 'none';
+          document.getElementById('view-riders-coffee-ride').style.display = 'none';
+          document.getElementById('view-riders-junior').style.display = 'none';
+
+          document.getElementById('tab-actions-gran-fondo').style.display = 'none';
+          document.getElementById('tab-actions-coffee-ride').style.display = 'none';
+          document.getElementById('tab-actions-junior').style.display = 'none';
+
+          document.getElementById('view-coupons').style.display = 'block';
+          document.getElementById('tab-actions-coupons').style.display = 'block';
+
+          renderCouponsTable();
+        }
       };
 
       // ==========================================
       // FILTRADO DINÁMICO DE CORREDORES
       // ==========================================
       const applyFilters = () => {
-        const search = (document.getElementById('filter-search')?.value || '').toLowerCase().trim();
-        const route = document.getElementById('filter-route')?.value || 'all';
-        const category = document.getElementById('filter-category')?.value || 'all';
-        const payment = document.getElementById('filter-payment')?.value || 'all';
+        if (currentEvent === 'gran-fondo') {
+          applyGranFondoFilters();
+        } else if (currentEvent === 'coffee-ride') {
+          applyCoffeeRideFilters();
+        } else {
+          // Junior
+          const jrRiders = flattenedRiders.filter(r => r.orderEvent === 'junior');
+          document.getElementById('filter-counter-junior').textContent = `${jrRiders.length} participantes registrados`;
+        }
+      };
 
-        filteredRiders = flattenedRiders.filter(r => {
-          // Filtro por Recorrido
+      const applyGranFondoFilters = () => {
+        const search = (document.getElementById('filter-gf-search')?.value || '').toLowerCase().trim();
+        const route = document.getElementById('filter-gf-route')?.value || 'all';
+        const category = document.getElementById('filter-gf-category')?.value || 'all';
+        const payment = document.getElementById('filter-gf-payment')?.value || 'all';
+
+        const baseRiders = flattenedRiders.filter(r => r.orderEvent === 'gran-fondo');
+
+        gfFilteredRiders = baseRiders.filter(r => {
           if (route !== 'all' && r.orderRoute !== route) return false;
 
-          // Filtro por Categoría
           if (category !== 'all') {
-            if (category === 'individual-masc' && !r.orderCategory.startsWith('ind-m-')) return false;
-            if (category === 'individual-fem' && !r.orderCategory.startsWith('ind-f-')) return false;
+            if (category === 'individual-masc' && !r.orderCategory?.startsWith('ind-m-')) return false;
+            if (category === 'individual-fem' && !r.orderCategory?.startsWith('ind-f-')) return false;
             if (category !== 'individual-masc' && category !== 'individual-fem' && r.orderCategory !== category) return false;
           }
 
-          // Filtro por Pago
           if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
           if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
 
-          // Búsqueda en vivo por nombres, apellidos, doc, email, dorsal, factura, ref, equipo
           if (search) {
             const matchName = (r.fullName || '').toLowerCase().includes(search);
             const matchNombres = (r.nombres || '').toLowerCase().includes(search);
@@ -1149,22 +1923,58 @@
           return true;
         });
 
-        document.getElementById('filter-counter').textContent = `Mostrando ${filteredRiders.length} de ${flattenedRiders.length} corredores`;
-        renderRidersTable(filteredRiders);
+        document.getElementById('filter-counter-gran-fondo').textContent = `Mostrando ${gfFilteredRiders.length} de ${baseRiders.length} corredores`;
+        renderGranFondoTable(gfFilteredRiders);
+      };
+
+      const applyCoffeeRideFilters = () => {
+        const search = (document.getElementById('filter-cr-search')?.value || '').toLowerCase().trim();
+        const option = document.getElementById('filter-cr-option')?.value || 'all';
+        const jersey = document.getElementById('filter-cr-jersey')?.value || 'all';
+        const payment = document.getElementById('filter-cr-payment')?.value || 'all';
+
+        const baseRiders = flattenedRiders.filter(r => r.orderEvent === 'coffee-ride');
+
+        crFilteredRiders = baseRiders.filter(r => {
+          if (option !== 'all' && r.crOption !== option) return false;
+
+          if (jersey === 'with-jersey' && !r.crHasJersey) return false;
+          if (jersey === 'without-jersey' && r.crHasJersey) return false;
+
+          if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
+          if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
+
+          if (search) {
+            const matchName = (r.fullName || '').toLowerCase().includes(search);
+            const matchNombres = (r.nombres || '').toLowerCase().includes(search);
+            const matchApellidos = (r.apellidos || '').toLowerCase().includes(search);
+            const matchDoc = (r.docNumber || '').toLowerCase().includes(search);
+            const matchEmail = (r.email || '').toLowerCase().includes(search);
+            const matchDorsal = (r.dorsalNumber || '').toLowerCase().includes(search);
+            const matchInvoice = (r.orderInvoice || '').toLowerCase().includes(search);
+            const matchRef = (r.orderRef || '').toLowerCase().includes(search);
+            if (!matchName && !matchNombres && !matchApellidos && !matchDoc && !matchEmail && !matchDorsal && !matchInvoice && !matchRef) return false;
+          }
+
+          return true;
+        });
+
+        document.getElementById('filter-counter-coffee-ride').textContent = `Mostrando ${crFilteredRiders.length} de ${baseRiders.length} participantes`;
+        renderCoffeeRideTable(crFilteredRiders);
       };
 
       // ==========================================
-      // RENDERIZADO DE TABLA DE CORREDORES
+      // TABLA GRAN FONDO
       // ==========================================
-      const renderRidersTable = (riders) => {
-        const tbody = document.getElementById('riders-table-body');
+      const renderGranFondoTable = (riders) => {
+        const tbody = document.getElementById('riders-table-body-gran-fondo');
         if (!tbody) return;
 
         if (riders.length === 0) {
           tbody.innerHTML = `
             <tr>
               <td colspan="12" style="text-align: center; padding: 40px; color: var(--text-muted);">
-                No se encontraron participantes con los filtros seleccionados.
+                No se encontraron participantes de Gran Fondo con los filtros seleccionados.
               </td>
             </tr>
           `;
@@ -1183,7 +1993,6 @@
             : `<span class="pay-badge pay-epayco">✓ ePayco Aprobado</span>`;
 
           const couponInfo = r.orderCoupon ? `<div style="font-size: 10px; color: var(--accent-hover); font-family: var(--font-mono); margin-top: 2px;">Cupón: ${r.orderCoupon}</div>` : '';
-
           const regDate = r.orderDate ? new Date(r.orderDate).toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A';
 
           return `
@@ -1232,7 +2041,7 @@
                 ${couponInfo}
               </td>
               <td style="text-align: right;">
-                <button type="button" class="btn-action-view" onclick="AdminApp.openRiderModal(${i})">
+                <button type="button" class="btn-action-view" onclick="AdminApp.openRiderModal(${i}, 'gran-fondo')">
                   Ver Ficha
                 </button>
               </td>
@@ -1242,42 +2051,156 @@
       };
 
       // ==========================================
-      // MODAL DE DETALLE DEL CORREDOR
+      // TABLA COFFEE RIDE (CAMPOS PROPIOS DEL FRONTEND)
       // ==========================================
-      const openRiderModal = (index) => {
-        const r = filteredRiders[index];
+      const renderCoffeeRideTable = (riders) => {
+        const tbody = document.getElementById('riders-table-body-coffee-ride');
+        if (!tbody) return;
+
+        if (riders.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="12" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                No se encontraron participantes de Genesis Coffee Ride con los filtros seleccionados.
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        tbody.innerHTML = riders.map((r, i) => {
+          const isVip = r.crOption === 'vip';
+          const optionBadge = isVip
+            ? `<span class="badge-cr-vip">👑 Experiencia VIP</span>`
+            : `<span class="badge-cr-standard">☕ Standard</span>`;
+
+          // Badge de Jersey Oficial adaptado a Coffee Ride
+          let jerseyBadge = '';
+          if (isVip) {
+            jerseyBadge = `<span class="jersey-badge-vip">✨ Incluido VIP (${r.crJerseySize})</span>`;
+          } else if (r.crHasJersey) {
+            jerseyBadge = `<span class="jersey-badge-addon">👕 Add-on +$100K (${r.crJerseySize})</span>`;
+          } else {
+            jerseyBadge = `<span class="jersey-badge-none">No solicitado</span>`;
+          }
+
+          const isCourtesy = r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100;
+          const payBadge = isCourtesy
+            ? `<span class="pay-badge pay-courtesy">🎁 Cortesía 100%</span>`
+            : `<span class="pay-badge pay-epayco">✓ ePayco Aprobado</span>`;
+
+          const couponInfo = r.orderCoupon ? `<div style="font-size: 10px; color: var(--accent-hover); font-family: var(--font-mono); margin-top: 2px;">Cupón: ${r.orderCoupon}</div>` : '';
+          const regDate = r.orderDate ? new Date(r.orderDate).toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A';
+
+          return `
+            <tr>
+              <td>
+                <span class="dorsal-tag" style="border-color: rgba(243, 156, 18, 0.4);">${r.dorsalNumber || 'CR-00' + (i + 1)}</span>
+                <div style="font-size: 10px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 3px;">${r.registrationId || r.orderInvoice}</div>
+              </td>
+              <td style="white-space: nowrap; color: var(--text-muted); font-size: 12px;">
+                ${regDate}
+              </td>
+              <td>
+                ${optionBadge}
+              </td>
+              <td>
+                ${jerseyBadge}
+              </td>
+              <td>
+                <strong style="color: #fff; font-size: 14px;">${r.nombres || r.fullName || '--'}</strong>
+              </td>
+              <td>
+                <strong style="color: #fff; font-size: 14px;">${r.apellidos || '--'}</strong>
+              </td>
+              <td style="white-space: nowrap;">
+                <span style="font-family: var(--font-mono);">${r.docType || 'CC'} ${r.docNumber}</span>
+              </td>
+              <td style="white-space: nowrap;">
+                <div>${r.birthDate || '--'}</div>
+                <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">${r.gender === 'M' ? '♂ Masc.' : '♀ Fem.'}</div>
+              </td>
+              <td>
+                <div><a href="https://wa.me/57${(r.phone || '').replace(/\D/g, '')}" target="_blank" class="contact-link wa-link" title="Abrir WhatsApp">💬 ${r.phone || '--'}</a></div>
+                <div style="margin-top: 2px;"><a href="mailto:${r.email}" class="contact-link" title="Enviar Correo">✉ ${r.email}</a></div>
+              </td>
+              <td style="font-size: 12px;">
+                <div style="color: #fff;">${r.city || '--'}, ${r.department || '--'}</div>
+                <div style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">EPS: ${r.eps || 'N/A'} (RH: <strong style="color: var(--accent-hover);">${r.bloodType || '--'}</strong>)</div>
+              </td>
+              <td>
+                ${payBadge}
+                <div style="font-weight: 700; margin-top: 3px; font-size: 12px;">${formatCOP(r.orderTotalPaid)}</div>
+                ${couponInfo}
+              </td>
+              <td style="text-align: right;">
+                <button type="button" class="btn-action-view" onclick="AdminApp.openRiderModal(${i}, 'coffee-ride')">
+                  Ver Ficha
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      };
+
+      // ==========================================
+      // MODAL DE DETALLE DEL PARTICIPANTE
+      // ==========================================
+      const openRiderModal = (index, eventType) => {
+        const ridersList = (eventType === 'coffee-ride') ? crFilteredRiders : gfFilteredRiders;
+        const r = ridersList[index];
         if (!r) return;
 
+        const isCoffeeRide = (eventType === 'coffee-ride') || r.orderEvent === 'coffee-ride';
+
         document.getElementById('modal-rider-name').textContent = `${r.nombres || ''} ${r.apellidos || ''}`.trim() || r.fullName;
-        document.getElementById('modal-rider-dorsal').textContent = `Dorsal Oficial: ${r.dorsalNumber || 'N/A'} • ${r.orderRouteName}`;
+        document.getElementById('modal-rider-dorsal').textContent = isCoffeeRide 
+          ? `Genesis Coffee Ride • ${r.crOption === 'vip' ? 'Experiencia VIP' : 'Inscripción Standard'} • ID: ${r.dorsalNumber || r.registrationId}`
+          : `Dorsal Oficial: ${r.dorsalNumber || 'N/A'} • ${r.orderRouteName}`;
 
         const isCourtesy = r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100;
 
+        let eventSpecificHtml = '';
+        if (isCoffeeRide) {
+          eventSpecificHtml = `
+            <div style="background: rgba(211, 84, 0, 0.08); border: 1px solid var(--border-accent); border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+              <h4 style="font-size: 13px; color: var(--accent-hover); text-transform: uppercase; margin-bottom: 8px;">☕ Modalidad Genesis Coffee Ride</h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                <div><strong>Modalidad Elegida:</strong> <span style="color: #fff; font-weight: 700;">${r.crOption === 'vip' ? '👑 Experiencia VIP' : 'Inscripción Standard'}</span></div>
+                <div><strong>Jersey Oficial by Hincapie:</strong> <span style="color: #2ecc71; font-weight: 700;">${r.crOption === 'vip' ? 'Incluido en Paquete VIP' : (r.crHasJersey ? 'Add-on Seleccionado (+ $100K COP)' : 'No solicitado')}</span></div>
+                <div><strong>Talla Seleccionada:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.crJerseySize || 'N/A'}</span></div>
+                <div><strong>Beneficios Festival:</strong> <span style="color: var(--text-muted);">${r.crOption === 'vip' ? 'Acceso Lounge, Catación VIP & Cena' : 'Ruta Festival & Acreditación'}</span></div>
+              </div>
+            </div>
+          `;
+        }
+
         document.getElementById('modal-rider-content').innerHTML = `
+          ${eventSpecificHtml}
+
           <div style="background: var(--card-inner); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
               <div><strong>Nombres:</strong> <span style="color: #fff; font-weight: 700;">${r.nombres || '--'}</span></div>
               <div><strong>Apellidos:</strong> <span style="color: #fff; font-weight: 700;">${r.apellidos || '--'}</span></div>
-              <div><strong>Documento:</strong> ${r.docType}: ${r.docNumber}</div>
-              <div><strong>Fecha de Nacimiento:</strong> ${r.birthDate}</div>
-              <div><strong>Edad al 31/12/2027:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.calculatedAge2027} años</span></div>
+              <div><strong>Documento:</strong> ${r.docType || 'CC'}: ${r.docNumber}</div>
+              <div><strong>Fecha de Nacimiento:</strong> ${r.birthDate || '--'}</div>
               <div><strong>Género:</strong> ${r.gender === 'M' ? 'Masculino' : 'Femenino'}</div>
-              <div><strong>Talla Jersey Oficial:</strong> <span style="color: #2ecc71; font-weight: 700;">${r.jerseySize}</span></div>
-              <div><strong>Grupo Sanguíneo (RH):</strong> ${r.bloodType}</div>
-              <div><strong>EPS / Póliza:</strong> ${r.eps}</div>
+              <div><strong>Grupo Sanguíneo (RH):</strong> ${r.bloodType || '--'}</div>
+              <div><strong>EPS / Póliza:</strong> ${r.eps || 'N/A'}</div>
               <div><strong>Ubicación:</strong> ${r.city || '--'}, ${r.department || '--'} (${r.country || 'Colombia'})</div>
-              ${r.orderTeamName ? `<div style="grid-column: span 2;"><strong>Nombre del Equipo / Dupla:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.orderTeamName}</span></div>` : ''}
+              ${!isCoffeeRide ? `<div><strong>Edad al 31/12/2027:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.calculatedAge2027 || '--'} años</span></div>` : ''}
+              ${!isCoffeeRide && r.orderTeamName ? `<div style="grid-column: span 2;"><strong>Nombre del Equipo / Dupla:</strong> <span style="color: var(--accent-hover); font-weight: 700;">${r.orderTeamName}</span></div>` : ''}
             </div>
           </div>
 
           <div style="background: var(--card-inner); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
             <h4 style="font-size: 13px; color: var(--accent-hover); text-transform: uppercase; margin-bottom: 8px;">Contacto de Emergencia y Salud</h4>
-            <div><strong>Contacto Emergencia:</strong> ${r.emergencyContactName} (Tel: ${r.emergencyContactPhone})</div>
+            <div><strong>Contacto Emergencia:</strong> ${r.emergencyContactName || '--'} (Tel: ${r.emergencyContactPhone || '--'})</div>
             <div style="margin-top: 6px;"><strong>Alergias / Observaciones Médicas:</strong> ${r.medicalNotes || 'Ninguna'}</div>
           </div>
 
           <div style="background: var(--card-inner); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
-            <h4 style="font-size: 13px; color: var(--accent-hover); text-transform: uppercase; margin-bottom: 8px;">Detalles de la Transacción</h4>
+            <h4 style="font-size: 13px; color: var(--accent-hover); text-transform: uppercase; margin-bottom: 8px;">Detalles de Pago y Facturación</h4>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
               <div><strong>Factura / ID:</strong> <span style="font-family: var(--font-mono);">${r.orderInvoice}</span></div>
               <div><strong>Referencia Pago:</strong> <span style="font-family: var(--font-mono);">${r.orderRef}</span></div>
@@ -1299,13 +2222,45 @@
       // ==========================================
       // EXPORTACIÓN A EXCEL / CSV CON UTF-8 BOM
       // ==========================================
-      const exportToCSV = (ridersToExport, filename = 'Inscritos_Tour_del_Cafe_2027.csv') => {
+      const exportToCSV = (ridersToExport, filename, eventType = 'gran-fondo') => {
         if (!ridersToExport || ridersToExport.length === 0) {
-          alert('No hay participantes para exportar.');
+          alert('No hay participantes registrados para exportar en este evento.');
           return;
         }
 
-        const headers = [
+        const isCR = eventType === 'coffee-ride';
+
+        const headers = isCR ? [
+          'Acreditación ID',
+          'Factura Consecutivo',
+          'Referencia Pago',
+          'Tipo de Pago',
+          'Valor Pagado (COP)',
+          'Cupón Aplicado',
+          'Descuento %',
+          'Fecha Registro',
+          'Evento Deportivo',
+          'Modalidad (VIP / Standard)',
+          'Jersey Oficial',
+          'Talla Jersey',
+          'Nombres',
+          'Apellidos',
+          'Nombre Completo',
+          'Tipo Doc',
+          'Número Documento',
+          'Género',
+          'Fecha Nacimiento',
+          'Email',
+          'WhatsApp',
+          'País',
+          'Departamento',
+          'Ciudad',
+          'EPS o Seguro',
+          'Grupo Sanguíneo RH',
+          'Contacto Emergencia',
+          'Teléfono Emergencia',
+          'Observaciones Médicas'
+        ] : [
           'Dorsal',
           'Factura Consecutivo',
           'Referencia Pago',
@@ -1314,6 +2269,7 @@
           'Cupón Aplicado',
           'Descuento %',
           'Fecha Registro',
+          'Evento Deportivo',
           'Recorrido',
           'Categoría Oficial',
           'Nombre del Equipo',
@@ -1345,41 +2301,78 @@
           return `"${str}"`;
         };
 
-        const rows = ridersToExport.map(r => [
-          escapeCSV(r.dorsalNumber || ''),
-          escapeCSV(r.orderInvoice || ''),
-          escapeCSV(r.orderRef || ''),
-          escapeCSV(r.orderPaymentType === 'COURTESY' ? 'Cortesía 100%' : 'ePayco Aprobado'),
-          escapeCSV(r.orderTotalPaid || 0),
-          escapeCSV(r.orderCoupon || 'Ninguno'),
-          escapeCSV(r.orderDiscountPercent || 0),
-          escapeCSV(r.orderDate || ''),
-          escapeCSV(r.orderRouteName || ''),
-          escapeCSV(r.orderCategoryName || ''),
-          escapeCSV(r.orderTeamName || 'N/A'),
-          escapeCSV(`${r.participantIndex}/${r.totalInOrder}`),
-          escapeCSV(r.nombres || ''),
-          escapeCSV(r.apellidos || ''),
-          escapeCSV(r.fullName || `${r.nombres || ''} ${r.apellidos || ''}`.trim()),
-          escapeCSV(r.docType || 'CC'),
-          escapeCSV(r.docNumber || ''),
-          escapeCSV(r.gender === 'M' ? 'Masculino' : 'Femenino'),
-          escapeCSV(r.birthDate || ''),
-          escapeCSV(r.calculatedAge2027 || ''),
-          escapeCSV(r.jerseySize || ''),
-          escapeCSV(r.email || ''),
-          escapeCSV(r.phone || ''),
-          escapeCSV(r.country || 'Colombia'),
-          escapeCSV(r.department || ''),
-          escapeCSV(r.city || ''),
-          escapeCSV(r.eps || ''),
-          escapeCSV(r.bloodType || ''),
-          escapeCSV(r.emergencyContactName || ''),
-          escapeCSV(r.emergencyContactPhone || ''),
-          escapeCSV(r.medicalNotes || 'Ninguna')
-        ]);
+        const rows = ridersToExport.map(r => {
+          if (isCR) {
+            return [
+              escapeCSV(r.dorsalNumber || r.registrationId || ''),
+              escapeCSV(r.orderInvoice || ''),
+              escapeCSV(r.orderRef || ''),
+              escapeCSV(r.orderPaymentType === 'COURTESY' ? 'Cortesía 100%' : 'ePayco Aprobado'),
+              escapeCSV(r.orderTotalPaid || 0),
+              escapeCSV(r.orderCoupon || 'Ninguno'),
+              escapeCSV(r.orderDiscountPercent || 0),
+              escapeCSV(r.orderDate || ''),
+              escapeCSV('Genesis Coffee Ride'),
+              escapeCSV(r.crOption === 'vip' ? 'Experiencia VIP' : 'Inscripción Standard'),
+              escapeCSV(r.crOption === 'vip' ? 'Incluido en VIP' : (r.crHasJersey ? 'Add-on Pagado (+ $100K COP)' : 'No solicitado')),
+              escapeCSV(r.crJerseySize || 'N/A'),
+              escapeCSV(r.nombres || ''),
+              escapeCSV(r.apellidos || ''),
+              escapeCSV(r.fullName || `${r.nombres || ''} ${r.apellidos || ''}`.trim()),
+              escapeCSV(r.docType || 'CC'),
+              escapeCSV(r.docNumber || ''),
+              escapeCSV(r.gender === 'M' ? 'Masculino' : 'Femenino'),
+              escapeCSV(r.birthDate || ''),
+              escapeCSV(r.email || ''),
+              escapeCSV(r.phone || ''),
+              escapeCSV(r.country || 'Colombia'),
+              escapeCSV(r.department || ''),
+              escapeCSV(r.city || ''),
+              escapeCSV(r.eps || ''),
+              escapeCSV(r.bloodType || ''),
+              escapeCSV(r.emergencyContactName || ''),
+              escapeCSV(r.emergencyContactPhone || ''),
+              escapeCSV(r.medicalNotes || 'Ninguna')
+            ];
+          } else {
+            return [
+              escapeCSV(r.dorsalNumber || ''),
+              escapeCSV(r.orderInvoice || ''),
+              escapeCSV(r.orderRef || ''),
+              escapeCSV(r.orderPaymentType === 'COURTESY' ? 'Cortesía 100%' : 'ePayco Aprobado'),
+              escapeCSV(r.orderTotalPaid || 0),
+              escapeCSV(r.orderCoupon || 'Ninguno'),
+              escapeCSV(r.orderDiscountPercent || 0),
+              escapeCSV(r.orderDate || ''),
+              escapeCSV(r.orderEvent === 'junior' ? 'Tour del Café Junior' : 'Tour del Café Gran Fondo'),
+              escapeCSV(r.orderRouteName || ''),
+              escapeCSV(r.orderCategoryName || ''),
+              escapeCSV(r.orderTeamName || 'N/A'),
+              escapeCSV(`${r.participantIndex}/${r.totalInOrder}`),
+              escapeCSV(r.nombres || ''),
+              escapeCSV(r.apellidos || ''),
+              escapeCSV(r.fullName || `${r.nombres || ''} ${r.apellidos || ''}`.trim()),
+              escapeCSV(r.docType || 'CC'),
+              escapeCSV(r.docNumber || ''),
+              escapeCSV(r.gender === 'M' ? 'Masculino' : 'Femenino'),
+              escapeCSV(r.birthDate || ''),
+              escapeCSV(r.calculatedAge2027 || ''),
+              escapeCSV(r.jerseySize || ''),
+              escapeCSV(r.email || ''),
+              escapeCSV(r.phone || ''),
+              escapeCSV(r.country || 'Colombia'),
+              escapeCSV(r.department || ''),
+              escapeCSV(r.city || ''),
+              escapeCSV(r.eps || ''),
+              escapeCSV(r.bloodType || ''),
+              escapeCSV(r.emergencyContactName || ''),
+              escapeCSV(r.emergencyContactPhone || ''),
+              escapeCSV(r.medicalNotes || 'Ninguna')
+            ];
+          }
+        });
 
-        // Separador ';' estándar en Excel para evitar conflictos con comas decimales
+        // Separador ';' estándar en Excel para compatibilidad nativa en español
         const csvContent = '\uFEFF' + [headers.map(escapeCSV).join(';'), ...rows.map(row => row.join(';'))].join('\r\n');
 
         const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
@@ -1392,55 +2385,62 @@
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
 
-        showToast(`Exportación completada: ${ridersToExport.length} corredores.`);
+        showToast(`Exportación completada: ${ridersToExport.length} registros exportados.`);
       };
 
       const exportExcelFiltered = () => {
         const dateStr = new Date().toISOString().slice(0, 10);
-        exportToCSV(filteredRiders, `Inscritos_Filtrados_TDC_${dateStr}.csv`);
+        if (currentEvent === 'coffee-ride') {
+          exportToCSV(crFilteredRiders, `Inscritos_Filtrados_CoffeeRide_TDC_${dateStr}.csv`, 'coffee-ride');
+        } else if (currentEvent === 'gran-fondo') {
+          exportToCSV(gfFilteredRiders, `Inscritos_Filtrados_GranFondo_TDC_${dateStr}.csv`, 'gran-fondo');
+        } else {
+          const jrRiders = flattenedRiders.filter(r => r.orderEvent === 'junior');
+          exportToCSV(jrRiders, `Inscritos_Junior_TDC_${dateStr}.csv`, 'junior');
+        }
+      };
+
+      const exportExcelEventAll = () => {
+        const dateStr = new Date().toISOString().slice(0, 10);
+        if (currentEvent === 'coffee-ride') {
+          const crAll = flattenedRiders.filter(r => r.orderEvent === 'coffee-ride');
+          exportToCSV(crAll, `Base_Completa_CoffeeRide_TDC_${dateStr}.csv`, 'coffee-ride');
+        } else if (currentEvent === 'gran-fondo') {
+          const gfAll = flattenedRiders.filter(r => r.orderEvent === 'gran-fondo');
+          exportToCSV(gfAll, `Base_Completa_GranFondo_TDC_${dateStr}.csv`, 'gran-fondo');
+        } else {
+          const jrAll = flattenedRiders.filter(r => r.orderEvent === 'junior');
+          exportToCSV(jrAll, `Base_Completa_Junior_TDC_${dateStr}.csv`, 'junior');
+        }
       };
 
       const exportExcelAll = () => {
         const dateStr = new Date().toISOString().slice(0, 10);
-        exportToCSV(flattenedRiders, `Base_Completa_Inscritos_TDC_${dateStr}.csv`);
+        exportToCSV(flattenedRiders, `Base_Consolidada_Inscritos_TDC_${dateStr}.csv`, 'gran-fondo');
       };
 
       // ==========================================
-      // PESTAÑAS
+      // GESTIÓN DE CUPONES POR EVENTO
       // ==========================================
-      const switchTab = (tab) => {
-        currentTab = tab;
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-
-        if (tab === 'riders') {
-          document.getElementById('tab-btn-riders').classList.add('active');
-          document.getElementById('view-riders').style.display = 'block';
-          document.getElementById('view-coupons').style.display = 'none';
-          document.getElementById('tab-actions-riders').style.display = 'block';
-          document.getElementById('tab-actions-coupons').style.display = 'none';
-        } else {
-          document.getElementById('tab-btn-coupons').classList.add('active');
-          document.getElementById('view-riders').style.display = 'none';
-          document.getElementById('view-coupons').style.display = 'block';
-          document.getElementById('tab-actions-riders').style.display = 'none';
-          document.getElementById('tab-actions-coupons').style.display = 'block';
-          loadCoupons();
-        }
-      };
-
-      // ==========================================
-      // GESTIÓN DE CUPONES
-      // ==========================================
-      const renderCouponsTable = (coupons) => {
+      const renderCouponsTable = () => {
         const tbody = document.getElementById('coupons-table-body');
         if (!tbody) return;
 
-        if (coupons.length === 0) {
-          tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">No hay cupones creados aún.</td></tr>`;
+        const filterMode = document.getElementById('filter-coupons-event')?.value || 'current';
+
+        // Filtrar según el modo
+        const couponsToDisplay = rawCoupons.filter(c => {
+          if (filterMode === 'all') return true;
+          const app = c.applicableEvent || 'all';
+          return app === 'all' || app === currentEvent;
+        });
+
+        if (couponsToDisplay.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">No hay cupones creados para este evento aún. Haz clic en "+ Crear Nuevo Cupón" para crear uno.</td></tr>`;
           return;
         }
 
-        tbody.innerHTML = coupons.map(c => {
+        tbody.innerHTML = couponsToDisplay.map(c => {
           const isCourtesy = c.discountPercent === 100;
           const percentBadge = isCourtesy
             ? `<span class="percent-badge percent-courtesy">🎁 100% CORTESÍA</span>`
@@ -1449,11 +2449,25 @@
           const usesText = c.maxUses !== null ? `${c.usedCount || 0} / ${c.maxUses}` : `${c.usedCount || 0} (Ilimitado)`;
           const expiryText = c.expiryDate ? new Date(c.expiryDate).toLocaleDateString('es-CO') : 'Sin expiración';
 
+          // Badge de evento aplicable
+          const appEvent = c.applicableEvent || 'all';
+          let eventBadge = '';
+          if (appEvent === 'gran-fondo') {
+            eventBadge = `<span class="route-chip route-macchiato" style="font-size: 10px;">🚴 Gran Fondo</span>`;
+          } else if (appEvent === 'coffee-ride') {
+            eventBadge = `<span class="route-chip route-espresso" style="font-size: 10px;">☕ Coffee Ride</span>`;
+          } else if (appEvent === 'junior') {
+            eventBadge = `<span class="percent-badge percent-courtesy" style="font-size: 10px;">🌟 Junior</span>`;
+          } else {
+            eventBadge = `<span class="pay-badge pay-epayco" style="font-size: 10px;">🌐 Todos los Eventos</span>`;
+          }
+
           const statusDot = c.active ? '<span class="dot-status dot-active"></span> Activo' : '<span class="dot-status dot-inactive"></span> Inactivo';
 
           return `
             <tr>
               <td><span class="coupon-code-badge">${c.code}</span></td>
+              <td>${eventBadge}</td>
               <td><strong style="color: #fff;">${c.description}</strong></td>
               <td>${percentBadge}</td>
               <td style="font-family: var(--font-mono); font-size: 13px;">${usesText}</td>
@@ -1476,6 +2490,7 @@
         const modal = document.getElementById('coupon-modal');
         const titleEl = document.getElementById('modal-coupon-title');
         const modeEl = document.getElementById('coupon-edit-mode');
+        const eventSelect = document.getElementById('coupon-form-event');
         const codeInput = document.getElementById('coupon-form-code');
         const descInput = document.getElementById('coupon-form-desc');
         const percentInput = document.getElementById('coupon-form-percent');
@@ -1486,6 +2501,7 @@
         if (coupon) {
           titleEl.textContent = `Editar Cupón: ${coupon.code}`;
           modeEl.value = 'edit';
+          if (eventSelect) eventSelect.value = coupon.applicableEvent || 'all';
           codeInput.value = coupon.code;
           codeInput.readOnly = true;
           descInput.value = coupon.description || '';
@@ -1496,6 +2512,7 @@
         } else {
           titleEl.textContent = 'Crear Nuevo Cupón';
           modeEl.value = 'create';
+          if (eventSelect) eventSelect.value = currentEvent; // Preselecciona el evento activo
           codeInput.value = '';
           codeInput.readOnly = false;
           descInput.value = '';
@@ -1522,6 +2539,7 @@
         e.preventDefault();
         const mode = document.getElementById('coupon-edit-mode').value;
         const code = document.getElementById('coupon-form-code').value.trim().toUpperCase();
+        const applicableEvent = document.getElementById('coupon-form-event')?.value || 'all';
         const description = document.getElementById('coupon-form-desc').value.trim();
         const discountPercent = parseInt(document.getElementById('coupon-form-percent').value, 10);
         const maxUsesVal = document.getElementById('coupon-form-max').value;
@@ -1530,7 +2548,7 @@
         const expiryDate = expiryVal ? new Date(expiryVal).toISOString() : null;
         const active = document.getElementById('coupon-form-active').checked;
 
-        const payload = { code, description, discountPercent, maxUses, expiryDate, active };
+        const payload = { code, applicableEvent, description, discountPercent, maxUses, expiryDate, active };
         const endpoint = mode === 'create' ? '/api/admin/coupons' : '/api/admin/coupons/update';
 
         try {
@@ -1604,6 +2622,7 @@
       return {
         logout,
         refreshAllData,
+        switchEvent,
         switchTab,
         applyFilters,
         openRiderModal,
@@ -1614,7 +2633,9 @@
         submitCouponForm,
         toggleCouponStatus,
         deleteCoupon,
+        renderCouponsTable,
         exportExcelFiltered,
+        exportExcelEventAll,
         exportExcelAll
       };
     })();

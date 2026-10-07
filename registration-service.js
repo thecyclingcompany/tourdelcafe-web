@@ -431,6 +431,7 @@ function processPaidRegistration(invoiceNumber, refPayco, paymentDetails = {}) {
   const finalRecord = {
     invoiceNumber,
     refPayco,
+    event: pending.event || (isGenesis ? 'coffee-ride' : (pending.route === 'junior' ? 'junior' : 'gran-fondo')),
     route: pending.route,
     routeName: routeDisplayName,
     category: pending.categoryId || pending.category,
@@ -530,6 +531,7 @@ function processCourtesyRegistration(invoiceNumber, couponCode, customDetails = 
   const finalRecord = {
     invoiceNumber,
     refPayco,
+    event: pending.event || (isGenesis ? 'coffee-ride' : (pending.route === 'junior' ? 'junior' : 'gran-fondo')),
     route: pending.route,
     routeName: routeDisplayName,
     category: pending.categoryId || pending.category,

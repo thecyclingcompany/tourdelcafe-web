@@ -18,6 +18,7 @@ const INITIAL_COUPONS = [
     usedCount: 0,
     expiryDate: null,
     active: true,
+    applicableEvent: 'all',
     createdAt: '2026-09-24T00:00:00.000Z'
   },
   {
@@ -28,6 +29,7 @@ const INITIAL_COUPONS = [
     usedCount: 0,
     expiryDate: '2027-02-01T23:59:59.000Z',
     active: true,
+    applicableEvent: 'all',
     createdAt: '2026-09-24T00:00:00.000Z'
   },
   {
@@ -38,6 +40,7 @@ const INITIAL_COUPONS = [
     usedCount: 0,
     expiryDate: '2027-01-31T23:59:59.000Z',
     active: true,
+    applicableEvent: 'all',
     createdAt: '2026-09-24T00:00:00.000Z'
   },
   {
@@ -48,6 +51,7 @@ const INITIAL_COUPONS = [
     usedCount: 0,
     expiryDate: null,
     active: true,
+    applicableEvent: 'all',
     createdAt: '2026-09-24T00:00:00.000Z'
   }
 ];
@@ -131,6 +135,7 @@ function createCoupon(couponData) {
     usedCount: 0,
     expiryDate: couponData.expiryDate ? new Date(couponData.expiryDate).toISOString() : null,
     active: couponData.active !== false,
+    applicableEvent: ['gran-fondo', 'coffee-ride', 'junior', 'all'].includes(couponData.applicableEvent) ? couponData.applicableEvent : 'all',
     createdAt: new Date().toISOString()
   };
 
@@ -177,6 +182,10 @@ function updateCoupon(code, updateData) {
     current.active = Boolean(updateData.active);
   }
 
+  if (updateData.applicableEvent !== undefined) {
+    current.applicableEvent = ['gran-fondo', 'coffee-ride', 'junior', 'all'].includes(updateData.applicableEvent) ? updateData.applicableEvent : 'all';
+  }
+
   coupons[index] = current;
   writeCoupons(coupons);
   return current;
@@ -200,9 +209,9 @@ function deleteCoupon(code) {
 }
 
 /**
- * Validar si un cupón es aplicable a un monto
+ * Validar si un cupón es aplicable a un monto y evento
  */
-function validateCoupon(code, totalAmount = 0) {
+function validateCoupon(code, totalAmount = 0, event = null) {
   if (!code) {
     return { valid: false, error: 'Por favor ingresa un código de descuento.' };
   }
@@ -216,6 +225,23 @@ function validateCoupon(code, totalAmount = 0) {
 
   if (!coupon.active) {
     return { valid: false, error: `El cupón "${cleanCode}" se encuentra actualmente inactivo.` };
+  }
+
+  // Validar aplicabilidad por evento si fue especificado
+  const targetEvent = coupon.applicableEvent || 'all';
+  if (event && targetEvent !== 'all') {
+    const normalizedEvent = (event === 'genesis-coffee-ride' || event === 'coffee-ride') ? 'coffee-ride' : event;
+    if (targetEvent !== normalizedEvent) {
+      const eventNames = {
+        'gran-fondo': 'Tour del Café Gran Fondo',
+        'coffee-ride': 'Genesis Coffee Ride',
+        'junior': 'Tour del Café Junior'
+      };
+      return { 
+        valid: false, 
+        error: `El cupón "${cleanCode}" es exclusivo para ${eventNames[targetEvent] || targetEvent}.` 
+      };
+    }
   }
 
   // Validar fecha de expiración

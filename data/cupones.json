@@ -7,6 +7,7 @@
     "usedCount": 1,
     "expiryDate": null,
     "active": true,
+    "applicableEvent": "all",
     "createdAt": "2026-09-24T00:00:00.000Z"
   },
   {
@@ -17,6 +18,7 @@
     "usedCount": 0,
     "expiryDate": "2027-02-01T23:59:59.000Z",
     "active": true,
+    "applicableEvent": "all",
     "createdAt": "2026-09-24T00:00:00.000Z"
   },
   {
@@ -27,6 +29,7 @@
     "usedCount": 0,
     "expiryDate": "2027-01-31T23:59:59.000Z",
     "active": true,
+    "applicableEvent": "all",
     "createdAt": "2026-09-24T00:00:00.000Z"
   },
   {
@@ -37,6 +40,7 @@
     "usedCount": 0,
     "expiryDate": null,
     "active": true,
+    "applicableEvent": "all",
     "createdAt": "2026-09-24T00:00:00.000Z"
   }
 ]
