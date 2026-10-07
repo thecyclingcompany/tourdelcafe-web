@@ -1448,6 +1448,25 @@
     if (btnCheckoutCourtesy) {
       btnCheckoutCourtesy.addEventListener('click', submitCourtesyRegistration);
     }
+
+    // 6. Detección automática por parámetros URL (Deep Linking directo a Genesis Coffee Ride)
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const eventParam = urlParams.get('event');
+      const optionParam = urlParams.get('option');
+
+      if (eventParam === 'genesis' || eventParam === 'genesis-coffee-ride') {
+        STATE.selectedEvent = 'genesis-coffee-ride';
+        if (optionParam === 'vip') {
+          selectGenesisOption('vip');
+        } else if (optionParam === 'standard') {
+          selectGenesisOption('standard');
+        }
+        goToStep(1);
+      }
+    } catch (err) {
+      console.warn('Aviso: no fue posible leer parámetros de URL:', err);
+    }
   });
 
 })();

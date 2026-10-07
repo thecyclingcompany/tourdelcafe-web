@@ -422,6 +422,67 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash) {
       handleRideHash();
     }
+
+    // Inicializar modales de Genesis Coffee Ride (Standard y VIP)
+    const initGenesisModals = () => {
+      const btnStandard = document.getElementById('btn-open-genesis-standard');
+      const btnVip = document.getElementById('btn-open-genesis-vip');
+      const modalStandard = document.getElementById('modal-genesis-standard');
+      const modalVip = document.getElementById('modal-genesis-vip');
+
+      if (!modalStandard || !modalVip) return;
+
+      const openModal = (modal) => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeModal = (modal) => {
+        modal.classList.remove('active');
+        const hasOtherActive = document.querySelector('.modal-overlay.active, .b2b-modal-overlay.active');
+        if (!hasOtherActive) {
+          document.body.style.overflow = '';
+        }
+      };
+
+      if (btnStandard) {
+        btnStandard.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal(modalStandard);
+        });
+      }
+
+      if (btnVip) {
+        btnVip.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal(modalVip);
+        });
+      }
+
+      [modalStandard, modalVip].forEach(modal => {
+        const closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeModal(modal);
+          });
+        }
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal(modal);
+          }
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (modalStandard.classList.contains('active')) closeModal(modalStandard);
+          if (modalVip.classList.contains('active')) closeModal(modalVip);
+        }
+      });
+    };
+
+    initGenesisModals();
   };
 
   // ==========================================
