@@ -2165,4 +2165,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initMobileVideoPlayback();
 
+  // ==========================================
+  // POP UP DE BIENVENIDA - TOUR DEL CAFÉ
+  // ==========================================
+  const initWelcomeModal = () => {
+    const welcomeModal = document.getElementById('welcome-modal');
+    if (!welcomeModal) return;
+
+    const closeBtn = document.getElementById('welcome-modal-close');
+    const ctaBtn = document.getElementById('welcome-modal-cta');
+
+    const openWelcomeModal = () => {
+      welcomeModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeWelcomeModal = () => {
+      welcomeModal.classList.remove('active');
+      const hasOtherActive = document.querySelector('.modal-overlay.active:not(#welcome-modal), .b2b-modal-overlay.active');
+      if (!hasOtherActive) {
+        document.body.style.overflow = '';
+      }
+    };
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeWelcomeModal();
+      });
+    }
+
+    welcomeModal.addEventListener('click', (e) => {
+      if (e.target === welcomeModal) {
+        closeWelcomeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && welcomeModal.classList.contains('active')) {
+        closeWelcomeModal();
+      }
+    });
+
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', (e) => {
+        closeWelcomeModal();
+        // Navegar a Genesis Coffee Ride en el Index
+        setTimeout(() => {
+          window.location.hash = '#ride-detail-quindio';
+          const coffeeRides = document.getElementById('coffee-rides');
+          const quindioDetail = document.getElementById('ride-detail-quindio');
+          const allDetails = document.querySelectorAll('.ride-detail-section');
+          if (coffeeRides && quindioDetail) {
+            coffeeRides.classList.add('detail-active');
+            allDetails.forEach(s => s.classList.remove('active'));
+            quindioDetail.classList.add('active');
+            quindioDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 150);
+      });
+    }
+
+    // Auto-mostrar al cargar el Index
+    const currentHash = window.location.hash;
+    const isDirectDeepLink = currentHash && currentHash !== '#inicio' && currentHash !== '#';
+
+    if (!isDirectDeepLink) {
+      setTimeout(() => {
+        openWelcomeModal();
+      }, 700);
+    }
+
+    // Métodos globales accesibles
+    window.openWelcomeModal = openWelcomeModal;
+    window.closeWelcomeModal = closeWelcomeModal;
+  };
+
+  initWelcomeModal();
+
 });
+
