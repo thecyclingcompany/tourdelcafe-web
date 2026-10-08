@@ -1249,7 +1249,241 @@
   // ==========================================
   // RECOLECCIÓN Y VALIDACIÓN PRE-PAGO
   // ==========================================
-  // (collectFormData defined above)
+  function collectFormData() {
+    // Limpiar estilos de error previos
+    document.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+
+    const cards = document.querySelectorAll('.participant-form-card');
+    const participants = [];
+    const errors = [];
+    let firstErrorElement = null;
+
+    // Asegurar que exista categoría seleccionada
+    if (!STATE.selectedCategory) {
+      if (STATE.selectedEvent === 'genesis-coffee-ride' || !STATE.selectedEvent) {
+        if (STATE.genesisOption === 'vip') {
+          selectGenesisOption('vip');
+        } else {
+          selectGenesisOption('standard');
+        }
+      }
+    }
+
+    const cat = STATE.selectedCategory;
+    if (!cat) {
+      return { valid: false, errors: ['Por favor selecciona una categoría oficial antes de continuar.'], participants: [], teamName: null };
+    }
+
+    const isGenesis = STATE.selectedEvent === 'genesis-coffee-ride' || !STATE.selectedEvent;
+    const isPareja = cat.gender === 'MIXTO' || (cat.id && cat.id.startsWith('pareja-'));
+    const isEquipo = cat.participantsCount === 4 || (cat.id && cat.id.startsWith('equipo-'));
+    const isTeamCategory = Boolean(!isGenesis && (isPareja || isEquipo));
+
+    let teamName = '';
+    if (isTeamCategory) {
+      const teamInput = document.getElementById('field-team-name');
+      teamName = (teamInput?.value || STATE.teamName || '').trim();
+      if (!teamName) {
+        if (teamInput) {
+          teamInput.classList.add('field-error');
+          if (!firstErrorElement) firstErrorElement = teamInput;
+        }
+        errors.push(isEquipo
+          ? 'Por favor ingresa el Nombre del Equipo para los 4 integrantes.'
+          : 'Por favor ingresa el Nombre del Equipo para la Pareja Mixta.');
+      } else {
+        STATE.teamName = teamName;
+      }
+    }
+
+    if (!cards || cards.length === 0) {
+      return { valid: false, errors: ['No se encontraron formularios de participantes. Por favor recarga la página.'], participants: [], teamName: null };
+    }
+
+    cards.forEach((card, idx) => {
+      const num = idx + 1;
+      const nombresInput = card.querySelector('.field-nombres');
+      const apellidosInput = card.querySelector('.field-apellidos');
+      const fullNameInput = card.querySelector('.field-fullName');
+      const docTypeSelect = card.querySelector('.field-docType');
+      const docNumberInput = card.querySelector('.field-docNumber');
+      const birthDateInput = card.querySelector('.field-birthDate');
+      const genderSelect = card.querySelector('.field-gender');
+      const hiddenGender = card.querySelector('.hidden-locked-gender');
+      const bloodTypeSelect = card.querySelector('.field-bloodType');
+      const phoneInput = card.querySelector('.field-phone');
+      const emailInput = card.querySelector('.field-email');
+      const countryInput = card.querySelector('.field-country');
+      const departmentInput = card.querySelector('.field-department');
+      const cityInput = card.querySelector('.field-city');
+      const epsInput = card.querySelector('.field-eps');
+      const emergencyNameInput = card.querySelector('.field-emergencyContactName');
+      const emergencyPhoneInput = card.querySelector('.field-emergencyContactPhone');
+      const medicalNotesInput = card.querySelector('.field-medicalNotes');
+      const jerseySizeSelect = card.querySelector('.field-jerseySize');
+      const termsInput = card.querySelector('.field-termsAccepted');
+      const termsWrapper = card.querySelector('.terms-checkbox-group');
+
+      const nombres = (nombresInput?.value || '').trim();
+      const apellidos = (apellidosInput?.value || '').trim();
+      const fullName = (nombres && apellidos) ? `${nombres} ${apellidos}` : ((fullNameInput?.value || nombres || apellidos || '').trim());
+      const docType = docTypeSelect?.value || '';
+      const docNumber = (docNumberInput?.value || '').trim();
+      const birthDate = birthDateInput?.value || '';
+      const gender = (genderSelect?.dataset.lockedGender || hiddenGender?.value || genderSelect?.value || '');
+      const bloodType = bloodTypeSelect?.value || '';
+      const phone = (phoneInput?.value || '').trim();
+      const email = (emailInput?.value || '').trim();
+      const country = (countryInput?.value || '').trim() || 'Colombia';
+      const department = (departmentInput?.value || '').trim();
+      const city = (cityInput?.value || '').trim();
+      const eps = (epsInput?.value || '').trim();
+      const emergencyContactName = (emergencyNameInput?.value || '').trim();
+      const emergencyContactPhone = (emergencyPhoneInput?.value || '').trim();
+      const medicalNotes = (medicalNotesInput?.value || '').trim() || 'Ninguna';
+      const jerseySize = jerseySizeSelect?.value || '';
+      const termsAccepted = Boolean(termsInput?.checked);
+
+      function markError(el, msg) {
+        if (el) {
+          el.classList.add('field-error');
+          if (!firstErrorElement) firstErrorElement = el;
+        }
+        errors.push(msg);
+      }
+
+      // Validaciones individuales
+      if (!nombres && !fullName) {
+        markError(nombresInput || fullNameInput, `Participante #${num}: Falta ingresar los nombres.`);
+      }
+      if (!apellidos && !fullName) {
+        markError(apellidosInput || fullNameInput, `Participante #${num}: Falta ingresar los apellidos.`);
+      }
+      if (!docType) {
+        markError(docTypeSelect, `Participante #${num}: Selecciona el tipo de documento.`);
+      }
+      if (!docNumber || docNumber.length < 4) {
+        markError(docNumberInput, `Participante #${num}: Ingresa un número de documento válido.`);
+      }
+      if (!birthDate) {
+        markError(birthDateInput, `Participante #${num}: Ingresa la fecha de nacimiento.`);
+      }
+      if (!gender) {
+        markError(genderSelect, `Participante #${num}: Selecciona el género.`);
+      }
+      if (!bloodType) {
+        markError(bloodTypeSelect, `Participante #${num}: Selecciona el grupo y RH sanguíneo.`);
+      }
+      if (!phone || phone.length < 7) {
+        markError(phoneInput, `Participante #${num}: Ingresa un número de WhatsApp de contacto.`);
+      }
+      if (!email || !email.includes('@')) {
+        markError(emailInput, `Participante #${num}: Ingresa un correo electrónico válido.`);
+      }
+      if (!department) {
+        markError(departmentInput, `Participante #${num}: Ingresa el departamento de residencia.`);
+      }
+      if (!city) {
+        markError(cityInput, `Participante #${num}: Ingresa la ciudad de residencia.`);
+      }
+      if (!eps) {
+        markError(epsInput, `Participante #${num}: Ingresa la EPS o seguro médico.`);
+      }
+      if (!emergencyContactName) {
+        markError(emergencyNameInput, `Participante #${num}: Ingresa el nombre del contacto de emergencia.`);
+      }
+      if (!emergencyContactPhone) {
+        markError(emergencyPhoneInput, `Participante #${num}: Ingresa el teléfono del contacto de emergencia.`);
+      }
+
+      // Validación de Talla de Jersey
+      const isVip = STATE.genesisOption === 'vip';
+      const isJerseyRequired = isVip || Boolean(STATE.includeJersey);
+      if (isJerseyRequired && !jerseySize) {
+        markError(jerseySizeSelect, isVip
+          ? `Participante #${num}: Por favor selecciona tu talla de Jersey Oficial (incluido en Experiencia VIP).`
+          : `Participante #${num}: Has seleccionado incluir el Jersey Oficial; por favor selecciona tu talla.`);
+      }
+
+      // Términos y condiciones
+      if (!termsAccepted) {
+        markError(termsWrapper || termsInput, `Participante #${num}: Debes aceptar el reglamento oficial y exoneración médica.`);
+      }
+
+      const age = calculateAge(birthDate);
+      if (age !== null && age < 18) {
+        markError(birthDateInput, `Participante #${num}: Debe ser mayor de 18 años al corte del evento (31 de diciembre de 2027).`);
+      }
+
+      participants.push({
+        nombres: nombres || (fullName ? fullName.split(/\s+/).slice(0, -1).join(' ') : ''),
+        apellidos: apellidos || (fullName ? fullName.split(/\s+/).slice(-1).join(' ') : ''),
+        fullName: fullName || `${nombres} ${apellidos}`.trim(),
+        docType,
+        docNumber,
+        birthDate,
+        gender,
+        bloodType,
+        phone,
+        email,
+        country,
+        department,
+        city,
+        eps,
+        emergencyContactName,
+        emergencyContactPhone,
+        medicalNotes,
+        hasJersey: isJerseyRequired,
+        jerseySize: isJerseyRequired ? jerseySize : 'No incluido',
+        termsAccepted,
+        calculatedAge2027: age,
+        teamName: isTeamCategory ? teamName : null
+      });
+    });
+
+    if (errors.length > 0) {
+      if (firstErrorElement) {
+        try {
+          firstErrorElement.focus();
+          firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (e) {}
+      }
+      return { valid: false, errors, participants: [], teamName: null };
+    }
+
+    return {
+      valid: true,
+      errors: [],
+      participants,
+      teamName: isTeamCategory ? teamName : null
+    };
+  }
+
+  /**
+   * Asegura la carga asíncrona del script de ePayco si aún no está disponible
+   */
+  async function ensureEpaycoLoaded() {
+    if (window.ePayco && window.ePayco.checkout) return true;
+    return new Promise((resolve) => {
+      let script = document.querySelector('script[src*="checkout.epayco.co"]');
+      if (!script) {
+        script = document.createElement('script');
+        script.src = 'https://checkout.epayco.co/checkout.js';
+        document.body.appendChild(script);
+      }
+      let tries = 0;
+      const interval = setInterval(() => {
+        tries++;
+        if (window.ePayco && window.ePayco.checkout) {
+          clearInterval(interval);
+          resolve(true);
+        } else if (tries > 25) {
+          clearInterval(interval);
+          resolve(Boolean(window.ePayco));
+        }
+      }, 200);
+    });
+  }
 
   // ==========================================
   // INICIAR CHECKOUT CON EPAYCO
@@ -1258,14 +1492,20 @@
     const check = collectFormData();
     if (!check.valid) {
       showToast(check.errors[0] || 'Por favor completa todos los campos requeridos.', true);
-      console.warn('Errores de validación:', check.errors);
+      console.warn('Errores de validación de formulario:', check.errors);
       return;
     }
 
     const payBtn = document.getElementById('btn-checkout-epayco');
     if (payBtn) {
       payBtn.disabled = true;
-      payBtn.innerHTML = `<span>Procesando inscripción...</span>`;
+      payBtn.innerHTML = `
+        <svg class="spinner-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 1s linear infinite;">
+          <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+        </svg>
+        <span>Conectando con ePayco...</span>
+      `;
     }
 
     try {
@@ -1281,6 +1521,7 @@
         categoryName: STATE.selectedCategory.name,
         teamName: check.teamName || null,
         includeJersey: hasJersey,
+        hasJersey: hasJersey,
         jerseyPrice: jerseyPrice,
         participants: check.participants,
         payerEmail: payer.email,
@@ -1315,9 +1556,10 @@
       // Forzar estrictamente modo pruebas como booleano nativo true
       epaycoConfig.test = true;
 
-      // 2. Configurar e invocar ePayco Checkout
-      if (!window.ePayco) {
-        throw new Error('La pasarela de pagos ePayco no se ha cargado. Verifica tu conexión a internet.');
+      // 2. Verificar carga de ePayco
+      const isLoaded = await ensureEpaycoLoaded();
+      if (!window.ePayco || !window.ePayco.checkout) {
+        throw new Error('La pasarela de pagos ePayco no se ha cargado. Verifica tu conexión a internet o desactiva bloqueadores de anuncios.');
       }
 
       const handler = window.ePayco.checkout.configure({
@@ -1508,6 +1750,22 @@
     } catch (err) {
       console.warn('Aviso: no fue posible leer parámetros de URL:', err);
     }
+
+    // 7. Limpieza interactiva de errores visuales al escribir o seleccionar
+    document.addEventListener('input', (e) => {
+      if (e.target && e.target.classList.contains('field-error')) {
+        e.target.classList.remove('field-error');
+      }
+    });
+    document.addEventListener('change', (e) => {
+      if (e.target && e.target.classList.contains('field-error')) {
+        e.target.classList.remove('field-error');
+      }
+      if (e.target && e.target.classList.contains('field-termsAccepted')) {
+        const wrap = e.target.closest('.terms-checkbox-group');
+        if (wrap) wrap.classList.remove('field-error');
+      }
+    });
   });
 
 })();

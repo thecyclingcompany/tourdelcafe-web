@@ -2059,3 +2059,26 @@ select.form-control:disabled {
   line-height: 1.5;
 }
 
+/* Estados de error y validación interactiva */
+.form-control.field-error,
+select.form-control.field-error {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.4) !important;
+  animation: shakeInput 0.35s ease;
+}
+
+.terms-checkbox-group.field-error {
+  padding: 10px;
+  background: rgba(231, 76, 60, 0.08);
+  border: 1px dashed rgba(231, 76, 60, 0.5);
+  border-radius: var(--radius-sm);
+  animation: shakeInput 0.35s ease;
+}
+
+@keyframes shakeInput {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+
