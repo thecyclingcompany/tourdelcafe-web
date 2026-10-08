@@ -5677,6 +5677,68 @@ p,
   transform: translateY(-2px);
 }
 
+.genesis-guest-btn:disabled,
+.genesis-guest-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(250, 250, 250, 0.45);
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Siluetas Teaser Genéricas de Invitados */
+.genesis-silhouette-wrapper {
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.genesis-silhouette-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 40%, rgba(243, 156, 18, 0.1) 0%, rgba(15, 15, 15, 0.98) 75%);
+  position: relative;
+  overflow: hidden;
+  padding: 28px 0;
+}
+
+.genesis-silhouette-svg {
+  width: 60%;
+  height: auto;
+  max-height: 160px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
+  transition: transform 0.4s ease;
+}
+
+.genesis-guest-card:hover .genesis-silhouette-svg {
+  transform: scale(1.06);
+}
+
+.silhouette-mystery-pill {
+  position: absolute;
+  bottom: 14px;
+  background: rgba(14, 14, 14, 0.85);
+  border: 1px solid rgba(243, 156, 18, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #f39c12;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
 /* Modales Genesis */
 .genesis-modal-card {
   max-width: 660px;
