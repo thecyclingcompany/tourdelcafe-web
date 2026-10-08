@@ -6,6 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const emailService = require('./email-service');
 
 const DATA_DIR = path.join(__dirname, 'data');
 const REGISTRATIONS_FILE = path.join(DATA_DIR, 'inscripciones.json');
@@ -694,63 +695,58 @@ async function sendRegistrationEmails(registration) {
 
   const isGenesis = ['standard', 'vip'].includes(registration.route) ||
     (registration.category && registration.category.startsWith('genesis-')) ||
-    (registration.routeName && registration.routeName.includes('Genesis'));
+    (registration.categoryName && registration.categoryName.toLowerCase().includes('genesis')) ||
+    (registration.routeName && registration.routeName.includes('Genesis')) ||
+    registration.event === 'genesis-coffee-ride' || registration.event === 'coffee-ride';
 
-  const eventTitle = isGenesis ? 'Genesis Coffee Ride 2027' : 'Tour del Café 2027';
+  const genesisModality = (
+    registration.route === 'vip' ||
+    (registration.genesisOption === 'vip') ||
+    (registration.category && registration.category.toLowerCase().includes('vip')) ||
+    (registration.categoryName && registration.categoryName.toLowerCase().includes('vip'))
+  ) ? 'Experiencia VIP' : 'Standard';
+
+  const eventTitle = isGenesis ? 'Genesis Coffee Ride' : 'Tour del Café Gran Fondo 2027';
 
   for (const p of registration.participants) {
     const emailData = {
       to: p.email,
       fullName: p.fullName,
-      subject: `¡Inscripción Confirmada! ${eventTitle} - Dorsal ${p.dorsalNumber}`,
+      subject: isGenesis
+        ? '¡Bienvenido al Genesis Coffee Ride! - Confirmación de Inscripción'
+        : `¡Inscripción Confirmada! ${eventTitle} - Dorsal ${p.dorsalNumber}`,
       dorsal: p.dorsalNumber,
       invoiceNumber: registration.invoiceNumber,
       refPayco: registration.refPayco,
+      modality: isGenesis ? genesisModality : (registration.categoryName || registration.route),
       sentAt: new Date().toISOString()
     };
 
-    // Envío real con Nodemailer desde info@tourdelcafe.org
     let dispatchedViaSmtp = false;
-    const smtpHost = process.env.SMTP_HOST || 'smtp.hostinger.com';
-    const smtpUser = process.env.SMTP_USER || 'info@tourdelcafe.org';
-    const smtpPass = process.env.SMTP_PASS;
 
-    if (smtpHost && smtpUser && smtpPass) {
-      try {
-        const nodemailer = require('nodemailer');
-        const transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: parseInt(process.env.SMTP_PORT || '465', 10),
-          secure: (process.env.SMTP_PORT || '465') === '465',
-          auth: {
-            user: smtpUser,
-            pass: smtpPass
-          }
-        });
-
-        const fromSender = isGenesis
-          ? `"Genesis Coffee Ride - Tour del Café" <${smtpUser}>`
-          : `"Tour del Café Gran Fondo" <${smtpUser}>`;
-
-        await transporter.sendMail({
-          from: fromSender,
-          to: p.email,
-          replyTo: 'info@tourdelcafe.org',
-          subject: emailData.subject,
-          html: buildEmailTemplate(registration, p)
-        });
-        dispatchedViaSmtp = true;
-        console.log(`[RegistrationEmail] Enviado por SMTP con éxito a ${p.email} desde ${smtpUser}`);
-      } catch (smtpErr) {
-        console.warn(`[RegistrationEmail] No se pudo enviar por SMTP a ${p.email}:`, smtpErr.message);
-      }
+    if (isGenesis) {
+      // Envío especializado Genesis Coffee Ride con logs específicos
+      const mailRes = await emailService.sendGenesisWelcomeEmail({
+        toEmail: p.email,
+        participantName: p.fullName,
+        orderRef: registration.refPayco,
+        modality: genesisModality
+      });
+      dispatchedViaSmtp = Boolean(mailRes && mailRes.success);
     } else {
-      console.log(`[RegistrationEmail Simulación] Credenciales SMTP no configuradas. Email preparado para ${p.email} desde ${smtpUser}`);
+      // Envío Tour del Café Gran Fondo
+      const mailRes = await emailService.sendWelcomeEmail(
+        p.email,
+        p.fullName,
+        registration.refPayco,
+        registration.categoryName || registration.route
+      );
+      dispatchedViaSmtp = Boolean(mailRes && mailRes.success);
     }
 
     emailData.dispatchedViaSmtp = dispatchedViaSmtp;
     sentLogs.push(emailData);
-    console.log(`[RegistrationService] Email registrado para ${p.fullName} (${p.email}) - Dorsal: ${p.dorsalNumber}`);
+    console.log(`[RegistrationService] Email procesado para ${p.fullName} (${p.email}) - Evento: ${eventTitle} | Dorsal: ${p.dorsalNumber}`);
   }
 
   writeJsonAtomic(EMAILS_LOG_FILE, sentLogs);

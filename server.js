@@ -7,6 +7,7 @@ const crypto = require('crypto');
 const inventoryService = require('./inventory-service');
 const registrationService = require('./registration-service');
 const couponService = require('./coupon-service');
+const emailService = require('./email-service');
 const nodemailer = require('nodemailer');
 
 // Configuración SMTP Hostinger
@@ -466,15 +467,20 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // 4. POST /api/epayco-webhook y /api/epayco/confirmacion: Webhook de confirmación ePayco
-  if (req.method === 'POST' && (decodedUrl === '/api/epayco-webhook' || decodedUrl === '/api/epayco/confirmacion')) {
+  // 4. POST/GET /api/epayco-webhook y /api/epayco/confirmacion: Webhook de confirmación ePayco
+  if ((req.method === 'POST' || req.method === 'GET') && (decodedUrl === '/api/epayco-webhook' || decodedUrl === '/api/epayco/confirmacion')) {
     try {
-      const body = await parseRequestBody(req);
+      let body = {};
+      if (req.method === 'POST') {
+        body = await parseRequestBody(req);
+      } else {
+        body = parsedUrl.query ? querystring.parse(parsedUrl.query) : {};
+      }
       console.log('[ePayco Webhook Received]', JSON.stringify(body, null, 2));
 
-      // Extraer campos de ePayco
-      const refPayco = body.x_ref_payco || body.ref_payco;
-      const invoiceNumber = body.x_id_invoice || body.x_invoice || body.invoice;
+      // Extraer campos clave de ePayco
+      const refPayco = (body.x_ref_payco || body.ref_payco || body.orderRef || body.x_id_factura || '').toString();
+      const invoiceNumber = (body.x_id_invoice || body.x_invoice || body.invoice || '').toString();
       const codResponse = (body.x_cod_response || body.cod_response || '').toString();
       const transactionState = (body.x_transaction_state || body.transaction_state || '').toString().toLowerCase();
 
@@ -483,7 +489,7 @@ const server = http.createServer(async (req, res) => {
       const isApproved = codResponse === '1' || ['aceptada', 'aprobada', 'approved', '1'].includes(transactionState);
 
       if (!isApproved) {
-        console.log(`[ePayco Webhook] Transacción ${refPayco} estado no aprobado: ${transactionState} (cod: ${codResponse}).`);
+        console.log(`[ePayco Webhook] Transacción ${refPayco} estado no aprobado: "${transactionState}" (cod: ${codResponse}).`);
         return sendJson(res, 200, {
           status: 'ignored',
           message: `Transacción con estado "${transactionState || codResponse}".`,
@@ -491,25 +497,127 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
+      // Parsear metadatos opcionales del checkout (extra1, extra2, extra3, description)
+      let extraData = {};
+      if (body.x_extra3) {
+        try {
+          extraData = typeof body.x_extra3 === 'string' ? JSON.parse(body.x_extra3) : body.x_extra3;
+        } catch (e) {
+          extraData = {};
+        }
+      }
+      const extra1 = (body.x_extra1 || '').toString();
+      const extra2 = (body.x_extra2 || '').toString();
+      const description = (body.x_description || body.x_name || '').toString();
+
       // DISCRIMINACIÓN: ¿Es una orden de Inscripción o de Tienda?
+      const pendingReg = invoiceNumber ? registrationService.getPendingRegistration(invoiceNumber) : null;
       const isRegistration = (invoiceNumber && invoiceNumber.startsWith('TDC-INS')) ||
-        Boolean(registrationService.getPendingRegistration(invoiceNumber));
+        Boolean(pendingReg) ||
+        (extraData && (extraData.type === 'registration' || extraData.event === 'genesis-coffee-ride')) ||
+        extra1.toLowerCase().includes('genesis') ||
+        description.toLowerCase().includes('genesis') ||
+        description.toLowerCase().includes('gran fondo');
 
       if (isRegistration) {
-        console.log(`[ePayco Webhook] Procesando confirmación de INSCRIPCIÓN: ${invoiceNumber} (Ref: ${refPayco})`);
+        // Reconocer evento: ¿Genesis Coffee Ride o Tour del Café Gran Fondo?
+        const isGenesis = (pendingReg && (
+            pendingReg.event === 'coffee-ride' ||
+            pendingReg.event === 'genesis-coffee-ride' ||
+            ['standard', 'vip'].includes(pendingReg.route) ||
+            (pendingReg.categoryId && pendingReg.categoryId.startsWith('genesis-')) ||
+            (pendingReg.categoryName && pendingReg.categoryName.toLowerCase().includes('genesis'))
+          )) ||
+          (extraData && (extraData.event === 'genesis-coffee-ride' || ['standard', 'vip'].includes(extraData.genesisOption || extraData.route))) ||
+          extra1.toLowerCase().includes('genesis') ||
+          description.toLowerCase().includes('genesis');
+
+        // Reconocer modalidad del Genesis Coffee Ride: Standard o Experiencia VIP
+        let modality = 'Standard';
+        const modalidadCheck = [
+          pendingReg && pendingReg.route,
+          pendingReg && pendingReg.genesisOption,
+          pendingReg && pendingReg.categoryName,
+          pendingReg && pendingReg.categoryId,
+          extraData && extraData.genesisOption,
+          extraData && extraData.route,
+          extra1,
+          description
+        ].map(v => (v || '').toString().toLowerCase()).join(' ');
+
+        if (modalidadCheck.includes('vip')) {
+          modality = 'Experiencia VIP';
+        } else {
+          modality = 'Standard';
+        }
+
+        // Capturar Nombre completo del participante
+        let participantName = '';
+        if (pendingReg && pendingReg.participants && pendingReg.participants[0]) {
+          participantName = pendingReg.participants[0].fullName;
+        } else if (body.x_customer_name || body.x_name) {
+          const fn = (body.x_customer_name || body.x_name || '').trim();
+          const ln = (body.x_customer_lastname || body.x_last_name || '').trim();
+          participantName = `${fn} ${ln}`.trim();
+        } else if (extra2 && extra2.includes('Titular:')) {
+          const match = extra2.match(/Titular:\s*([^|]+)/i);
+          if (match) participantName = match[1].trim();
+        }
+        if (!participantName) participantName = 'Participante';
+
+        // Capturar Correo electrónico
+        let participantEmail = '';
+        if (pendingReg && pendingReg.participants && pendingReg.participants[0]) {
+          participantEmail = pendingReg.participants[0].email;
+        } else if (pendingReg && pendingReg.payerEmail) {
+          participantEmail = pendingReg.payerEmail;
+        } else if (body.x_customer_email || body.x_email) {
+          participantEmail = (body.x_customer_email || body.x_email).trim();
+        }
+
+        // Trazabilidad estructurada de parámetros
+        const eventName = isGenesis ? 'Genesis Coffee Ride' : 'Tour del Café Gran Fondo';
+        console.log(`[ePayco Webhook ${eventName}] Procesando pago aprobado:`, {
+          participantName,
+          participantEmail,
+          orderRef: refPayco,
+          invoice: invoiceNumber,
+          modality: isGenesis ? modality : undefined
+        });
+
+        // Procesar inscripción con dorsales y envío de correo en registrationService
         const regResult = registrationService.processPaidRegistration(invoiceNumber, refPayco, {
           date: body.x_transaction_date,
           franchise: body.x_franchise || body.x_bank_name
         });
 
-        console.log(`[ePayco Webhook Success] Resultado de inscripción:`, regResult);
+        // Si no existía orden pendiente pero recibimos un pago válido para Genesis por ePayco,
+        // garantizar envío directo del correo de bienvenida para que el participante siempre lo reciba
+        if (!regResult.success && isGenesis && participantEmail) {
+          console.log('[ePayco Webhook Genesis Fallback] Enviando confirmación directa de bienvenida...');
+          await emailService.sendGenesisWelcomeEmail({
+            toEmail: participantEmail,
+            participantName,
+            orderRef: refPayco,
+            modality
+          });
+        }
+
+        console.log(`[ePayco Webhook Success] Resultado de inscripción (${eventName}):`, regResult);
 
         return sendJson(res, 200, {
           status: 'success',
           type: 'registration',
-          message: 'Inscripción confirmada, dorsales asignados y correos encolados',
-          ref: refPayco,
+          event: isGenesis ? 'genesis-coffee-ride' : 'gran-fondo',
+          modality: isGenesis ? modality : undefined,
+          participantName,
+          participantEmail,
+          orderRef: refPayco,
           invoice: invoiceNumber,
+          message: isGenesis
+            ? `Inscripción Genesis Coffee Ride (${modality}) confirmada exitosamente`
+            : 'Inscripción confirmada, dorsales asignados y correos enviados',
+          ref: refPayco,
           duplicate: Boolean(regResult.duplicate)
         });
       }
