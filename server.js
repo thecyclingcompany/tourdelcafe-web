@@ -1027,6 +1027,9 @@ const server = http.createServer(async (req, res) => {
   if (targetPath === '/inscripciones' || targetPath === '/inscripciones.html') {
     targetPath = '/inscripciones.html';
   }
+  if (targetPath === '/proyecto' || targetPath === '/proyecto.pdf' || targetPath === '/proyecto-fest' || targetPath === '/proyecto-fest.pdf') {
+    targetPath = '/assets/Proyecto Tour del Café Fest 2027-2028.pdf';
+  }
 
   let filePath = path.join(root, targetPath);
 
