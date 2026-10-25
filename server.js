@@ -1030,6 +1030,9 @@ const server = http.createServer(async (req, res) => {
   if (targetPath === '/proyecto' || targetPath === '/proyecto.pdf' || targetPath === '/proyecto-fest' || targetPath === '/proyecto-fest.pdf') {
     targetPath = '/assets/Proyecto Tour del Café Fest 2027-2028.pdf';
   }
+  if (targetPath === '/presentacion' || targetPath === '/presentacion.pdf' || targetPath === '/presentacion-tour-del-cafe.pdf' || targetPath === '/presentacion-tour-del-cafe') {
+    targetPath = '/assets/Presentación Tour del Café 2027-2028.pdf';
+  }
 
   let filePath = path.join(root, targetPath);
 
