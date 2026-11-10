@@ -448,6 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnStandard) {
         btnStandard.addEventListener('click', (e) => {
           e.preventDefault();
+          if (btnStandard.disabled || btnStandard.classList.contains('disabled')) return;
           openModal(modalStandard);
         });
       }
@@ -455,6 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnVip) {
         btnVip.addEventListener('click', (e) => {
           e.preventDefault();
+          if (btnVip.disabled || btnVip.classList.contains('disabled')) return;
           openModal(modalVip);
         });
       }
@@ -562,10 +564,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const vipPriceEl = document.getElementById('genesis-price-label-vip');
 
       if (standardPriceEl) {
-        standardPriceEl.textContent = formatPriceCOP(stage.prices.standard);
+        standardPriceEl.textContent = 'Próximamente';
       }
       if (vipPriceEl) {
-        vipPriceEl.textContent = formatPriceCOP(stage.prices.vip);
+        vipPriceEl.textContent = 'Próximamente';
       }
     };
 
@@ -1976,96 +1978,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // FORMULARIO DE COMUNIDAD OFICIAL
+  // FORMULARIO DE COMUNIDAD OFICIAL (FOOTER Y POP UP)
   // ==========================================
   const initComunidadForm = () => {
-    const form = document.getElementById('form-comunidad');
-    if (!form) return;
+    const forms = document.querySelectorAll('.comunidad-form');
+    if (!forms.length) return;
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    forms.forEach((form) => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-      const feedback = document.getElementById('comunidad-feedback');
-      const submitBtn = form.querySelector('button[type="submit"]') || document.getElementById('btn-comunidad-submit');
-      const originalBtnText = submitBtn ? submitBtn.innerText : 'Unirme a la Comunidad';
+        const feedback = form.querySelector('.comunidad-feedback');
+        const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('.btn-primary');
+        const originalBtnText = submitBtn ? submitBtn.innerText : 'Unirme a la Comunidad';
 
-      const fullnameInput = form.querySelector('[name="nombre_apellidos"]');
-      const paisInput = form.querySelector('[name="pais"]');
-      const ciudadInput = form.querySelector('[name="ciudad"]');
-      const emailInput = form.querySelector('[name="email"]');
-      const telefonoInput = form.querySelector('[name="telefono"]');
+        const fullnameInput = form.querySelector('[name="nombre_apellidos"]');
+        const paisInput = form.querySelector('[name="pais"]');
+        const ciudadInput = form.querySelector('[name="ciudad"]');
+        const emailInput = form.querySelector('[name="email"]');
+        const telefonoInput = form.querySelector('[name="telefono"]');
 
-      const fullname = fullnameInput ? fullnameInput.value.trim() : '';
-      const pais = paisInput ? paisInput.value.trim() : '';
-      const ciudad = ciudadInput ? ciudadInput.value.trim() : '';
-      const email = emailInput ? emailInput.value.trim() : '';
-      const telefono = telefonoInput ? telefonoInput.value.trim() : '';
+        const fullname = fullnameInput ? fullnameInput.value.trim() : '';
+        const pais = paisInput ? paisInput.value.trim() : '';
+        const ciudad = ciudadInput ? ciudadInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const telefono = telefonoInput ? telefonoInput.value.trim() : '';
 
-      // Validación de campos requeridos
-      if (!fullname || !pais || !ciudad || !email || !telefono) {
-        if (feedback) {
-          feedback.className = 'comunidad-feedback error';
-          feedback.style.display = 'block';
-          feedback.textContent = 'Por favor completa todos los campos requeridos.';
-        }
-        return;
-      }
-
-      // Validación de email
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        if (feedback) {
-          feedback.className = 'comunidad-feedback error';
-          feedback.style.display = 'block';
-          feedback.textContent = 'Por favor ingresa un correo electrónico válido.';
-        }
-        return;
-      }
-
-      // Deshabilita el botón de envío y cambia el texto a "Registrando..."
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Registrando...';
-      }
-
-      if (feedback) {
-        feedback.style.display = 'none';
-      }
-
-      const formData = new FormData(form);
-      const COMUNIDAD_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwl57a69fYmqr_OIUyACekCoBvllnbKGzZ9C0y9BAe1KW6xzxbTTYai4VY40Ro8xhgOuA/exec';
-
-      try {
-        const response = await fetch(COMUNIDAD_SCRIPT_URL, {
-          method: 'POST',
-          body: formData
-        });
-
-        // Al recibir respuesta exitosa:
-        if (feedback) {
-          feedback.className = 'comunidad-feedback success';
-          feedback.style.display = 'block';
-          feedback.innerHTML = '✨ ¡Bienvenido a la comunidad del Tour del Café! Pronto recibirás novedades exclusivas.';
+        // Validación de campos requeridos
+        if (!fullname || !pais || !ciudad || !email || !telefono) {
+          if (feedback) {
+            feedback.className = 'comunidad-feedback error';
+            feedback.style.display = 'block';
+            feedback.textContent = 'Por favor completa todos los campos requeridos.';
+          }
+          return;
         }
 
-        // Limpia los campos con form.reset()
-        form.reset();
-
-      } catch (error) {
-        console.error('Error al enviar formulario de comunidad:', error);
-        // Si ocurre algún error en la solicitud, muestra una notificación amigable
-        if (feedback) {
-          feedback.className = 'comunidad-feedback error';
-          feedback.style.display = 'block';
-          feedback.textContent = 'Ocurrió un problema al enviar tu registro. Por favor intenta de nuevo.';
+        // Validación de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          if (feedback) {
+            feedback.className = 'comunidad-feedback error';
+            feedback.style.display = 'block';
+            feedback.textContent = 'Por favor ingresa un correo electrónico válido.';
+          }
+          return;
         }
-      } finally {
-        // Restablece el botón original
+
+        // Deshabilita el botón de envío y cambia el texto a "Registrando..."
         if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Registrando...';
         }
-      }
+
+        if (feedback) {
+          feedback.style.display = 'none';
+        }
+
+        const formData = new FormData(form);
+        const COMUNIDAD_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwl57a69fYmqr_OIUyACekCoBvllnbKGzZ9C0y9BAe1KW6xzxbTTYai4VY40Ro8xhgOuA/exec';
+
+        try {
+          const response = await fetch(COMUNIDAD_SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+          });
+
+          // Al recibir respuesta exitosa:
+          if (feedback) {
+            feedback.className = 'comunidad-feedback success';
+            feedback.style.display = 'block';
+            feedback.innerHTML = '✨ ¡Bienvenido a la comunidad del Tour del Café! Pronto recibirás novedades exclusivas.';
+          }
+
+          // Limpia los campos con form.reset()
+          form.reset();
+
+        } catch (error) {
+          console.error('Error al enviar formulario de comunidad:', error);
+          if (feedback) {
+            feedback.className = 'comunidad-feedback error';
+            feedback.style.display = 'block';
+            feedback.textContent = 'Ocurrió un problema al enviar tu registro. Por favor intenta de nuevo.';
+          }
+        } finally {
+          // Restablece el botón original
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+          }
+        }
+      });
     });
   };
 

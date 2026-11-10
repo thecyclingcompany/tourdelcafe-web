@@ -5502,6 +5502,21 @@ p,
   box-shadow: 0 10px 28px rgba(243, 156, 18, 0.22);
 }
 
+.btn-genesis-plan:disabled,
+.btn-genesis-plan.disabled {
+  opacity: 0.65;
+  cursor: not-allowed !important;
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.plan-btn-cta.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .plan-btn-badge {
   font-size: 0.7rem;
   font-weight: 700;
@@ -7018,11 +7033,12 @@ select.b2b-form-control option {
   position: relative;
   max-width: 680px;
   width: 92%;
+  max-height: 90vh;
+  overflow-y: auto;
   background: radial-gradient(circle at 85% 25%, #1d1915 0%, #11100f 60%, #0a0908 100%);
   border: 1px solid rgba(211, 84, 0, 0.38);
   border-radius: 22px;
   box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95), 0 0 50px rgba(211, 84, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  overflow: hidden;
   padding: 0;
   transform: scale(0.92) translateY(18px);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);

@@ -1662,7 +1662,12 @@
     // 1. Selección de Evento
     const btnStartCoffeeRide = document.getElementById('btn-start-coffee-ride');
     if (btnStartCoffeeRide) {
-      btnStartCoffeeRide.addEventListener('click', () => {
+      btnStartCoffeeRide.addEventListener('click', (e) => {
+        if (btnStartCoffeeRide.disabled || btnStartCoffeeRide.closest('.event-card.disabled')) {
+          e.preventDefault();
+          showToast('Las inscripciones para este evento abrirán próximamente. ¡Sigue atento!', false);
+          return;
+        }
         STATE.selectedEvent = 'genesis-coffee-ride';
         goToStep(1);
       });
