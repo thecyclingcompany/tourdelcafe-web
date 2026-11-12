@@ -45,14 +45,27 @@ const mimeTypes = {
   '.pdf': 'application/pdf',
   '.mp4': 'video/mp4',
   '.ico': 'image/x-icon',
-  '.csv': 'text/csv; charset=utf-8'
+  '.csv': 'text/csv; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8'
 };
 
 // Caché en memoria y compresión gzip para recursos estáticos (evita saturación de I/O y errores 503)
 const staticCache = new Map();
 const MAX_STATIC_CACHE_BYTES = 2 * 1024 * 1024; // 2 MB por archivo
 const STATIC_STAT_TTL_MS = 10000; // Revalidación ligera cada 10s
-const COMPRESSIBLE_EXTS = new Set(['.html', '.css', '.js', '.json', '.svg', '.csv']);
+const COMPRESSIBLE_EXTS = new Set(['.html', '.css', '.js', '.json', '.svg', '.csv', '.txt']);
+
+let cached404Html = null;
+function get404Html() {
+  if (!cached404Html) {
+    try {
+      cached404Html = fs.readFileSync(path.join(root, '404.html'));
+    } catch (_) {
+      cached404Html = Buffer.from('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>404 - Not Found</title></head><body><h1>404 - Página no encontrada</h1><p><a href="/">Volver al inicio</a></p></body></html>');
+    }
+  }
+  return cached404Html;
+}
 
 function getCacheControlForExt(ext) {
   if (ext === '.js' || ext === '.css') {
@@ -63,6 +76,9 @@ function getCacheControlForExt(ext) {
   }
   if (ext === '.html') {
     return 'public, max-age=300, must-revalidate';
+  }
+  if (ext === '.txt' || ext === '.xml') {
+    return 'public, max-age=86400';
   }
   return 'public, max-age=3600';
 }
@@ -218,8 +234,38 @@ function checkAdminAuth(req, parsedUrl) {
 
 const server = http.createServer(async (req, res) => {
   const parsedUrl = url.parse(req.url);
-  const cleanUrl = parsedUrl.pathname;
-  const decodedUrl = decodeURIComponent(cleanUrl);
+  const cleanUrl = parsedUrl.pathname || '/';
+  let decodedUrl;
+  try {
+    decodedUrl = decodeURIComponent(cleanUrl);
+  } catch (_) {
+    decodedUrl = cleanUrl;
+  }
+  const lowerPath = decodedUrl.toLowerCase();
+
+  // Fast-fail de seguridad para escaneos de bots comunes (.php, wp-admin, xmlrpc, .env, git, etc.)
+  // Responde de forma instantánea (<1ms) con 404 Not Found y cabeceras de caché para que el proxy/edge no sature Node.js
+  if (
+    lowerPath.endsWith('.php') ||
+    lowerPath.includes('.php') ||
+    lowerPath.includes('/wp-') ||
+    lowerPath.includes('wp-admin') ||
+    lowerPath.includes('wp-login') ||
+    lowerPath.includes('wp-content') ||
+    lowerPath.includes('wp-includes') ||
+    lowerPath.includes('xmlrpc') ||
+    lowerPath.includes('/.env') ||
+    lowerPath.includes('/.git') ||
+    lowerPath.includes('phpmyadmin')
+  ) {
+    res.writeHead(404, {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'public, max-age=86400',
+      'X-Content-Type-Options': 'nosniff'
+    });
+    res.end('Not Found');
+    return;
+  }
 
   // Manejo de preflight CORS (OPTIONS)
   if (req.method === 'OPTIONS') {
@@ -1040,6 +1086,11 @@ const server = http.createServer(async (req, res) => {
   // ==========================================
   let targetPath = decodedUrl;
 
+  // Limpiar parámetros query residuales si vinieron codificados en la ruta (%3F)
+  if (targetPath.includes('?')) {
+    targetPath = targetPath.split('?')[0];
+  }
+
   // Enrutamiento seguro para el panel de administración
   const isAdminRoute = decodedUrl === '/admin' || decodedUrl.startsWith('/admin/');
   if (isAdminRoute) {
@@ -1115,6 +1166,12 @@ const server = http.createServer(async (req, res) => {
       };
       if (useGzip) headers['Content-Encoding'] = 'gzip';
 
+      if (req.method === 'HEAD') {
+        res.writeHead(200, headers);
+        res.end();
+        return;
+      }
+
       res.writeHead(200, headers);
       res.end(body);
       return;
@@ -1122,7 +1179,28 @@ const server = http.createServer(async (req, res) => {
 
     const resolved = await resolveStaticFile(candidatePath);
     if (!resolved) {
-      res.statusCode = 404;
+      const acceptsHtml = (req.headers.accept || '').includes('text/html');
+      if ((req.method === 'GET' || req.method === 'HEAD') && acceptsHtml) {
+        const body404 = get404Html();
+        res.writeHead(404, {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Content-Length': body404.length,
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'X-Content-Type-Options': 'nosniff'
+        });
+        if (req.method === 'HEAD') {
+          res.end();
+        } else {
+          res.end(body404);
+        }
+        return;
+      }
+
+      res.writeHead(404, {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Cache-Control': 'public, max-age=300',
+        'X-Content-Type-Options': 'nosniff'
+      });
       res.end('Not Found');
       return;
     }
@@ -1209,12 +1287,29 @@ const server = http.createServer(async (req, res) => {
       };
       if (useGzip) headers['Content-Encoding'] = 'gzip';
 
+      if (req.method === 'HEAD') {
+        res.writeHead(200, headers);
+        res.end();
+        return;
+      }
+
       res.writeHead(200, headers);
       res.end(body);
       return;
     }
 
     // Streaming seguro para archivos grandes (> 2MB, ej. videos y PDFs)
+    if (req.method === 'HEAD') {
+      res.writeHead(200, {
+        'Content-Type': contentType,
+        'Content-Length': totalSize,
+        'Accept-Ranges': 'bytes',
+        'ETag': etag,
+        'Cache-Control': cacheControl
+      });
+      res.end();
+      return;
+    }
     const stream = fs.createReadStream(filePath);
     stream.on('error', () => {
       if (!res.headersSent) res.statusCode = 500;

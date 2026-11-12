@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+
+User-agent: PetalBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://tourdelcafe.org/sitemap.xml

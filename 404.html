@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Página no encontrada | Tour del Café</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0e0d0c;
+      color: #fafafa;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      text-align: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .bg-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 480px;
+      max-width: 90vw;
+      max-height: 90vw;
+      background: radial-gradient(circle, rgba(211, 84, 0, 0.18) 0%, rgba(14, 13, 12, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .content-box {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      width: 100%;
+      background: rgba(22, 20, 19, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 44px 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .logo-container {
+      margin-bottom: 24px;
+    }
+    .logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+    .code-404 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(4rem, 12vw, 6.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #f5d082 0%, #d35400 60%, #e67e22 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(211, 84, 0, 0.25);
+    }
+    .title {
+      font-size: clamp(1.25rem, 4vw, 1.6rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    .description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(250, 250, 250, 0.72);
+      margin-bottom: 32px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 26px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 15px rgba(211, 84, 0, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(211, 84, 0, 0.55);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fafafa;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    .footer-note {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: rgba(250, 250, 250, 0.4);
+    }
+    @media (max-width: 480px) {
+      .content-box {
+        padding: 32px 20px;
+      }
+      .actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <main class="content-box">
+    <div class="logo-container">
+      <a href="/" aria-label="Ir al inicio del Tour del Café">
+        <img src="assets/logo-festival-header.png" alt="Tour del Café Logo" class="logo-img">
+      </a>
+    </div>
+    <div class="code-404">404</div>
+    <h1 class="title">Ruta No Encontrada</h1>
+    <p class="description">
+      La página o recurso que intentas explorar no existe o ha sido reubicada. Te invitamos a continuar descubriendo la fiesta del ciclismo y el café de especialidad.
+    </p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary">
+        <span>← Volver al Inicio</span>
+      </a>
+      <a href="/inscripciones.html" class="btn btn-secondary">
+        <span>Inscripciones</span>
+      </a>
+      <a href="/tienda.html" class="btn btn-secondary">
+        <span>Tienda Oficial</span>
+      </a>
+    </div>
+    <div class="footer-note">
+      Tour del Café &bull; World's Coffee &amp; Cycling Festival
+    </div>
+  </main>
+</body>
+</html>
