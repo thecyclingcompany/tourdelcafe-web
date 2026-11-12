@@ -230,6 +230,105 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(updateScrollytelling, 100);
   }
 
+  // 1b. Modal de Tarjetas del Manifiesto
+  const initManifestoModal = () => {
+    const modal = document.getElementById('manifesto-modal');
+    const cards = document.querySelectorAll('.manifesto-card');
+    if (!modal || !cards.length) return;
+
+    const manifestoItems = [
+      {
+        tag: 'Tour del Café • El Concepto',
+        title: 'El Primer Festival Global de Café y Ciclismo',
+        text: 'Las montañas que cosechan el mejor café de especialidad del mundo son las mismas que esculpieron el indomable espíritu del ciclismo colombiano. El Tour del Café nace no solo como un evento, sino como la primera plataforma internacional de triple impacto que unifica los dos más grandes embajadores y símbolos de la identidad de Colombia ante el mundo: la riqueza de nuestra tradición caficultora y la gloria de nuestras leyendas del pedal. Este festival global integra de manera inédita el ciclismo de alto nivel, la cultura del café de especialidad y el turismo deportivo de clase mundial, estructurándose sobre un legado histórico y social compartido.',
+        highlight: 'Ciclismo • Caficultura • Turismo',
+        img: 'assets/manifiesto-tdc-index.jpg',
+        alt: 'Concepto: El Primer Festival Global de Café y Ciclismo'
+      },
+      {
+        tag: 'Pilar 01 • El Origen',
+        title: 'Las Montañas Sagradas del Café y el Ciclismo',
+        text: "Las mismas montañas del Eje Cafetero que vieron nacer el mejor café de origen del mundo forjaron la resiliencia de los legendarios 'escarabajos' colombianos. El Tour del Café nace para honrar esa historia compartida.",
+        highlight: '+500.000 Familias Caficultoras & Historia de Leyendas',
+        img: 'assets/pilar-1-tdc-index.jpg',
+        alt: 'Pilar 1: Las Montañas Sagradas del Café y el Ciclismo'
+      },
+      {
+        tag: 'Pilar 02 • El Festival',
+        title: 'El Tour del Café',
+        text: 'Más que una carrera ciclista, un festival internacional que combina competencia aficionada (Gran Fondo), ciclismo élite (UCI 2.1), coffee Rides (roadas y cataciones) y muestras comerciales B2B y B2C.',
+        highlight: "Gran Fondo + Carrera UCI 2.1 + Expo & Roaster's Lounge",
+        img: 'assets/pilar-2-tdc-index.jpg',
+        alt: 'Pilar 2: El Primer Festival Global de Ciclismo & Café'
+      },
+      {
+        tag: 'Pilar 3 • El Legado',
+        title: 'Transformación Social & Futuro Deportivo',
+        text: 'A través de los programas Legado en Movimiento y Ride to the Origins en asocio con A Coffee Family, impulsamos el desarrollo técnico y académico de los jóvenes talentos del ciclismo y apoyamos de forma directa el bienestar de más de 50 familias productoras de café.',
+        highlight: 'Legado en Movimiento & Ride to the Origins',
+        img: 'assets/pilar-3-tdc-index.jpg',
+        alt: 'Pilar 3: Transformación Social & Futuro Deportivo'
+      }
+    ];
+
+    const imgEl = document.getElementById('manifesto-modal-img');
+    const tagEl = document.getElementById('manifesto-modal-tag');
+    const titleEl = document.getElementById('manifesto-modal-title');
+    const textEl = document.getElementById('manifesto-modal-text');
+    const highlightEl = document.getElementById('manifesto-modal-highlight');
+    const closeBtn = document.getElementById('manifesto-modal-close');
+
+    const openManifestoModal = (idx) => {
+      const item = manifestoItems[idx];
+      if (!item) return;
+      if (imgEl) {
+        imgEl.src = item.img;
+        imgEl.alt = item.alt;
+      }
+      if (tagEl) tagEl.textContent = item.tag;
+      if (titleEl) titleEl.textContent = item.title;
+      if (textEl) textEl.textContent = item.text;
+      if (highlightEl) highlightEl.textContent = item.highlight;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeManifestoModal = () => {
+      modal.classList.remove('active');
+      const hasOtherActive = document.querySelector('.modal-overlay.active, .b2b-modal-overlay.active');
+      if (!hasOtherActive) {
+        document.body.style.overflow = '';
+      }
+    };
+
+    cards.forEach((card) => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idx = parseInt(card.getAttribute('data-manifesto-index'), 10);
+        openManifestoModal(idx);
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeManifestoModal();
+      });
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeManifestoModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeManifestoModal();
+      }
+    });
+  };
+
+  initManifestoModal();
+
   // 2. Reveal on Scroll general
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
