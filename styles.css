@@ -178,14 +178,14 @@ p,
 }
 
 .section-padding {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 @media (max-width: 767px) {
   .section-padding {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 34px;
+    padding-bottom: 34px;
   }
 }
 
@@ -1628,7 +1628,7 @@ p,
 #coffee-rides {
   position: relative;
   background-color: transparent;
-  border-top: 1px solid var(--color-border-dark);
+  border-top: none;
   overflow: hidden;
   scroll-margin-top: 80px;
 }
@@ -1896,7 +1896,7 @@ p,
 #gran-fondo {
   position: relative;
   background-color: transparent;
-  border-top: 1px solid var(--color-border-dark);
+  border-top: none;
   overflow: clip;
   scroll-margin-top: 80px;
 }
@@ -4148,7 +4148,7 @@ p,
 
 .impacto-social-section {
   background-color: var(--color-dark-bg);
-  border-top: 1px solid var(--color-border-dark);
+  border-top: none;
   position: relative;
   overflow: hidden;
 }

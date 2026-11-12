@@ -1464,8 +1464,8 @@ img, video, iframe {
 .home-store-section {
   position: relative;
   background: radial-gradient(circle at 50% 10%, rgba(211, 84, 0, 0.15) 0%, rgba(18, 18, 18, 1) 70%);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 90px 0;
+  border-top: none;
+  padding: 50px 0;
   overflow: hidden;
 }
 
