@@ -7037,6 +7037,8 @@ select.b2b-form-control option {
   .recorrido-specs-table,
   .table-container,
   .specs-table-wrapper,
+  .awards-table-wrapper,
+  .responsive-table,
   .custom-table-responsive,
   .route-map-wrapper {
     overflow-x: auto !important;

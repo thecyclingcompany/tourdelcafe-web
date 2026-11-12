@@ -1526,16 +1526,19 @@ document.addEventListener('DOMContentLoaded', () => {
     familyCards.forEach(card => {
       const familyId = card.getAttribute('data-family');
       
-      card.addEventListener('mouseenter', () => {
+      const activateCard = () => {
         clearActiveStates();
         card.classList.add('active-card');
         mapSvg.classList.add('active-map');
-        
+
         const matchingHotspot = document.querySelector(`.map-hotspot-group[data-family="${familyId}"]`);
         if (matchingHotspot) {
           matchingHotspot.classList.add('active-hotspot');
         }
-      });
+      };
+
+      card.addEventListener('mouseenter', activateCard);
+      card.addEventListener('click', activateCard);
 
       card.addEventListener('mouseleave', () => {
         clearActiveStates();
@@ -1546,7 +1549,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hotspots.forEach(hotspot => {
       const familyId = hotspot.getAttribute('data-family');
 
-      hotspot.addEventListener('mouseenter', () => {
+      const activateHotspot = () => {
         clearActiveStates();
         hotspot.classList.add('active-hotspot');
         mapSvg.classList.add('active-map');
@@ -1555,7 +1558,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (matchingCard) {
           matchingCard.classList.add('active-card');
         }
-      });
+      };
+
+      hotspot.addEventListener('mouseenter', activateHotspot);
+      hotspot.addEventListener('click', activateHotspot);
 
       hotspot.addEventListener('mouseleave', () => {
         clearActiveStates();
@@ -1573,16 +1579,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!perks.length || !previewImg) return;
     
     perks.forEach(perk => {
-      perk.addEventListener('mouseenter', () => {
-        // Remove active class from all perks
+      const activatePerk = () => {
         perks.forEach(p => p.classList.remove('active'));
-        // Add active class to hovered perk
         perk.classList.add('active');
-        
-        // Change image source and alt with smooth transition
+
         const newSrc = perk.getAttribute('data-image');
         const newAlt = perk.textContent.trim();
-        
+
         if (newSrc && previewImg.getAttribute('src') !== newSrc) {
           previewImg.style.opacity = '0';
           setTimeout(() => {
@@ -1591,7 +1594,10 @@ document.addEventListener('DOMContentLoaded', () => {
             previewImg.style.opacity = '1';
           }, 150);
         }
-      });
+      };
+
+      perk.addEventListener('mouseenter', activatePerk);
+      perk.addEventListener('click', activatePerk);
     });
     
     // Set first item active on load
@@ -1606,6 +1612,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initHospitalityInteractive();
   initImpactoSocialMap();
+
+  // Re-renderizado seguro si data.js se hidrata o carga con defer/asíncrono
+  const hydrateEventData = () => {
+    if (typeof renderVIP === 'function') renderVIP();
+    if (typeof renderHoteles === 'function') renderHoteles();
+  };
+
+  window.addEventListener('eventDataReady', hydrateEventData);
+
+  if (window.eventData) {
+    hydrateEventData();
+  } else {
+    // Fallback automático si data.js tarda en cargar en redes móviles
+    setTimeout(() => {
+      if (!window.eventData) {
+        import('./data.js')
+          .then(() => hydrateEventData())
+          .catch((err) => {
+            console.warn('Fallback de carga para data.js no disponible:', err);
+          });
+      }
+    }, 600);
+  }
+
+  // Garantía de visibilidad para elementos reveal-on-scroll en conexiones lentas
+  setTimeout(() => {
+    document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
+      el.classList.add('revealed');
+    });
+  }, 1500);
 
   // ==========================================
   // B2B MODALS AND REGISTRATION FORMS (EXPO & ROASTERS)

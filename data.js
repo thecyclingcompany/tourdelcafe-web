@@ -527,5 +527,6 @@ export const collectionsData = {
 if (typeof window !== 'undefined') {
   window.eventData = eventData;
   window.collectionsData = collectionsData;
+  window.dispatchEvent(new CustomEvent('eventDataReady'));
 }
 

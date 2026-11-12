@@ -4,6 +4,7 @@ const path = require('path');
 const url = require('url');
 const querystring = require('querystring');
 const crypto = require('crypto');
+const zlib = require('zlib');
 const inventoryService = require('./inventory-service');
 const registrationService = require('./registration-service');
 const couponService = require('./coupon-service');
@@ -31,20 +32,65 @@ const ADMIN_PASS = process.env.ADMIN_PASS || 'mitico_admin_2027';
 const ADMIN_SECRET = process.env.ADMIN_KEY || 'mitico_admin_2027';
 
 const mimeTypes = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'application/javascript',
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
-  '.json': 'application/json',
+  '.json': 'application/json; charset=utf-8',
   '.pdf': 'application/pdf',
   '.mp4': 'video/mp4',
   '.ico': 'image/x-icon',
   '.csv': 'text/csv; charset=utf-8'
 };
+
+// Caché en memoria y compresión gzip para recursos estáticos (evita saturación de I/O y errores 503)
+const staticCache = new Map();
+const MAX_STATIC_CACHE_BYTES = 2 * 1024 * 1024; // 2 MB por archivo
+const STATIC_STAT_TTL_MS = 10000; // Revalidación ligera cada 10s
+const COMPRESSIBLE_EXTS = new Set(['.html', '.css', '.js', '.json', '.svg', '.csv']);
+
+function getCacheControlForExt(ext) {
+  if (ext === '.js' || ext === '.css') {
+    return 'public, max-age=3600, stale-while-revalidate=86400';
+  }
+  if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.webp' || ext === '.gif' || ext === '.svg' || ext === '.ico' || ext === '.pdf' || ext === '.mp4') {
+    return 'public, max-age=604800';
+  }
+  if (ext === '.html') {
+    return 'public, max-age=300, must-revalidate';
+  }
+  return 'public, max-age=3600';
+}
+
+async function resolveStaticFile(candidatePath) {
+  try {
+    const stats = await fs.promises.stat(candidatePath);
+    if (stats.isFile()) return { filePath: candidatePath, stats };
+  } catch (_) {}
+
+  if (!candidatePath.endsWith('.html')) {
+    try {
+      const htmlPath = candidatePath + '.html';
+      const stats = await fs.promises.stat(htmlPath);
+      if (stats.isFile()) return { filePath: htmlPath, stats };
+    } catch (_) {}
+  }
+  return null;
+}
+
+function gzipAsync(buffer) {
+  return new Promise((resolve, reject) => {
+    zlib.gzip(buffer, { level: 6 }, (err, compressed) => {
+      if (err) reject(err);
+      else resolve(compressed);
+    });
+  });
+}
 
 /**
  * Helper para responder en formato JSON con headers CORS
@@ -1034,31 +1080,59 @@ const server = http.createServer(async (req, res) => {
     targetPath = '/assets/Presentación Tour del Café 2027-2028.pdf';
   }
 
-  let filePath = path.join(root, targetPath);
+  const candidatePath = path.join(root, targetPath);
 
-  // Soporte para URLs sin extensión .html (ej: /tienda, /admin-inventario)
-  if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
-    filePath = filePath + '.html';
-  }
-
-  if (!filePath.startsWith(root)) {
-    console.log(`[Response] 403 Forbidden for: ${filePath}`);
+  if (!candidatePath.startsWith(root)) {
     res.statusCode = 403;
     res.end('Forbidden');
     return;
   }
 
-  fs.stat(filePath, (err, stats) => {
-    if (err || !stats.isFile()) {
-      console.log(`[Response] 404 Not Found for: ${filePath}`);
+  try {
+    const now = Date.now();
+    let cached = staticCache.get(candidatePath);
+
+    // Servir desde caché en memoria si el TTL sigue vigente (evita bloqueos de disco bajo concurrencia)
+    if (cached && (now - cached.checkedAt) < STATIC_STAT_TTL_MS && !req.headers.range) {
+      if (req.headers['if-none-match'] === cached.etag) {
+        res.writeHead(304, {
+          'ETag': cached.etag,
+          'Cache-Control': cached.cacheControl
+        });
+        res.end();
+        return;
+      }
+
+      const acceptEncoding = req.headers['accept-encoding'] || '';
+      const useGzip = cached.gzipBuffer && acceptEncoding.includes('gzip');
+      const body = useGzip ? cached.gzipBuffer : cached.buffer;
+      const headers = {
+        'Content-Type': cached.contentType,
+        'Content-Length': body.length,
+        'ETag': cached.etag,
+        'Cache-Control': cached.cacheControl,
+        'Vary': 'Accept-Encoding'
+      };
+      if (useGzip) headers['Content-Encoding'] = 'gzip';
+
+      res.writeHead(200, headers);
+      res.end(body);
+      return;
+    }
+
+    const resolved = await resolveStaticFile(candidatePath);
+    if (!resolved) {
       res.statusCode = 404;
       res.end('Not Found');
       return;
     }
 
+    const { filePath, stats } = resolved;
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || 'application/octet-stream';
     const totalSize = stats.size;
+    const etag = `"${totalSize}-${Math.floor(stats.mtimeMs)}"`;
+    const cacheControl = getCacheControlForExt(ext);
 
     // Soporte obligatorio de HTTP 206 Partial Content para streaming en iOS Safari y Android
     const range = req.headers.range;
@@ -1077,26 +1151,99 @@ const server = http.createServer(async (req, res) => {
 
       const chunkSize = (end - start) + 1;
       const fileStream = fs.createReadStream(filePath, { start, end });
+      fileStream.on('error', () => {
+        if (!res.headersSent) res.statusCode = 500;
+        res.end();
+      });
+      res.on('close', () => fileStream.destroy());
+
       res.writeHead(206, {
         'Content-Range': `bytes ${start}-${end}/${totalSize}`,
         'Accept-Ranges': 'bytes',
         'Content-Length': chunkSize,
         'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=3600'
+        'Cache-Control': cacheControl
       });
       fileStream.pipe(res);
       return;
     }
 
+    if (req.headers['if-none-match'] === etag) {
+      if (cached) cached.checkedAt = now;
+      res.writeHead(304, {
+        'ETag': etag,
+        'Cache-Control': cacheControl
+      });
+      res.end();
+      return;
+    }
+
+    // Cachear en memoria archivos estáticos <= 2MB (JS, CSS, HTML, SVG, JSON, imágenes pequeñas)
+    if (totalSize <= MAX_STATIC_CACHE_BYTES) {
+      if (!cached || cached.etag !== etag) {
+        const buffer = await fs.promises.readFile(filePath);
+        const gzipBuffer = COMPRESSIBLE_EXTS.has(ext) ? await gzipAsync(buffer) : null;
+        cached = {
+          filePath,
+          buffer,
+          gzipBuffer,
+          contentType,
+          etag,
+          cacheControl,
+          checkedAt: now
+        };
+        staticCache.set(candidatePath, cached);
+      } else {
+        cached.checkedAt = now;
+      }
+
+      const acceptEncoding = req.headers['accept-encoding'] || '';
+      const useGzip = cached.gzipBuffer && acceptEncoding.includes('gzip');
+      const body = useGzip ? cached.gzipBuffer : cached.buffer;
+      const headers = {
+        'Content-Type': contentType,
+        'Content-Length': body.length,
+        'ETag': etag,
+        'Cache-Control': cacheControl,
+        'Vary': 'Accept-Encoding'
+      };
+      if (useGzip) headers['Content-Encoding'] = 'gzip';
+
+      res.writeHead(200, headers);
+      res.end(body);
+      return;
+    }
+
+    // Streaming seguro para archivos grandes (> 2MB, ej. videos y PDFs)
+    const stream = fs.createReadStream(filePath);
+    stream.on('error', () => {
+      if (!res.headersSent) res.statusCode = 500;
+      res.end();
+    });
+    res.on('close', () => stream.destroy());
+
     res.writeHead(200, {
       'Content-Type': contentType,
       'Content-Length': totalSize,
       'Accept-Ranges': 'bytes',
-      'Cache-Control': ext === '.mp4' ? 'public, max-age=3600' : 'no-cache, no-store, must-revalidate'
+      'ETag': etag,
+      'Cache-Control': cacheControl
     });
-    fs.createReadStream(filePath).pipe(res);
-  });
+    stream.pipe(res);
+  } catch (err) {
+    console.error('[Server] Error sirviendo archivo estático:', err.message);
+    if (!res.headersSent) {
+      res.statusCode = 500;
+      res.end('Internal Server Error');
+    } else {
+      res.end();
+    }
+  }
 });
+
+// Ajuste de timeouts para evitar errores 502/503 detrás del proxy inverso de Hostinger
+server.keepAliveTimeout = 65000;
+server.headersTimeout = 66000;
 
 server.listen(port, () => {
   console.log(`[Server] Servidor ejecutándose en http://localhost:${port}/`);
