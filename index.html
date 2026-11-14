@@ -131,12 +131,9 @@
 
         <!-- HERO SECTION INMERSIVA -->
         <section id="inicio" class="hero-section">
-            <!-- Background Video -->
-            <video class="hero-video-bg" src="assets/video-hero-tdc.mp4" poster="assets/header-tdc-index.jpg" autoplay
-                muted loop playsinline webkit-playsinline preload="auto">
-                <source src="assets/video-hero-tdc.mp4" type="video/mp4">
-                Tu navegador no soporta reproducción de video.
-            </video>
+            <!-- Scrollytelling Canvas de Fondo (Ciclista y recolector hacia el horizonte) -->
+            <canvas id="hero-scrollytelling-canvas" class="hero-scrollytelling-canvas" aria-hidden="true"></canvas>
+
             <!-- Dark gradient overlay -->
             <div class="hero-overlay"></div>
 
@@ -172,13 +169,13 @@
                     }
                 };
                 (function () {
-                    var vids = document.querySelectorAll('.hero-video-bg, .hero-logo-animation');
+                    var vids = document.querySelectorAll('.hero-logo-animation');
                     vids.forEach(function (v) { window.safeStartVideo(v); });
                 })();
             </script>
 
             <!-- Hero Central Content -->
-            <div class="hero-content">
+            <div class="hero-content section-title-fadein">
                 <h1 class="visually-hidden">Tour del Café</h1>
 
                 <!-- Countdown Timer Widget -->
@@ -210,7 +207,7 @@
         <!-- SECCIÓN MANIFIESTO & SCROLLYTELLING -->
         <section id="acerca" class="scrollytelling-section section-padding">
             <div class="container-main">
-                <div class="section-header reveal-on-scroll">
+                <div class="section-header reveal-on-scroll section-title-fadein">
                     <div style="margin-bottom: 1.5rem; text-align: center;">
                         <span class="badge-tag">Manifiesto</span>
                     </div>
@@ -222,8 +219,8 @@
                     <article class="manifesto-card" data-manifesto-index="0">
                         <div class="manifesto-card-img-wrap">
                             <img src="assets/manifiesto-tdc-index.jpg"
-                                alt="Concepto: El Primer Festival Global de Café y Ciclismo"
-                                class="manifesto-card-img" loading="lazy">
+                                alt="Concepto: El Primer Festival Global de Café y Ciclismo" class="manifesto-card-img"
+                                loading="lazy">
                         </div>
                         <div class="manifesto-card-body">
                             <div class="manifesto-card-tag">Tour del Café • El Concepto</div>
@@ -233,7 +230,8 @@
                                 esculpieron el indomable espíritu del ciclismo colombiano. El Tour del Café nace no solo
                                 como un evento, sino como la primera plataforma internacional de triple impacto...
                             </p>
-                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="0">Ver más →</a>
+                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="0">Ver más
+                                →</a>
                         </div>
                     </article>
 
@@ -241,8 +239,8 @@
                     <article class="manifesto-card" data-manifesto-index="1">
                         <div class="manifesto-card-img-wrap">
                             <img src="assets/pilar-1-tdc-index.jpg"
-                                alt="Pilar 1: Las Montañas Sagradas del Café y el Ciclismo"
-                                class="manifesto-card-img" loading="lazy">
+                                alt="Pilar 1: Las Montañas Sagradas del Café y el Ciclismo" class="manifesto-card-img"
+                                loading="lazy">
                         </div>
                         <div class="manifesto-card-body">
                             <div class="manifesto-card-tag">Pilar 01 • El Origen</div>
@@ -252,7 +250,8 @@
                                 forjaron la resiliencia de los legendarios 'escarabajos' colombianos. El Tour del Café
                                 nace para honrar esa historia compartida.
                             </p>
-                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="1">Ver más →</a>
+                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="1">Ver más
+                                →</a>
                         </div>
                     </article>
 
@@ -271,7 +270,8 @@
                                 aficionada (Gran Fondo), ciclismo élite (UCI 2.1), coffee Rides (roadas y cataciones) y
                                 muestras comerciales B2B y B2C.
                             </p>
-                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="2">Ver más →</a>
+                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="2">Ver más
+                                →</a>
                         </div>
                     </article>
 
@@ -279,8 +279,8 @@
                     <article class="manifesto-card" data-manifesto-index="3">
                         <div class="manifesto-card-img-wrap">
                             <img src="assets/pilar-3-tdc-index.jpg"
-                                alt="Pilar 3: Transformación Social &amp; Futuro Deportivo"
-                                class="manifesto-card-img" loading="lazy">
+                                alt="Pilar 3: Transformación Social &amp; Futuro Deportivo" class="manifesto-card-img"
+                                loading="lazy">
                         </div>
                         <div class="manifesto-card-body">
                             <div class="manifesto-card-tag">Pilar 3 • El Legado</div>
@@ -290,7 +290,8 @@
                                 Coffee Family, impulsamos el desarrollo técnico y académico de los jóvenes talentos del
                                 ciclismo y apoyamos a más de 50 familias productoras de café.
                             </p>
-                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="3">Ver más →</a>
+                            <a href="#manifesto-modal" class="manifesto-ver-mas-link" data-manifesto-index="3">Ver más
+                                →</a>
                         </div>
                     </article>
                 </div>
@@ -300,7 +301,7 @@
         <!-- SECCIÓN COFFEE RIDES -->
         <section id="coffee-rides" class="coffee-rides-section section-padding">
             <div class="container-main">
-                <div class="section-header reveal-on-scroll">
+                <div class="section-header reveal-on-scroll section-title-fadein">
                     <div style="margin-bottom: 1.5rem; text-align: center;">
                         <span class="badge-tag">COMUNIDAD &amp; ACTIVACIONES GLOBALES</span>
                     </div>
@@ -1553,7 +1554,7 @@
         <!-- SECCIÓN GRAN FONDO -->
         <section id="gran-fondo" class="gran-fondo-section section-padding">
             <div class="container-main">
-                <div class="section-header reveal-on-scroll">
+                <div class="section-header reveal-on-scroll section-title-fadein">
                     <div style="margin-bottom: 1.5rem; text-align: center;">
                         <span class="badge-tag">EDICIÓN RESILIENCIA • FEBRERO • 2028</span>
                     </div>
@@ -2360,7 +2361,8 @@
         </section>
 
         <!-- SECCIÓN IMPACTO SOCIAL & LEGADO SOSTENIBLE -->
-        <section id="impacto-social" class="impacto-social-section section-padding reveal-on-scroll" style="min-height: 300px; display: flex; align-items: center;">
+        <section id="impacto-social" class="impacto-social-section section-padding reveal-on-scroll"
+            style="min-height: 300px; display: flex; align-items: center;">
 
             <!-- Fondo Parallax (Don José en lateral derecho) -->
             <div class="impacto-parallax-container" id="impacto-parallax-container" aria-hidden="true">
@@ -2372,14 +2374,17 @@
             </div>
 
             <div class="container-main">
-                <div class="section-header" style="margin-bottom: 0;">
+                <div class="section-header section-title-fadein" style="margin-bottom: 0;">
                     <div style="margin-bottom: 1.5rem; text-align: center;">
                         <span class="badge-tag">Impacto Social &amp; Legado Sostenible</span>
                     </div>
                     <h2 class="heading-2" style="text-align: center;">Legado en Movimiento</h2>
                     <p class="body-main"
                         style="max-width: 800px; margin: 0 auto; text-align: center; color: rgba(250, 250, 250, 0.75);">
-                        Un ecosistema circular donde la tradición cafetera de nuestras familias y el ciclismo nacional se unen para transformar vidas y construir un futuro sostenible. Para que tu apoyo sea sostenible, se ha diseñado un modelo en donde tu participación en el Tour del Café, las compras de café y productos Mítico co-financiarán el desarrollo de dos programas
+                        Un ecosistema circular donde la tradición cafetera de nuestras familias y el ciclismo nacional
+                        se unen para transformar vidas y construir un futuro sostenible. Para que tu apoyo sea
+                        sostenible, se ha diseñado un modelo en donde tu participación en el Tour del Café, las compras
+                        de café y productos Mítico co-financiarán el desarrollo de dos programas
                     </p>
                     <div style="display: flex; justify-content: center; margin-top: 2.2rem;">
                         <a href="legado-en-movimiento.html" class="btn-primary">Conocer Más</a>
@@ -2393,7 +2398,7 @@
              ========================================== -->
         <section id="tienda-oficial" class="home-store-section section-padding reveal-on-scroll">
             <div class="container-main">
-                <div class="home-store-header" style="max-width: 960px;">
+                <div class="home-store-header section-title-fadein" style="max-width: 960px;">
                     <!-- Store badge "TIENDA OFICIAL" en la parte superior -->
                     <div style="text-align: center; margin-bottom: 14px;">
                         <span class="store-badge" style="margin-bottom: 0;">TIENDA OFICIAL</span>
@@ -2417,7 +2422,8 @@
                         </span>
                     </div>
                     <h2 class="heading-2"
-                        style="margin-top: 5px; margin-bottom: 14px; font-size: clamp(0.92rem, 2.7vw, 1.7rem); white-space: nowrap; letter-spacing: -0.2px;">Colección Resiliencia: Fuerza de Nuestra Tierra</h2>
+                        style="margin-top: 5px; margin-bottom: 14px; font-size: clamp(0.92rem, 2.7vw, 1.7rem); white-space: nowrap; letter-spacing: -0.2px;">
+                        Colección Resiliencia: Fuerza de Nuestra Tierra</h2>
                     <p class="body-main"
                         style="max-width: 820px; margin: 0 auto; color: rgba(250, 250, 250, 0.85); font-size: 1.05rem; line-height: 1.65;">
                         Un homenaje a la fuerza de nuestra tierra. Un porcentaje de las utilidades de esta colección se

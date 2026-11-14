@@ -329,6 +329,211 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initManifestoModal();
 
+  // ==========================================
+  // SCROLLYTELLING CANVAS BACKGROUND HERO
+  // Sincroniza 100 fotogramas del ciclista y recolector hacia el horizonte
+  // desde el tope del Hero (0%) hasta la sección Tienda Oficial (100%)
+  // ==========================================
+  const initHeroScrollytelling = () => {
+    const canvas = document.getElementById('hero-scrollytelling-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d', { alpha: false });
+    if (!ctx) return;
+
+    const TOTAL_FRAMES = 100;
+    const FRAME_PATH = (idx) => `assets/hero-tour-del-cafe/tour-del-cafe-hero-${String(idx).padStart(3, '0')}.jpg`;
+
+    const images = new Array(TOTAL_FRAMES);
+    let targetFrame = 0;
+    let currentFrame = 0;
+    let lastDrawnFrame = -1;
+    let isTicking = false;
+
+    // Ajuste responsivo de dimensiones con soporte de alta densidad (Retina)
+    const resizeCanvas = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      lastDrawnFrame = -1;
+      render();
+    };
+
+    // Escalado responsivo manteniendo proporción de aspecto (tipo object-fit: cover)
+    const drawCover = (img) => {
+      if (!img || !img.complete || img.naturalWidth === 0) return;
+      const cw = canvas.width;
+      const ch = canvas.height;
+      const iw = img.naturalWidth;
+      const ih = img.naturalHeight;
+
+      const canvasRatio = cw / ch;
+      const imgRatio = iw / ih;
+
+      let dw, dh, dx, dy;
+      if (canvasRatio > imgRatio) {
+        dw = cw;
+        dh = cw / imgRatio;
+        dx = 0;
+        dy = (ch - dh) / 2;
+      } else {
+        dh = ch;
+        dw = ch * imgRatio;
+        dx = (cw - dw) / 2;
+        dy = 0;
+      }
+
+      ctx.drawImage(img, dx, dy, dw, dh);
+    };
+
+    // Búsqueda del fotograma cargado más cercano para evitar parpadeos en scrolls rápidos
+    const getAvailableImage = (index) => {
+      if (images[index] && images[index].complete && images[index].naturalWidth > 0) {
+        return images[index];
+      }
+      for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
+        const prev = index - offset;
+        if (prev >= 0 && images[prev] && images[prev].complete && images[prev].naturalWidth > 0) {
+          return images[prev];
+        }
+        const next = index + offset;
+        if (next < TOTAL_FRAMES && images[next] && images[next].complete && images[next].naturalWidth > 0) {
+          return images[next];
+        }
+      }
+      return null;
+    };
+
+    const render = () => {
+      const frameIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.round(currentFrame)));
+      if (frameIndex !== lastDrawnFrame) {
+        const img = getAvailableImage(frameIndex);
+        if (img) {
+          drawCover(img);
+          lastDrawnFrame = frameIndex;
+        }
+      }
+    };
+
+    // Interpolación lineal suave (lerp) mediante requestAnimationFrame
+    const loop = () => {
+      const diff = targetFrame - currentFrame;
+      if (Math.abs(diff) > 0.005) {
+        currentFrame += diff * 0.14;
+        render();
+        requestAnimationFrame(loop);
+      } else {
+        currentFrame = targetFrame;
+        render();
+        isTicking = false;
+      }
+    };
+
+    const startLoop = () => {
+      if (!isTicking) {
+        isTicking = true;
+        requestAnimationFrame(loop);
+      }
+    };
+
+    // Sincronización exacta con el scroll: Hero (0%) a Tienda Oficial (100%)
+    const updateScroll = () => {
+      const tienda = document.getElementById('tienda-oficial');
+      let maxScroll = 1;
+      if (tienda) {
+        const rect = tienda.getBoundingClientRect();
+        const tiendaTop = rect.top + window.scrollY;
+        // La sección Tienda Oficial alcanza el 100% cuando su cabecera se alinea bajo la barra de navegación
+        maxScroll = Math.max(1, tiendaTop - 80);
+      } else {
+        maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      }
+
+      const scrollY = Math.max(0, window.scrollY);
+      const progress = Math.min(1, Math.max(0, scrollY / maxScroll));
+      targetFrame = progress * (TOTAL_FRAMES - 1);
+      startLoop();
+    };
+
+    // Precarga progresiva en memoria
+    const preloadImages = () => {
+      // 1. Cargar fotograma 0 de inmediato para render instantáneo sin pantalla negra
+      const firstImg = new Image();
+      firstImg.src = FRAME_PATH(0);
+      images[0] = firstImg;
+      firstImg.onload = () => {
+        render();
+      };
+
+      // 2. Precargar los 99 fotogramas restantes
+      for (let i = 1; i < TOTAL_FRAMES; i++) {
+        const img = new Image();
+        img.src = FRAME_PATH(i);
+        img.onload = () => {
+          if (Math.round(currentFrame) === i) {
+            render();
+          }
+        };
+        images[i] = img;
+      }
+    };
+
+    // Eventos
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      updateScroll();
+    }, { passive: true });
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => {
+        resizeCanvas();
+        updateScroll();
+      }, 100);
+    }, { passive: true });
+
+    // Arranque
+    resizeCanvas();
+    preloadImages();
+    updateScroll();
+  };
+
+  initHeroScrollytelling();
+
+  // ==========================================
+  // FADE-IN EN TÍTULOS Y LOGOS DE SECCIÓN
+  // IntersectionObserver para aparición suave con ligero desplazamiento vertical
+  // ==========================================
+  const initSectionTitleFadeIn = () => {
+    const titles = document.querySelectorAll('.section-title-fadein');
+    if (!titles.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    titles.forEach(el => {
+      // Si el elemento ya está dentro del área visible en la carga inicial, activarlo de inmediato
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  };
+
+  initSectionTitleFadeIn();
+
   // 2. Reveal on Scroll general
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
