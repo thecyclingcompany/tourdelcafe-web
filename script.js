@@ -455,6 +455,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const progress = Math.min(1, Math.max(0, scrollY / maxScroll));
       targetFrame = progress * (TOTAL_FRAMES - 1);
       startLoop();
+
+      // Desvanecimiento suave del póster estático inicial para fundir con el canvas animado en scroll
+      const heroPoster = document.querySelector('.hero-bg-poster');
+      if (heroPoster) {
+        const posterOpacity = Math.max(0, 1 - (scrollY / (window.innerHeight * 0.75)));
+        heroPoster.style.opacity = posterOpacity;
+      }
     };
 
     // Precarga progresiva en memoria
