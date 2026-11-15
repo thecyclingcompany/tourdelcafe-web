@@ -1068,36 +1068,26 @@ p,
 /* ==========================================
    HERO SECTION & SCROLLYTELLING CANVAS
    ========================================== */
-.hero-section {
+.hero-section,
+#inicio,
+#hero {
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: visible;
-  background-color: #0e0d0c;
+  background: transparent !important;
+  background-color: transparent !important;
+  margin: 0;
+  padding: 0;
   z-index: 2;
-  isolation: isolate;
-}
-
-.hero-bg-poster {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('assets/hero-tour-del-cafe/tour-del-cafe-hero-000.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;
-  pointer-events: none;
-  transition: opacity 0.15s ease-out;
 }
 
 #hero-scrollytelling-canvas,
 .hero-scrollytelling-canvas {
   position: fixed;
+  inset: 0;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1111,9 +1101,9 @@ p,
   background-position: center;
 }
 
-#hero-scrollytelling-overlay,
-.hero-scrollytelling-overlay {
+.global-bg-overlay {
   position: fixed;
+  inset: 0;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1121,13 +1111,12 @@ p,
   z-index: 1;
   pointer-events: none;
   display: block;
-  background: linear-gradient(180deg,
-      rgba(10, 10, 10, 0.45) 0%,
-      rgba(10, 10, 10, 0.55) 60%,
-      rgba(10, 10, 10, 0.8) 100%);
+  background: rgba(18, 18, 18, 0.72) !important;
 }
 
-.hero-video-bg {
+.hero-video-bg,
+.hero-bg-poster,
+.hero-overlay {
   display: none !important;
 }
 
@@ -1164,20 +1153,6 @@ p,
   border: 0 !important;
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg,
-      rgba(10, 10, 10, 0.45) 0%,
-      rgba(10, 10, 10, 0.55) 60%,
-      rgba(10, 10, 10, 0.8) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
 /* ==========================================
    SCROLLYTELLING: SECTION TITLES & LOGOS FADE-IN
    ========================================== */
@@ -1193,20 +1168,35 @@ p,
   transform: translateY(0);
 }
 
+.section-logo-fadein {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.section-logo-fadein.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-content {
   position: absolute;
-  bottom: 2.5vh;
-  /* Pinned near the bottom road curve */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 3.5vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 3;
   text-align: center;
   max-width: 900px;
-  width: calc(100% - 40px);
-  padding: 0;
+  width: 100%;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  pointer-events: auto;
 }
 
 .hero-content .badge-tag {
@@ -1254,11 +1244,11 @@ p,
   display: flex;
   gap: 12px;
   justify-content: center;
+  align-items: center;
   z-index: 10;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   animation: fadeInUp 1s ease 0.5s both;
-  margin-top: 0;
-  /* Pinned at bottom now */
+  margin: 0 auto !important;
   width: 310px;
   max-width: 90vw;
   box-sizing: border-box;
@@ -7514,7 +7504,8 @@ select.b2b-form-control option {
 .home-store-section {
   position: relative !important;
   z-index: 2 !important;
-  background: radial-gradient(circle at 50% 10%, rgba(211, 84, 0, 0.15) 0%, #121212 70%) !important;
+  background: transparent !important;
+  background-color: transparent !important;
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
@@ -7529,7 +7520,8 @@ select.b2b-form-control option {
 .main-footer {
   position: relative !important;
   z-index: 2 !important;
-  background-color: var(--color-dark-bg) !important;
+  background: transparent !important;
+  background-color: transparent !important;
   opacity: 1 !important;
   visibility: visible !important;
 }

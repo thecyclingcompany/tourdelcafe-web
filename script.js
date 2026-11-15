@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loop = () => {
       const diff = targetFrame - currentFrame;
       if (Math.abs(diff) > 0.005) {
-        currentFrame += diff * 0.14;
+        currentFrame += diff * 0.15;
         render();
         requestAnimationFrame(loop);
       } else {
@@ -440,28 +440,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sincronización exacta con el scroll: Hero (0%) a Tienda Oficial (100%)
     const updateScroll = () => {
-      const tienda = document.getElementById('tienda-oficial');
-      let maxScroll = 1;
-      if (tienda) {
-        const rect = tienda.getBoundingClientRect();
-        const tiendaTop = rect.top + window.scrollY;
-        // La sección Tienda Oficial alcanza el 100% cuando su cabecera se alinea bajo la barra de navegación
-        maxScroll = Math.max(1, tiendaTop - 80);
+      const tiendaSection = document.getElementById('tienda-oficial');
+      let maxScrollTarget = 1;
+      if (tiendaSection) {
+        maxScrollTarget = Math.max(1, tiendaSection.offsetTop);
       } else {
-        maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        maxScrollTarget = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
       }
 
-      const scrollY = Math.max(0, window.scrollY);
-      const progress = Math.min(1, Math.max(0, scrollY / maxScroll));
-      targetFrame = progress * (TOTAL_FRAMES - 1);
+      const scrollProgress = Math.min(Math.max(window.scrollY / maxScrollTarget, 0), 1);
+      targetFrame = scrollProgress * (TOTAL_FRAMES - 1);
       startLoop();
-
-      // Desvanecimiento suave del póster estático inicial para fundir con el canvas animado en scroll
-      const heroPoster = document.querySelector('.hero-bg-poster');
-      if (heroPoster) {
-        const posterOpacity = Math.max(0, 1 - (scrollY / (window.innerHeight * 0.75)));
-        heroPoster.style.opacity = posterOpacity;
-      }
     };
 
     // Precarga progresiva en memoria
@@ -473,6 +462,9 @@ document.addEventListener('DOMContentLoaded', () => {
       firstImg.onload = () => {
         render();
       };
+      if (firstImg.complete && firstImg.naturalWidth > 0) {
+        render();
+      }
 
       // 2. Precargar los 99 fotogramas restantes
       for (let i = 1; i < TOTAL_FRAMES; i++) {
@@ -540,6 +532,38 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initSectionTitleFadeIn();
+
+  // ==========================================
+  // FADE-IN EN LOGOS DE SECCIÓN (EMIL-DESIGN-ENG & APPLE-DESIGN)
+  // IntersectionObserver para aparición suave (0.8s, cubic-bezier(0.22, 1, 0.36, 1))
+  // ==========================================
+  const initSectionLogoFadeIn = () => {
+    const logos = document.querySelectorAll('.section-logo-fadein');
+    if (!logos.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    logos.forEach(logo => {
+      const rect = logo.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        logo.classList.add('is-visible');
+      } else {
+        observer.observe(logo);
+      }
+    });
+  };
+
+  initSectionLogoFadeIn();
 
   // 2. Reveal on Scroll general
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
