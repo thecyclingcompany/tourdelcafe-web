@@ -129,13 +129,12 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
 
+        <!-- Scrollytelling Canvas de Fondo (Ciclista y recolector hacia el horizonte) -->
+        <canvas id="hero-scrollytelling-canvas" class="hero-scrollytelling-canvas" aria-hidden="true"></canvas>
+        <div id="hero-scrollytelling-overlay" class="hero-scrollytelling-overlay" aria-hidden="true"></div>
+
         <!-- HERO SECTION INMERSIVA -->
         <section id="inicio" class="hero-section">
-            <!-- Scrollytelling Canvas de Fondo (Ciclista y recolector hacia el horizonte) -->
-            <canvas id="hero-scrollytelling-canvas" class="hero-scrollytelling-canvas" aria-hidden="true"></canvas>
-
-            <!-- Dark gradient overlay -->
-            <div class="hero-overlay"></div>
 
             <!-- Logo Animation Overlay -->
             <video class="hero-logo-animation" src="assets/animacion-logo-tdc.mp4" autoplay muted loop playsinline
@@ -1610,7 +1609,7 @@
                 </div>
 
                 <!-- Paneles de Contenido -->
-                <div class="gf-tabs-content reveal-on-scroll">
+                <div class="gf-tabs-content reveal-on-scroll" style="display: none; min-height: 0;">
 
                     <!-- PESTAÑA: Acerca del GF (Oculto) -->
                     <div id="tab-acerca-gf" class="gf-tab-panel" style="display: none;">
@@ -2361,20 +2360,11 @@
         </section>
 
         <!-- SECCIÓN IMPACTO SOCIAL & LEGADO SOSTENIBLE -->
-        <section id="impacto-social" class="impacto-social-section section-padding reveal-on-scroll"
+        <section id="impacto-social" class="impacto-social-section section-padding"
             style="min-height: 300px; display: flex; align-items: center;">
 
-            <!-- Fondo Parallax (Don José en lateral derecho) -->
-            <div class="impacto-parallax-container" id="impacto-parallax-container" aria-hidden="true">
-                <div class="impacto-parallax-layer" id="impacto-parallax-layer">
-                    <img src="assets/don-jose-impacto-tdc.png" alt="Don José - Impacto Social Tour del Café"
-                        class="impacto-parallax-img">
-                    <div class="impacto-parallax-filter"></div>
-                </div>
-            </div>
-
             <div class="container-main">
-                <div class="section-header section-title-fadein" style="margin-bottom: 0;">
+                <div class="section-header" style="margin-bottom: 0;">
                     <div style="margin-bottom: 1.5rem; text-align: center;">
                         <span class="badge-tag">Impacto Social &amp; Legado Sostenible</span>
                     </div>
@@ -2396,9 +2386,9 @@
         <!-- ==========================================
              SECCIÓN DESTACADA: TIENDA OFICIAL MÍTICO COFFEE
              ========================================== -->
-        <section id="tienda-oficial" class="home-store-section section-padding reveal-on-scroll">
+        <section id="tienda-oficial" class="home-store-section section-padding">
             <div class="container-main">
-                <div class="home-store-header section-title-fadein" style="max-width: 960px;">
+                <div class="home-store-header" style="max-width: 960px;">
                     <!-- Store badge "TIENDA OFICIAL" en la parte superior -->
                     <div style="text-align: center; margin-bottom: 14px;">
                         <span class="store-badge" style="margin-bottom: 0;">TIENDA OFICIAL</span>

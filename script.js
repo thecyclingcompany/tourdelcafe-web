@@ -902,9 +902,15 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.classList.add('active');
 
         // Activar panel
+        let hasActive = false;
         gfPanels.forEach(panel => {
           if (panel.id === targetTabId) {
             panel.classList.add('active-panel');
+            hasActive = true;
+            const tabsContent = panel.closest('.gf-tabs-content');
+            if (tabsContent) {
+              tabsContent.style.display = 'block';
+            }
             // Si el panel contiene videos, iniciar reproducción segura
             const panelVideos = panel.querySelectorAll('video');
             panelVideos.forEach(v => {

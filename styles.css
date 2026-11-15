@@ -785,6 +785,8 @@ p,
    MAIN FOOTER
    ========================================== */
 .main-footer {
+  position: relative;
+  z-index: 2;
   background-color: var(--color-dark-bg);
   border-top: 2px solid var(--color-secondary-accent);
   color: var(--color-text-light);
@@ -1090,6 +1092,22 @@ p,
   background-color: #0e0d0c;
 }
 
+#hero-scrollytelling-overlay,
+.hero-scrollytelling-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+  background: linear-gradient(180deg,
+      rgba(10, 10, 10, 0.45) 0%,
+      rgba(10, 10, 10, 0.55) 60%,
+      rgba(10, 10, 10, 0.8) 100%);
+}
+
 .hero-video-bg {
   display: none !important;
 }
@@ -1128,17 +1146,7 @@ p,
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg,
-      rgba(10, 10, 10, 0.45) 0%,
-      rgba(10, 10, 10, 0.55) 60%,
-      rgba(10, 10, 10, 0.8) 100%);
-  z-index: 1;
-  pointer-events: none;
+  display: none !important;
 }
 
 /* ==========================================
@@ -1274,9 +1282,9 @@ p,
 .scrollytelling-section {
   position: relative;
   z-index: 2;
-  background: rgba(18, 18, 18, 0.65);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .scrollytelling-section::before {
@@ -1633,9 +1641,9 @@ p,
 #coffee-rides {
   position: relative;
   z-index: 2;
-  background: rgba(18, 18, 18, 0.65);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-top: none;
   overflow: hidden;
   scroll-margin-top: 80px;
@@ -1891,12 +1899,17 @@ p,
 #gran-fondo {
   position: relative;
   z-index: 2;
-  background: rgba(18, 18, 18, 0.65);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-top: none;
   overflow: clip;
   scroll-margin-top: 80px;
+}
+
+.gran-fondo-section:not(:has(.gf-tab-panel.active-panel)) .gf-tabs-nav {
+  margin-bottom: 0 !important;
+  border-bottom: none;
 }
 
 .gran-fondo-section::before {
@@ -1983,7 +1996,15 @@ p,
 
 .gf-tabs-content {
   position: relative;
-  min-height: 400px;
+  min-height: 0;
+}
+
+.gf-tabs-content:not(:has(.gf-tab-panel.active-panel)) {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .gf-tab-panel {
@@ -4130,9 +4151,9 @@ p,
    ========================================================================== */
 
 .impacto-social-section {
-  background-color: rgba(18, 18, 18, 0.65);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-top: none;
   position: relative;
   z-index: 2;
@@ -4146,16 +4167,9 @@ p,
   z-index: 2;
 }
 
-/* Contenedor del fondo con efecto parallax en el lateral derecho */
+/* Contenedor del fondo con efecto parallax (retirado) */
 .impacto-parallax-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
+  display: none !important;
 }
 
 .impacto-parallax-layer {
@@ -7462,4 +7476,32 @@ select.b2b-form-control option {
     padding: 13px 24px;
     font-size: 0.95rem;
   }
-}
+}
+
+/* ==========================================
+   RESTAURACIÓN Y CAPAS: TIENDA OFICIAL Y FOOTER
+   ========================================== */
+#tienda-oficial,
+.home-store-section {
+  position: relative !important;
+  z-index: 2 !important;
+  background: radial-gradient(circle at 50% 10%, rgba(211, 84, 0, 0.15) 0%, #121212 70%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.home-store-header {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.main-footer {
+  position: relative !important;
+  z-index: 2 !important;
+  background-color: var(--color-dark-bg) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
