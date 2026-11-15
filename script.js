@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('hero-scrollytelling-canvas');
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d', { alpha: false });
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const TOTAL_FRAMES = 100;
@@ -438,17 +438,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
+    // Cálculo dinámico del límite superior de la Tienda Oficial (100% del scrollytelling)
+    const getTiendaTarget = () => {
+      const tiendaSection = document.getElementById('tienda-oficial');
+      if (tiendaSection) {
+        const rect = tiendaSection.getBoundingClientRect();
+        const absTop = rect.top + window.scrollY;
+        // La animación culmina (100%) cuando la sección entra en el tercio superior de la vista
+        return Math.max(1, absTop - (window.innerHeight * 0.3));
+      }
+      return Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    };
+
+    let maxScrollTarget = 1;
+
     // Sincronización exacta con el scroll: Hero (0%) a Tienda Oficial (100%)
     const updateScroll = () => {
-      const tiendaSection = document.getElementById('tienda-oficial');
-      let maxScrollTarget = 1;
-      if (tiendaSection) {
-        maxScrollTarget = Math.max(1, tiendaSection.offsetTop);
-      } else {
-        maxScrollTarget = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      }
-
-      const scrollProgress = Math.min(Math.max(window.scrollY / maxScrollTarget, 0), 1);
+      maxScrollTarget = getTiendaTarget();
+      const scrollY = Math.max(0, window.scrollY);
+      const scrollProgress = Math.min(Math.max(scrollY / maxScrollTarget, 0), 1);
       targetFrame = scrollProgress * (TOTAL_FRAMES - 1);
       startLoop();
     };
@@ -460,9 +468,11 @@ document.addEventListener('DOMContentLoaded', () => {
       firstImg.src = FRAME_PATH(0);
       images[0] = firstImg;
       firstImg.onload = () => {
+        lastDrawnFrame = -1;
         render();
       };
       if (firstImg.complete && firstImg.naturalWidth > 0) {
+        lastDrawnFrame = -1;
         render();
       }
 
@@ -472,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = FRAME_PATH(i);
         img.onload = () => {
           if (Math.round(currentFrame) === i) {
+            lastDrawnFrame = -1;
             render();
           }
         };
@@ -491,6 +502,9 @@ document.addEventListener('DOMContentLoaded', () => {
         updateScroll();
       }, 100);
     }, { passive: true });
+    window.addEventListener('load', () => {
+      updateScroll();
+    });
 
     // Arranque
     resizeCanvas();
@@ -535,10 +549,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
   // FADE-IN EN LOGOS DE SECCIÓN (EMIL-DESIGN-ENG & APPLE-DESIGN)
-  // IntersectionObserver para aparición suave (0.8s, cubic-bezier(0.22, 1, 0.36, 1))
+  // IntersectionObserver para aparición suave con físicas fluidas
   // ==========================================
   const initSectionLogoFadeIn = () => {
-    const logos = document.querySelectorAll('.section-logo-fadein');
+    const logos = document.querySelectorAll('.reveal-logo');
     if (!logos.length) return;
 
     const observer = new IntersectionObserver((entries, obs) => {
@@ -550,16 +564,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      rootMargin: '0px 0px -50px 0px'
     });
 
     logos.forEach(logo => {
-      const rect = logo.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        logo.classList.add('is-visible');
-      } else {
-        observer.observe(logo);
-      }
+      observer.observe(logo);
     });
   };
 

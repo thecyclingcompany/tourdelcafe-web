@@ -784,11 +784,13 @@ p,
 /* ==========================================
    MAIN FOOTER
    ========================================== */
+footer,
 .main-footer {
   position: relative;
-  z-index: 2;
-  background-color: var(--color-dark-bg);
-  border-top: 2px solid var(--color-secondary-accent);
+  z-index: 10 !important;
+  background-color: #0D0D0D !important;
+  background: #0D0D0D !important;
+  border-top: 1px solid #2A2A2A !important;
   color: var(--color-text-light);
   padding: 80px 0 40px;
 }
@@ -1081,7 +1083,8 @@ p,
   background-color: transparent !important;
   margin: 0;
   padding: 0;
-  z-index: 2;
+  z-index: auto !important;
+  isolation: auto !important;
 }
 
 #hero-scrollytelling-canvas,
@@ -1120,6 +1123,8 @@ p,
   display: none !important;
 }
 
+.hero-section video,
+.hero-section source,
 .hero-logo-animation {
   position: absolute;
   top: 50%;
@@ -1133,7 +1138,9 @@ p,
   max-width: none;
   z-index: 2;
   object-fit: cover;
-  mix-blend-mode: screen;
+  mix-blend-mode: screen !important;
+  background: transparent !important;
+  background-color: transparent !important;
   pointer-events: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -1168,16 +1175,19 @@ p,
   transform: translateY(0);
 }
 
-.section-logo-fadein {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+/* ==========================================
+   ANIMACIÓN FADE-IN EN LOGOS DE SECCIÓN (APPLE & EMIL DESIGN)
+   ========================================== */
+.reveal-logo {
+  opacity: 0 !important;
+  transform: translateY(28px) scale(0.97) !important;
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) !important;
   will-change: opacity, transform;
 }
 
-.section-logo-fadein.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal-logo.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
 }
 
 .hero-content {
@@ -7517,11 +7527,13 @@ select.b2b-form-control option {
   transform: none !important;
 }
 
+footer,
 .main-footer {
   position: relative !important;
-  z-index: 2 !important;
-  background: transparent !important;
-  background-color: transparent !important;
+  z-index: 10 !important;
+  background-color: #0D0D0D !important;
+  background: #0D0D0D !important;
+  border-top: 1px solid #2A2A2A !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
