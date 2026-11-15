@@ -1308,12 +1308,21 @@ footer,
 /* ==========================================
    SCROLLYTELLING & MANIFIESTO
    ========================================== */
-.scrollytelling-section {
+.scrollytelling-section,
+#acerca {
   position: relative;
   z-index: 2;
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+  padding-bottom: 58px !important; /* Reducción del 10% del alto inferior (de 64px a 58px) */
+}
+
+@media (max-width: 767px) {
+  .scrollytelling-section,
+  #acerca {
+    padding-bottom: 30px !important; /* Reducción proporcional en móvil (de 34px a 30px) */
+  }
 }
 
 .scrollytelling-section::before {
@@ -1350,21 +1359,26 @@ footer,
   }
 }
 
-.manifesto-card {
-  background: rgba(24, 22, 20, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.manifesto-card,
+.manifesto-cards-grid .manifesto-card {
+  background: rgba(24, 22, 20, 0.70) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
+  margin-top: 0;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-.manifesto-card:hover {
+.manifesto-card:hover,
+.manifesto-cards-grid .manifesto-card:hover {
   transform: translateY(-6px);
+  background: rgba(30, 27, 24, 0.78) !important;
   border-color: rgba(211, 84, 0, 0.55);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
 }
@@ -1374,7 +1388,7 @@ footer,
   aspect-ratio: 16 / 10;
   overflow: hidden;
   position: relative;
-  background: #12100e;
+  background: transparent;
 }
 
 .manifesto-card-img {
@@ -4458,8 +4472,8 @@ footer,
   display: inline-block;
 }
 
-/* MANIFIESTO CARD */
-.manifesto-card {
+/* MANIFIESTO CARD (LEGACY BANNER) */
+.manifesto-legacy-card {
   background: linear-gradient(135deg, rgba(25, 25, 25, 0.8) 0%, rgba(15, 15, 15, 0.9) 100%);
   border: 1px solid var(--color-border-dark);
   border-left: 4px solid var(--color-accent);
