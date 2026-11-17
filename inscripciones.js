@@ -1228,6 +1228,57 @@
 
       showToast('¡Inscripción de cortesía confirmada! Redirigiendo...', false);
       const reg = data.registration;
+
+      // Sincronizar participantes en Supabase como APROBADA
+      if (window.TourCafeSupabase && typeof window.TourCafeSupabase.guardarInscripcion === 'function') {
+        try {
+          const isGenesisEvent = STATE.selectedEvent === 'genesis-coffee-ride' || !STATE.selectedEvent;
+          const evName = isGenesisEvent ? 'Genesis Coffee Ride' : 'Gran Fondo Tour del Café';
+          const catName = STATE.selectedCategory?.name || (STATE.genesisOption === 'vip' ? 'Experiencia VIP' : 'Standard');
+          const modalidad = check.participants.length === 4 ? 'Equipo' : (check.participants.length === 2 ? 'Pareja' : 'Individual');
+          const invoiceNum = reg.invoiceNumber || ('TDC-CORTESIA-' + Date.now().toString(36).toUpperCase());
+
+          const supabaseRows = check.participants.map((p, idx) => ({
+            referencia_pago: invoiceNum,
+            evento: evName,
+            categoria: catName,
+            modalidad: modalidad,
+            nombre_equipo: check.teamName || null,
+            nombre_completo: (p.fullName || `${p.nombres || ''} ${p.apellidos || ''}`).trim() || `Participante ${idx + 1}`,
+            tipo_documento: (p.docType || 'CC').toUpperCase(),
+            numero_documento: String(p.docNumber || ''),
+            email: (p.email || payer.email || '').trim(),
+            telefono: (p.phone || payer.phone || '').trim(),
+            ciudad: p.city || null,
+            pais: p.country || 'Colombia',
+            talla_jersey: p.jerseySize || (hasJersey ? 'Por definir' : null),
+            eps_seguro: p.eps || null,
+            tipo_sangre: p.bloodType || null,
+            contacto_emergencia: p.emergencyContactName || null,
+            telefono_emergencia: p.emergencyContactPhone || null,
+            cupon_aplicado: STATE.appliedCoupon ? STATE.appliedCoupon.code : 'CORTESIA-100',
+            valor_pagado: 0,
+            estado_pago: 'APROBADA',
+            epayco_ref: reg.refPayco || 'CORTESIA-100',
+            datos_adicionales: {
+              birthDate: p.birthDate,
+              gender: p.gender,
+              department: p.department,
+              medicalNotes: p.medicalNotes,
+              participantIndex: idx + 1,
+              genesisOption: STATE.genesisOption,
+              includeJersey: hasJersey,
+              tipo_registro: 'CORTESIA_100'
+            }
+          }));
+
+          await window.TourCafeSupabase.guardarInscripcion(supabaseRows);
+          console.log('[Supabase] Participantes de cortesía registrados en Supabase:', invoiceNum);
+        } catch (sbErr) {
+          console.warn('[Supabase Cortesía Sync Error]:', sbErr);
+        }
+      }
+
       setTimeout(() => {
         window.location.href = `/checkout/resultado.html?ref_payco=${encodeURIComponent(reg.refPayco)}&invoice=${encodeURIComponent(reg.invoiceNumber)}&cortesia=true`;
       }, 1000);
@@ -1571,6 +1622,54 @@
       const jerseyText = (STATE.genesisOption === 'standard' && STATE.includeJersey) ? ' + Jersey Oficial' : (STATE.genesisOption === 'vip' ? ' (Jersey Incluido)' : '');
       const count = check.participants.length;
 
+      // Guardar participantes en Supabase con estado PENDIENTE antes de ir a ePayco
+      if (window.TourCafeSupabase && typeof window.TourCafeSupabase.guardarInscripcion === 'function') {
+        try {
+          const isGenesisEvent = STATE.selectedEvent === 'genesis-coffee-ride' || !STATE.selectedEvent;
+          const evName = isGenesisEvent ? 'Genesis Coffee Ride' : 'Gran Fondo Tour del Café';
+          const catName = STATE.selectedCategory?.name || (STATE.genesisOption === 'vip' ? 'Experiencia VIP' : 'Standard');
+          const modalidad = count === 4 ? 'Equipo' : (count === 2 ? 'Pareja' : 'Individual');
+
+          const supabasePendingRows = check.participants.map((p, idx) => ({
+            referencia_pago: invoiceNumber,
+            evento: evName,
+            categoria: catName,
+            modalidad: modalidad,
+            nombre_equipo: check.teamName || null,
+            nombre_completo: (p.fullName || `${p.nombres || ''} ${p.apellidos || ''}`).trim() || `Participante ${idx + 1}`,
+            tipo_documento: (p.docType || 'CC').toUpperCase(),
+            numero_documento: String(p.docNumber || ''),
+            email: (p.email || payer.email || '').trim(),
+            telefono: (p.phone || payer.phone || '').trim(),
+            ciudad: p.city || null,
+            pais: p.country || 'Colombia',
+            talla_jersey: p.jerseySize || (hasJersey ? 'Por definir' : null),
+            eps_seguro: p.eps || null,
+            tipo_sangre: p.bloodType || null,
+            contacto_emergencia: p.emergencyContactName || null,
+            telefono_emergencia: p.emergencyContactPhone || null,
+            cupon_aplicado: STATE.appliedCoupon ? STATE.appliedCoupon.code : null,
+            valor_pagado: totalAmount || 0,
+            estado_pago: 'PENDIENTE',
+            epayco_ref: null,
+            datos_adicionales: {
+              birthDate: p.birthDate,
+              gender: p.gender,
+              department: p.department,
+              medicalNotes: p.medicalNotes,
+              participantIndex: idx + 1,
+              genesisOption: STATE.genesisOption,
+              includeJersey: hasJersey
+            }
+          }));
+
+          await window.TourCafeSupabase.guardarInscripcion(supabasePendingRows);
+          console.log('[Supabase] Registro previo guardado en Supabase como PENDIENTE:', invoiceNumber);
+        } catch (sbErr) {
+          console.warn('[Supabase Pre-Pago Sync Error]:', sbErr);
+        }
+      }
+
       // Validación y valores por defecto para datos de facturación tomados del formulario
       const payerFullName = (
         payer.nombres && payer.apellidos
@@ -1601,8 +1700,8 @@
         external: 'false', // Modal nativo dentro del portal
         test: true, // Booleano nativo explícito en el objeto data del checkout
 
-        // Metadatos
-        extra1: `Genesis Coffee Ride | ${optionLabel}`,
+        // Metadatos - Enviar invoiceNumber en extra1 para conciliación directa de pago
+        extra1: invoiceNumber,
         extra2: `Titular: ${payerFullName} | Tel: ${payer.phone}`,
         extra3: JSON.stringify({
           type: 'registration',

@@ -1120,6 +1120,9 @@
           <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelEventAll()" title="Descargar todos los inscritos en Gran Fondo">
             Base Gran Fondo (.csv)
           </button>
+          <button type="button" class="btn-export-all" onclick="AdminApp.exportSupabaseDirect()" title="Descargar todas las inscripciones en tiempo real desde Supabase" style="background: rgba(46, 204, 113, 0.15); border-color: rgba(46, 204, 113, 0.4); color: #2ecc71;">
+            ⚡ Base Supabase (.csv)
+          </button>
         </div>
       </div>
 
@@ -1133,6 +1136,9 @@
           <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelEventAll()" title="Descargar toda la base de Coffee Ride">
             Base Coffee Ride (.csv)
           </button>
+          <button type="button" class="btn-export-all" onclick="AdminApp.exportSupabaseDirect()" title="Descargar todas las inscripciones en tiempo real desde Supabase" style="background: rgba(46, 204, 113, 0.15); border-color: rgba(46, 204, 113, 0.4); color: #2ecc71;">
+            ⚡ Base Supabase (.csv)
+          </button>
         </div>
       </div>
 
@@ -1141,6 +1147,9 @@
         <div style="display: flex; gap: 8px;">
           <button type="button" class="btn-export-all" onclick="AdminApp.exportExcelAll()" title="Descargar base consolidada">
             Base Consolidada (.csv)
+          </button>
+          <button type="button" class="btn-export-all" onclick="AdminApp.exportSupabaseDirect()" title="Descargar todas las inscripciones en tiempo real desde Supabase" style="background: rgba(46, 204, 113, 0.15); border-color: rgba(46, 204, 113, 0.4); color: #2ecc71;">
+            ⚡ Base Supabase (.csv)
           </button>
         </div>
       </div>
@@ -1191,9 +1200,12 @@
             </optgroup>
           </select>
 
-          <!-- Filtro Pago -->
+          <!-- Filtro Pago / Estado Supabase -->
           <select id="filter-gf-payment" class="filter-select" onchange="AdminApp.applyFilters()">
-            <option value="all">Todos los Pagos</option>
+            <option value="all">Todos los Estados / Pagos</option>
+            <option value="APROBADA">Aprobadas / Pagadas</option>
+            <option value="PENDIENTE">Pendientes de Pago</option>
+            <option value="RECHAZADA">Rechazadas / Canceladas</option>
             <option value="epayco">Aprobado ePayco</option>
             <option value="courtesy">Cortesía 100%</option>
           </select>
@@ -1262,9 +1274,12 @@
             <option value="without-jersey">Sin Jersey Adicional</option>
           </select>
 
-          <!-- Filtro Pago -->
+          <!-- Filtro Pago / Estado Supabase -->
           <select id="filter-cr-payment" class="filter-select" onchange="AdminApp.applyFilters()">
-            <option value="all">Todos los Pagos</option>
+            <option value="all">Todos los Estados / Pagos</option>
+            <option value="APROBADA">Aprobadas / Pagadas</option>
+            <option value="PENDIENTE">Pendientes de Pago</option>
+            <option value="RECHAZADA">Rechazadas / Canceladas</option>
             <option value="epayco">Aprobado ePayco</option>
             <option value="courtesy">Cortesía 100%</option>
           </select>
@@ -1535,6 +1550,10 @@
     <span id="toast-message">Operación realizada</span>
   </div>
 
+  <!-- SDK Supabase v2 & Cliente Oficial -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-client.js"></script>
+
   <!-- Lógica Principal del Dashboard -->
   <script>
     const AdminApp = (() => {
@@ -1614,17 +1633,147 @@
       };
 
       // ==========================================
-      // CARGA DE DATOS
+      // CARGA DE DATOS (SUPABASE REALTIME + FALLBACK LOCAL)
       // ==========================================
       const loadRegistrations = async () => {
         try {
-          const res = await fetch('/api/admin/registrations', { headers: getAuthHeaders() });
-          const data = await res.json();
+          let loadedFromSupabase = false;
+          let sbData = null;
 
-          if (data.success) {
-            rawRegistrations = data.registrations || [];
+          // 1. Intentar consulta directa a Supabase (ordenada cronológicamente DESC)
+          try {
+            const sbClient = window.supabaseClient || (window.TourCafeSupabase && window.TourCafeSupabase.getClient());
+            if (sbClient) {
+              const res = await sbClient.from('inscripciones').select('*').order('created_at', { ascending: false });
+              if (!res.error && Array.isArray(res.data) && res.data.length > 0) {
+                sbData = res.data;
+                loadedFromSupabase = true;
+                console.log(`[Dashboard Supabase] ${sbData.length} registros cargados en tiempo real.`);
+              }
+            }
+          } catch (sbErr) {
+            console.warn('[Dashboard Supabase Fetch Error]:', sbErr);
+          }
 
-            // Aplanar corredores individuales con los metadatos de su orden y evento
+          // 2. Consulta al backend local para cupones y fallback
+          let localData = null;
+          try {
+            const res = await fetch('/api/admin/registrations', { headers: getAuthHeaders() });
+            localData = await res.json();
+          } catch (locErr) {
+            console.warn('[Dashboard Local Fetch Error]:', locErr);
+          }
+
+          if (loadedFromSupabase && sbData) {
+            flattenedRiders = [];
+            const groupedByRef = {};
+
+            sbData.forEach(row => {
+              const evLower = (row.evento || '').toLowerCase();
+              const isCR = evLower.includes('genesis') || evLower.includes('coffee');
+              const isJr = evLower.includes('junior');
+              const ev = isCR ? 'coffee-ride' : (isJr ? 'junior' : 'gran-fondo');
+              const catLower = (row.categoria || '').toLowerCase();
+              const isVIP = isCR && (catLower.includes('vip') || (row.datos_adicionales && row.datos_adicionales.genesisOption === 'vip'));
+              const hasJersey = isVIP || Boolean(row.talla_jersey && !row.talla_jersey.toLowerCase().includes('no') && !row.talla_jersey.toLowerCase().includes('solicitado'));
+
+              const names = (row.nombre_completo || '').trim().split(/\s+/);
+              const nombres = names.length > 1 ? names.slice(0, -1).join(' ') : (row.nombre_completo || '');
+              const apellidos = names.length > 1 ? names.slice(-1).join(' ') : '';
+              const state = (row.estado_pago || 'PENDIENTE').toUpperCase();
+              const isCourtesy = (row.cupon_aplicado && row.valor_pagado === 0) || (row.epayco_ref && row.epayco_ref.startsWith('CORTESIA-'));
+
+              const riderObj = {
+                id: row.id,
+                nombres,
+                apellidos,
+                fullName: row.nombre_completo || 'Ciclista',
+                docType: row.tipo_documento || 'CC',
+                docNumber: row.numero_documento || '',
+                birthDate: (row.datos_adicionales && row.datos_adicionales.birthDate) || '',
+                gender: (row.datos_adicionales && row.datos_adicionales.gender) || (catLower.includes('fem') ? 'F' : 'M'),
+                bloodType: row.tipo_sangre || '',
+                phone: row.telefono || '',
+                email: row.email || '',
+                country: row.pais || 'Colombia',
+                department: (row.datos_adicionales && row.datos_adicionales.department) || '',
+                city: row.ciudad || '',
+                eps: row.eps_seguro || '',
+                emergencyContactName: row.contacto_emergencia || '',
+                emergencyContactPhone: row.telefono_emergencia || '',
+                medicalNotes: (row.datos_adicionales && row.datos_adicionales.medicalNotes) || 'Ninguna',
+                jerseySize: row.talla_jersey || '',
+                dorsalNumber: (row.datos_adicionales && row.datos_adicionales.dorsalNumber) || '',
+                registrationId: row.referencia_pago,
+
+                orderEvent: ev,
+                orderInvoice: row.referencia_pago,
+                orderRef: row.epayco_ref || 'N/A',
+                orderDate: row.created_at,
+                orderRoute: isVIP ? 'vip' : (catLower.includes('macchiato') ? 'macchiato' : (catLower.includes('espresso') ? 'espresso' : 'standard')),
+                orderRouteName: row.categoria || (isVIP ? 'Experiencia VIP' : 'Standard'),
+                orderCategory: row.categoria,
+                orderCategoryName: row.categoria,
+                orderPaymentType: isCourtesy ? 'COURTESY' : 'EPAYCO',
+                orderPaymentState: state,
+                orderTotalPaid: parseFloat(row.valor_pagado) || 0,
+                orderBaseAmount: parseFloat(row.valor_pagado) || 0,
+                orderCoupon: row.cupon_aplicado || null,
+                orderDiscountPercent: isCourtesy ? 100 : 0,
+                payerEmail: row.email,
+                payerPhone: row.telefono,
+                participantIndex: (row.datos_adicionales && row.datos_adicionales.participantIndex) || 1,
+                totalInOrder: 1,
+                orderTeamName: row.nombre_equipo || null,
+
+                crOption: isVIP ? 'vip' : 'standard',
+                crHasJersey: hasJersey,
+                crJerseyType: isVIP ? 'vip_included' : (hasJersey ? 'addon' : 'none'),
+                crJerseySize: row.talla_jersey || (hasJersey ? 'Por asignar' : 'No solicitado'),
+                rawSupabase: row
+              };
+
+              flattenedRiders.push(riderObj);
+
+              if (!groupedByRef[row.referencia_pago]) {
+                groupedByRef[row.referencia_pago] = {
+                  invoiceNumber: row.referencia_pago,
+                  refPayco: row.epayco_ref,
+                  event: ev,
+                  paymentType: isCourtesy ? 'COURTESY' : 'EPAYCO',
+                  totalAmount: parseFloat(row.valor_pagado) || 0,
+                  couponCode: row.cupon_aplicado,
+                  participants: []
+                };
+              }
+              groupedByRef[row.referencia_pago].participants.push(riderObj);
+            });
+
+            rawRegistrations = Object.values(groupedByRef);
+
+            // Suscripción Realtime en Supabase si no está activa
+            if (!window._supabaseRealtimeActive) {
+              const sbClient = window.supabaseClient || (window.TourCafeSupabase && window.TourCafeSupabase.getClient());
+              if (sbClient && typeof sbClient.channel === 'function') {
+                try {
+                  sbClient.channel('admin-inscripciones-realtime')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'inscripciones' }, () => {
+                      console.log('[Supabase Realtime] Cambio detectado en inscripciones. Recargando...');
+                      loadRegistrations();
+                    })
+                    .subscribe();
+                  window._supabaseRealtimeActive = true;
+                } catch (e) {
+                  console.warn('[Supabase Realtime Sub]:', e);
+                }
+              }
+            }
+
+            updateKPIs(localData?.kpis);
+            applyFilters();
+          } else if (localData && localData.success) {
+            // Fallback a almacenamiento local si Supabase no tiene registros aún o falló la red
+            rawRegistrations = localData.registrations || [];
             flattenedRiders = [];
             rawRegistrations.forEach(order => {
               const ev = order.event || classifyEvent(order);
@@ -1633,8 +1782,6 @@
                 const nombres = p.nombres || (p.fullName ? p.fullName.trim().split(/\s+/).slice(0, -1).join(' ') : '');
                 const apellidos = p.apellidos || (p.fullName ? p.fullName.trim().split(/\s+/).slice(-1).join(' ') : '');
                 const fullName = p.fullName || `${nombres} ${apellidos}`.trim();
-
-                // Detección de campos de Coffee Ride
                 const isCR = ev === 'coffee-ride';
                 const isVIP = isCR && (order.route === 'vip' || order.genesisOption === 'vip' || (order.categoryName && order.categoryName.toLowerCase().includes('vip')));
                 const hasJersey = isVIP || Boolean(order.hasJersey || order.includeJersey || p.hasJersey || (p.jerseySize && !p.jerseySize.toLowerCase().includes('no')));
@@ -1656,6 +1803,7 @@
                   orderCategory: order.category || order.categoryId,
                   orderCategoryName: order.categoryName || (ev === 'coffee-ride' ? (isVIP ? 'Experiencia VIP' : 'Inscripción Standard') : order.category),
                   orderPaymentType: order.paymentType || (order.totalAmount === 0 ? 'COURTESY' : 'EPAYCO'),
+                  orderPaymentState: (order.paymentType === 'COURTESY' || order.totalAmount === 0 || order.status === 'CONFIRMED') ? 'APROBADA' : 'PENDIENTE',
                   orderTotalPaid: order.totalAmount,
                   orderBaseAmount: order.baseAmount || order.totalAmount,
                   orderCoupon: order.couponCode || null,
@@ -1665,7 +1813,6 @@
                   participantIndex: idx + 1,
                   totalInOrder: participants.length,
                   orderTeamName: order.teamName || p.teamName || null,
-                  // Metadatos Coffee Ride
                   crOption: isVIP ? 'vip' : 'standard',
                   crHasJersey: hasJersey,
                   crJerseyType: jerseyType,
@@ -1674,8 +1821,7 @@
               });
             });
 
-            // Actualizar KPIs y renderizar
-            updateKPIs(data.kpis);
+            updateKPIs(localData.kpis);
             applyFilters();
           }
         } catch (err) {
@@ -1904,8 +2050,14 @@
             if (category !== 'individual-masc' && category !== 'individual-fem' && r.orderCategory !== category) return false;
           }
 
-          if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
-          if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
+          if (payment !== 'all') {
+            const st = (r.orderPaymentState || '').toUpperCase();
+            if (payment === 'APROBADA' && st !== 'APROBADA' && st !== 'CONFIRMED') return false;
+            if (payment === 'PENDIENTE' && st !== 'PENDIENTE') return false;
+            if (payment === 'RECHAZADA' && st !== 'RECHAZADA') return false;
+            if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
+            if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
+          }
 
           if (search) {
             const matchName = (r.fullName || '').toLowerCase().includes(search);
@@ -1941,8 +2093,14 @@
           if (jersey === 'with-jersey' && !r.crHasJersey) return false;
           if (jersey === 'without-jersey' && r.crHasJersey) return false;
 
-          if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
-          if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
+          if (payment !== 'all') {
+            const st = (r.orderPaymentState || '').toUpperCase();
+            if (payment === 'APROBADA' && st !== 'APROBADA' && st !== 'CONFIRMED') return false;
+            if (payment === 'PENDIENTE' && st !== 'PENDIENTE') return false;
+            if (payment === 'RECHAZADA' && st !== 'RECHAZADA') return false;
+            if (payment === 'epayco' && (r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100)) return false;
+            if (payment === 'courtesy' && r.orderPaymentType !== 'COURTESY' && r.orderDiscountPercent !== 100) return false;
+          }
 
           if (search) {
             const matchName = (r.fullName || '').toLowerCase().includes(search);
@@ -1988,9 +2146,17 @@
             : `<span class="route-chip route-espresso">115K Espresso</span>`;
 
           const isCourtesy = r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100;
-          const payBadge = isCourtesy
-            ? `<span class="pay-badge pay-courtesy">🎁 Cortesía 100%</span>`
-            : `<span class="pay-badge pay-epayco">✓ ePayco Aprobado</span>`;
+          let payBadge = '';
+          const stGF = (r.orderPaymentState || '').toUpperCase();
+          if (stGF === 'PENDIENTE') {
+            payBadge = `<span class="pay-badge" style="background: rgba(243, 156, 18, 0.15); color: #f39c12; border: 1px solid rgba(243, 156, 18, 0.3);">⏳ PENDIENTE</span>`;
+          } else if (stGF === 'RECHAZADA') {
+            payBadge = `<span class="pay-badge" style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.3);">✕ RECHAZADA</span>`;
+          } else if (isCourtesy) {
+            payBadge = `<span class="pay-badge pay-courtesy">🎁 Cortesía 100%</span>`;
+          } else {
+            payBadge = `<span class="pay-badge pay-epayco">✓ Aprobado ePayco</span>`;
+          }
 
           const couponInfo = r.orderCoupon ? `<div style="font-size: 10px; color: var(--accent-hover); font-family: var(--font-mono); margin-top: 2px;">Cupón: ${r.orderCoupon}</div>` : '';
           const regDate = r.orderDate ? new Date(r.orderDate).toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A';
@@ -2085,9 +2251,17 @@
           }
 
           const isCourtesy = r.orderPaymentType === 'COURTESY' || r.orderDiscountPercent === 100;
-          const payBadge = isCourtesy
-            ? `<span class="pay-badge pay-courtesy">🎁 Cortesía 100%</span>`
-            : `<span class="pay-badge pay-epayco">✓ ePayco Aprobado</span>`;
+          let payBadge = '';
+          const stGF = (r.orderPaymentState || '').toUpperCase();
+          if (stGF === 'PENDIENTE') {
+            payBadge = `<span class="pay-badge" style="background: rgba(243, 156, 18, 0.15); color: #f39c12; border: 1px solid rgba(243, 156, 18, 0.3);">⏳ PENDIENTE</span>`;
+          } else if (stGF === 'RECHAZADA') {
+            payBadge = `<span class="pay-badge" style="background: rgba(231, 76, 60, 0.15); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.3);">✕ RECHAZADA</span>`;
+          } else if (isCourtesy) {
+            payBadge = `<span class="pay-badge pay-courtesy">🎁 Cortesía 100%</span>`;
+          } else {
+            payBadge = `<span class="pay-badge pay-epayco">✓ Aprobado ePayco</span>`;
+          }
 
           const couponInfo = r.orderCoupon ? `<div style="font-size: 10px; color: var(--accent-hover); font-family: var(--font-mono); margin-top: 2px;">Cupón: ${r.orderCoupon}</div>` : '';
           const regDate = r.orderDate ? new Date(r.orderDate).toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' }) : 'N/A';
@@ -2234,6 +2408,7 @@
           'Acreditación ID',
           'Factura Consecutivo',
           'Referencia Pago',
+          'Estado Pago (Supabase)',
           'Tipo de Pago',
           'Valor Pagado (COP)',
           'Cupón Aplicado',
@@ -2264,6 +2439,7 @@
           'Dorsal',
           'Factura Consecutivo',
           'Referencia Pago',
+          'Estado Pago (Supabase)',
           'Tipo de Pago',
           'Valor Pagado (COP)',
           'Cupón Aplicado',
@@ -2307,6 +2483,7 @@
               escapeCSV(r.dorsalNumber || r.registrationId || ''),
               escapeCSV(r.orderInvoice || ''),
               escapeCSV(r.orderRef || ''),
+              escapeCSV(r.orderPaymentState || (r.orderPaymentType === 'COURTESY' ? 'APROBADA' : 'PENDIENTE')),
               escapeCSV(r.orderPaymentType === 'COURTESY' ? 'Cortesía 100%' : 'ePayco Aprobado'),
               escapeCSV(r.orderTotalPaid || 0),
               escapeCSV(r.orderCoupon || 'Ninguno'),
@@ -2339,6 +2516,7 @@
               escapeCSV(r.dorsalNumber || ''),
               escapeCSV(r.orderInvoice || ''),
               escapeCSV(r.orderRef || ''),
+              escapeCSV(r.orderPaymentState || (r.orderPaymentType === 'COURTESY' ? 'APROBADA' : 'PENDIENTE')),
               escapeCSV(r.orderPaymentType === 'COURTESY' ? 'Cortesía 100%' : 'ePayco Aprobado'),
               escapeCSV(r.orderTotalPaid || 0),
               escapeCSV(r.orderCoupon || 'Ninguno'),
@@ -2417,6 +2595,97 @@
       const exportExcelAll = () => {
         const dateStr = new Date().toISOString().slice(0, 10);
         exportToCSV(flattenedRiders, `Base_Consolidada_Inscritos_TDC_${dateStr}.csv`, 'gran-fondo');
+      };
+
+      const exportSupabaseDirect = async () => {
+        try {
+          const sbClient = window.supabaseClient || (window.TourCafeSupabase && window.TourCafeSupabase.getClient());
+          if (!sbClient) {
+            alert('Cliente de Supabase no disponible en este momento.');
+            return;
+          }
+          const { data, error } = await sbClient.from('inscripciones').select('*').order('created_at', { ascending: false });
+          if (error || !data || data.length === 0) {
+            alert('No hay inscripciones registradas en Supabase.');
+            return;
+          }
+
+          const headers = [
+            'Referencia Pago',
+            'Estado Pago',
+            'Referencia ePayco',
+            'Evento',
+            'Categoría',
+            'Modalidad',
+            'Nombre Equipo',
+            'Nombre Completo',
+            'Tipo Documento',
+            'Número Documento',
+            'Email',
+            'Teléfono',
+            'Ciudad',
+            'País',
+            'Talla Jersey',
+            'EPS / Seguro',
+            'Tipo Sangre RH',
+            'Contacto Emergencia',
+            'Teléfono Emergencia',
+            'Cupón Aplicado',
+            'Valor Pagado (COP)',
+            'Fecha Registro'
+          ];
+
+          const escapeCSV = (val) => {
+            if (val === null || val === undefined) return '""';
+            const str = String(val).replace(/"/g, '""');
+            return `"${str}"`;
+          };
+
+          const rows = data.map(r => [
+            escapeCSV(r.referencia_pago || ''),
+            escapeCSV(r.estado_pago || 'PENDIENTE'),
+            escapeCSV(r.epayco_ref || 'N/A'),
+            escapeCSV(r.evento || ''),
+            escapeCSV(r.categoria || ''),
+            escapeCSV(r.modalidad || 'Individual'),
+            escapeCSV(r.nombre_equipo || ''),
+            escapeCSV(r.nombre_completo || ''),
+            escapeCSV(r.tipo_documento || 'CC'),
+            escapeCSV(r.numero_documento || ''),
+            escapeCSV(r.email || ''),
+            escapeCSV(r.telefono || ''),
+            escapeCSV(r.ciudad || ''),
+            escapeCSV(r.pais || 'Colombia'),
+            escapeCSV(r.talla_jersey || 'N/A'),
+            escapeCSV(r.eps_seguro || ''),
+            escapeCSV(r.tipo_sangre || ''),
+            escapeCSV(r.contacto_emergencia || ''),
+            escapeCSV(r.telefono_emergencia || ''),
+            escapeCSV(r.cupon_aplicado || 'Ninguno'),
+            escapeCSV(r.valor_pagado || 0),
+            escapeCSV(r.created_at || '')
+          ]);
+
+          const csvContent = '\uFEFF' + [
+            headers.map(escapeCSV).join(';'),
+            ...rows.map(row => row.join(';'))
+          ].join('\r\n');
+
+          const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          const dateStr = new Date().toISOString().slice(0, 10);
+          a.href = url;
+          a.download = `Inscripciones_Supabase_Oficial_TDC_${dateStr}.csv`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+
+          showToast(`Exportación completada: ${data.length} inscripciones de Supabase.`);
+        } catch (err) {
+          alert('Error exportando datos de Supabase: ' + err.message);
+        }
       };
 
       // ==========================================
@@ -2636,7 +2905,8 @@
         renderCouponsTable,
         exportExcelFiltered,
         exportExcelEventAll,
-        exportExcelAll
+        exportExcelAll,
+        exportSupabaseDirect
       };
     })();
   </script>

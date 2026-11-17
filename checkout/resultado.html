@@ -308,12 +308,35 @@
         © 2026 Tour del Café & Mítico Coffee. Todos los derechos reservados. | Pagos seguros procesados por ePayco Colombia.
     </footer>
 
+    <!-- SDK Supabase v2 & Cliente Oficial -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../supabase-client.js"></script>
+
     <!-- Lógica de Consulta y Renderizado -->
     <script>
         (function() {
             const container = document.getElementById('resultado-container');
             const urlParams = new URLSearchParams(window.location.search);
             const refPayco = urlParams.get('ref_payco') || urlParams.get('x_ref_payco');
+            const invoiceParam = urlParams.get('invoice') || urlParams.get('x_id_invoice');
+
+            // Helper para sincronizar actualización de estado en Supabase
+            const syncSupabasePayment = async (refPago, estadoPago, epaycoRefId, valor) => {
+                if (!refPago) return;
+                try {
+                    if (window.TourCafeSupabase && typeof window.TourCafeSupabase.actualizarEstadoPago === 'function') {
+                        const res = await window.TourCafeSupabase.actualizarEstadoPago(refPago, estadoPago, epaycoRefId, valor);
+                        console.log('[Supabase Sync Resultado]:', refPago, estadoPago, res);
+                    } else if (window.supabaseClient) {
+                        const payload = { estado_pago: estadoPago };
+                        if (epaycoRefId) payload.epayco_ref = epaycoRefId;
+                        if (valor !== undefined && valor !== null) payload.valor_pagado = parseFloat(valor) || 0;
+                        await window.supabaseClient.from('inscripciones').update(payload).eq('referencia_pago', refPago);
+                    }
+                } catch (e) {
+                    console.warn('[Supabase Sync Error]:', e);
+                }
+            };
 
             const formatCOP = (val) => {
                 if (!val) return '$ 0 COP';
@@ -362,10 +385,16 @@
             // Manejo especial de Cortesía 100% (sin pasar por ePayco)
             const isCourtesyDirect = (refPayco && refPayco.startsWith('CORTESIA-')) || urlParams.get('cortesia') === 'true';
             if (isCourtesyDirect) {
+                const targetRef = invoiceParam || refPayco || 'TDC-CORTESIA';
+                syncSupabasePayment(targetRef, 'APROBADA', refPayco || 'CORTESIA-100', 0);
+
                 fetch(`/api/inscripciones/consultar?ref=${encodeURIComponent(refPayco || '')}&invoice=${encodeURIComponent(invoiceParam || '')}`)
                     .then(r => r.json())
                     .then(regData => {
                         const reg = regData.registration;
+                        const finalRef = reg ? reg.invoiceNumber : targetRef;
+                        syncSupabasePayment(finalRef, 'APROBADA', reg ? reg.refPayco : refPayco, 0);
+
                         const orderInfo = {
                             invoice: reg ? reg.invoiceNumber : (invoiceParam || 'TDC-CORTESIA'),
                             ref: reg ? reg.refPayco : refPayco,
@@ -401,6 +430,17 @@
                         if (response.success && response.data) {
                             const d = response.data;
                             const codResponse = parseInt(d.x_cod_response);
+
+                            // Extraer referencia de pago para reconciliación en Supabase
+                            const refPago = (d.x_extra1 && String(d.x_extra1).startsWith('TDC-'))
+                                ? String(d.x_extra1).trim()
+                                : (d.x_id_invoice || invoiceParam || refPayco);
+                            const nuevoEstado = (codResponse === 1) ? 'APROBADA' : ((codResponse === 3) ? 'PENDIENTE' : 'RECHAZADA');
+                            const epaycoRefId = d.x_ref_payco || refPayco;
+                            const amountPaid = parseFloat(d.x_amount) || 0;
+
+                            // Actualizar en Supabase inmediatamente
+                            syncSupabasePayment(refPago, nuevoEstado, epaycoRefId, amountPaid);
 
                             const orderInfo = {
                                 invoice: d.x_id_invoice || 'TDC-Orden',

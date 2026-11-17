@@ -8,6 +8,13 @@ const fs = require('fs');
 const path = require('path');
 const emailService = require('./email-service');
 
+let supabaseClient = null;
+try {
+  supabaseClient = require('./supabase-client');
+} catch (e) {
+  console.warn('[RegistrationService] No se pudo cargar supabase-client:', e.message);
+}
+
 const DATA_DIR = path.join(__dirname, 'data');
 const REGISTRATIONS_FILE = path.join(DATA_DIR, 'inscripciones.json');
 const PENDING_REGISTRATIONS_FILE = path.join(DATA_DIR, 'inscripciones-pendientes.json');
@@ -356,6 +363,55 @@ function savePendingRegistration(invoiceNumber, data) {
   };
 
   writeJsonAtomic(PENDING_REGISTRATIONS_FILE, pending);
+
+  // Sincronización en Supabase (estado PENDIENTE)
+  if (supabaseClient && typeof supabaseClient.guardarInscripcion === 'function' && Array.isArray(data.participants)) {
+    try {
+      const isGenesis = ['standard', 'vip'].includes(data.route) || (data.categoryId && data.categoryId.startsWith('genesis-')) || data.event === 'genesis-coffee-ride' || data.event === 'coffee-ride';
+      const eventName = isGenesis ? 'Genesis Coffee Ride' : (data.event === 'gran-fondo' ? 'Gran Fondo Tour del Café' : (data.event || 'Tour del Café'));
+      const catName = data.categoryName || data.categoryId || (data.route === 'vip' ? 'Experiencia VIP' : 'Standard');
+      const modalidad = data.participants.length === 4 ? 'Equipo' : (data.participants.length === 2 ? 'Pareja' : 'Individual');
+
+      const rows = data.participants.map((p, idx) => ({
+        referencia_pago: invoiceNumber,
+        evento: eventName,
+        categoria: catName,
+        modalidad: modalidad,
+        nombre_equipo: data.teamName || p.teamName || null,
+        nombre_completo: (p.fullName || `${p.nombres || ''} ${p.apellidos || ''}`).trim() || `Ciclista ${idx + 1}`,
+        tipo_documento: (p.docType || 'CC').toUpperCase(),
+        numero_documento: String(p.docNumber || ''),
+        email: (p.email || data.payerEmail || '').trim(),
+        telefono: (p.phone || data.payerPhone || '').trim(),
+        ciudad: p.city || null,
+        pais: p.country || 'Colombia',
+        talla_jersey: p.jerseySize || (data.hasJersey || data.includeJersey ? 'Por definir' : null),
+        eps_seguro: p.eps || null,
+        tipo_sangre: p.bloodType || null,
+        contacto_emergencia: p.emergencyContactName || null,
+        telefono_emergencia: p.emergencyContactPhone || null,
+        cupon_aplicado: data.couponCode || null,
+        valor_pagado: data.totalAmount || 0,
+        estado_pago: 'PENDIENTE',
+        epayco_ref: null,
+        datos_adicionales: {
+          birthDate: p.birthDate,
+          gender: p.gender,
+          department: p.department,
+          medicalNotes: p.medicalNotes,
+          participantIndex: idx + 1,
+          route: data.route
+        }
+      }));
+
+      supabaseClient.guardarInscripcion(rows).catch(err => {
+        console.warn('[RegistrationService Supabase] Error guardando pendiente:', err.message || err);
+      });
+    } catch (sbErr) {
+      console.warn('[RegistrationService Supabase] Error preparando registros:', sbErr.message);
+    }
+  }
+
   return pending[invoiceNumber];
 }
 
@@ -474,6 +530,13 @@ function processPaidRegistration(invoiceNumber, refPayco, paymentDetails = {}) {
     console.error('[RegistrationService] Error enviando correos de inscripción:', err);
   });
 
+  // Actualizar estado de pago en Supabase a APROBADA
+  if (supabaseClient && typeof supabaseClient.actualizarEstadoPago === 'function') {
+    supabaseClient.actualizarEstadoPago(invoiceNumber, 'APROBADA', refPayco, finalRecord.totalAmount).catch(err => {
+      console.warn('[RegistrationService Supabase] Error actualizando estado de pago APROBADA:', err.message || err);
+    });
+  }
+
   return { success: true, registration: finalRecord };
 }
 
@@ -573,6 +636,13 @@ function processCourtesyRegistration(invoiceNumber, couponCode, customDetails = 
   sendRegistrationEmails(finalRecord).catch(err => {
     console.error('[RegistrationService] Error enviando correos de cortesía:', err);
   });
+
+  // Actualizar estado en Supabase a APROBADA
+  if (supabaseClient && typeof supabaseClient.actualizarEstadoPago === 'function') {
+    supabaseClient.actualizarEstadoPago(invoiceNumber, 'APROBADA', refPayco, 0).catch(err => {
+      console.warn('[RegistrationService Supabase] Error actualizando cortesía en Supabase:', err.message || err);
+    });
+  }
 
   return { success: true, registration: finalRecord };
 }

@@ -9,6 +9,13 @@ const inventoryService = require('./inventory-service');
 const registrationService = require('./registration-service');
 const couponService = require('./coupon-service');
 const emailService = require('./email-service');
+
+let supabaseClient = null;
+try {
+  supabaseClient = require('./supabase-client');
+} catch (e) {
+  console.warn('[Server] No se pudo cargar supabase-client:', e.message);
+}
 const nodemailer = require('nodemailer');
 
 // Configuración SMTP Hostinger
@@ -582,6 +589,13 @@ const server = http.createServer(async (req, res) => {
 
       if (!isApproved) {
         console.log(`[ePayco Webhook] Transacción ${refPayco} estado no aprobado: "${transactionState}" (cod: ${codResponse}).`);
+        const estadoNoAprobado = (codResponse === '3' || transactionState.includes('pend')) ? 'PENDIENTE' : 'RECHAZADA';
+        const targetInvoice = invoiceNumber || (body.x_extra1 && String(body.x_extra1).startsWith('TDC-') ? body.x_extra1 : null);
+        if (targetInvoice && supabaseClient && typeof supabaseClient.actualizarEstadoPago === 'function') {
+          supabaseClient.actualizarEstadoPago(targetInvoice, estadoNoAprobado, refPayco, body.x_amount).catch(err => {
+            console.warn('[Server Supabase] Error actualizando estado no aprobado:', err);
+          });
+        }
         return sendJson(res, 200, {
           status: 'ignored',
           message: `Transacción con estado "${transactionState || codResponse}".`,
